@@ -17,8 +17,6 @@ aliases: [/overview/introduction/,/about/why-i-built-frisbee/]
 toc: true
 ---
 
-The effort being put in automating tests should not take over delivering value to users.
-
 
 ## What Does Frisbee Do?
 
@@ -33,7 +31,7 @@ The effort being put in automating tests should not take over delivering value t
 - Assert actual program behavior and side effects
 
 
-## Who Should Use Hugo?
+## Who Should Use Frisbee?
 
 Frisbee is intended for engineers and researchers looking to invent, build, verify, evaluate, and release distributed systems faster and more reliably.
 
@@ -42,3 +40,6 @@ Use cases include:
 - Cloud Databases
 - Federated Learning Frameworks
 - Telecommunication providers
+
+
+
