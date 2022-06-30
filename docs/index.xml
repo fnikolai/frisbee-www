@@ -6,7 +6,7 @@
     <description>Recent content in Docs on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 29 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://fnikolai.github.io/frisbee-www/docs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://fnikolai.github.io/frisbee-www/docs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Frisbee Documentation</title>
       <link>https://fnikolai.github.io/frisbee-www/docs/documentation/</link>
@@ -69,32 +69,24 @@ I changed some templates, but the changes does not seem to affect the Test Plan.
       <pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>https://fnikolai.github.io/frisbee-www/docs/about/what-is-frisbee/</guid>
-      <description>The effort being put in automating tests should not take over delivering value to users.
-What Does Frisbee Do? Setup initial dependency stack – easily!
+      <description>What Does Frisbee Do? Setup initial dependency stack – easily!
 Test against actual, close to production software - no mocks!
 Replay complex workloads written in an intuitive language!
 Combine Chaos Engineering with large-scale performance testing!
 Assert actual program behavior and side effects
-Who Should Use Hugo? Frisbee is intended for engineers and researchers looking to invent, build, verify, evaluate, and release distributed systems faster and more reliably.</description>
+Who Should Use Frisbee? Frisbee is intended for engineers and researchers looking to invent, build, verify, evaluate, and release distributed systems faster and more reliably.
+Use cases include:</description>
     </item>
     
     <item>
-      <title>Hugo Features</title>
+      <title>Basic Features</title>
       <link>https://fnikolai.github.io/frisbee-www/docs/about/features/</link>
-      <pubDate>Wed, 01 Feb 2017 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 30 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>https://fnikolai.github.io/frisbee-www/docs/about/features/</guid>
-      <description>General Extremely fast build times (&amp;lt; 1 ms per page) Completely cross platform, with easy installation on macOS, Linux, Windows, and more Renders changes on the fly with LiveReload as you develop Powerful theming Host your site anywhere Organization Straightforward organization for your projects, including website sections Customizable URLs Support for configurable taxonomies, including categories and tags Sort content as you desire through powerful template functions Automatic table of contents generation Dynamic menu creation Pretty URLs support Permalink pattern support Redirects via aliases Content Native Markdown and Emacs Org-Mode support, as well as other languages via external helpers (see supported formats) TOML, YAML, and JSON metadata support in front matter Customizable homepage Multiple content types Automatic and user defined content summaries Shortcodes to enable rich content inside of Markdown &amp;quot;Minutes to Read&amp;quot; functionality &amp;quot;WordCount&amp;quot; functionality Additional Features Integrated Disqus comment support Integrated Google Analytics support Automatic RSS creation Support for Go HTML templates Syntax highlighting powered by Chroma </description>
-    </item>
-    
-    <item>
-      <title>The Benefits of Static Site Generators</title>
-      <link>https://fnikolai.github.io/frisbee-www/docs/about/benefits/</link>
-      <pubDate>Wed, 01 Feb 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://fnikolai.github.io/frisbee-www/docs/about/benefits/</guid>
-      <description>The purpose of website generators is to render content into HTML files. Most are &amp;quot;dynamic site generators.&amp;quot; That means the HTTP server---i.e., the program that sends files to the browser to be viewed---runs the generator to create a new HTML file every time an end user requests a page.
-Over time, dynamic site generators were programmed to cache their HTML files to prevent unnecessary delays in delivering pages to end users.</description>
+      <description>This document describes the basic features of Frisbee, including Actions, Testing Workflows, Visualized Operations, and Security Guarantees.
+Actions An Action is the key to defining a DSL for replaying complex workloads. Frisbee covers a full range of actions required to test a distributed system, and consists of five comprehensive and fine-grained components: templates, services, clusters, faults, and calls.
+Templates: Templates define minimally constraining skeletons. When called with `input&#39; parameters, templates generate the customized configuration by replacing the placeholders with the given input.</description>
     </item>
     
     <item>
