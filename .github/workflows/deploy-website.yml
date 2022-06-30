@@ -32,7 +32,6 @@ jobs:
       - name: Build
         run: |
           ls -lah
-          mkdir /docs
           hugo 
 
       - name: Deploy
@@ -42,4 +41,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           # external_repository: username/external-repository
           publish_branch: gh-pages
-          publish_dir: /docs
+          publish_dir: public
