@@ -26,11 +26,11 @@
         {{ with $img }}
         {{ $big := .Fill "1024x512 top" }}
         {{ $small := $big.Resize "512x" }}
-        <a href="{{ $.RelPermalink}}" class="tile lazyload cover dib f4 h5 ml1 mr4 bg-black relative mw-100 shadow-5" style="width:{{ $small.Width }}px;" 
-          data-bg="{{ $img.RelPermalink }}"
-          data-sizes="auto" 
-           data-srcset="{{ $small.RelPermalink }} 1x,
-          {{ $big.RelPermalink }} 2x" data-src="small"
+        <a href="{{ $.Permalink}}" class="tile lazyload cover dib f4 h5 ml1 mr4 bg-black relative mw-100 shadow-5" style="width:{{ $small.Width }}px;"
+          data-bg="{{ $img.Permalink }}"
+          data-sizes="auto"
+           data-srcset="{{ $small.Permalink }} 1x,
+          {{ $big.Permalink }} 2x" data-src="small"
         >
           {{with $.Title}}
           <div class="details absolute bottom-0 f3-ns f4 left-0 o-0 right-0 top-0">

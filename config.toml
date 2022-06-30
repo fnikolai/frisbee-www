@@ -7,7 +7,7 @@ publishdir = "public"
 enableEmoji = true
 
 
-canonifyURLs = "false"
+canonifyURLs = "true"
 pluralizeListTitles = "false"
 plainIdAnchors = "true"
 disableKinds = ["taxonomy", "taxonomyTerm"]
