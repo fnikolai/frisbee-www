@@ -75,16 +75,17 @@
     url = "/news/"
 
   [[global]]
-    name = "Docs"
+    name = "Documentation"
     weight = 5
     identifier = "docs"
-    url = "/documentation/"
+    url = "/docs/"
 
-    [[global]]
-      name = "Showcase"
-      weight = 20
-      identifier = "showcase"
-      url = "/showcase/"
+  [[global]]
+    name = "Showcase"
+    weight = 20
+    identifier = "showcase"
+    url = "/showcase/"
+
 
   # Anything with a weight > 100 gets an external icon
   [[global]]
