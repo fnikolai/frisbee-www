@@ -32,6 +32,7 @@ jobs:
       - name: Build
         run: |
           ls -lah
+          mkdir /docs
           hugo 
 
       - name: Deploy
