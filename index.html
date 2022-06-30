@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  
+  <link rel="preload" href="https://fnikolai.github.io/frisbee-www/fonts/muli-latin-200.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://fnikolai.github.io/frisbee-www/fonts/muli-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://fnikolai.github.io/frisbee-www/fonts/muli-latin-800.woff2" as="font" type="font/woff2" crossorigin>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>The world’s fastest framework for building websites | </title>
+
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  <meta name="generator" content="Hugo 0.101.0" />
+
+  
+  <meta name="robots" content="noindex, nofollow">
+  
+
+  <link rel="alternate" type="application/rss&#43;xml" href="https://fnikolai.github.io/frisbee-www/index.xml">
+  
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/frisbee-www/output/css/app.min.b368142944d203fdc1d3dec8ab085c0c0e75aaf9171853110f03e91c1c2616f4.css" integrity="sha256-s2gUKUTSA/3B097IqwhcDA51qvkXGFMRDwPpHBwmFvQ=" crossorigin="anonymous">
+  
+  
+  
+
+  <meta name="description"
+  content="Frisbee: Smart, Cloud-Native Testbed!">
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/frisbee-www/output/js/app.d45556fb33ae1b6a80d0ca8947dc6206bb04aa896ff68df8dff63ece1ae625a6.js" integrity="sha256-1FVW&#43;zOuG2qA0MqJR9xiBrsEqolv9o343/Y&#43;zhrmJaY=" crossorigin="anonymous" defer></script>
+  
+      
+ 
+
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0594cb">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="The world’s fastest framework for building websites" />
+<meta property="og:description" content="Frisbee: Smart, Cloud-Native Testbed!" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://fnikolai.github.io/frisbee-www/" /><meta property="og:image" content="https://fnikolai.github.io/frisbee-www/opengraph/gohugoio-card-base-1_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_18228077615821881053.png"/><meta property="og:site_name" content="Helm" />
+<meta itemprop="name" content="The world’s fastest framework for building websites">
+<meta itemprop="description" content="Frisbee: Smart, Cloud-Native Testbed!"><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://fnikolai.github.io/frisbee-www/opengraph/gohugoio-card-base-1_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_18228077615821881053.png"/>
+<meta name="twitter:title" content="The world’s fastest framework for building websites"/>
+<meta name="twitter:description" content="Frisbee: Smart, Cloud-Native Testbed!"/>
+
+
+</head>
+
+<body class="ma0 sans-serif bg-primary-color-light">
+  
+
+  
+<nav class="bg-primary-color-dark pv4 w-100" role="navigation">
+
+  <div class="center flex-ns flex-wrap items-center justify-start mw9">
+
+    <h1 class="dim f3 lh-solid ml0-ns mr0 mr4-l mv0 pl3 pl4-ns">
+      <a href="https://carv-ics-forth.github.io/frisbee/" class="link white">
+         Frisbee
+      </a>
+    </h1>
+    <ul class="list ma0 pa0 dn dib-l" role="menu">
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+          <a href="/frisbee-www/news/" class="dim link light-silver">
+            News
+              
+            
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+          <a href="/frisbee-www/documentation/" class="dim link light-silver">
+            Docs
+              
+            
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+          <a href="/frisbee-www/showcase/" class="dim link light-silver">
+            Showcase
+              
+            
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+          <a href="https://github.com/CARV-ICS-FORTH/frisbee/discussions" class="dim link light-silver">
+            Community
+              
+            
+            
+              <span class="pl1">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link">
+<path d="M25.152 16.576v5.696q0 2.144-1.504 3.648t-3.648 1.504h-14.848q-2.144 0-3.648-1.504t-1.504-3.648v-14.848q0-2.112 1.504-3.616t3.648-1.536h12.576q0.224 0 0.384 0.16t0.16 0.416v1.152q0 0.256-0.16 0.416t-0.384 0.16h-12.576q-1.184 0-2.016 0.832t-0.864 2.016v14.848q0 1.184 0.864 2.016t2.016 0.864h14.848q1.184 0 2.016-0.864t0.832-2.016v-5.696q0-0.256 0.16-0.416t0.416-0.16h1.152q0.256 0 0.416 0.16t0.16 0.416zM32 1.152v9.12q0 0.48-0.352 0.8t-0.8 0.352-0.8-0.352l-3.136-3.136-11.648 11.648q-0.16 0.192-0.416 0.192t-0.384-0.192l-2.048-2.048q-0.192-0.16-0.192-0.384t0.192-0.416l11.648-11.648-3.136-3.136q-0.352-0.352-0.352-0.8t0.352-0.8 0.8-0.352h9.12q0.48 0 0.8 0.352t0.352 0.8z"></path>
+</svg>
+
+              </span>
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+          <a href="https://github.com/CARV-ICS-FORTH/frisbee" class="dim link light-silver">
+            GitHub
+              
+            
+            
+              <span class="pl1">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link">
+<path d="M25.152 16.576v5.696q0 2.144-1.504 3.648t-3.648 1.504h-14.848q-2.144 0-3.648-1.504t-1.504-3.648v-14.848q0-2.112 1.504-3.616t3.648-1.536h12.576q0.224 0 0.384 0.16t0.16 0.416v1.152q0 0.256-0.16 0.416t-0.384 0.16h-12.576q-1.184 0-2.016 0.832t-0.864 2.016v14.848q0 1.184 0.864 2.016t2.016 0.864h14.848q1.184 0 2.016-0.864t0.832-2.016v-5.696q0-0.256 0.16-0.416t0.416-0.16h1.152q0.256 0 0.416 0.16t0.16 0.416zM32 1.152v9.12q0 0.48-0.352 0.8t-0.8 0.352-0.8-0.352l-3.136-3.136-11.648 11.648q-0.16 0.192-0.416 0.192t-0.384-0.192l-2.048-2.048q-0.192-0.16-0.192-0.384t0.192-0.416l11.648-11.648-3.136-3.136q-0.352-0.352-0.352-0.8t0.352-0.8 0.8-0.352h9.12q0.48 0 0.8 0.352t0.352 0.8z"></path>
+</svg>
+
+              </span>
+            
+          </a>
+        </li>
+      
+    </ul>
+
+    <div class="db dib-ns pl3"><form id="site-search-form" action="" role="search">
+  <fieldset class="bn ma0 pa0">
+    <label class="clip" for="search-input">Search</label>
+    <input type="search" id="search-input" class="needs-js bg-left bn f5 input-reset lh-solid mt3 mt0-ns pl4 pv2 w5 white" placeholder="Search the Docs" name="search-input" value="" style="background: url('/images/icon-search.png') 5px 11px/16px 16px no-repeat; background-color: rgba(255,255,255,0);">
+  </fieldset>
+</form>
+</div>
+
+    <span class="absolute mt1 mt2-l pr3 right-0 top-0">
+
+<a class="github-button needs-js link primary-color-dark" href="https://github.com/CARV-ICS-FORTH/frisbee" data-size="large" data-show-count="false" aria-label="Star Frisbee on GitHub">Star</a>
+</span>
+
+  </div>
+</nav>
+
+  
+  <header class="bg-primary-color-dark ph4 tc" role="banner">
+  <section class="center pb4 pb5-l ph4-l pt3 pt5-ns w-90 w-60-l">
+    
+    
+      <h2 class="f3 f1-l fw4 white-90 m0 lh-title pt2 pb3 pv0-ns">
+        Frisbee: Smart, Cloud-Native Testbed!
+      </h2>
+    
+    <div class="lh-copy f4 w-90-ns center fw2 silver tc tc-ns">
+      <p>The Kubernetes Native Platform for exploring, testing, and benchmarking distributed applications.</p>
+
+    </div>
+    <div class="w4 mv4 center">
+      <a class="f5 db link grow tc v-mid bg-blue white ba b--blue ph3 pv2 br1" href="/getting-started/quick-start/">Quick Start</a>
+    </div>
+  </section>
+</header>
+
+  <section class="relative w-100 bg-black white">
+  <div class="flex flex-wrap w-90-l center center mw9">
+    
+    
+      
+      
+      <a href="/frisbee-www/news/no-more-releasenotes-here/" class="link lh-copy light-gray f6 w-100 w-50-m w-25-l bg-animate hover-bg-accent-color hover-white pv3 pv4-ns ph3 ph4-ns dib">
+        <span class="f6 gray pb1 db">
+          June 28, 2022
+        </span>
+        Frisbee Release Notes now gets released on GitHub Only
+      </a>
+    
+      
+      
+      <a href="/frisbee-www/news/lets-celebrate-hugos-5th-birthday/" class="link lh-copy light-gray f6 w-100 w-50-m w-25-l bg-animate hover-bg-accent-color hover-white pv3 pv4-ns ph3 ph4-ns dib">
+        <span class="f6 gray pb1 db">
+          July 4, 2018
+        </span>
+        How a side project became one of the most popular frameworks for building websites.
+      </a>
+    
+
+  </div>
+</section>
+
+
+  <main role="main" class="content-with-sidebar min-vh-100 pb7 pb0-ns">
+    
+  <section class="w-100 ph4 ph5-ns pv4"><div class="w-90-l center">
+  
+    <div class=" flex-ns flex-wrap justify-center center mw9">
+      
+      
+        
+
+        <div class="w-100 w-50-ns ph5-l pv5-l nested-copy-line-height">
+          
+          <div class="flex-l flex-wrap justify-between">
+            <div class="flex-auto w-100 w-20-ns pt1 ">
+              
+                <img src="/images/icon-fast.svg" alt="icon depicting Language Agnostic" class="h3 o-80 v-mid center w-100">
+              
+            </div>
+
+            <div class="flex-auto tc tl-ns w-100 w-80-ns">
+              <h3 class="lh-title gray o-80 f4 f5-ns mb2 fw8 bmt1 mt0-l">
+                 Language Agnostic
+              </h3>
+              <div class="db v-mid w-100 gray measure-wide mb5 mb0-l">
+                <p class="f3 primary-color mt0 mb2">Are you busy writing tests instead of delivering value to users?</p>
+                <div class="lh-copy">
+                  Create complex workloads by writing test steps in simple statements.
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      
+        
+
+        <div class="w-100 w-50-ns ph5-l pv5-l nested-copy-line-height">
+          
+          <div class="flex-l flex-wrap justify-between">
+            <div class="flex-auto w-100 w-20-ns pt1 ">
+              
+                <img src="/images/icon-content-management.svg" alt="icon depicting Deploy Anywhere" class="h3 o-80 v-mid center w-100">
+              
+            </div>
+
+            <div class="flex-auto tc tl-ns w-100 w-80-ns">
+              <h3 class="lh-title gray o-80 f4 f5-ns mb2 fw8 bmt1 mt0-l">
+                 Deploy Anywhere
+              </h3>
+              <div class="db v-mid w-100 gray measure-wide mb5 mb0-l">
+                <p class="f3 primary-color mt0 mb2">Do you wish to scale-up or rerun your tests in different infrastructure?</p>
+                <div class="lh-copy">
+                  Setup Frisbee on your workstation, on your cluster, or to the Cloud.
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      
+        
+
+        <div class="w-100 w-50-ns ph5-l pv5-l nested-copy-line-height">
+          
+          <div class="flex-l flex-wrap justify-between">
+            <div class="flex-auto w-100 w-20-ns pt1 ">
+              
+                <img src="/images/icon-custom-outputs.svg" alt="icon depicting Real-time Reports" class="h3 o-80 v-mid center w-100">
+              
+            </div>
+
+            <div class="flex-auto tc tl-ns w-100 w-80-ns">
+              <h3 class="lh-title gray o-80 f4 f5-ns mb2 fw8 bmt1 mt0-l">
+                 Real-time Reports
+              </h3>
+              <div class="db v-mid w-100 gray measure-wide mb5 mb0-l">
+                <p class="f3 primary-color mt0 mb2">Are you having hard time to understand your system?</p>
+                <div class="lh-copy">
+                  View step-wise results for each test and analyze real-time.
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      
+        
+
+        <div class="w-100 w-50-ns ph5-l pv5-l nested-copy-line-height">
+          
+          <div class="flex-l flex-wrap justify-between">
+            <div class="flex-auto w-100 w-20-ns pt1 ">
+              
+                <img src="/images/icon-built-in-templates.svg" alt="icon depicting Detect SLA Violations" class="h3 o-80 v-mid center w-100">
+              
+            </div>
+
+            <div class="flex-auto tc tl-ns w-100 w-80-ns">
+              <h3 class="lh-title gray o-80 f4 f5-ns mb2 fw8 bmt1 mt0-l">
+                 Detect SLA Violations
+              </h3>
+              <div class="db v-mid w-100 gray measure-wide mb5 mb0-l">
+                <p class="f3 primary-color mt0 mb2">Are you sure your last commit did not break performance?</p>
+                <div class="lh-copy">
+                  Assert your SLAs using the Frisbee&#39;s metrics-driven architecture
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      
+        
+
+        <div class="w-100 w-50-ns ph5-l pv5-l nested-copy-line-height">
+          
+          <div class="flex-l flex-wrap justify-between">
+            <div class="flex-auto w-100 w-20-ns pt1 ">
+              
+                <img src="/images/icon-multilingual2.svg" alt="icon depicting Identify Weaknesses &amp; Potential Outages" class="h3 o-80 v-mid center w-100">
+              
+            </div>
+
+            <div class="flex-auto tc tl-ns w-100 w-80-ns">
+              <h3 class="lh-title gray o-80 f4 f5-ns mb2 fw8 bmt1 mt0-l">
+                 Identify Weaknesses &amp; Potential Outages
+              </h3>
+              <div class="db v-mid w-100 gray measure-wide mb5 mb0-l">
+                <p class="f3 primary-color mt0 mb2">How many failures can you tolerate?</p>
+                <div class="lh-copy">
+                  Combine Chaos Engineering with large-scale performance testing!
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      
+        
+
+        <div class="w-100 w-50-ns ph5-l pv5-l nested-copy-line-height">
+          
+          <div class="flex-l flex-wrap justify-between">
+            <div class="flex-auto w-100 w-20-ns pt1 ">
+              
+                <img src="/images/icon-shortcodes.svg" alt="icon depicting AI-Driven Testing" class="h3 o-80 v-mid center w-100">
+              
+            </div>
+
+            <div class="flex-auto tc tl-ns w-100 w-80-ns">
+              <h3 class="lh-title gray o-80 f4 f5-ns mb2 fw8 bmt1 mt0-l">
+                 AI-Driven Testing
+              </h3>
+              <div class="db v-mid w-100 gray measure-wide mb5 mb0-l">
+                <p class="f3 primary-color mt0 mb2">Are you confident about your test-cases?</p>
+                <div class="lh-copy">
+                  Reduce variability by determing if tests are flaky before merging the code.
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      
+    </div>
+  
+</div>
+</section>
+
+
+<section class="bg-near-white mid-gray pb5 ph4 ph5-ns pt4 w-100">
+  <h3 class="black f1 fw4 lh-title ma0 pb3 pt0-l pt4">Showcase</h3>
+  
+  <div class="w-100">
+    <div class="w-100 overflow-x-scroll">
+      <div class="row nowrap mv2 pb1">
+        
+        
+        
+   
+        
+        
+        
+        <a href="/frisbee-www/showcase/flower/" class="tile lazyload cover dib f4 h5 ml1 mr4 bg-black relative mw-100 shadow-5" style="width:512px;" 
+          data-bg="/frisbee-www/showcase/flower/featured.png"
+          data-sizes="auto" 
+           data-srcset="/frisbee-www/showcase/flower/featured_huf0871f98b80a2d3694d50ea4e04f67d1_58718_c2d80208760e030b32d05322897c8f8c.png 1x,
+          /frisbee-www/showcase/flower/featured_huf0871f98b80a2d3694d50ea4e04f67d1_58718_1024x512_fill_box_top_3.png 2x" data-src="small"
+        >
+          
+          <div class="details absolute bottom-0 f3-ns f4 left-0 o-0 right-0 top-0">
+            <div class="absolute bottom-0 pa2 tc white">
+              Flower &#8594;
+            </div>
+          </div>
+          
+        </a>
+        
+
+        
+          
+   
+        
+        
+        
+        <a href="/frisbee-www/showcase/redis/" class="tile lazyload cover dib f4 h5 ml1 mr4 bg-black relative mw-100 shadow-5" style="width:512px;" 
+          data-bg="/frisbee-www/showcase/redis/featured.png"
+          data-sizes="auto" 
+           data-srcset="/frisbee-www/showcase/redis/featured_hu52aafd2345e4766d38a4e0a52f70acc4_40754_b2497500f4016fca3770d8eac5144e40.png 1x,
+          /frisbee-www/showcase/redis/featured_hu52aafd2345e4766d38a4e0a52f70acc4_40754_1024x512_fill_box_top_3.png 2x" data-src="small"
+        >
+          
+          <div class="details absolute bottom-0 f3-ns f4 left-0 o-0 right-0 top-0">
+            <div class="absolute bottom-0 pa2 tc white">
+              Redis &#8594;
+            </div>
+          </div>
+          
+        </a>
+        
+
+        
+          
+   
+        
+        
+        
+        <a href="/frisbee-www/showcase/iperf3/" class="tile lazyload cover dib f4 h5 ml1 mr4 bg-black relative mw-100 shadow-5" style="width:512px;" 
+          data-bg="/frisbee-www/showcase/iperf3/featured.png"
+          data-sizes="auto" 
+           data-srcset="/frisbee-www/showcase/iperf3/featured_hu1da28ed6a4ae8995b9d5205d539b6768_3387_79805adcc9597671192aeebd035096b5.png 1x,
+          /frisbee-www/showcase/iperf3/featured_hu1da28ed6a4ae8995b9d5205d539b6768_3387_1024x512_fill_box_top_3.png 2x" data-src="small"
+        >
+          
+          <div class="details absolute bottom-0 f3-ns f4 left-0 o-0 right-0 top-0">
+            <div class="absolute bottom-0 pa2 tc white">
+              iPerf3 &#8594;
+            </div>
+          </div>
+          
+        </a>
+        
+
+        
+          
+   
+        
+        
+        
+        <a href="/frisbee-www/showcase/cockroach/" class="tile lazyload cover dib f4 h5 ml1 mr4 bg-black relative mw-100 shadow-5" style="width:512px;" 
+          data-bg="/frisbee-www/showcase/cockroach/featured.png"
+          data-sizes="auto" 
+           data-srcset="/frisbee-www/showcase/cockroach/featured_hu6a8fc3e62ea5d416963bfcbcfdfd5b9d_33804_11fba4510dc111fe9a859833dbee0fae.png 1x,
+          /frisbee-www/showcase/cockroach/featured_hu6a8fc3e62ea5d416963bfcbcfdfd5b9d_33804_1024x512_fill_box_top_3.png 2x" data-src="small"
+        >
+          
+          <div class="details absolute bottom-0 f3-ns f4 left-0 o-0 right-0 top-0">
+            <div class="absolute bottom-0 pa2 tc white">
+              CockroachDB &#8594;
+            </div>
+          </div>
+          
+        </a>
+        
+
+        
+        
+      </div>
+    </div>
+  </div>
+  
+  <div class="flex w-100 mt4 justify-end">
+    <a href="/showcase/" class="br2 f6 bg-primary-color-dark hover-bg-primary-color link ph3 pv2 ttu white">See All</a>
+  </div>
+</section>
+
+
+<section class="w-100 ph4 ph5-ns pv4 pv6-ns mid-gray bg-white bb bt b--light-gray">  <div class="flex-ns flex-wrap center mw9">
+    
+
+    <div class="w-100 w-50-ns">
+
+      <div class="w-80 center tc nested-copy-line-height">
+          <img src="/images/frisbee-logo.svg" alt="Hugo Gopher" class="h4">
+
+        <h3 class="f2 black">Install in seconds.</h3>
+        <p class="f3">No dependencies, No compilation.</p>
+      </div>
+    </div>
+
+    
+    <div class="w-100 w-50-ns tc">
+
+      <p class="f5 mid-gray">Install via Helm</p>
+      <div class="code f4 bg-black light-green lh-copy pv3 ph3 br2 w-100 w-100-ns center tl">
+          >> helm repo add frisbee https://carv-ics-forth.github.io/frisbee/charts
+            <br />
+          >> helm upgrade --install --wait my-frisbee frisbee/platform
+            <br />
+      </div>
+     
+
+      <p class="f5 nested-links"><a href="https://fnikolai.github.io/frisbee-www/getting-started/installing/" class="link">See the Getting Started Guide for other methods. <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link">
+<path d="M25.152 16.576v5.696q0 2.144-1.504 3.648t-3.648 1.504h-14.848q-2.144 0-3.648-1.504t-1.504-3.648v-14.848q0-2.112 1.504-3.616t3.648-1.536h12.576q0.224 0 0.384 0.16t0.16 0.416v1.152q0 0.256-0.16 0.416t-0.384 0.16h-12.576q-1.184 0-2.016 0.832t-0.864 2.016v14.848q0 1.184 0.864 2.016t2.016 0.864h14.848q1.184 0 2.016-0.864t0.832-2.016v-5.696q0-0.256 0.16-0.416t0.416-0.16h1.152q0.256 0 0.416 0.16t0.16 0.416zM32 1.152v9.12q0 0.48-0.352 0.8t-0.8 0.352-0.8-0.352l-3.136-3.136-11.648 11.648q-0.16 0.192-0.416 0.192t-0.384-0.192l-2.048-2.048q-0.192-0.16-0.192-0.384t0.192-0.416l11.648-11.648-3.136-3.136q-0.352-0.352-0.352-0.8t0.352-0.8 0.8-0.352h9.12q0.48 0 0.8 0.352t0.352 0.8z"></path>
+</svg>
+</a></p>
+    </div>
+
+    
+
+      
+
+  </div>
+</section>
+
+
+
+  <section class="w-100 ph4 ph5-ns pt4 pb5 mid-gray bg-primary-color-light bb bt b--light-gray "><div class="w-100 center pt5">
+  <div class="w-100 w-40-l tc center">
+    <img src="/images/GitHub-Mark-64px.png" alt="Github Logo" class="tc center">
+  </div>
+</div>
+
+<div class="flex-ns flex-wrap center pb4 center mw9">
+  
+  <div class="w-100 tc w-third-l">
+    <h3 class="f3 mv3 accent-color-light">We welcome all contributions</h3>
+    <ul class="list ma0 pa0">
+      <li class="mb3 f4">
+
+        <a href="https://github.com/CARV-ICS-FORTH/frisbee/blob/main/CONTRIBUTING.md" class="link mid-gray dim">
+          Fork the repo and work on an issue <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link">
+<path d="M25.152 16.576v5.696q0 2.144-1.504 3.648t-3.648 1.504h-14.848q-2.144 0-3.648-1.504t-1.504-3.648v-14.848q0-2.112 1.504-3.616t3.648-1.536h12.576q0.224 0 0.384 0.16t0.16 0.416v1.152q0 0.256-0.16 0.416t-0.384 0.16h-12.576q-1.184 0-2.016 0.832t-0.864 2.016v14.848q0 1.184 0.864 2.016t2.016 0.864h14.848q1.184 0 2.016-0.864t0.832-2.016v-5.696q0-0.256 0.16-0.416t0.416-0.16h1.152q0.256 0 0.416 0.16t0.16 0.416zM32 1.152v9.12q0 0.48-0.352 0.8t-0.8 0.352-0.8-0.352l-3.136-3.136-11.648 11.648q-0.16 0.192-0.416 0.192t-0.384-0.192l-2.048-2.048q-0.192-0.16-0.192-0.384t0.192-0.416l11.648-11.648-3.136-3.136q-0.352-0.352-0.352-0.8t0.352-0.8 0.8-0.352h9.12q0.48 0 0.8 0.352t0.352 0.8z"></path>
+</svg>
+
+        </a>
+      </li>
+
+      <li class="mb3 f4">
+        <a href="https://github.com/CARV-ICS-FORTH/frisbee/tree/main/charts" class="link mid-gray dim">
+          Test your applications in Frisbee <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link">
+<path d="M25.152 16.576v5.696q0 2.144-1.504 3.648t-3.648 1.504h-14.848q-2.144 0-3.648-1.504t-1.504-3.648v-14.848q0-2.112 1.504-3.616t3.648-1.536h12.576q0.224 0 0.384 0.16t0.16 0.416v1.152q0 0.256-0.16 0.416t-0.384 0.16h-12.576q-1.184 0-2.016 0.832t-0.864 2.016v14.848q0 1.184 0.864 2.016t2.016 0.864h14.848q1.184 0 2.016-0.864t0.832-2.016v-5.696q0-0.256 0.16-0.416t0.416-0.16h1.152q0.256 0 0.416 0.16t0.16 0.416zM32 1.152v9.12q0 0.48-0.352 0.8t-0.8 0.352-0.8-0.352l-3.136-3.136-11.648 11.648q-0.16 0.192-0.416 0.192t-0.384-0.192l-2.048-2.048q-0.192-0.16-0.192-0.384t0.192-0.416l11.648-11.648-3.136-3.136q-0.352-0.352-0.352-0.8t0.352-0.8 0.8-0.352h9.12q0.48 0 0.8 0.352t0.352 0.8z"></path>
+</svg>
+
+        </a>
+      </li>
+
+      <li class="mb3 f4">
+        <a href="https://github.com/CARV-ICS-FORTH/frisbee/tree/main/examples" class="link mid-gray dim">
+          Discover new testing patterns <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link">
+<path d="M25.152 16.576v5.696q0 2.144-1.504 3.648t-3.648 1.504h-14.848q-2.144 0-3.648-1.504t-1.504-3.648v-14.848q0-2.112 1.504-3.616t3.648-1.536h12.576q0.224 0 0.384 0.16t0.16 0.416v1.152q0 0.256-0.16 0.416t-0.384 0.16h-12.576q-1.184 0-2.016 0.832t-0.864 2.016v14.848q0 1.184 0.864 2.016t2.016 0.864h14.848q1.184 0 2.016-0.864t0.832-2.016v-5.696q0-0.256 0.16-0.416t0.416-0.16h1.152q0.256 0 0.416 0.16t0.16 0.416zM32 1.152v9.12q0 0.48-0.352 0.8t-0.8 0.352-0.8-0.352l-3.136-3.136-11.648 11.648q-0.16 0.192-0.416 0.192t-0.384-0.192l-2.048-2.048q-0.192-0.16-0.192-0.384t0.192-0.416l11.648-11.648-3.136-3.136q-0.352-0.352-0.352-0.8t0.352-0.8 0.8-0.352h9.12q0.48 0 0.8 0.352t0.352 0.8z"></path>
+</svg>
+
+        </a>
+      </li>
+
+    </ul>
+
+  </div>
+
+
+  <div class="w-100 w-third-l tc">
+    <div class="w-60-l center">
+
+      <p class="f4">Frisbee is open-source and completely free.</p>
+    </div>
+  </div>
+
+
+  <div class="w-100 tc w-third-l">
+    <h3 class="f3 mv3 accent-color-light">More ways to contribute</h3>
+    <ul class="list ma0 pa0">
+      <li class="mb3 f4">
+        <a href="https://github.com/CARV-ICS-FORTH/frisbee/tree/main/docs/overview/introduction/" class="link mid-gray dim">
+          Help improve the docs <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link">
+<path d="M25.152 16.576v5.696q0 2.144-1.504 3.648t-3.648 1.504h-14.848q-2.144 0-3.648-1.504t-1.504-3.648v-14.848q0-2.112 1.504-3.616t3.648-1.536h12.576q0.224 0 0.384 0.16t0.16 0.416v1.152q0 0.256-0.16 0.416t-0.384 0.16h-12.576q-1.184 0-2.016 0.832t-0.864 2.016v14.848q0 1.184 0.864 2.016t2.016 0.864h14.848q1.184 0 2.016-0.864t0.832-2.016v-5.696q0-0.256 0.16-0.416t0.416-0.16h1.152q0.256 0 0.416 0.16t0.16 0.416zM32 1.152v9.12q0 0.48-0.352 0.8t-0.8 0.352-0.8-0.352l-3.136-3.136-11.648 11.648q-0.16 0.192-0.416 0.192t-0.384-0.192l-2.048-2.048q-0.192-0.16-0.192-0.384t0.192-0.416l11.648-11.648-3.136-3.136q-0.352-0.352-0.352-0.8t0.352-0.8 0.8-0.352h9.12q0.48 0 0.8 0.352t0.352 0.8z"></path>
+</svg>
+
+        </a>
+      </li>
+
+      <li class="mb3 f4">
+
+        <a href="https://github.com/CARV-ICS-FORTH/frisbee/discussions" class="link mid-gray dim">
+          Help others in the forums <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link">
+<path d="M25.152 16.576v5.696q0 2.144-1.504 3.648t-3.648 1.504h-14.848q-2.144 0-3.648-1.504t-1.504-3.648v-14.848q0-2.112 1.504-3.616t3.648-1.536h12.576q0.224 0 0.384 0.16t0.16 0.416v1.152q0 0.256-0.16 0.416t-0.384 0.16h-12.576q-1.184 0-2.016 0.832t-0.864 2.016v14.848q0 1.184 0.864 2.016t2.016 0.864h14.848q1.184 0 2.016-0.864t0.832-2.016v-5.696q0-0.256 0.16-0.416t0.416-0.16h1.152q0.256 0 0.416 0.16t0.16 0.416zM32 1.152v9.12q0 0.48-0.352 0.8t-0.8 0.352-0.8-0.352l-3.136-3.136-11.648 11.648q-0.16 0.192-0.416 0.192t-0.384-0.192l-2.048-2.048q-0.192-0.16-0.192-0.384t0.192-0.416l11.648-11.648-3.136-3.136q-0.352-0.352-0.352-0.8t0.352-0.8 0.8-0.352h9.12q0.48 0 0.8 0.352t0.352 0.8z"></path>
+</svg>
+
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+  
+
+
+</div>
+</section>
+
+  </main>
+
+  <footer class="bg-primary-color-dark ph4-ns pt4 relative w-100" role="contentinfo">
+    <div class="center flex-ns flex-wrap justify-between mw9 w-90">
+      <div class="pb3 pt4 w-100 w-50-ns">
+
+          <h3 class="b f3 mv0 light-gray">
+              This project has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement No. 894204 (Ether, H2020-MSCA-IF-2019)
+          </h3>
+
+      </div>
+
+      <div class="w-50 w-50-l"> 
+        
+
+
+  <section class="pb3 w-100">
+    <div class="center mw9"> 
+
+      <div class="flex-ns flex-wrap center justify-between pt3">
+        
+          
+          
+            <div class="ba b--dark-gray bg-light-gray br3 flex flex-column flex-wrap items-center justify-center ph3 pv4 mb4 w-100 w-30-l  o-100">
+              
+                
+                   <a href="https://cordis.europa.eu/project/id/894204?utm_campaign=hugosponsor&amp;utm_medium=banner&amp;utm_source=homepage" class="grow">
+                
+              <img src="/images/sponsors/eu-logo.png" alt="Logo for European Union" class="img h3 center" />
+              </a>
+              
+            </div>
+          
+        
+          
+          
+            <div class="ba b--dark-gray bg-light-gray br3 flex flex-column flex-wrap items-center justify-center ph3 pv4 mb4 w-100 w-30-l  o-100">
+              
+                
+                   <a href="https://marie-sklodowska-curie-actions.ec.europa.eu/actions/postdoctoral-fellowships?utm_campaign=hugosponsor&amp;utm_medium=banner&amp;utm_source=homepage" class="grow">
+                
+              <img src="/images/sponsors/msca-logo.jpg" alt="Logo for Marie Skłodowska-Curie Actions" class="img h3 center" />
+              </a>
+              
+            </div>
+          
+        
+      </div>
+    </div>
+  </section>
+
+
+      </div>
+
+    </div>
+
+    <div class="bg-primary-color-dark bottom-0 left-0 right-0 dn-l fixed pb3 ph3 pt3 w-100"><div  class="globalmenu mobilemenu pb1 dn">
+    
+
+<ul class="list hidden dib ph0 scrolling-touch tc">
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/frisbee-www/news/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          News
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/frisbee-www/documentation/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          Docs
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/frisbee-www/showcase/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          Showcase
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="https://github.com/CARV-ICS-FORTH/frisbee/discussions" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          Community
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="https://github.com/CARV-ICS-FORTH/frisbee" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          GitHub
+        </a>
+    </li>
+  
+</ul>
+
+</div>
+<div  class="docsmenu mobilemenu pb1 dn">
+    
+
+<ul class="list dib ph0 scrolling-touch tc">
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/frisbee-www/about/" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
+          About Frisbee
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100 mb2 bb b--mid-gray">
+        <a href="/frisbee-www/getting-started" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
+          Getting Started
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/frisbee-www/chart-guide/" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
+          Chart Guide
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100 mb2 bb b--mid-gray">
+        <a href="/frisbee-www/commands/" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
+          CLI
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/frisbee-www/troubleshooting/" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
+          Troubleshooting
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/frisbee-www/hosting-and-deployment/" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
+          Hosting &amp; Deployment
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100 mb2 bb b--mid-gray">
+        <a href="/frisbee-www/contribute/" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
+          Contribute
+        </a>
+    </li>
+  
+</ul>
+
+</div>
+
+<div class="flex dn-l justify-between">
+  <button class="js-toggle flex-auto dib dn-l f6 tc db ph3 pv2 link mr2 white bg-primary-color-dark hover-bg-primary-color ba b--white-40 w-auto" data-target=".globalmenu">Menu</button>
+
+  <button class="js-toggle flex-auto dib dn-l f6 tc db ph3 pv2 link white bg-primary-color-dark hover-bg-primary-color ba b--white-40 w-auto" data-target=".docsmenu">Docs Menu</button>
+</div>
+</div>
+
+</footer>
+
+  
+  
+
+  
+
+  
+
+
+</body>
+
+</html>
