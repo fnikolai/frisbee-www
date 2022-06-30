@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  
+  <link rel="preload" href="https://fnikolai.github.io/frisbee-www/fonts/muli-latin-200.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://fnikolai.github.io/frisbee-www/fonts/muli-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://fnikolai.github.io/frisbee-www/fonts/muli-latin-800.woff2" as="font" type="font/woff2" crossorigin>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>Basic Usage | </title>
+
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  <meta name="generator" content="Hugo 0.101.0" />
+
+  
+  <meta name="robots" content="noindex, nofollow">
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/frisbee-www/output/css/app.min.b368142944d203fdc1d3dec8ab085c0c0e75aaf9171853110f03e91c1c2616f4.css" integrity="sha256-s2gUKUTSA/3B097IqwhcDA51qvkXGFMRDwPpHBwmFvQ=" crossorigin="anonymous">
+  
+  
+  
+
+  <meta name="description"
+  content="Hugo&#39;s CLI is fully featured but simple to use, even for those who have very limited experience working from the command line.">
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/frisbee-www/output/js/app.d45556fb33ae1b6a80d0ca8947dc6206bb04aa896ff68df8dff63ece1ae625a6.js" integrity="sha256-1FVW&#43;zOuG2qA0MqJR9xiBrsEqolv9o343/Y&#43;zhrmJaY=" crossorigin="anonymous" defer></script>
+  
+      
+ 
+
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0594cb">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="Basic Usage" />
+<meta property="og:description" content="Hugo&#39;s CLI is fully featured but simple to use, even for those who have very limited experience working from the command line." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://fnikolai.github.io/frisbee-www/getting-started/usage/" /><meta property="og:image" content="https://fnikolai.github.io/frisbee-www/opengraph/gohugoio-card-base-1_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_6878747853054423248.png"/><meta property="article:section" content="getting-started" />
+<meta property="article:published_time" content="2017-02-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-02-01T00:00:00+00:00" /><meta property="og:site_name" content="Helm" />
+<meta itemprop="name" content="Basic Usage">
+<meta itemprop="description" content="Hugo&#39;s CLI is fully featured but simple to use, even for those who have very limited experience working from the command line."><meta itemprop="datePublished" content="2017-02-01T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2017-02-01T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1210">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://fnikolai.github.io/frisbee-www/opengraph/gohugoio-card-base-1_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_6878747853054423248.png"/>
+<meta name="twitter:title" content="Basic Usage"/>
+<meta name="twitter:description" content="Hugo&#39;s CLI is fully featured but simple to use, even for those who have very limited experience working from the command line."/>
+
+
+</head>
+
+<body class="ma0 sans-serif bg-primary-color-light">
+  
+
+  
+<nav class="bg-primary-color-dark pv4 w-100" role="navigation">
+
+  <div class="center flex-ns flex-wrap items-center justify-start mw9">
+
+    <h1 class="dim f3 lh-solid ml0-ns mr0 mr4-l mv0 pl3 pl4-ns">
+      <a href="https://carv-ics-forth.github.io/frisbee/" class="link white">
+         Frisbee
+      </a>
+    </h1>
+    <ul class="list ma0 pa0 dn dib-l" role="menu">
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+          <a href="/frisbee-www/news/" class="dim link light-silver">
+            News
+              
+            
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+          <a href="/frisbee-www/documentation/" class="dim link light-silver">
+            Docs
+              
+            
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+          <a href="/frisbee-www/showcase/" class="dim link light-silver">
+            Showcase
+              
+            
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+          <a href="https://github.com/CARV-ICS-FORTH/frisbee/discussions" class="dim link light-silver">
+            Community
+              
+            
+            
+              <span class="pl1">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link">
+<path d="M25.152 16.576v5.696q0 2.144-1.504 3.648t-3.648 1.504h-14.848q-2.144 0-3.648-1.504t-1.504-3.648v-14.848q0-2.112 1.504-3.616t3.648-1.536h12.576q0.224 0 0.384 0.16t0.16 0.416v1.152q0 0.256-0.16 0.416t-0.384 0.16h-12.576q-1.184 0-2.016 0.832t-0.864 2.016v14.848q0 1.184 0.864 2.016t2.016 0.864h14.848q1.184 0 2.016-0.864t0.832-2.016v-5.696q0-0.256 0.16-0.416t0.416-0.16h1.152q0.256 0 0.416 0.16t0.16 0.416zM32 1.152v9.12q0 0.48-0.352 0.8t-0.8 0.352-0.8-0.352l-3.136-3.136-11.648 11.648q-0.16 0.192-0.416 0.192t-0.384-0.192l-2.048-2.048q-0.192-0.16-0.192-0.384t0.192-0.416l11.648-11.648-3.136-3.136q-0.352-0.352-0.352-0.8t0.352-0.8 0.8-0.352h9.12q0.48 0 0.8 0.352t0.352 0.8z"></path>
+</svg>
+
+              </span>
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+          <a href="https://github.com/CARV-ICS-FORTH/frisbee" class="dim link light-silver">
+            GitHub
+              
+            
+            
+              <span class="pl1">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link">
+<path d="M25.152 16.576v5.696q0 2.144-1.504 3.648t-3.648 1.504h-14.848q-2.144 0-3.648-1.504t-1.504-3.648v-14.848q0-2.112 1.504-3.616t3.648-1.536h12.576q0.224 0 0.384 0.16t0.16 0.416v1.152q0 0.256-0.16 0.416t-0.384 0.16h-12.576q-1.184 0-2.016 0.832t-0.864 2.016v14.848q0 1.184 0.864 2.016t2.016 0.864h14.848q1.184 0 2.016-0.864t0.832-2.016v-5.696q0-0.256 0.16-0.416t0.416-0.16h1.152q0.256 0 0.416 0.16t0.16 0.416zM32 1.152v9.12q0 0.48-0.352 0.8t-0.8 0.352-0.8-0.352l-3.136-3.136-11.648 11.648q-0.16 0.192-0.416 0.192t-0.384-0.192l-2.048-2.048q-0.192-0.16-0.192-0.384t0.192-0.416l11.648-11.648-3.136-3.136q-0.352-0.352-0.352-0.8t0.352-0.8 0.8-0.352h9.12q0.48 0 0.8 0.352t0.352 0.8z"></path>
+</svg>
+
+              </span>
+            
+          </a>
+        </li>
+      
+    </ul>
+
+    <div class="db dib-ns pl3"><form id="site-search-form" action="" role="search">
+  <fieldset class="bn ma0 pa0">
+    <label class="clip" for="search-input">Search</label>
+    <input type="search" id="search-input" class="needs-js bg-left bn f5 input-reset lh-solid mt3 mt0-ns pl4 pv2 w5 white" placeholder="Search the Docs" name="search-input" value="" style="background: url('/images/icon-search.png') 5px 11px/16px 16px no-repeat; background-color: rgba(255,255,255,0);">
+  </fieldset>
+</form>
+</div>
+
+    <span class="absolute mt1 mt2-l pr3 right-0 top-0">
+
+<a class="github-button needs-js link primary-color-dark" href="https://github.com/CARV-ICS-FORTH/frisbee" data-size="large" data-show-count="false" aria-label="Star Frisbee on GitHub">Star</a>
+</span>
+
+  </div>
+</nav>
+
+  
+  <main role="main" class="content-with-sidebar min-vh-100 pb7 pb0-ns">
+    
+  <article class="w-100 ph4 pb5 pb6-ns pt1 pt5-ns">
+    <div class="flex-l">
+
+      <div class="order-2 w-100 w-20-l ph5-m ph0-l mb4 sticky">
+<aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
+	
+		<p class="b">What's on this Page</p>
+  	<nav id="TableOfContents">
+  <ul>
+    <li><a href="#test-installation">Test Installation</a></li>
+    <li><a href="#the-hugo-command">The <code>hugo</code> Command</a></li>
+    <li><a href="#draft-future-and-expired-content">Draft, Future, and Expired Content</a></li>
+    <li><a href="#livereload">LiveReload</a>
+      <ul>
+        <li><a href="#redirect-automatically-to-the-page-you-just-saved">Redirect automatically to the page you just saved</a></li>
+        <li><a href="#disable-livereload">Disable LiveReload</a></li>
+      </ul>
+    </li>
+    <li><a href="#deploy-your-website">Deploy Your Website</a></li>
+  </ul>
+</nav>
+	
+
+	<div date-pref>
+		
+			<a href="https://fnikolai.github.io/frisbee-www/getting-started/installing/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Install Frisbee ">
+				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+
+			</a>
+		
+
+		
+			<a href="https://fnikolai.github.io/frisbee-www/getting-started/configuration/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Configure Hugo">
+			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+
+			</a>
+		
+	</div>
+
+</aside>
+</div>
+
+      <div class="order-1 w-60-l mw7 ph0 ph5-ns mid-gray nested-copy-line-height no-underline nested-links nested-img nested-copy-seperator nested-blockquote mt0-ns" style="flex-grow:1;">
+        <div class="documentation-copy center measure-wide-l">
+          <div id="readout" class="fixed right-0 bottom-0">
+          </div>
+          <header class="flex-none w-100">
+  
+    
+      <a href="/categories/getting-started" class="f6 fw8 mb0 link mid-gray dim mr3">
+        GETTING STARTED
+      </a>
+    
+  
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Basic Usage</h1>
+</header>
+
+<aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
+  
+    <div class="f4 fw4 lh-copy">
+      Hugo's CLI is fully featured but simple to use, even for those who have very limited experience working from the command line.
+    </div>
+  
+
+  
+</aside>
+
+
+
+<div class="prose" id="prose">
+
+<p>The following is a description of the most common commands you will use while developing your Hugo project. See the <a href="/commands/">Command Line Reference</a> for a comprehensive view of Hugo's CLI.</p>
+<h2 id="test-installation">Test Installation <a class="header-link" href="#test-installation"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2>
+<p>Once you have <a href="/getting-started/installing/">installed Hugo</a>, make sure it is in your <code>PATH</code>. You can test that Hugo has been installed correctly via the <code>help</code> command:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>hugo help
+</span></span></code></pre></div><p>The output you see in your console should be similar to the following:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zed" data-lang="zed"><span style="display:flex;"><span>hugo<span style="color:#bbb"> </span>is<span style="color:#bbb"> </span>the<span style="color:#bbb"> </span>main<span style="color:#bbb"> </span>command,<span style="color:#bbb"> </span>used<span style="color:#bbb"> </span>to<span style="color:#bbb"> </span>build<span style="color:#bbb"> </span>your<span style="color:#bbb"> </span>Hugo<span style="color:#bbb"> </span>site.<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>Hugo<span style="color:#bbb"> </span>is<span style="color:#bbb"> </span>a<span style="color:#bbb"> </span>Fast<span style="color:#bbb"> </span>and<span style="color:#bbb"> </span>Flexible<span style="color:#bbb"> </span>Static<span style="color:#bbb"> </span>Site<span style="color:#bbb"> </span>Generator<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>built<span style="color:#bbb"> </span>with<span style="color:#bbb"> </span>love<span style="color:#bbb"> </span>by<span style="color:#bbb"> </span>spf13<span style="color:#bbb"> </span>and<span style="color:#bbb"> </span>friends<span style="color:#bbb"> </span>in<span style="color:#bbb"> </span>Go.<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>Complete<span style="color:#bbb"> </span>documentation<span style="color:#bbb"> </span>is<span style="color:#bbb"> </span>available<span style="color:#bbb"> </span>at<span style="color:#bbb"> </span>https<span style="color:#555">:</span><span style="color:#09f;font-style:italic">//gohugo.io/.
+</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"></span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>Usage<span style="color:#555">:</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>hugo<span style="color:#bbb"> </span>[flags]<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>hugo<span style="color:#bbb"> </span>[command]<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>Available<span style="color:#bbb"> </span>Commands<span style="color:#555">:</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>completion<span style="color:#bbb">  </span>Generate<span style="color:#bbb"> </span>the<span style="color:#bbb"> </span>autocompletion<span style="color:#bbb"> </span>script<span style="color:#bbb"> </span>for<span style="color:#bbb"> </span>the<span style="color:#bbb"> </span>specified<span style="color:#bbb"> </span>shell<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>config<span style="color:#bbb">      </span>Print<span style="color:#bbb"> </span>the<span style="color:#bbb"> </span>site<span style="color:#bbb"> </span>configuration<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>convert<span style="color:#bbb">     </span>Convert<span style="color:#bbb"> </span>your<span style="color:#bbb"> </span>content<span style="color:#bbb"> </span>to<span style="color:#bbb"> </span>different<span style="color:#bbb"> </span>formats<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>deploy<span style="color:#bbb">      </span>Deploy<span style="color:#bbb"> </span>your<span style="color:#bbb"> </span>site<span style="color:#bbb"> </span>to<span style="color:#bbb"> </span>a<span style="color:#bbb"> </span>Cloud<span style="color:#bbb"> </span>provider.<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>env<span style="color:#bbb">         </span>Print<span style="color:#bbb"> </span>Hugo<span style="color:#bbb"> </span>version<span style="color:#bbb"> </span>and<span style="color:#bbb"> </span>environment<span style="color:#bbb"> </span>info<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>gen<span style="color:#bbb">         </span>A<span style="color:#bbb"> </span>collection<span style="color:#bbb"> </span>of<span style="color:#bbb"> </span>several<span style="color:#bbb"> </span>useful<span style="color:#bbb"> </span>generators.<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>help<span style="color:#bbb">        </span>Help<span style="color:#bbb"> </span>about<span style="color:#bbb"> </span>any<span style="color:#bbb"> </span>command<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>import<span style="color:#bbb">      </span>Import<span style="color:#bbb"> </span>your<span style="color:#bbb"> </span>site<span style="color:#bbb"> </span>from<span style="color:#bbb"> </span>others.<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>list<span style="color:#bbb">        </span>Listing<span style="color:#bbb"> </span>out<span style="color:#bbb"> </span>various<span style="color:#bbb"> </span>types<span style="color:#bbb"> </span>of<span style="color:#bbb"> </span>content<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>mod<span style="color:#bbb">         </span>Various<span style="color:#bbb"> </span>Hugo<span style="color:#bbb"> </span>Modules<span style="color:#bbb"> </span>helpers.<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>new<span style="color:#bbb">         </span>Create<span style="color:#bbb"> </span>new<span style="color:#bbb"> </span>content<span style="color:#bbb"> </span>for<span style="color:#bbb"> </span>your<span style="color:#bbb"> </span>site<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>server<span style="color:#bbb">      </span>A<span style="color:#bbb"> </span>high<span style="color:#bbb"> </span>performance<span style="color:#bbb"> </span>webserver<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>version<span style="color:#bbb">     </span>Print<span style="color:#bbb"> </span>the<span style="color:#bbb"> </span>version<span style="color:#bbb"> </span>number<span style="color:#bbb"> </span>of<span style="color:#bbb"> </span>Hugo<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>Flags<span style="color:#555">:</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#555">-</span>b,<span style="color:#bbb"> </span><span style="color:#555">--</span>baseURL<span style="color:#bbb"> </span>string<span style="color:#bbb">             </span>hostname<span style="color:#bbb"> </span>(and<span style="color:#bbb"> </span>path)<span style="color:#bbb"> </span>to<span style="color:#bbb"> </span>the<span style="color:#bbb"> </span>root,<span style="color:#bbb"> </span>e.g.<span style="color:#bbb"> </span>https<span style="color:#555">:</span><span style="color:#09f;font-style:italic">//spf13.com/
+</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"></span><span style="color:#bbb">  </span><span style="color:#555">-</span>D,<span style="color:#bbb"> </span><span style="color:#555">--</span>buildDrafts<span style="color:#bbb">                </span>include<span style="color:#bbb"> </span>content<span style="color:#bbb"> </span>marked<span style="color:#bbb"> </span>as<span style="color:#bbb"> </span>draft<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#555">-</span>E,<span style="color:#bbb"> </span><span style="color:#555">--</span>buildExpired<span style="color:#bbb">               </span>include<span style="color:#bbb"> </span>expired<span style="color:#bbb"> </span>content<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#555">-</span>F,<span style="color:#bbb"> </span><span style="color:#555">--</span>buildFuture<span style="color:#bbb">                </span>include<span style="color:#bbb"> </span>content<span style="color:#bbb"> </span>with<span style="color:#bbb"> </span>publishdate<span style="color:#bbb"> </span>in<span style="color:#bbb"> </span>the<span style="color:#bbb"> </span>future<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#555">--</span>cacheDir<span style="color:#bbb"> </span>string<span style="color:#bbb">            </span>filesystem<span style="color:#bbb"> </span>path<span style="color:#bbb"> </span>to<span style="color:#bbb"> </span>cache<span style="color:#bbb"> </span>directory.<span style="color:#bbb"> </span>Defaults<span style="color:#555">:</span><span style="color:#bbb"> </span><span style="color:#a00;background-color:#faa">$</span><span style="color:#0cf;font-weight:bold">TMPDIR/hugo_cache/</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#555">--</span>cleanDestinationDir<span style="color:#bbb">        </span>remove<span style="color:#bbb"> </span>files<span style="color:#bbb"> </span>from<span style="color:#bbb"> </span>destination<span style="color:#bbb"> </span>not<span style="color:#bbb"> </span>found<span style="color:#bbb"> </span>in<span style="color:#bbb"> </span>static<span style="color:#bbb"> </span>directories<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#555">--</span>config<span style="color:#bbb"> </span>string<span style="color:#bbb">              </span>config<span style="color:#bbb"> </span>file<span style="color:#bbb"> </span>(default<span style="color:#bbb"> </span>is<span style="color:#bbb"> </span><span style="color:#0cf;font-weight:bold">path/</span>config.yaml<span style="color:#555">|</span>json<span style="color:#555">|</span>toml)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#555">--</span>configDir<span style="color:#bbb"> </span>string<span style="color:#bbb">           </span>config<span style="color:#bbb"> </span>dir<span style="color:#bbb"> </span>(default<span style="color:#bbb"> </span><span style="color:#a00;background-color:#faa">&#34;</span>config<span style="color:#a00;background-color:#faa">&#34;</span>)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#555">-</span>c,<span style="color:#bbb"> </span><span style="color:#555">--</span>contentDir<span style="color:#bbb"> </span>string<span style="color:#bbb">          </span>filesystem<span style="color:#bbb"> </span>path<span style="color:#bbb"> </span>to<span style="color:#bbb"> </span>content<span style="color:#bbb"> </span>directory<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#555">--</span>debug<span style="color:#bbb">                      </span>debug<span style="color:#bbb"> </span>output<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#555">-</span>d,<span style="color:#bbb"> </span><span style="color:#555">--</span>destination<span style="color:#bbb"> </span>string<span style="color:#bbb">         </span>filesystem<span style="color:#bbb"> </span>path<span style="color:#bbb"> </span>to<span style="color:#bbb"> </span>write<span style="color:#bbb"> </span>files<span style="color:#bbb"> </span>to<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#555">--</span>disableKinds<span style="color:#bbb"> </span>strings<span style="color:#bbb">       </span>disable<span style="color:#bbb"> </span>different<span style="color:#bbb"> </span>kind<span style="color:#bbb"> </span>of<span style="color:#bbb"> </span>pages<span style="color:#bbb"> </span>(home,<span style="color:#bbb"> </span>RSS<span style="color:#bbb"> </span>etc.)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#555">--</span>enableGitInfo<span style="color:#bbb">              </span>add<span style="color:#bbb"> </span>Git<span style="color:#bbb"> </span>revision,<span style="color:#bbb"> </span>date,<span style="color:#bbb"> </span>author,<span style="color:#bbb"> </span>and<span style="color:#bbb"> </span>CODEOWNERS<span style="color:#bbb"> </span>info<span style="color:#bbb"> </span>to<span style="color:#bbb"> </span>the<span style="color:#bbb"> </span>pages<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#555">-</span>e,<span style="color:#bbb"> </span><span style="color:#555">--</span>environment<span style="color:#bbb"> </span>string<span style="color:#bbb">         </span>build<span style="color:#bbb"> </span>environment<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#555">--</span>forceSyncStatic<span style="color:#bbb">            </span>copy<span style="color:#bbb"> </span>all<span style="color:#bbb"> </span>files<span style="color:#bbb"> </span>when<span style="color:#bbb"> </span>static<span style="color:#bbb"> </span>is<span style="color:#bbb"> </span>changed.<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#555">--</span>gc<span style="color:#bbb">                         </span>enable<span style="color:#bbb"> </span>to<span style="color:#bbb"> </span>run<span style="color:#bbb"> </span>some<span style="color:#bbb"> </span>cleanup<span style="color:#bbb"> </span>tasks<span style="color:#bbb"> </span>(remove<span style="color:#bbb"> </span>unused<span style="color:#bbb"> </span>cache<span style="color:#bbb"> </span>files)<span style="color:#bbb"> </span>after<span style="color:#bbb"> </span>the<span style="color:#bbb"> </span>build<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#555">-</span>h,<span style="color:#bbb"> </span><span style="color:#555">--</span>help<span style="color:#bbb">                       </span>help<span style="color:#bbb"> </span>for<span style="color:#bbb"> </span>hugo<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#555">--</span>ignoreCache<span style="color:#bbb">                </span>ignores<span style="color:#bbb"> </span>the<span style="color:#bbb"> </span>cache<span style="color:#bbb"> </span>directory<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#555">--</span>ignoreVendorPaths<span style="color:#bbb"> </span>string<span style="color:#bbb">   </span>ignores<span style="color:#bbb"> </span>any<span style="color:#bbb"> </span>_vendor<span style="color:#bbb"> </span>for<span style="color:#bbb"> </span>module<span style="color:#bbb"> </span>paths<span style="color:#bbb"> </span>matching<span style="color:#bbb"> </span>the<span style="color:#bbb"> </span>given<span style="color:#bbb"> </span>Glob<span style="color:#bbb"> </span>pattern<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#555">-</span>l,<span style="color:#bbb"> </span><span style="color:#555">--</span>layoutDir<span style="color:#bbb"> </span>string<span style="color:#bbb">           </span>filesystem<span style="color:#bbb"> </span>path<span style="color:#bbb"> </span>to<span style="color:#bbb"> </span>layout<span style="color:#bbb"> </span>directory<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#555">--</span>log<span style="color:#bbb">                        </span>enable<span style="color:#bbb"> </span>Logging<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#555">--</span>logFile<span style="color:#bbb"> </span>string<span style="color:#bbb">             </span>log<span style="color:#bbb"> </span>File<span style="color:#bbb"> </span>path<span style="color:#bbb"> </span>(if<span style="color:#bbb"> </span>set,<span style="color:#bbb"> </span>logging<span style="color:#bbb"> </span>enabled<span style="color:#bbb"> </span>automatically)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#555">--</span>minify<span style="color:#bbb">                     </span>minify<span style="color:#bbb"> </span>any<span style="color:#bbb"> </span>supported<span style="color:#bbb"> </span>output<span style="color:#bbb"> </span>format<span style="color:#bbb"> </span>(HTML,<span style="color:#bbb"> </span>XML<span style="color:#bbb"> </span>etc.)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#555">--</span>noChmod<span style="color:#bbb">                    </span>don<span style="color:#a00;background-color:#faa">&#39;</span>t<span style="color:#bbb"> </span>sync<span style="color:#bbb"> </span><span style="color:#069;font-weight:bold">permission</span><span style="color:#bbb"> </span>mode<span style="color:#bbb"> </span>of<span style="color:#bbb"> </span>files<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#555">--</span>noTimes<span style="color:#bbb">                    </span>don<span style="color:#a00;background-color:#faa">&#39;</span>t<span style="color:#bbb"> </span>sync<span style="color:#bbb"> </span>modification<span style="color:#bbb"> </span>time<span style="color:#bbb"> </span>of<span style="color:#bbb"> </span>files<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#555">--</span>panicOnWarning<span style="color:#bbb">             </span>panic<span style="color:#bbb"> </span>on<span style="color:#bbb"> </span>first<span style="color:#bbb"> </span>WARNING<span style="color:#bbb"> </span>log<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#555">--</span>poll<span style="color:#bbb"> </span>string<span style="color:#bbb">                </span>set<span style="color:#bbb"> </span>this<span style="color:#bbb"> </span>to<span style="color:#bbb"> </span>a<span style="color:#bbb"> </span>poll<span style="color:#bbb"> </span>interval,<span style="color:#bbb"> </span>e.g<span style="color:#bbb"> </span><span style="color:#555">--</span>poll<span style="color:#bbb"> </span><span style="color:#a00;background-color:#faa">700</span>ms,<span style="color:#bbb"> </span>to<span style="color:#bbb"> </span>use<span style="color:#bbb"> </span>a<span style="color:#bbb"> </span>poll<span style="color:#bbb"> </span>based<span style="color:#bbb"> </span>approach<span style="color:#bbb"> </span>to<span style="color:#bbb"> </span>watch<span style="color:#bbb"> </span>for<span style="color:#bbb"> </span>file<span style="color:#bbb"> </span>system<span style="color:#bbb"> </span>changes<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#555">--</span>printI18nWarnings<span style="color:#bbb">          </span>print<span style="color:#bbb"> </span>missing<span style="color:#bbb"> </span>translations<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#555">--</span>printMemoryUsage<span style="color:#bbb">           </span>print<span style="color:#bbb"> </span>memory<span style="color:#bbb"> </span>usage<span style="color:#bbb"> </span>to<span style="color:#bbb"> </span>screen<span style="color:#bbb"> </span>at<span style="color:#bbb"> </span>intervals<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#555">--</span>printPathWarnings<span style="color:#bbb">          </span>print<span style="color:#bbb"> </span>warnings<span style="color:#bbb"> </span>on<span style="color:#bbb"> </span>duplicate<span style="color:#bbb"> </span>target<span style="color:#bbb"> </span>paths<span style="color:#bbb"> </span>etc.<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#555">--</span>printUnusedTemplates<span style="color:#bbb">       </span>print<span style="color:#bbb"> </span>warnings<span style="color:#bbb"> </span>on<span style="color:#bbb"> </span>unused<span style="color:#bbb"> </span>templates.<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#555">--</span>quiet<span style="color:#bbb">                      </span>build<span style="color:#bbb"> </span>in<span style="color:#bbb"> </span>quiet<span style="color:#bbb"> </span>mode<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#555">--</span>renderToMemory<span style="color:#bbb">             </span>render<span style="color:#bbb"> </span>to<span style="color:#bbb"> </span>memory<span style="color:#bbb"> </span>(only<span style="color:#bbb"> </span>useful<span style="color:#bbb"> </span>for<span style="color:#bbb"> </span>benchmark<span style="color:#bbb"> </span>testing)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#555">-</span>s,<span style="color:#bbb"> </span><span style="color:#555">--</span>source<span style="color:#bbb"> </span>string<span style="color:#bbb">              </span>filesystem<span style="color:#bbb"> </span>path<span style="color:#bbb"> </span>to<span style="color:#bbb"> </span>read<span style="color:#bbb"> </span>files<span style="color:#bbb"> </span>relative<span style="color:#bbb"> </span>from<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#555">--</span>templateMetrics<span style="color:#bbb">            </span>display<span style="color:#bbb"> </span>metrics<span style="color:#bbb"> </span>about<span style="color:#bbb"> </span>template<span style="color:#bbb"> </span>executions<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#555">--</span>templateMetricsHints<span style="color:#bbb">       </span>calculate<span style="color:#bbb"> </span>some<span style="color:#bbb"> </span>improvement<span style="color:#bbb"> </span>hints<span style="color:#bbb"> </span>when<span style="color:#bbb"> </span>combined<span style="color:#bbb"> </span>with<span style="color:#bbb"> </span><span style="color:#555">--</span>templateMetrics<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#555">-</span>t,<span style="color:#bbb"> </span><span style="color:#555">--</span>theme<span style="color:#bbb"> </span>strings<span style="color:#bbb">              </span>themes<span style="color:#bbb"> </span>to<span style="color:#bbb"> </span>use<span style="color:#bbb"> </span>(located<span style="color:#bbb"> </span>in<span style="color:#bbb"> </span><span style="color:#555">/</span><span style="color:#0cf;font-weight:bold">themes/THEMENAME/</span>)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#555">--</span>themesDir<span style="color:#bbb"> </span>string<span style="color:#bbb">           </span>filesystem<span style="color:#bbb"> </span>path<span style="color:#bbb"> </span>to<span style="color:#bbb"> </span>themes<span style="color:#bbb"> </span>directory<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#555">--</span>trace<span style="color:#bbb"> </span>file<span style="color:#bbb">                 </span>write<span style="color:#bbb"> </span>trace<span style="color:#bbb"> </span>to<span style="color:#bbb"> </span>file<span style="color:#bbb"> </span>(not<span style="color:#bbb"> </span>useful<span style="color:#bbb"> </span>in<span style="color:#bbb"> </span>general)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#555">-</span>v,<span style="color:#bbb"> </span><span style="color:#555">--</span>verbose<span style="color:#bbb">                    </span>verbose<span style="color:#bbb"> </span>output<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#555">--</span>verboseLog<span style="color:#bbb">                 </span>verbose<span style="color:#bbb"> </span>logging<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#555">-</span>w,<span style="color:#bbb"> </span><span style="color:#555">--</span>watch<span style="color:#bbb">                      </span>watch<span style="color:#bbb"> </span>filesystem<span style="color:#bbb"> </span>for<span style="color:#bbb"> </span>changes<span style="color:#bbb"> </span>and<span style="color:#bbb"> </span>recreate<span style="color:#bbb"> </span>as<span style="color:#bbb"> </span>needed<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>Use<span style="color:#bbb"> </span><span style="color:#a00;background-color:#faa">&#34;</span>hugo<span style="color:#bbb"> </span>[command]<span style="color:#bbb"> </span><span style="color:#555">--</span>help<span style="color:#a00;background-color:#faa">&#34;</span><span style="color:#bbb"> </span>for<span style="color:#bbb"> </span>more<span style="color:#bbb"> </span>information<span style="color:#bbb"> </span>about<span style="color:#bbb"> </span>a<span style="color:#bbb"> </span>command.<span style="color:#bbb">
+</span></span></span></code></pre></div><h2 id="the-hugo-command">The <code>hugo</code> Command <a class="header-link" href="#the-hugo-command"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2>
+<p>The most common usage is probably to run <code>hugo</code> with your current directory being the input directory.</p>
+<p>This generates your website to the <code>public/</code> directory by default, although you can customize the output directory in your <a href="/getting-started/configuration/">site configuration</a> by changing the <code>publishDir</code> field.</p>
+<p>The command <code>hugo</code> renders your site into <code>public/</code> dir and is ready to be deployed to your web server:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>hugo
+</span></span><span style="display:flex;"><span>0 draft content
+</span></span><span style="display:flex;"><span>0 future content
+</span></span><span style="display:flex;"><span>99 pages created
+</span></span><span style="display:flex;"><span>0 paginator pages created
+</span></span><span style="display:flex;"><span>16 tags created
+</span></span><span style="display:flex;"><span>0 groups created
+</span></span><span style="display:flex;"><span>in 90 ms
+</span></span></code></pre></div><h2 id="draft-future-and-expired-content">Draft, Future, and Expired Content <a class="header-link" href="#draft-future-and-expired-content"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2>
+<p>Hugo allows you to set <code>draft</code>, <code>publishdate</code>, and even <code>expirydate</code> in your content's <a href="/content-management/front-matter/">front matter</a>. By default, Hugo will not publish:</p>
+<ol>
+<li>Content with a future <code>publishdate</code> value</li>
+<li>Content with <code>draft: true</code> status</li>
+<li>Content with a past <code>expirydate</code> value</li>
+</ol>
+<p>All three of these can be overridden during both local development <em>and</em> deployment by adding the following flags to <code>hugo</code> and <code>hugo server</code>, respectively, or by changing the boolean values assigned to the fields of the same name (without <code>--</code>) in your <a href="/getting-started/configuration/">configuration</a>:</p>
+<ol>
+<li><code>--buildFuture</code></li>
+<li><code>--buildDrafts</code></li>
+<li><code>--buildExpired</code></li>
+</ol>
+<h2 id="livereload">LiveReload <a class="header-link" href="#livereload"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2>
+<p>Hugo comes with <a href="https://github.com/livereload/livereload-js">LiveReload</a> built in. There are no additional packages to install. A common way to use Hugo while developing a site is to have Hugo run a server with the <code>hugo server</code> command and watch for changes:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>hugo server
+</span></span><span style="display:flex;"><span>0 draft content
+</span></span><span style="display:flex;"><span>0 future content
+</span></span><span style="display:flex;"><span>99 pages created
+</span></span><span style="display:flex;"><span>0 paginator pages created
+</span></span><span style="display:flex;"><span>16 tags created
+</span></span><span style="display:flex;"><span>0 groups created
+</span></span><span style="display:flex;"><span>in 120 ms
+</span></span><span style="display:flex;"><span>Watching for changes in /Users/yourname/sites/yourhugosite/{data,content,layouts,static}
+</span></span><span style="display:flex;"><span>Serving pages from /Users/yourname/sites/yourhugosite/public
+</span></span><span style="display:flex;"><span>Web Server is available at http://localhost:1313/
+</span></span><span style="display:flex;"><span>Press Ctrl+C to stop
+</span></span></code></pre></div><p>This will run a fully functioning web server while simultaneously watching your file system for additions, deletions, or changes within the following areas of your <a href="/getting-started/directory-structure/">project organization</a>:</p>
+<ul>
+<li><code>/static/*</code></li>
+<li><code>/content/*</code></li>
+<li><code>/data/*</code></li>
+<li><code>/i18n/*</code></li>
+<li><code>/layouts/*</code></li>
+<li><code>/themes/&lt;CURRENT-THEME&gt;/*</code></li>
+<li><code>config</code></li>
+</ul>
+<p>Whenever you make changes, Hugo will simultaneously rebuild the site and continue to serve content. As soon as the build is finished, LiveReload tells the browser to silently reload the page.</p>
+<p>Most Hugo builds are so fast that you may not notice the change unless looking directly at the site in your browser. This means that keeping the site open on a second monitor (or another half of your current monitor) allows you to see the most up-to-date version of your website without the need to leave your text editor.</p>
+
+<aside class="admonition note">
+	<div class="note-icon">
+		
+	</div>
+	
+	
+	<div class="admonition-content"><p>Hugo injects the LiveReload <code>&lt;script&gt;</code> before the closing <code>&lt;/body&gt;</code> in your templates and will therefore not work if this tag is not present..</p>
+</div>
+</aside>
+
+<h3 id="redirect-automatically-to-the-page-you-just-saved">Redirect automatically to the page you just saved <a class="header-link" href="#redirect-automatically-to-the-page-you-just-saved"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3>
+<p>When you are working with more than one document and want to see the markup as real-time as possible it's not ideal to keep jumping between them.
+Fortunately Hugo has an easy, embedded and simple solution for this. It's the flag <code>--navigateToChanged</code>.</p>
+<h3 id="disable-livereload">Disable LiveReload <a class="header-link" href="#disable-livereload"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3>
+<p>LiveReload works by injecting JavaScript into the pages Hugo generates. The script creates a connection from the browser's web socket client to the Hugo web socket server.</p>
+<p>The following methods make it easy to disable LiveReload:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>hugo server --watch=false
+</span></span></code></pre></div><p>Or...</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>hugo server --disableLiveReload
+</span></span></code></pre></div><p>The latter flag can be omitted by adding the following:</p>
+
+<div class="code relative" id="config">
+	<div class="code-nav flex flex-nowrap items-stretch"><div class="san-serif f6 dib lh-solid pl2 pv2 mr2">config.</div>
+			<button data-toggle-tab="yaml" class="tab-button active ba san-serif f6 dib lh-solid ph2 pv2">yaml</button>&nbsp;
+		
+			<button data-toggle-tab="toml" class="tab-button  ba san-serif f6 dib lh-solid ph2 pv2">toml</button>&nbsp;
+		
+			<button data-toggle-tab="json" class="tab-button  ba san-serif f6 dib lh-solid ph2 pv2">json</button>&nbsp;
+		
+	</div>
+	<div class="tab-content">
+		
+			<div data-pane="yaml" class="code-copy-content nt3 tab-pane active">
+				<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#309;font-weight:bold">disableLiveReload</span>:<span style="color:#bbb"> </span><span style="color:#069;font-weight:bold">true</span><span style="color:#bbb">
+</span></span></span></code></pre></div>
+			</div>
+			
+				<button class="needs-js copy copy-toggle bg-accent-color-dark f6 absolute top-0 right-0 lh-solid hover-bg-primary-color-dark bn white ph3 pv2" title="Copy this code to your clipboard." data-clipboard-action="copy" aria-label="copy button">
+				</button>
+				
+			
+		
+			<div data-pane="toml" class="code-copy-content nt3 tab-pane ">
+				<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>disableLiveReload = <span style="color:#069;font-weight:bold">true</span>
+</span></span></code></pre></div>
+			</div>
+			
+				<button class="needs-js copy copy-toggle bg-accent-color-dark f6 absolute top-0 right-0 lh-solid hover-bg-primary-color-dark bn white ph3 pv2" title="Copy this code to your clipboard." data-clipboard-action="copy" aria-label="copy button">
+				</button>
+				
+			
+		
+			<div data-pane="json" class="code-copy-content nt3 tab-pane ">
+				<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   <span style="color:#309;font-weight:bold">&#34;disableLiveReload&#34;</span>: <span style="color:#069;font-weight:bold">true</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+			</div>
+			
+				<button class="needs-js copy copy-toggle bg-accent-color-dark f6 absolute top-0 right-0 lh-solid hover-bg-primary-color-dark bn white ph3 pv2" title="Copy this code to your clipboard." data-clipboard-action="copy" aria-label="copy button">
+				</button>
+				
+			
+		
+	</div>
+
+</div>
+
+<h2 id="deploy-your-website">Deploy Your Website <a class="header-link" href="#deploy-your-website"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2>
+<p>After running <code>hugo server</code> for local web development, you need to do a final <code>hugo</code> run <em>without the <code>server</code> part of the command</em> to rebuild your site. You may then deploy your site by copying the <code>public/</code> directory to your production web server.</p>
+<p>Since Hugo generates a static website, your site can be hosted <em>anywhere</em> using any web server. See <a href="/hosting-and-deployment/">Hosting and Deployment</a> for methods for hosting and automating deployments contributed by the Hugo community.</p>
+
+<aside class="admonition warning">
+	<div class="admonition-icon">
+		
+	</div>
+	
+	
+	<div class="admonition-content"><p>Running <code>hugo</code> <em>does not</em> remove generated files before building. This means that you should delete your <code>public/</code> directory (or the publish directory you specified via flag or configuration file) before running the <code>hugo</code> command. If you do not remove these files, you run the risk of the wrong files (e.g., drafts or future posts) being left in the generated site.</p>
+</div>
+</aside>
+
+
+</div>
+
+          
+
+        </div>
+      </div>
+      <div class="order-0 w-20 dn db-l">
+        
+<nav role="navigation">
+  <ul class="list pa0 nl2">
+    
+      
+      <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".about">About Frisbee</a>
+        <ul class="about desktopmenu animated fadeIn list pl0 bg-light-gray dn">
+          <li class="f6 fw4">
+            <a href="/frisbee-www/about/what-is-frisbee/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              What is Frisbee
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/frisbee-www/about/features/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Hugo Features
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/frisbee-www/about/benefits/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              The Benefits of Static
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/frisbee-www/about/license/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              License
+            </a>
+          </li>
+        </ul>
+      </li>
+      
+      <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8 mb1 bb b--moon-gray">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2  primary-color" data-target=".getting-started">Getting Started</a>
+        <ul class="getting-started desktopmenu animated fadeIn list pl0 bg-light-gray db">
+          <li class="f6 fw4">
+            <a href="/frisbee-www/getting-started/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Overview
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/frisbee-www/getting-started/quick-start/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Quick Start
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/frisbee-www/getting-started/installing/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Install Frisbee
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/frisbee-www/getting-started/usage/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 primary-color ">
+              Basic Usage
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/frisbee-www/getting-started/configuration/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Configuration
+            </a>
+          </li>
+        </ul>
+      </li>
+      
+      <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".chart-guide">Chart Guide</a>
+        <ul class="chart-guide desktopmenu animated fadeIn list pl0 bg-light-gray dn">
+          <li class="f6 fw4">
+            <a href="/frisbee-www/chart-guide/deploy/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Use an existing Chart
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/frisbee-www/chart-guide/develop/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Develop a new Chart
+            </a>
+          </li>
+        </ul>
+      </li>
+      
+      <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8 mb1 bb b--moon-gray">
+        <a href="/frisbee-www/commands/" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".commands">CLI</a>
+      </li>
+      
+      <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".troubleshooting">Troubleshooting</a>
+        <ul class="troubleshooting desktopmenu animated fadeIn list pl0 bg-light-gray dn">
+          <li class="f6 fw4">
+            <a href="/frisbee-www/troubleshooting/faq/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              FAQ
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/frisbee-www/troubleshooting/tools/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Tools
+            </a>
+          </li>
+        </ul>
+      </li>
+      
+      <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
+        <a href="/frisbee-www/hosting-and-deployment/" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".hosting-and-deployment">Hosting &amp; Deployment</a>
+      </li>
+      
+      <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8 mb1 bb b--moon-gray">
+        <a href="/frisbee-www/contribute/" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".contribute">Contribute</a>
+      </li>
+  </ul>
+</nav>
+
+      </div>
+
+    </div>
+  </article>
+
+  <div class="w-100 bg-light-gray">
+    <div class="mw7 pa4 center nested-lh-copy lh-copy">
+      <h6 class="f6 dark-gray mb2">
+  Last updated: February 1, 2017
+</h6>
+
+      <a href="https://github.com/CARV-ICS-FORTH/frisbeeedit/master/content/en/getting-started/usage.md" class="
+f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
+">Improve this page</a>
+
+      
+
+
+    </div>
+  </div>
+
+  </main>
+
+  <footer class="bg-primary-color-dark ph4-ns pt4 relative w-100" role="contentinfo">
+    <div class="center flex-ns flex-wrap justify-between mw9 w-90">
+      <div class="pb3 pt4 w-100 w-50-ns">
+
+          <h3 class="b f3 mv0 light-gray">
+              This project has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement No. 894204 (Ether, H2020-MSCA-IF-2019)
+          </h3>
+
+      </div>
+
+      <div class="w-50 w-50-l"> 
+        
+
+
+  <section class="pb3 w-100">
+    <div class="center mw9"> 
+
+      <div class="flex-ns flex-wrap center justify-between pt3">
+        
+          
+          
+            <div class="ba b--dark-gray bg-light-gray br3 flex flex-column flex-wrap items-center justify-center ph3 pv4 mb4 w-100 w-30-l  o-100">
+              
+                
+                   <a href="https://cordis.europa.eu/project/id/894204?utm_campaign=hugosponsor&amp;utm_medium=banner&amp;utm_source=homepage" class="grow">
+                
+              <img src="/images/sponsors/eu-logo.png" alt="Logo for European Union" class="img h3 center" />
+              </a>
+              
+            </div>
+          
+        
+          
+          
+            <div class="ba b--dark-gray bg-light-gray br3 flex flex-column flex-wrap items-center justify-center ph3 pv4 mb4 w-100 w-30-l  o-100">
+              
+                
+                   <a href="https://marie-sklodowska-curie-actions.ec.europa.eu/actions/postdoctoral-fellowships?utm_campaign=hugosponsor&amp;utm_medium=banner&amp;utm_source=homepage" class="grow">
+                
+              <img src="/images/sponsors/msca-logo.jpg" alt="Logo for Marie Skłodowska-Curie Actions" class="img h3 center" />
+              </a>
+              
+            </div>
+          
+        
+      </div>
+    </div>
+  </section>
+
+
+      </div>
+
+    </div>
+
+    <div class="bg-primary-color-dark bottom-0 left-0 right-0 dn-l fixed pb3 ph3 pt3 w-100"><div  class="globalmenu mobilemenu pb1 dn">
+    
+
+<ul class="list hidden dib ph0 scrolling-touch tc">
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/frisbee-www/news/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          News
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/frisbee-www/documentation/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          Docs
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/frisbee-www/showcase/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          Showcase
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="https://github.com/CARV-ICS-FORTH/frisbee/discussions" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          Community
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="https://github.com/CARV-ICS-FORTH/frisbee" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          GitHub
+        </a>
+    </li>
+  
+</ul>
+
+</div>
+<div  class="docsmenu mobilemenu pb1 dn">
+    
+
+<ul class="list dib ph0 scrolling-touch tc">
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/frisbee-www/about/" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
+          About Frisbee
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100 mb2 bb b--mid-gray">
+        <a href="/frisbee-www/getting-started" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
+          Getting Started
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/frisbee-www/chart-guide/" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
+          Chart Guide
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100 mb2 bb b--mid-gray">
+        <a href="/frisbee-www/commands/" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
+          CLI
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/frisbee-www/troubleshooting/" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
+          Troubleshooting
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/frisbee-www/hosting-and-deployment/" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
+          Hosting &amp; Deployment
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100 mb2 bb b--mid-gray">
+        <a href="/frisbee-www/contribute/" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
+          Contribute
+        </a>
+    </li>
+  
+</ul>
+
+</div>
+
+<div class="flex dn-l justify-between">
+  <button class="js-toggle flex-auto dib dn-l f6 tc db ph3 pv2 link mr2 white bg-primary-color-dark hover-bg-primary-color ba b--white-40 w-auto" data-target=".globalmenu">Menu</button>
+
+  <button class="js-toggle flex-auto dib dn-l f6 tc db ph3 pv2 link white bg-primary-color-dark hover-bg-primary-color ba b--white-40 w-auto" data-target=".docsmenu">Docs Menu</button>
+</div>
+</div>
+
+</footer>
+
+  
+  
+
+  
+
+  
+
+
+</body>
+
+</html>
