@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  
+  <link rel="preload" href="https://fnikolai.github.io/frisbee-www/fonts/muli-latin-200.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://fnikolai.github.io/frisbee-www/fonts/muli-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://fnikolai.github.io/frisbee-www/fonts/muli-latin-800.woff2" as="font" type="font/woff2" crossorigin>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>Testing Flower | </title>
+
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  <meta name="generator" content="Hugo 0.101.0" />
+
+  
+  <meta name="robots" content="noindex, nofollow">
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="https://fnikolai.github.io/frisbee-www/output/css/app.min.b368142944d203fdc1d3dec8ab085c0c0e75aaf9171853110f03e91c1c2616f4.css" integrity="sha256-s2gUKUTSA/3B097IqwhcDA51qvkXGFMRDwPpHBwmFvQ=" crossorigin="anonymous">
+  
+  
+  
+
+  <meta name="description"
+  content="Experience with testing a Federated Learning Framework">
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="https://fnikolai.github.io/frisbee-www/output/js/app.d45556fb33ae1b6a80d0ca8947dc6206bb04aa896ff68df8dff63ece1ae625a6.js" integrity="sha256-1FVW&#43;zOuG2qA0MqJR9xiBrsEqolv9o343/Y&#43;zhrmJaY=" crossorigin="anonymous" defer></script>
+  
+      
+ 
+
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+<link rel="apple-touch-icon" sizes="180x180" href="https://fnikolai.github.io/frisbee-www/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="https://fnikolai.github.io/frisbee-www/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://fnikolai.github.io/frisbee-www/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="https://fnikolai.github.io/frisbee-www/manifest.json">
+<link rel="mask-icon" href="https://fnikolai.github.io/frisbee-www/safari-pinned-tab.svg" color="#0594cb">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="Testing Flower" />
+<meta property="og:description" content="Experience with testing a Federated Learning Framework" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://fnikolai.github.io/frisbee-www/blog/testing-flower/" /><meta property="og:image" content="https://fnikolai.github.io/frisbee-www/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_16975270712637819555.png"/><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2022-06-30T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-06-30T00:00:00+00:00" /><meta property="og:site_name" content="Helm" />
+<meta itemprop="name" content="Testing Flower">
+<meta itemprop="description" content="Experience with testing a Federated Learning Framework"><meta itemprop="datePublished" content="2022-06-30T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-06-30T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1083">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://fnikolai.github.io/frisbee-www/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_16975270712637819555.png"/>
+<meta name="twitter:title" content="Testing Flower"/>
+<meta name="twitter:description" content="Experience with testing a Federated Learning Framework"/>
+
+
+</head>
+
+<body class="ma0 sans-serif bg-primary-color-light">
+  
+
+  
+<nav class="bg-primary-color-dark pv4 w-100" role="navigation">
+
+  <div class="center flex-ns flex-wrap items-center justify-start mw9">
+
+    <h1 class="dim f3 lh-solid ml0-ns mr0 mr4-l mv0 pl3 pl4-ns">
+      <a href="https://fnikolai.github.io/frisbee-www" class="link white">
+         Home
+      </a>
+    </h1>
+    <ul class="list ma0 pa0 dn dib-l" role="menu">
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+          <a href="https://fnikolai.github.io/frisbee-www/news/" class="dim link light-silver">
+            News
+              
+            
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+          <a href="https://fnikolai.github.io/frisbee-www/docs/" class="dim link light-silver">
+            Docs
+              
+            
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+          <a href="https://fnikolai.github.io/frisbee-www/showcase/" class="dim link light-silver">
+            Showcase
+              
+            
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+          <a href="https://fnikolai.github.io/frisbee-www/blog/" class="dim link light-silver">
+            Blog
+              
+            
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+          <a href="https://github.com/CARV-ICS-FORTH/frisbee/discussions" class="dim link light-silver">
+            Community
+              
+            
+            
+              <span class="pl1">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link">
+<path d="M25.152 16.576v5.696q0 2.144-1.504 3.648t-3.648 1.504h-14.848q-2.144 0-3.648-1.504t-1.504-3.648v-14.848q0-2.112 1.504-3.616t3.648-1.536h12.576q0.224 0 0.384 0.16t0.16 0.416v1.152q0 0.256-0.16 0.416t-0.384 0.16h-12.576q-1.184 0-2.016 0.832t-0.864 2.016v14.848q0 1.184 0.864 2.016t2.016 0.864h14.848q1.184 0 2.016-0.864t0.832-2.016v-5.696q0-0.256 0.16-0.416t0.416-0.16h1.152q0.256 0 0.416 0.16t0.16 0.416zM32 1.152v9.12q0 0.48-0.352 0.8t-0.8 0.352-0.8-0.352l-3.136-3.136-11.648 11.648q-0.16 0.192-0.416 0.192t-0.384-0.192l-2.048-2.048q-0.192-0.16-0.192-0.384t0.192-0.416l11.648-11.648-3.136-3.136q-0.352-0.352-0.352-0.8t0.352-0.8 0.8-0.352h9.12q0.48 0 0.8 0.352t0.352 0.8z"></path>
+</svg>
+
+              </span>
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+          <a href="https://github.com/CARV-ICS-FORTH/frisbee" class="dim link light-silver">
+            GitHub
+              
+            
+            
+              <span class="pl1">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link">
+<path d="M25.152 16.576v5.696q0 2.144-1.504 3.648t-3.648 1.504h-14.848q-2.144 0-3.648-1.504t-1.504-3.648v-14.848q0-2.112 1.504-3.616t3.648-1.536h12.576q0.224 0 0.384 0.16t0.16 0.416v1.152q0 0.256-0.16 0.416t-0.384 0.16h-12.576q-1.184 0-2.016 0.832t-0.864 2.016v14.848q0 1.184 0.864 2.016t2.016 0.864h14.848q1.184 0 2.016-0.864t0.832-2.016v-5.696q0-0.256 0.16-0.416t0.416-0.16h1.152q0.256 0 0.416 0.16t0.16 0.416zM32 1.152v9.12q0 0.48-0.352 0.8t-0.8 0.352-0.8-0.352l-3.136-3.136-11.648 11.648q-0.16 0.192-0.416 0.192t-0.384-0.192l-2.048-2.048q-0.192-0.16-0.192-0.384t0.192-0.416l11.648-11.648-3.136-3.136q-0.352-0.352-0.352-0.8t0.352-0.8 0.8-0.352h9.12q0.48 0 0.8 0.352t0.352 0.8z"></path>
+</svg>
+
+              </span>
+            
+          </a>
+        </li>
+      
+    </ul>
+
+    <div class="db dib-ns pl3"><form id="site-search-form" action="" role="search">
+  <fieldset class="bn ma0 pa0">
+    <label class="clip" for="search-input">Search</label>
+    <input type="search" id="search-input" class="needs-js bg-left bn f5 input-reset lh-solid mt3 mt0-ns pl4 pv2 w5 white" placeholder="Search the Docs" name="search-input" value="" style="background: url('/images/icon-search.png') 5px 11px/16px 16px no-repeat; background-color: rgba(255,255,255,0);">
+  </fieldset>
+</form>
+</div>
+
+    <span class="absolute mt1 mt2-l pr3 right-0 top-0">
+
+<a class="github-button needs-js link primary-color-dark" href="https://github.com/CARV-ICS-FORTH/frisbee/stargazers" data-size="large" data-show-count="true" aria-label="Star Frisbee on GitHub">Star</a>
+</span>
+
+  </div>
+</nav>
+
+  
+  <main role="main" class="content-with-sidebar min-vh-100 pb7 pb0-ns">
+    
+  <article class="w-100 ph4 pb5 pb6-ns pt1 pt5-ns">
+    <div class="flex-l">
+
+      <div class="order-2 w-100 w-20-l ph5-m ph0-l mb4 sticky">
+<aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
+	
+		<p class="b">What's on this Page</p>
+  	<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-baseline">1. Baseline</a></li>
+        <li><a href="#2-throttled-server">2. Throttled Server</a></li>
+        <li><a href="#3-throttled-client">3. Throttled Client</a></li>
+        <li><a href="#4a-partition-server-to-clients">4A. Partition Server-To-Clients</a></li>
+        <li><a href="#4b-partition-server-to-clients">4B. Partition Server-To-Clients</a></li>
+        <li><a href="#5-partition-client-to-server">5. Partition Client-to-Server</a></li>
+        <li><a href="#6-partition-client-to-client">6. Partition Client-to-Client</a></li>
+        <li><a href="#7-network-loss">7. Network Loss</a></li>
+        <li><a href="#8-network-duplicates">8. Network Duplicates</a></li>
+        <li><a href="#9-network-delay">9. Network Delay</a></li>
+        <li><a href="#10-scheduled-join">10. Scheduled Join</a></li>
+        <li><a href="#11a-scaled-baseline-30-clients">11a. Scaled Baseline, 30 Clients</a></li>
+        <li><a href="#11b-scaled-baseline-12-clients">11b. Scaled Baseline, 12 Clients</a></li>
+        <li><a href="#11c-scaled-baseline-10-clients">11c. Scaled Baseline, 10 Clients</a></li>
+        <li><a href="#11c-scaled-baseline-7-clients">11c. Scaled Baseline, 7 Clients</a></li>
+        <li><a href="#11c-scaled-baseline-9-clients">11c. Scaled Baseline, 9 Clients</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+	
+
+	<div date-pref>
+		
+			<a href="https://fnikolai.github.io/frisbee-www/blog/testing-cockroachdb/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Testing CockroachDB ">
+				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+
+			</a>
+		
+
+		
+	</div>
+
+</aside>
+</div>
+
+      <div class="order-1 w-60-l mw7 ph0 ph5-ns mid-gray nested-copy-line-height no-underline nested-links nested-img nested-copy-seperator nested-blockquote mt0-ns" style="flex-grow:1;">
+        <div class="documentation-copy center measure-wide-l">
+          <div id="readout" class="fixed right-0 bottom-0">
+          </div>
+          <header class="flex-none w-100">
+  
+    
+      <a href="https://fnikolai.github.io/frisbee-www/categories/blog" class="f6 fw8 mb0 link mid-gray dim mr3">
+        BLOG
+      </a>
+    
+  
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Testing Flower</h1>
+</header>
+
+<aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
+  
+    <div class="f4 fw4 lh-copy">
+      Experience with testing a Federated Learning Framework
+    </div>
+  
+
+  
+</aside>
+
+
+
+<div class="prose" id="prose">
+
+<h3 id="1-baseline">1. Baseline <a class="header-link" href="#1-baseline"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3>
+<ol>
+<li>Start server</li>
+<li>Download the dataset into a shared volume that will be shared with the clients.</li>
+<li>Start 2 clients</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>History (~4m)</th>
+<th>Loss</th>
+<th>Distributed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>round 1</td>
+<td>1.9984407424926758</td>
+<td></td>
+</tr>
+<tr>
+<td>round 2</td>
+<td>1.677626609802246</td>
+<td></td>
+</tr>
+<tr>
+<td>round 3</td>
+<td>1.5497934818267822</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="observations">Observations <a class="header-link" href="#observations"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<ul>
+<li>...</li>
+</ul>
+<h4 id="metrics">Metrics <a class="header-link" href="#metrics"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<p><img src="images/image-20220609192440670.png" alt="image-20220609192440670"></p>
+<p>Average CPU Usage</p>
+<p><img src="images/image-20220609192505809.png" alt="image-20220609192505809"></p>
+<p>Page faults</p>
+<p><img src="images/image-20220609192542674.png" alt="image-20220609192542674"></p>
+<p>Accessed Sectors</p>
+<p><img src="images/image-20220609192602497.png" alt="image-20220609192602497"></p>
+<p>Network Throughput</p>
+<h3 id="2-throttled-server">2. Throttled Server <a class="header-link" href="#2-throttled-server"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3>
+<ol>
+<li>Start 1 Flower server low on resources (1 vCPU)</li>
+<li>Download the dataset into a shared volume that will be shared with the clients.</li>
+<li>Start 3 clients</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>History (~ 4min)</th>
+<th>Loss</th>
+<th>Distributed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>round 1</td>
+<td>2.0968997478485107</td>
+<td></td>
+</tr>
+<tr>
+<td>round 2</td>
+<td>1.6811288595199585</td>
+<td></td>
+</tr>
+<tr>
+<td>round 3</td>
+<td>1.5280077457427979</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="observations-1">Observations <a class="header-link" href="#observations-1"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<ul>
+<li>..</li>
+</ul>
+<h4 id="metrics-1">Metrics <a class="header-link" href="#metrics-1"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<p><img src="images/image-20220607233620086.png" alt="image-20220607233620086"></p>
+<p>Average CPU Usage</p>
+<p><img src="images/image-20220607233631962.png" alt="image-20220607233631962"></p>
+<p>Page faults</p>
+<p><img src="images/image-20220607233700834.png" alt="image-20220607233700834"></p>
+<p>Accessed Sectors</p>
+<p><img src="images/image-20220607233712231.png" alt="image-20220607233712231"></p>
+<p>Network Throughput</p>
+<h3 id="3-throttled-client">3. Throttled Client <a class="header-link" href="#3-throttled-client"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3>
+<ol>
+<li>Start 1 Flower server</li>
+<li>Download the dataset into a shared volume that will be shared with the clients.</li>
+<li>Start 2 Flower clients</li>
+<li>Start 1 Flow client low on resources (1 vCPU)</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>History (~ 28min)</th>
+<th>Loss</th>
+<th>Distributed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>round 1</td>
+<td>1.998113751411438</td>
+<td></td>
+</tr>
+<tr>
+<td>round 2</td>
+<td>1.6380009651184082</td>
+<td></td>
+</tr>
+<tr>
+<td>round 3</td>
+<td>1.5157533884048462</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="observations-2">Observations <a class="header-link" href="#observations-2"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<ul>
+<li>One slow node can kill the entire training</li>
+<li>Increases training time. Follows the Amdahl's law.</li>
+<li>Reduces accuracy. I assume that due to the prolonged execution the rolling averages spread over time and cause
+time skews in the calculations.</li>
+</ul>
+<h4 id="metrics-2">Metrics <a class="header-link" href="#metrics-2"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<p><img src="images/image-20220608001438451.png" alt="image-20220608001438451"></p>
+<p>Average CPU Usage</p>
+<p><img src="images/image-20220608001536575.png" alt="image-20220608001536575"></p>
+<p>Page faults</p>
+<p><img src="images/image-20220608001548209.png" alt="image-20220608001548209"></p>
+<p>Accessed Sectors</p>
+<p><img src="images/image-20220608001558227.png" alt="image-20220608001558227"></p>
+<p>Network Throughput</p>
+<h3 id="4a-partition-server-to-clients">4A. Partition Server-To-Clients <a class="header-link" href="#4a-partition-server-to-clients"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3>
+<ol>
+<li>Start 1 Flower server</li>
+<li>Download the dataset into a shared volume that will be shared with the clients.</li>
+<li>Start 3 Flower clients</li>
+<li>Make the server unreachable to and from all clients, <strong>before any client start sending traffic.</strong></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>History</th>
+<th>Loss</th>
+<th>Distributed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Never Finished</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="observations-3">Observations <a class="header-link" href="#observations-3"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<ul>
+<li>The clients fail, but are not terminated</li>
+<li>Failed to pick subchannel&quot;</li>
+<li>The clients have local activity, until the first round where it detects the failure</li>
+</ul>
+<h4 id="metrics-3">Metrics <a class="header-link" href="#metrics-3"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<p><img src="images/image-20220608130209826.png" alt="image-20220608130209826"></p>
+<p>Average CPU Usage</p>
+<p><img src="images/image-20220608130328953.png" alt="image-20220608130328953"></p>
+<p>Page faults</p>
+<p><img src="images/image-20220608130340082.png" alt="image-20220608130340082"></p>
+<p>Accessed Sectors</p>
+<p><img src="images/image-20220608130417180.png" alt="image-20220608130417180"></p>
+<p>Network Throughput</p>
+<h3 id="4b-partition-server-to-clients">4B. Partition Server-To-Clients <a class="header-link" href="#4b-partition-server-to-clients"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3>
+<ol>
+<li>Start 1 Flower server</li>
+<li>Download the dataset into a shared volume that will be shared with the clients.</li>
+<li>Start 3 Flower clients</li>
+<li>Make the server unreachable to and from all clients, <strong>after clients have started sending traffic.</strong></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>History</th>
+<th>Loss</th>
+<th>Distributed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Never Finished</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="observations-4">Observations <a class="header-link" href="#observations-4"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<ul>
+<li>
+<p>Recipe for destruction.</p>
+</li>
+<li>
+<p>2 clients detect the failure.</p>
+</li>
+<li>
+<p>1 client does not detect the failure</p>
+</li>
+<li>
+<p>The server does not detect the failure</p>
+</li>
+<li>
+<p>They both behave normally, but without making any progress</p>
+</li>
+</ul>
+<h4 id="metrics-4">Metrics <a class="header-link" href="#metrics-4"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<p><img src="images/image-20220608132304693.png" alt="image-20220608132304693"></p>
+<p>Average CPU Usage</p>
+<p><img src="images/image-20220608132316356.png" alt="image-20220608132316356"></p>
+<p>Page faults</p>
+<p><img src="images/image-20220608132518773.png" alt="image-20220608132518773"></p>
+<p>Accessed Sectors</p>
+<p><img src="images/image-20220608132554279.png" alt="image-20220608132554279"></p>
+<p>Network Throughput</p>
+<h3 id="5-partition-client-to-server">5. Partition Client-to-Server <a class="header-link" href="#5-partition-client-to-server"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3>
+<ol>
+<li>Start 1 Flower server</li>
+<li>Download the dataset into a shared volume that will be shared with the clients.</li>
+<li>Start 3 Flower clients</li>
+<li>Make client-0 unreachable to and from the server.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>History (~3.30min)</th>
+<th>Loss</th>
+<th>Distributed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>round 1</td>
+<td>2.2510666847229004</td>
+<td></td>
+</tr>
+<tr>
+<td>round 2</td>
+<td>1.6967562437057495</td>
+<td></td>
+</tr>
+<tr>
+<td>round 3</td>
+<td>1.5192006826400757</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="observations-5">Observations <a class="header-link" href="#observations-5"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<ul>
+<li>Client-0 detects the error</li>
+<li>Client-1 and Client-2 work normally</li>
+</ul>
+<h4 id="metrics-5">Metrics <a class="header-link" href="#metrics-5"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<p><img src="images/image-20220608135023471.png" alt="image-20220608135023471"></p>
+<p>Average CPU Usage</p>
+<p><img src="images/image-20220608135040514.png" alt="image-20220608135040514"></p>
+<p>Page faults</p>
+<p><img src="images/image-20220608135052252.png" alt="image-20220608135052252"></p>
+<p>Accessed Sectors</p>
+<p><img src="images/image-20220608135602023.png" alt="image-20220608135602023"></p>
+<p>Network Throughput</p>
+<h3 id="6-partition-client-to-client">6. Partition Client-to-Client <a class="header-link" href="#6-partition-client-to-client"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3>
+<ol>
+<li>Start 1 Flower server</li>
+<li>Download the dataset into a shared volume that will be shared with the clients.</li>
+<li>Start 3 Flower clients</li>
+<li>Make client-0 unreachable from other clients (but not from the server)</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>History (~4.30min)</th>
+<th>Loss</th>
+<th>Distributed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>round 1</td>
+<td>2.1528310775756836</td>
+<td></td>
+</tr>
+<tr>
+<td>round 2</td>
+<td>1.669345498085022</td>
+<td></td>
+</tr>
+<tr>
+<td>round 3</td>
+<td>1.5152634382247925</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="observations-6">Observations <a class="header-link" href="#observations-6"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<ul>
+<li>No client reports the error</li>
+</ul>
+<h4 id="metrics-6">Metrics <a class="header-link" href="#metrics-6"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<p><img src="images/image-20220608140407839.png" alt="image-20220608140407839"></p>
+<p>Average CPU Usage</p>
+<p><img src="images/image-20220608140447212.png" alt="image-20220608140447212"></p>
+<p>Page faults</p>
+<p><img src="images/image-20220608140500718.png" alt="image-20220608140500718"></p>
+<p>Accessed Sectors</p>
+<p><img src="images/image-20220608140515543.png" alt="image-20220608140515543"></p>
+<p>Network Throughput</p>
+<h3 id="7-network-loss">7. Network Loss <a class="header-link" href="#7-network-loss"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3>
+<ol>
+<li>Start 1 Flower server</li>
+<li>Download the dataset into a shared volume that will be shared with the clients.</li>
+<li>Start 3 Flower clients</li>
+<li>Make the server to lose 25% of the traffic</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>History</th>
+<th>Loss</th>
+<th>Distributed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>round 1</td>
+<td>1.905974268913269</td>
+<td></td>
+</tr>
+<tr>
+<td>round 2</td>
+<td>1.6126952171325684</td>
+<td></td>
+</tr>
+<tr>
+<td>round 3</td>
+<td>1.4758493900299072</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="observations-7">Observations <a class="header-link" href="#observations-7"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<ul>
+<li>Neithers clients nor the server detected the failure.</li>
+</ul>
+<h4 id="metrics-7">Metrics <a class="header-link" href="#metrics-7"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<p><img src="images/image-20220608162149844.png" alt="image-20220608162149844"></p>
+<p>Average CPU Usage</p>
+<p><img src="images/image-20220608162200908.png" alt="image-20220608162200908"></p>
+<p>Page faults</p>
+<p><img src="images/image-20220608162212052.png" alt="image-20220608162212052"></p>
+<p>Accessed Sectors</p>
+<p><img src="images/image-20220608162224419.png" alt="image-20220608162224419"></p>
+<p>Network Throughput</p>
+<h3 id="8-network-duplicates">8. Network Duplicates <a class="header-link" href="#8-network-duplicates"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3>
+<ol>
+<li>Start 1 Flower server</li>
+<li>Download the dataset into a shared volume that will be shared with the clients.</li>
+<li>Start 3 Flower clients</li>
+<li>Make the server to receive 40% duplicate traffic</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>History</th>
+<th>Loss</th>
+<th>Distributed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>round 1</td>
+<td>2.0752482414245605</td>
+<td></td>
+</tr>
+<tr>
+<td>round 2</td>
+<td>1.7581167221069336</td>
+<td></td>
+</tr>
+<tr>
+<td>round 3</td>
+<td>1.5365952253341675</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="observations-8">Observations <a class="header-link" href="#observations-8"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<ul>
+<li>Neither clients nor the server detected the failure.</li>
+</ul>
+<h4 id="metrics-8">Metrics <a class="header-link" href="#metrics-8"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<p><img src="images/image-20220608165054670.png" alt="image-20220608165054670"></p>
+<p>Average CPU Usage</p>
+<p><img src="images/image-20220608165120220.png" alt="image-20220608165120220"></p>
+<p>Page faults</p>
+<p><img src="images/image-20220608165131633.png" alt="image-20220608165131633"></p>
+<p>Accessed Sectors</p>
+<p><img src="images/image-20220608165147814.png" alt="image-20220608165147814"></p>
+<p>Network Throughput</p>
+<h3 id="9-network-delay">9. Network Delay <a class="header-link" href="#9-network-delay"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3>
+<ol>
+<li>Start 1 Flower server</li>
+<li>Download the dataset into a shared volume that will be shared with the clients.</li>
+<li>Start 3 Flower clients</li>
+<li>Make server traffic delay 120ms</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>History (~4.45min)</th>
+<th>Loss</th>
+<th>Distributed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>round 1</td>
+<td>2.003849983215332</td>
+<td></td>
+</tr>
+<tr>
+<td>round 2</td>
+<td>1.663912057876587</td>
+<td></td>
+</tr>
+<tr>
+<td>round 3</td>
+<td>1.5070706605911255</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="observations-9">Observations <a class="header-link" href="#observations-9"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<ul>
+<li>Neither clients nor the server detected the failure.</li>
+</ul>
+<h4 id="metrics-9">Metrics <a class="header-link" href="#metrics-9"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<p><img src="images/image-20220608171926368.png" alt="image-20220608171926368"></p>
+<p>Average CPU Usage</p>
+<p><img src="images/image-20220608171956156.png" alt="image-20220608171956156"></p>
+<p>Page faults</p>
+<p><img src="images/image-20220608172014755.png" alt="image-20220608172014755"></p>
+<p>Accessed Sectors</p>
+<p><img src="images/image-20220608172025106.png" alt="image-20220608172025106"></p>
+<p>Network Throughput</p>
+<h3 id="10-scheduled-join">10. Scheduled Join <a class="header-link" href="#10-scheduled-join"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3>
+<ol>
+<li>Start 1 Flower server</li>
+<li>Download the dataset into a shared volume that will be shared with the clients.</li>
+<li>Start 3 Flower clients, 1 every 5 minutes</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>History</th>
+<th>Loss</th>
+<th>Distributed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>round 1</td>
+<td>2.068521022796631</td>
+<td></td>
+</tr>
+<tr>
+<td>round 2</td>
+<td>1.673058032989502</td>
+<td></td>
+</tr>
+<tr>
+<td>round 3</td>
+<td>1.5220290422439575</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="observations-10">Observations <a class="header-link" href="#observations-10"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<ul>
+<li>Realized that the server requires only two clients to work.</li>
+</ul>
+<h4 id="metrics-10">Metrics <a class="header-link" href="#metrics-10"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<p><img src="images/image-20220608175432008.png" alt="image-20220608175432008"></p>
+<p>Average CPU Usage</p>
+<p><img src="images/image-20220608175442443.png" alt="image-20220608175442443"></p>
+<p>Page faults</p>
+<p><img src="images/image-20220608175457000.png" alt="image-20220608175457000"></p>
+<p>Accessed Sectors</p>
+<p><img src="images/image-20220608175513261.png" alt="image-20220608175513261"></p>
+<p>Network Throughput</p>
+<h3 id="11a-scaled-baseline-30-clients">11a. Scaled Baseline, 30 Clients <a class="header-link" href="#11a-scaled-baseline-30-clients"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3>
+<ol>
+<li>Start server that expects 30 clients</li>
+<li>Download the dataset into a shared volume that will be shared with the clients.</li>
+<li>Start 30 clients</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>History (~2.30h)</th>
+<th>Loss</th>
+<th>Distributed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>round 1</td>
+<td>2.0025325325235354</td>
+<td></td>
+</tr>
+<tr>
+<td>round 2</td>
+<td>1.6564564564576558</td>
+<td></td>
+</tr>
+<tr>
+<td>round 3</td>
+<td>1.5153456432132434</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="observations-11">Observations <a class="header-link" href="#observations-11"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<ul>
+<li>
+<p>The experiment works only if FL_MIN_AVAILABLE_CLIENTS==FL_MIN_FIT_CLIENTS==joined clients</p>
+</li>
+<li>
+<p>Otherwise, additional nodes exit in failure</p>
+</li>
+</ul>
+<p><img src="images/image-20220608185729213.png" alt="image-20220608185729213"></p>
+<ul>
+<li>30 clients hit the CPU capacity of the cluster</li>
+</ul>
+<p><img src="images/image-20220608191751981.png" alt="image-20220608191751981"></p>
+<h4 id="metrics-11">Metrics <a class="header-link" href="#metrics-11"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<p><img src="images/image-20220608195026806.png" alt="image-20220608195026806"></p>
+<p>Average CPU Usage</p>
+<p><img src="images/image-20220608195056786.png" alt="image-20220608195056786"></p>
+<p>Page faults</p>
+<p><img src="images/image-20220608195124640.png" alt="image-20220608195124640"></p>
+<p>Accessed Sectors</p>
+<p><img src="images/image-20220608195147681.png" alt="image-20220608195147681"></p>
+<p>Network Throughput</p>
+<h3 id="11b-scaled-baseline-12-clients">11b. Scaled Baseline, 12 Clients <a class="header-link" href="#11b-scaled-baseline-12-clients"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3>
+<ol>
+<li>Start server that expects 12 clients</li>
+<li>Download the dataset into a shared volume that will be shared with the clients.</li>
+<li>Start 10 clients</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>History (~50m)</th>
+<th>Loss</th>
+<th>Distributed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>round 1</td>
+<td>2.243218421936035</td>
+<td></td>
+</tr>
+<tr>
+<td>round 2</td>
+<td>1.7176001071929932</td>
+<td></td>
+</tr>
+<tr>
+<td>round 3</td>
+<td>1.5219959020614624</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="heading"> <a class="header-link" href="#heading"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<h4 id="observations-12">Observations <a class="header-link" href="#observations-12"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<ul>
+<li></li>
+</ul>
+<p><img src="images/image-20220609163419058.png" alt="image-20220609163419058"></p>
+<p>Average CPU Usage</p>
+<p><img src="images/image-20220609163444920.png" alt="image-20220609163444920"></p>
+<p>Page faults</p>
+<p><img src="images/image-20220609163521100.png" alt="image-20220609163521100"></p>
+<p>Accessed Sectors</p>
+<p><img src="images/image-20220609163544081.png" alt="image-20220609163544081"></p>
+<p>Network Throughput</p>
+<h3 id="11c-scaled-baseline-10-clients">11c. Scaled Baseline, 10 Clients <a class="header-link" href="#11c-scaled-baseline-10-clients"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3>
+<ol>
+<li>Start server that expects 10 clients</li>
+<li>Download the dataset into a shared volume that will be shared with the clients.</li>
+<li>Start 10 clients</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>History (~48.9m)</th>
+<th>Loss</th>
+<th>Distributed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>round 1</td>
+<td>1.9093841314315796</td>
+<td></td>
+</tr>
+<tr>
+<td>round 2</td>
+<td>1.6616249084472656</td>
+<td></td>
+</tr>
+<tr>
+<td>round 3</td>
+<td>1.5116339921951294</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="heading-1"> <a class="header-link" href="#heading-1"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<h4 id="observations-13">Observations <a class="header-link" href="#observations-13"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<p><img src="images/image-20220609182917096.png" alt="image-20220609182917096"></p>
+<p>Average CPU Usage</p>
+<p><img src="images/image-20220609183105844.png" alt="image-20220609183105844"></p>
+<p>Page faults</p>
+<p><img src="images/image-20220609183934485.png" alt="image-20220609183934485"></p>
+<p>Accessed Sectors</p>
+<p><img src="images/image-20220609183921641.png" alt="image-20220609183921641"></p>
+<p>Network Throughput</p>
+<h3 id="11c-scaled-baseline-7-clients">11c. Scaled Baseline, 7 Clients <a class="header-link" href="#11c-scaled-baseline-7-clients"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3>
+<ol>
+<li>Start server that expects 7 clients</li>
+<li>Download the dataset into a shared volume that will be shared with the clients.</li>
+<li>Start 7 clients</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>History (~6.5m)</th>
+<th>Loss</th>
+<th>Distributed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>round 1</td>
+<td>2.0500011444091797</td>
+<td></td>
+</tr>
+<tr>
+<td>round 2</td>
+<td>1.687509298324585</td>
+<td></td>
+</tr>
+<tr>
+<td>round 3</td>
+<td>1.5112173557281494</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="heading-2"> <a class="header-link" href="#heading-2"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<h4 id="observations-14">Observations <a class="header-link" href="#observations-14"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<ul>
+<li>Because all the clients start simultaneously, the scheduling is inefficient.</li>
+<li>The scheduler sees 0 activity and collocates the clients. But then the traffic begins, and everything does down.</li>
+</ul>
+<p><img src="images/image-20220609193843149.png" alt="image-20220609193843149"></p>
+<p>Average CPU Usage</p>
+<p><img src="images/image-20220609193855621.png" alt="image-20220609193855621"></p>
+<p>Page faults</p>
+<p><img src="images/image-20220609193928305.png" alt="image-20220609193928305"></p>
+<p>Accessed Sectors</p>
+<p><img src="images/image-20220609193918106.png" alt="image-20220609193918106"></p>
+<p>Network Throughput</p>
+<h3 id="11c-scaled-baseline-9-clients">11c. Scaled Baseline, 9 Clients <a class="header-link" href="#11c-scaled-baseline-9-clients"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3>
+<ol>
+<li>Start server that expects 9clients</li>
+<li>Download the dataset into a shared volume that will be shared with the clients.</li>
+<li>Start 9 clients</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>History (~6.1m)</th>
+<th>Loss</th>
+<th>Distributed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>round 1</td>
+<td>1.97438645362854</td>
+<td></td>
+</tr>
+<tr>
+<td>round 2</td>
+<td>1.6904945373535156</td>
+<td></td>
+</tr>
+<tr>
+<td>round 3</td>
+<td>1.5080753564834595</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="heading-3"> <a class="header-link" href="#heading-3"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<h4 id="observations-15">Observations <a class="header-link" href="#observations-15"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<ul>
+<li>Because all the clients start simultaneously, the scheduling is inefficient.</li>
+<li>The scheduler sees 0 activity and collocates the clients. But then the traffic begins, and everything does down.</li>
+</ul>
+<p><img src="images/image-20220609202344170.png" alt="image-20220609202344170"></p>
+<p>Average CPU Usage</p>
+<p><img src="images/image-20220609202415613.png" alt="image-20220609202415613"></p>
+<p>Page faults</p>
+<p><img src="images/image-20220609202430983.png" alt="image-20220609202430983"></p>
+<p>Accessed Sectors</p>
+<p><img src="images/image-20220609202443154.png" alt="image-20220609202443154"></p>
+<p>Network Throughput</p>
+
+</div>
+
+          
+
+        </div>
+      </div>
+      <div class="order-0 w-20 dn db-l">
+        
+<nav role="navigation">
+  <ul class="list pa0 nl2">
+    
+      
+      <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".about">About Frisbee</a>
+        <ul class="about desktopmenu animated fadeIn list pl0 bg-light-gray dn">
+          <li class="f6 fw4">
+            <a href="https://fnikolai.github.io/frisbee-www/docs/about/what-is-frisbee/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              What is Frisbee
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="https://fnikolai.github.io/frisbee-www/docs/about/features/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Basic Features
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="https://fnikolai.github.io/frisbee-www/docs/about/license/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              License
+            </a>
+          </li>
+        </ul>
+      </li>
+      
+      <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8 mb1 bb b--moon-gray">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".getting-started">Getting Started</a>
+        <ul class="getting-started desktopmenu animated fadeIn list pl0 bg-light-gray dn">
+          <li class="f6 fw4">
+            <a href="https://fnikolai.github.io/frisbee-www/docs/getting-started/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Overview
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="https://fnikolai.github.io/frisbee-www/docs/getting-started/quick-start/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Quick Start
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="https://fnikolai.github.io/frisbee-www/docs/getting-started/installing/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Install Frisbee
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="https://fnikolai.github.io/frisbee-www/docs/getting-started/usage/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Basic Usage
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="https://fnikolai.github.io/frisbee-www/docs/getting-started/configuration/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Configuration
+            </a>
+          </li>
+        </ul>
+      </li>
+      
+      <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".chart-guide">Chart Guide</a>
+        <ul class="chart-guide desktopmenu animated fadeIn list pl0 bg-light-gray dn">
+          <li class="f6 fw4">
+            <a href="https://fnikolai.github.io/frisbee-www/docs/chart-guide/deploy/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Use an existing Chart
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="https://fnikolai.github.io/frisbee-www/docs/chart-guide/develop/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Develop a new Chart
+            </a>
+          </li>
+        </ul>
+      </li>
+      
+      <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8 mb1 bb b--moon-gray">
+        <a href="https://fnikolai.github.io/frisbee-www/commands/" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".commands">CLI</a>
+      </li>
+      
+      <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".troubleshooting">Troubleshooting</a>
+        <ul class="troubleshooting desktopmenu animated fadeIn list pl0 bg-light-gray dn">
+          <li class="f6 fw4">
+            <a href="https://fnikolai.github.io/frisbee-www/docs/troubleshooting/faq/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              FAQ
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="https://fnikolai.github.io/frisbee-www/docs/troubleshooting/tools/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Tools
+            </a>
+          </li>
+        </ul>
+      </li>
+      
+      <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
+        <a href="https://fnikolai.github.io/frisbee-www/hosting-and-deployment/" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".hosting-and-deployment">Hosting &amp; Deployment</a>
+      </li>
+      
+      <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8 mb1 bb b--moon-gray">
+        <a href="https://fnikolai.github.io/frisbee-www/contribute/" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".contribute">Contribute</a>
+      </li>
+  </ul>
+</nav>
+
+      </div>
+
+    </div>
+  </article>
+
+  <div class="w-100 bg-light-gray">
+    <div class="mw7 pa4 center nested-lh-copy lh-copy">
+      <h6 class="f6 dark-gray mb2">
+  Last updated: June 30, 2022
+</h6>
+
+      <a href="https://github.com/CARV-ICS-FORTH/frisbee/edit/master/content/en/blog/testing-flower/index.md" class="
+f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
+">Improve this page</a>
+
+      
+
+
+    </div>
+  </div>
+
+  </main>
+
+  <footer class="bg-primary-color-dark ph4-ns pt4 relative w-100" role="contentinfo">
+    <div class="center flex-ns flex-wrap justify-between mw9 w-90">
+      <div class="pb3 pt4 w-100 w-50-ns">
+          <h3 class="b f4 mv0 light-gray">
+              This project has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement No. 894204 (Ether, H2020-MSCA-IF-2019)
+          </h3>
+      </div>
+
+      <div class="w-50 w-50-l"> 
+        
+
+
+  <section class="pb3 w-100">
+    <div class="center mw9"> 
+
+      <div class="flex-ns flex-wrap center justify-between pt3">
+        
+          
+          
+            <div class="ba b--dark-gray bg-light-gray br3 flex flex-column flex-wrap items-center justify-center ph3 pv4 mb4 w-100 w-30-l  o-100">
+              
+                
+                   <a href="https://cordis.europa.eu/project/id/894204?utm_campaign=hugosponsor&amp;utm_medium=banner&amp;utm_source=homepage" class="grow">
+                
+              <img src="https://fnikolai.github.io/frisbee-www/images/sponsors/eu-logo.png" alt="Logo for European Union" class="img h3 center" />
+              </a>
+              
+            </div>
+          
+        
+          
+          
+            <div class="ba b--dark-gray bg-light-gray br3 flex flex-column flex-wrap items-center justify-center ph3 pv4 mb4 w-100 w-30-l  o-100">
+              
+                
+                   <a href="https://marie-sklodowska-curie-actions.ec.europa.eu/actions/postdoctoral-fellowships?utm_campaign=hugosponsor&amp;utm_medium=banner&amp;utm_source=homepage" class="grow">
+                
+              <img src="https://fnikolai.github.io/frisbee-www/images/sponsors/msca-logo.jpg" alt="Logo for Marie Skłodowska-Curie Actions" class="img h3 center" />
+              </a>
+              
+            </div>
+          
+        
+      </div>
+    </div>
+  </section>
+
+
+      </div>
+
+    </div>
+
+    <div class="bg-primary-color-dark bottom-0 left-0 right-0 dn-l fixed pb3 ph3 pt3 w-100"><div  class="globalmenu mobilemenu pb1 dn">
+    
+
+<ul class="list hidden dib ph0 scrolling-touch tc">
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="https://fnikolai.github.io/frisbee-www/news/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          News
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="https://fnikolai.github.io/frisbee-www/docs/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          Docs
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="https://fnikolai.github.io/frisbee-www/showcase/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          Showcase
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="https://fnikolai.github.io/frisbee-www/blog/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          Blog
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="https://github.com/CARV-ICS-FORTH/frisbee/discussions" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          Community
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="https://github.com/CARV-ICS-FORTH/frisbee" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          GitHub
+        </a>
+    </li>
+  
+</ul>
+
+</div>
+<div  class="docsmenu mobilemenu pb1 dn">
+    
+
+<ul class="list dib ph0 scrolling-touch tc">
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="https://fnikolai.github.io/frisbee-www/about/" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
+          About Frisbee
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100 mb2 bb b--mid-gray">
+        <a href="https://fnikolai.github.io/frisbee-www/getting-started" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
+          Getting Started
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="https://fnikolai.github.io/frisbee-www/chart-guide/" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
+          Chart Guide
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100 mb2 bb b--mid-gray">
+        <a href="https://fnikolai.github.io/frisbee-www/commands/" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
+          CLI
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="https://fnikolai.github.io/frisbee-www/troubleshooting/" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
+          Troubleshooting
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="https://fnikolai.github.io/frisbee-www/hosting-and-deployment/" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
+          Hosting &amp; Deployment
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100 mb2 bb b--mid-gray">
+        <a href="https://fnikolai.github.io/frisbee-www/contribute/" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
+          Contribute
+        </a>
+    </li>
+  
+</ul>
+
+</div>
+
+<div class="flex dn-l justify-between">
+  <button class="js-toggle flex-auto dib dn-l f6 tc db ph3 pv2 link mr2 white bg-primary-color-dark hover-bg-primary-color ba b--white-40 w-auto" data-target=".globalmenu">Menu</button>
+
+  <button class="js-toggle flex-auto dib dn-l f6 tc db ph3 pv2 link white bg-primary-color-dark hover-bg-primary-color ba b--white-40 w-auto" data-target=".docsmenu">Docs Menu</button>
+</div>
+</div>
+
+</footer>
+
+  
+  
+
+  
+
+  
+
+
+</body>
+
+</html>
