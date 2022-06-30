@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docs on </title>
+    <link>https://fnikolai.github.io/frisbee-www/docs/</link>
+    <description>Recent content in Docs on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 29 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://fnikolai.github.io/frisbee-www/docs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Frisbee Documentation</title>
+      <link>https://fnikolai.github.io/frisbee-www/docs/documentation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fnikolai.github.io/frisbee-www/docs/documentation/</guid>
+      <description>The effort being put in automating tests should not take over delivering value to users. Frisbee makes it possible to:
+Setup initial dependency stack – easily!
+Test against actual, close to production software - no mocks!
+Replay complex workloads written in an intuitive language!
+Combine Chaos Engineering with large-scale performance testing!
+Assert actual program behavior and side effects
+Below you will find some of the most common and helpful pages from our documentation.</description>
+    </item>
+    
+    <item>
+      <title>Develop a new Chart For Frisbee</title>
+      <link>https://fnikolai.github.io/frisbee-www/docs/chart-guide/develop/</link>
+      <pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://fnikolai.github.io/frisbee-www/docs/chart-guide/develop/</guid>
+      <description>This is a guide for those who wish to contribute new Charts in Frisbee.
+Because there is an overlap, we advise you to have a look at the Guide for Code Developers first.
+What is a Helm Chart ? Helm is a package manager for Kubernetes.
+Helm uses a packaging format called charts. A chart is a collection of files that describe a related set of Kubernetes resources. A single chart might be used to deploy something simple, like a memcached pod, or something complex, like a full web app stack with HTTP servers, databases, caches, and so on.</description>
+    </item>
+    
+    <item>
+      <title>Frequently Asked Questions</title>
+      <link>https://fnikolai.github.io/frisbee-www/docs/troubleshooting/faq/</link>
+      <pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://fnikolai.github.io/frisbee-www/docs/troubleshooting/faq/</guid>
+      <description>What is Frisbee ? Frisbee is a test-suite for Kubernetes.
+The service seems fine, but I get a Failed message. The service run in a Pod that may host multiple containers. The application contrainer, the telemetry container, and so on. Given that, if the application seems fine, it is perhaps one of the sidecar containers that has failed.
+I changed some templates, but the changes does not seem to affect the Test Plan.</description>
+    </item>
+    
+    <item>
+      <title>Tools for debugging</title>
+      <link>https://fnikolai.github.io/frisbee-www/docs/troubleshooting/tools/</link>
+      <pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://fnikolai.github.io/frisbee-www/docs/troubleshooting/tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Chart Guide</title>
+      <link>https://fnikolai.github.io/frisbee-www/docs/chart-guide/deploy/</link>
+      <pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://fnikolai.github.io/frisbee-www/docs/chart-guide/deploy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>What is Frisbee</title>
+      <link>https://fnikolai.github.io/frisbee-www/docs/about/what-is-frisbee/</link>
+      <pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://fnikolai.github.io/frisbee-www/docs/about/what-is-frisbee/</guid>
+      <description>The effort being put in automating tests should not take over delivering value to users.
+What Does Frisbee Do? Setup initial dependency stack – easily!
+Test against actual, close to production software - no mocks!
+Replay complex workloads written in an intuitive language!
+Combine Chaos Engineering with large-scale performance testing!
+Assert actual program behavior and side effects
+Who Should Use Hugo? Frisbee is intended for engineers and researchers looking to invent, build, verify, evaluate, and release distributed systems faster and more reliably.</description>
+    </item>
+    
+    <item>
+      <title>Hugo Features</title>
+      <link>https://fnikolai.github.io/frisbee-www/docs/about/features/</link>
+      <pubDate>Wed, 01 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://fnikolai.github.io/frisbee-www/docs/about/features/</guid>
+      <description>General Extremely fast build times (&amp;lt; 1 ms per page) Completely cross platform, with easy installation on macOS, Linux, Windows, and more Renders changes on the fly with LiveReload as you develop Powerful theming Host your site anywhere Organization Straightforward organization for your projects, including website sections Customizable URLs Support for configurable taxonomies, including categories and tags Sort content as you desire through powerful template functions Automatic table of contents generation Dynamic menu creation Pretty URLs support Permalink pattern support Redirects via aliases Content Native Markdown and Emacs Org-Mode support, as well as other languages via external helpers (see supported formats) TOML, YAML, and JSON metadata support in front matter Customizable homepage Multiple content types Automatic and user defined content summaries Shortcodes to enable rich content inside of Markdown &amp;quot;Minutes to Read&amp;quot; functionality &amp;quot;WordCount&amp;quot; functionality Additional Features Integrated Disqus comment support Integrated Google Analytics support Automatic RSS creation Support for Go HTML templates Syntax highlighting powered by Chroma </description>
+    </item>
+    
+    <item>
+      <title>The Benefits of Static Site Generators</title>
+      <link>https://fnikolai.github.io/frisbee-www/docs/about/benefits/</link>
+      <pubDate>Wed, 01 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://fnikolai.github.io/frisbee-www/docs/about/benefits/</guid>
+      <description>The purpose of website generators is to render content into HTML files. Most are &amp;quot;dynamic site generators.&amp;quot; That means the HTTP server---i.e., the program that sends files to the browser to be viewed---runs the generator to create a new HTML file every time an end user requests a page.
+Over time, dynamic site generators were programmed to cache their HTML files to prevent unnecessary delays in delivering pages to end users.</description>
+    </item>
+    
+    <item>
+      <title>Apache License</title>
+      <link>https://fnikolai.github.io/frisbee-www/docs/about/license/</link>
+      <pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://fnikolai.github.io/frisbee-www/docs/about/license/</guid>
+      <description>Version 2.0, January 2004 https://www.apache.org/licenses/LICENSE-2.0
+Terms and Conditions for use, reproduction, and distribution
+1. Definitions “License” shall mean the terms and conditions for use, reproduction, and distribution as defined by Sections 1 through 9 of this document.
+“Licensor” shall mean the copyright owner or entity authorized by the copyright owner that is granting the License.
+“Legal Entity” shall mean the union of the acting entity and all other entities that control, are controlled by, or are under common control with that entity.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://fnikolai.github.io/frisbee-www/docs/code-developer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fnikolai.github.io/frisbee-www/docs/code-developer/</guid>
+      <description>Guide for the Frisbee Platform Developers Change the Code Make a new release Step 1: Change the version in the VERSION file Step 2: Update the controller&#39;s container Step 3: Update the Github repo Step 4: Create GitHub release Step 5: Validate release Change the Code # Fetch Frisbee &amp;gt;&amp;gt; git clone git@github.com:CARV-ICS-FORTH/frisbee.git &amp;gt;&amp;gt; cd frisbee There are two ways to run a Frisbee controller.
+As Go program outside a cluster.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  
+  <link rel="preload" href="https://fnikolai.github.io/frisbee-www/fonts/muli-latin-200.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://fnikolai.github.io/frisbee-www/fonts/muli-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://fnikolai.github.io/frisbee-www/fonts/muli-latin-800.woff2" as="font" type="font/woff2" crossorigin>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title></title>
+
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  <meta name="generator" content="Hugo 0.101.0" />
+
+  
+  <meta name="robots" content="noindex, nofollow">
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/frisbee-www/output/css/app.min.b368142944d203fdc1d3dec8ab085c0c0e75aaf9171853110f03e91c1c2616f4.css" integrity="sha256-s2gUKUTSA/3B097IqwhcDA51qvkXGFMRDwPpHBwmFvQ=" crossorigin="anonymous">
+  
+  
+  
+
+  <meta name="description"
+  content="Frisbee: Smart, Cloud-Native Testbed!">
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/frisbee-www/output/js/app.d45556fb33ae1b6a80d0ca8947dc6206bb04aa896ff68df8dff63ece1ae625a6.js" integrity="sha256-1FVW&#43;zOuG2qA0MqJR9xiBrsEqolv9o343/Y&#43;zhrmJaY=" crossorigin="anonymous" defer></script>
+  
+      
+ 
+
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0594cb">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="" />
+<meta property="og:description" content="Guide for the Frisbee Platform Developers Change the Code Make a new release Step 1: Change the version in the VERSION file Step 2: Update the controller&#39;s container Step 3: Update the Github repo Step 4: Create GitHub release Step 5: Validate release Change the Code # Fetch Frisbee &gt;&gt; git clone git@github.com:CARV-ICS-FORTH/frisbee.git &gt;&gt; cd frisbee There are two ways to run a Frisbee controller.
+As Go program outside a cluster." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://fnikolai.github.io/frisbee-www/docs/code-developer/" /><meta property="og:image" content="https://fnikolai.github.io/frisbee-www/opengraph/gohugoio-card-base-1_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_2511081389690397177.png"/><meta property="article:section" content="docs" />
+
+<meta property="og:site_name" content="Helm" />
+<meta itemprop="name" content="">
+<meta itemprop="description" content="Guide for the Frisbee Platform Developers Change the Code Make a new release Step 1: Change the version in the VERSION file Step 2: Update the controller&#39;s container Step 3: Update the Github repo Step 4: Create GitHub release Step 5: Validate release Change the Code # Fetch Frisbee &gt;&gt; git clone git@github.com:CARV-ICS-FORTH/frisbee.git &gt;&gt; cd frisbee There are two ways to run a Frisbee controller.
+As Go program outside a cluster.">
+
+<meta itemprop="wordCount" content="561">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://fnikolai.github.io/frisbee-www/opengraph/gohugoio-card-base-1_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_2511081389690397177.png"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Guide for the Frisbee Platform Developers Change the Code Make a new release Step 1: Change the version in the VERSION file Step 2: Update the controller&#39;s container Step 3: Update the Github repo Step 4: Create GitHub release Step 5: Validate release Change the Code # Fetch Frisbee &gt;&gt; git clone git@github.com:CARV-ICS-FORTH/frisbee.git &gt;&gt; cd frisbee There are two ways to run a Frisbee controller.
+As Go program outside a cluster."/>
+
+
+</head>
+
+<body class="ma0 sans-serif bg-primary-color-light">
+  
+
+  
+<nav class="bg-primary-color-dark pv4 w-100" role="navigation">
+
+  <div class="center flex-ns flex-wrap items-center justify-start mw9">
+
+    <h1 class="dim f3 lh-solid ml0-ns mr0 mr4-l mv0 pl3 pl4-ns">
+      <a href="https://fnikolai.github.io/frisbee-www" class="link white">
+         Frisbee
+      </a>
+    </h1>
+    <ul class="list ma0 pa0 dn dib-l" role="menu">
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+          <a href="/frisbee-www/news/" class="dim link light-silver">
+            News
+              
+            
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+          <a href="/frisbee-www/docs/" class="dim link light-silver">
+            Documentation
+              
+            
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+          <a href="/frisbee-www/showcase/" class="dim link light-silver">
+            Showcase
+              
+            
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+          <a href="https://github.com/CARV-ICS-FORTH/frisbee/discussions" class="dim link light-silver">
+            Community
+              
+            
+            
+              <span class="pl1">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link">
+<path d="M25.152 16.576v5.696q0 2.144-1.504 3.648t-3.648 1.504h-14.848q-2.144 0-3.648-1.504t-1.504-3.648v-14.848q0-2.112 1.504-3.616t3.648-1.536h12.576q0.224 0 0.384 0.16t0.16 0.416v1.152q0 0.256-0.16 0.416t-0.384 0.16h-12.576q-1.184 0-2.016 0.832t-0.864 2.016v14.848q0 1.184 0.864 2.016t2.016 0.864h14.848q1.184 0 2.016-0.864t0.832-2.016v-5.696q0-0.256 0.16-0.416t0.416-0.16h1.152q0.256 0 0.416 0.16t0.16 0.416zM32 1.152v9.12q0 0.48-0.352 0.8t-0.8 0.352-0.8-0.352l-3.136-3.136-11.648 11.648q-0.16 0.192-0.416 0.192t-0.384-0.192l-2.048-2.048q-0.192-0.16-0.192-0.384t0.192-0.416l11.648-11.648-3.136-3.136q-0.352-0.352-0.352-0.8t0.352-0.8 0.8-0.352h9.12q0.48 0 0.8 0.352t0.352 0.8z"></path>
+</svg>
+
+              </span>
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+          <a href="https://github.com/CARV-ICS-FORTH/frisbee" class="dim link light-silver">
+            GitHub
+              
+            
+            
+              <span class="pl1">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link">
+<path d="M25.152 16.576v5.696q0 2.144-1.504 3.648t-3.648 1.504h-14.848q-2.144 0-3.648-1.504t-1.504-3.648v-14.848q0-2.112 1.504-3.616t3.648-1.536h12.576q0.224 0 0.384 0.16t0.16 0.416v1.152q0 0.256-0.16 0.416t-0.384 0.16h-12.576q-1.184 0-2.016 0.832t-0.864 2.016v14.848q0 1.184 0.864 2.016t2.016 0.864h14.848q1.184 0 2.016-0.864t0.832-2.016v-5.696q0-0.256 0.16-0.416t0.416-0.16h1.152q0.256 0 0.416 0.16t0.16 0.416zM32 1.152v9.12q0 0.48-0.352 0.8t-0.8 0.352-0.8-0.352l-3.136-3.136-11.648 11.648q-0.16 0.192-0.416 0.192t-0.384-0.192l-2.048-2.048q-0.192-0.16-0.192-0.384t0.192-0.416l11.648-11.648-3.136-3.136q-0.352-0.352-0.352-0.8t0.352-0.8 0.8-0.352h9.12q0.48 0 0.8 0.352t0.352 0.8z"></path>
+</svg>
+
+              </span>
+            
+          </a>
+        </li>
+      
+    </ul>
+
+    <div class="db dib-ns pl3"><form id="site-search-form" action="" role="search">
+  <fieldset class="bn ma0 pa0">
+    <label class="clip" for="search-input">Search</label>
+    <input type="search" id="search-input" class="needs-js bg-left bn f5 input-reset lh-solid mt3 mt0-ns pl4 pv2 w5 white" placeholder="Search the Docs" name="search-input" value="" style="background: url('/images/icon-search.png') 5px 11px/16px 16px no-repeat; background-color: rgba(255,255,255,0);">
+  </fieldset>
+</form>
+</div>
+
+    <span class="absolute mt1 mt2-l pr3 right-0 top-0">
+
+<a class="github-button needs-js link primary-color-dark" href="https://github.com/CARV-ICS-FORTH/frisbee" data-size="large" data-show-count="false" aria-label="Star Frisbee on GitHub">Star</a>
+</span>
+
+  </div>
+</nav>
+
+  
+  <main role="main" class="content-with-sidebar min-vh-100 pb7 pb0-ns">
+    
+  <article class="w-100 ph4 pb5 pb6-ns pt1 pt5-ns">
+    <div class="flex-l">
+
+      <div class="order-2 w-100 w-20-l ph5-m ph0-l mb4 sticky">
+<aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
+	
+
+	<div date-pref>
+		
+			<a href="https://fnikolai.github.io/frisbee-www/docs/about/license/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Apache License ">
+				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+
+			</a>
+		
+
+		
+	</div>
+
+</aside>
+</div>
+
+      <div class="order-1 w-60-l mw7 ph0 ph5-ns mid-gray nested-copy-line-height no-underline nested-links nested-img nested-copy-seperator nested-blockquote mt0-ns" style="flex-grow:1;">
+        <div class="documentation-copy center measure-wide-l">
+          <div id="readout" class="fixed right-0 bottom-0">
+          </div>
+          <header class="flex-none w-100">
+  
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark"></h1>
+</header>
+
+<aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
+  
+
+  
+</aside>
+
+
+
+<div class="prose" id="prose">
+
+<h1 id="guide-for-the-frisbee-platform-developers">Guide for the Frisbee Platform Developers</h1>
+<!-- raw HTML omitted -->
+<ul>
+<li><a href="#change-the-code">Change the Code</a></li>
+<li><a href="#make-a-new-release">Make a new release</a>
+<ul>
+<li><a href="#step-1-change-the-version-in-the-version-file">Step 1: Change the version in the VERSION file</a></li>
+<li><a href="#step-2-update-the-controllers-container">Step 2: Update the controller's container</a></li>
+<li><a href="#step-3-update-the-github-repo">Step 3: Update the Github repo</a></li>
+<li><a href="#step-4-create--github-release">Step 4: Create  GitHub release</a></li>
+<li><a href="#step-5-validate-release">Step 5: Validate release</a></li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<h2 id="change-the-code">Change the Code <a class="header-link" href="#change-the-code"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># Fetch Frisbee</span>
+</span></span><span style="display:flex;"><span>&gt;&gt; git clone git@github.com:CARV-ICS-FORTH/frisbee.git
+</span></span><span style="display:flex;"><span>&gt;&gt; <span style="color:#366">cd</span> frisbee
+</span></span></code></pre></div><p>There are two ways to run a Frisbee controller.</p>
+<ul>
+<li>As Go program outside a cluster.</li>
+<li>As a container inside a Kubernetes cluster.</li>
+</ul>
+<p>By default, Frisbee prefers the second way.</p>
+<p>However, when debugging a few feature it is impractical to have to create and deploy the container all the time. In such
+cases, it is preferable to run the controller outside the cluster, as shown next.</p>
+<p><strong>Step 1:</strong></p>
+<p>Firstly, we have to inform the Helm chart responsible for handling the platform deployment to not include the
+controller.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># Remove the containerized controller from a running deployment</span>
+</span></span><span style="display:flex;"><span>&gt;&gt; helm upgrade --install  my-frisbee ./charts/platform/ --set operator.enabled<span style="color:#555">=</span><span style="color:#366">false</span> -f ./charts/platform/values.yaml
+</span></span></code></pre></div><p>Notice we the flag <code>global.ingress</code> . Set it accordingly to the Ingress in your cluster.</p>
+<p>If you run Frisbee on a local cluster, simply omit the flag.</p>
+<p><strong>Step 2:</strong></p>
+<p>On the second step, we need to run the controller as a standalone binary.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># Run Frisbee controller outside a cluster (from Frisbee directory)</span>
+</span></span><span style="display:flex;"><span>&gt;&gt; make run
+</span></span></code></pre></div><p>This may take a while as it has to take download the Go dependencies and compile the binary.</p>
+<p>If everything went fine, you should see something like the following.</p>
+<p><img src="developers.assets/image-20211217192114704.png" alt="image-20211217192114704"></p>
+<blockquote>
+<p>Tip: Beware the different between <code>charts/platform</code> and  <code>frisbee/platform</code>.</p>
+</blockquote>
+<p>Given that we are under the Frisbee directory, the <code>charts/platform</code> points to the local copy of the chart, which is the
+one we want to modify.</p>
+<p>Otherwise, if <code>frisbee/platform</code> is used, Helm will use the released version of the repo.</p>
+<h2 id="make-a-new-release">Make a new release <a class="header-link" href="#make-a-new-release"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2>
+<h4 id="step-1-change-the-version-in-the-version-file">Step 1: Change the version in the VERSION file <a class="header-link" href="#step-1-change-the-version-in-the-version-file"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<h4 id="step-2-update-the-controllers-container">Step 2: Update the controller's container <a class="header-link" href="#step-2-update-the-controllers-container"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<p>If you have changes anything outside the <code>charts</code> folder, then you have probably modified some of the controller.</p>
+<p>In this case, you have to rebuild the container and push it to the registry.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>make docker-build <span style="color:#033">IMG</span><span style="color:#555">=</span><span style="color:#c30">&#34;yourImage&#34;</span>
+</span></span></code></pre></div><p>Otherwise, you can use which will rebuild and automatically publish the container into the public Docker Hun registry,
+under the name <a href="https://hub.docker.com/repository/docker/icsforth/frisbee-operator">icsforth / frisbee-operator</a></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&gt;&gt; make docker push
+</span></span></code></pre></div><h4 id="step-3-update-the-github-repo">Step 3: Update the Github repo <a class="header-link" href="#step-3-update-the-github-repo"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<p>We have also automated the way to publish new releases in Github.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&gt;&gt; make release
+</span></span></code></pre></div><p>This will commit and tag all the changes in the repo. However, it will push changes to the Github.</p>
+<p>You have to do it manually using</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&gt;&gt; git push --set-upstream origin  <span style="color:#555">&amp;&amp;</span> git push --tags
+</span></span></code></pre></div><h4 id="step-4-create--github-release">Step 4: Create  GitHub release <a class="header-link" href="#step-4-create--github-release"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<ol>
+<li>
+<p>Go to GitHub and create a pull request</p>
+</li>
+<li>
+<p>Merge pull request</p>
+</li>
+<li>
+<p>Delete branch</p>
+</li>
+<li>
+<p>Go to <a href="https://github.com/CARV-ICS-FORTH/frisbee/tags">GitHub Tags</a> and create a new release for the latest tag</p>
+</li>
+</ol>
+<p>The previous must have triggered some GitHub Actions. Go to <a href="https://github.com/CARV-ICS-FORTH/frisbee/actions">https://github.com/CARV-ICS-FORTH/frisbee/actions</a> and check
+that is everything is successful.</p>
+<p>Then go to the <a href="https://github.com/CARV-ICS-FORTH/frisbee/tags">tags</a> and create a new release for the latest tag.</p>
+<p><img src="developers.assets/image-20211217145923170.png" alt="image-20211217145923170"></p>
+<h4 id="step-5-validate-release">Step 5: Validate release <a class="header-link" href="#step-5-validate-release"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<p>The previous step have triggered the appropriate action for creating new charts.</p>
+<p>To confirm that they have been actually created, you can use the  <code>helm</code> tool to search the repo.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&gt;&gt; helm repo update
+</span></span><span style="display:flex;"><span>&gt;&gt; helm search repo frisbee
+</span></span></code></pre></div><p>Then, you see that the <code>latest</code> Chart version is equal to the latest <code>git tag</code>, and in accordance to the VERSION file.</p>
+
+</div>
+
+          
+
+        </div>
+      </div>
+      <div class="order-0 w-20 dn db-l">
+        
+<nav role="navigation">
+  <ul class="list pa0 nl2">
+    
+      
+      <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".about">About Frisbee</a>
+        <ul class="about desktopmenu animated fadeIn list pl0 bg-light-gray dn">
+          <li class="f6 fw4">
+            <a href="/frisbee-www/docs/about/what-is-frisbee/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              What is Frisbee
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/frisbee-www/docs/about/features/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Hugo Features
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/frisbee-www/docs/about/benefits/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              The Benefits of Static
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/frisbee-www/docs/about/license/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              License
+            </a>
+          </li>
+        </ul>
+      </li>
+      
+      <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8 mb1 bb b--moon-gray">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".getting-started">Getting Started</a>
+        <ul class="getting-started desktopmenu animated fadeIn list pl0 bg-light-gray dn">
+          <li class="f6 fw4">
+            <a href="/frisbee-www/docs/getting-started/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Overview
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/frisbee-www/docs/getting-started/quick-start/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Quick Start
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/frisbee-www/docs/getting-started/installing/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Install Frisbee
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/frisbee-www/docs/getting-started/usage/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Basic Usage
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/frisbee-www/docs/getting-started/configuration/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Configuration
+            </a>
+          </li>
+        </ul>
+      </li>
+      
+      <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".chart-guide">Chart Guide</a>
+        <ul class="chart-guide desktopmenu animated fadeIn list pl0 bg-light-gray dn">
+          <li class="f6 fw4">
+            <a href="/frisbee-www/docs/chart-guide/deploy/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Use an existing Chart
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/frisbee-www/docs/chart-guide/develop/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Develop a new Chart
+            </a>
+          </li>
+        </ul>
+      </li>
+      
+      <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8 mb1 bb b--moon-gray">
+        <a href="/frisbee-www/commands/" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".commands">CLI</a>
+      </li>
+      
+      <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".troubleshooting">Troubleshooting</a>
+        <ul class="troubleshooting desktopmenu animated fadeIn list pl0 bg-light-gray dn">
+          <li class="f6 fw4">
+            <a href="/frisbee-www/docs/troubleshooting/faq/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              FAQ
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/frisbee-www/docs/troubleshooting/tools/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Tools
+            </a>
+          </li>
+        </ul>
+      </li>
+      
+      <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
+        <a href="/frisbee-www/hosting-and-deployment/" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".hosting-and-deployment">Hosting &amp; Deployment</a>
+      </li>
+      
+      <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8 mb1 bb b--moon-gray">
+        <a href="/frisbee-www/contribute/" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".contribute">Contribute</a>
+      </li>
+  </ul>
+</nav>
+
+      </div>
+
+    </div>
+  </article>
+
+  <div class="w-100 bg-light-gray">
+    <div class="mw7 pa4 center nested-lh-copy lh-copy">
+      <h6 class="f6 dark-gray mb2">
+  Last updated: January 1, 0001
+</h6>
+
+      <a href="https://github.com/CARV-ICS-FORTH/frisbeeedit/master/content/en/docs/code-developer.md" class="
+f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
+">Improve this page</a>
+
+      
+
+
+    </div>
+  </div>
+
+  </main>
+
+  <footer class="bg-primary-color-dark ph4-ns pt4 relative w-100" role="contentinfo">
+    <div class="center flex-ns flex-wrap justify-between mw9 w-90">
+      <div class="pb3 pt4 w-100 w-50-ns">
+
+          <h3 class="b f3 mv0 light-gray">
+              This project has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement No. 894204 (Ether, H2020-MSCA-IF-2019)
+          </h3>
+
+      </div>
+
+      <div class="w-50 w-50-l"> 
+        
+
+
+  <section class="pb3 w-100">
+    <div class="center mw9"> 
+
+      <div class="flex-ns flex-wrap center justify-between pt3">
+        
+          
+          
+            <div class="ba b--dark-gray bg-light-gray br3 flex flex-column flex-wrap items-center justify-center ph3 pv4 mb4 w-100 w-30-l  o-100">
+              
+                
+                   <a href="https://cordis.europa.eu/project/id/894204?utm_campaign=hugosponsor&amp;utm_medium=banner&amp;utm_source=homepage" class="grow">
+                
+              <img src="/images/sponsors/eu-logo.png" alt="Logo for European Union" class="img h3 center" />
+              </a>
+              
+            </div>
+          
+        
+          
+          
+            <div class="ba b--dark-gray bg-light-gray br3 flex flex-column flex-wrap items-center justify-center ph3 pv4 mb4 w-100 w-30-l  o-100">
+              
+                
+                   <a href="https://marie-sklodowska-curie-actions.ec.europa.eu/actions/postdoctoral-fellowships?utm_campaign=hugosponsor&amp;utm_medium=banner&amp;utm_source=homepage" class="grow">
+                
+              <img src="/images/sponsors/msca-logo.jpg" alt="Logo for Marie Skłodowska-Curie Actions" class="img h3 center" />
+              </a>
+              
+            </div>
+          
+        
+      </div>
+    </div>
+  </section>
+
+
+      </div>
+
+    </div>
+
+    <div class="bg-primary-color-dark bottom-0 left-0 right-0 dn-l fixed pb3 ph3 pt3 w-100"><div  class="globalmenu mobilemenu pb1 dn">
+    
+
+<ul class="list hidden dib ph0 scrolling-touch tc">
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/frisbee-www/news/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          News
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/frisbee-www/docs/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          Documentation
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/frisbee-www/showcase/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          Showcase
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="https://github.com/CARV-ICS-FORTH/frisbee/discussions" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          Community
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="https://github.com/CARV-ICS-FORTH/frisbee" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          GitHub
+        </a>
+    </li>
+  
+</ul>
+
+</div>
+<div  class="docsmenu mobilemenu pb1 dn">
+    
+
+<ul class="list dib ph0 scrolling-touch tc">
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/frisbee-www/about/" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
+          About Frisbee
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100 mb2 bb b--mid-gray">
+        <a href="/frisbee-www/getting-started" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
+          Getting Started
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/frisbee-www/chart-guide/" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
+          Chart Guide
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100 mb2 bb b--mid-gray">
+        <a href="/frisbee-www/commands/" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
+          CLI
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/frisbee-www/troubleshooting/" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
+          Troubleshooting
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/frisbee-www/hosting-and-deployment/" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
+          Hosting &amp; Deployment
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100 mb2 bb b--mid-gray">
+        <a href="/frisbee-www/contribute/" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
+          Contribute
+        </a>
+    </li>
+  
+</ul>
+
+</div>
+
+<div class="flex dn-l justify-between">
+  <button class="js-toggle flex-auto dib dn-l f6 tc db ph3 pv2 link mr2 white bg-primary-color-dark hover-bg-primary-color ba b--white-40 w-auto" data-target=".globalmenu">Menu</button>
+
+  <button class="js-toggle flex-auto dib dn-l f6 tc db ph3 pv2 link white bg-primary-color-dark hover-bg-primary-color ba b--white-40 w-auto" data-target=".docsmenu">Docs Menu</button>
+</div>
+</div>
+
+</footer>
+
+  
+  
+
+  
+
+  
+
+
+</body>
+
+</html>
