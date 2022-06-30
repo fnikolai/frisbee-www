@@ -85,6 +85,11 @@
     identifier = "showcase"
     url = "/showcase/"
 
+  [[global]]
+    name = "Blog"
+    weight = 21
+    identifier = "blog"
+    url = "/blog/"
 
   # Anything with a weight > 100 gets an external icon
   [[global]]
