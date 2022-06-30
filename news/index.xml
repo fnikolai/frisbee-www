@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Frisbee News on </title>
-    <link>https://fnikolai.github.io/news/</link>
+    <link>https://fnikolai.github.io/frisbee-www/news/</link>
     <description>Recent content in Frisbee News on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Jun 2022 12:22:47 +0100</lastBuildDate><atom:link href="https://fnikolai.github.io/news/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Jun 2022 12:22:47 +0100</lastBuildDate><atom:link href="https://fnikolai.github.io/frisbee-www/news/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Release Notes now on GitHub Only</title>
-      <link>https://fnikolai.github.io/news/no-more-releasenotes-here/</link>
+      <link>https://fnikolai.github.io/frisbee-www/news/no-more-releasenotes-here/</link>
       <pubDate>Tue, 28 Jun 2022 12:22:47 +0100</pubDate>
       
-      <guid>https://fnikolai.github.io/news/no-more-releasenotes-here/</guid>
+      <guid>https://fnikolai.github.io/frisbee-www/news/no-more-releasenotes-here/</guid>
       <description>For details about release notes, you need to go here: https://github.com/CARV-ICS-FORTH/frisbee/releases -- see this for an Atom feed: https://github.com/CARV-ICS-FORTH/frisbee/releases.atom</description>
     </item>
     
     <item>
       <title>Let’s celebrate Hugo’s 5th birthday</title>
-      <link>https://fnikolai.github.io/news/lets-celebrate-hugos-5th-birthday/</link>
+      <link>https://fnikolai.github.io/frisbee-www/news/lets-celebrate-hugos-5th-birthday/</link>
       <pubDate>Wed, 04 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://fnikolai.github.io/news/lets-celebrate-hugos-5th-birthday/</guid>
+      <guid>https://fnikolai.github.io/frisbee-www/news/lets-celebrate-hugos-5th-birthday/</guid>
       <description>By Bjørn Erik Pedersen (@bepsays / @bep), Hugo Lead
 Five years ago today, Steve Francia made his first commit on the Hugo project: &amp;quot;Hugo: A Fast and Flexible Static Site Generator built with love by spf13 in GoLang&amp;quot;.
 Steve was writing that on a train commute to New York. I&#39;m writing this article running Hugo v0.43-DEV, the preview version of the next Hugo release. The release is scheduled for Monday and adds a powerful assets pipeline, with SCSS/SASS support, assets minification, fingerprinting/subresource integrity, ad-hoc image processing and much more.</description>

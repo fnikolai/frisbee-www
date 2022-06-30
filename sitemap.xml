@@ -2,84 +2,84 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://fnikolai.github.io/getting-started/</loc>
+    <loc>https://fnikolai.github.io/frisbee-www/getting-started/</loc>
     <lastmod>2017-02-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fnikolai.github.io/documentation/</loc>
+    <loc>https://fnikolai.github.io/frisbee-www/documentation/</loc>
   </url><url>
-    <loc>https://fnikolai.github.io/getting-started/quick-start/</loc>
+    <loc>https://fnikolai.github.io/frisbee-www/getting-started/quick-start/</loc>
     <lastmod>2022-06-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fnikolai.github.io/chart-guide/develop/</loc>
+    <loc>https://fnikolai.github.io/frisbee-www/chart-guide/develop/</loc>
     <lastmod>2022-06-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fnikolai.github.io/troubleshooting/faq/</loc>
+    <loc>https://fnikolai.github.io/frisbee-www/troubleshooting/faq/</loc>
     <lastmod>2022-06-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fnikolai.github.io/troubleshooting/tools/</loc>
+    <loc>https://fnikolai.github.io/frisbee-www/troubleshooting/tools/</loc>
     <lastmod>2022-06-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fnikolai.github.io/chart-guide/deploy/</loc>
+    <loc>https://fnikolai.github.io/frisbee-www/chart-guide/deploy/</loc>
     <lastmod>2022-06-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fnikolai.github.io/about/what-is-frisbee/</loc>
+    <loc>https://fnikolai.github.io/frisbee-www/about/what-is-frisbee/</loc>
     <lastmod>2022-06-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fnikolai.github.io/about/features/</loc>
+    <loc>https://fnikolai.github.io/frisbee-www/about/features/</loc>
     <lastmod>2017-02-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fnikolai.github.io/getting-started/installing/</loc>
+    <loc>https://fnikolai.github.io/frisbee-www/getting-started/installing/</loc>
     <lastmod>2022-06-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fnikolai.github.io/about/benefits/</loc>
+    <loc>https://fnikolai.github.io/frisbee-www/about/benefits/</loc>
     <lastmod>2017-02-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fnikolai.github.io/getting-started/usage/</loc>
+    <loc>https://fnikolai.github.io/frisbee-www/getting-started/usage/</loc>
     <lastmod>2017-02-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fnikolai.github.io/about/license/</loc>
+    <loc>https://fnikolai.github.io/frisbee-www/about/license/</loc>
     <lastmod>2022-06-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fnikolai.github.io/getting-started/configuration/</loc>
+    <loc>https://fnikolai.github.io/frisbee-www/getting-started/configuration/</loc>
     <lastmod>2017-03-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fnikolai.github.io/news/</loc>
+    <loc>https://fnikolai.github.io/frisbee-www/news/</loc>
     <lastmod>2022-06-28T12:22:47+01:00</lastmod>
   </url><url>
-    <loc>https://fnikolai.github.io/news/no-more-releasenotes-here/</loc>
+    <loc>https://fnikolai.github.io/frisbee-www/news/no-more-releasenotes-here/</loc>
     <lastmod>2022-06-28T12:22:47+01:00</lastmod>
   </url><url>
-    <loc>https://fnikolai.github.io/about/</loc>
+    <loc>https://fnikolai.github.io/frisbee-www/about/</loc>
     <lastmod>2022-06-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fnikolai.github.io/chart-guide/</loc>
+    <loc>https://fnikolai.github.io/frisbee-www/chart-guide/</loc>
     <lastmod>2022-06-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fnikolai.github.io/showcase/flower/</loc>
+    <loc>https://fnikolai.github.io/frisbee-www/showcase/flower/</loc>
     <lastmod>2022-06-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fnikolai.github.io/showcase/iperf3/</loc>
+    <loc>https://fnikolai.github.io/frisbee-www/showcase/iperf3/</loc>
     <lastmod>2022-06-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fnikolai.github.io/showcase/redis/</loc>
+    <loc>https://fnikolai.github.io/frisbee-www/showcase/redis/</loc>
     <lastmod>2022-06-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fnikolai.github.io/showcase/</loc>
+    <loc>https://fnikolai.github.io/frisbee-www/showcase/</loc>
     <lastmod>2022-06-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fnikolai.github.io/troubleshooting/</loc>
+    <loc>https://fnikolai.github.io/frisbee-www/troubleshooting/</loc>
     <lastmod>2022-06-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fnikolai.github.io/news/lets-celebrate-hugos-5th-birthday/</loc>
+    <loc>https://fnikolai.github.io/frisbee-www/news/lets-celebrate-hugos-5th-birthday/</loc>
     <lastmod>2018-07-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fnikolai.github.io/showcase/cockroach/</loc>
+    <loc>https://fnikolai.github.io/frisbee-www/showcase/cockroach/</loc>
     <lastmod>2018-02-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fnikolai.github.io/</loc>
+    <loc>https://fnikolai.github.io/frisbee-www/</loc>
     <lastmod>2017-03-02T12:00:00-05:00</lastmod>
   </url><url>
-    <loc>https://fnikolai.github.io/code-developer/</loc>
+    <loc>https://fnikolai.github.io/frisbee-www/code-developer/</loc>
     <priority>0</priority>
   </url>
 </urlset>
