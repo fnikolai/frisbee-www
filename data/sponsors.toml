@@ -1,0 +1,11 @@
+[[banners]]
+name = "European Union"
+link = "https://cordis.europa.eu/project/id/894204"
+logo = "/images/sponsors/eu-logo.png"
+copy = ""
+
+[[banners]]
+name = "Marie Skłodowska-Curie Actions"
+link = "https://marie-sklodowska-curie-actions.ec.europa.eu/actions/postdoctoral-fellowships"
+logo = "/images/sponsors/msca-logo.jpg"
+copy = ""

@@ -1,0 +1,77 @@
+baseURL = "https://carv-ics-forth.github.io"
+languageCode = "en-us"
+theme = "frisbee"
+
+contentDir = "content"
+publishdir = "docs"
+enableEmoji = true
+
+
+canonifyURLs = "false"
+pluralizeListTitles = "false"
+plainIdAnchors = "true"
+disableKinds = ["taxonomy", "taxonomyTerm"]
+
+
+
+[build]
+useResourceCacheWhen="never"
+
+[markup]
+[markup.goldmark]
+[markup.goldmark.extensions]
+typographer = false
+[markup.highlight]
+style = "manni"
+guessSyntax = true
+
+
+[Permalinks]
+code = "/:filename/"
+
+
+[params]
+title = "Helm"
+description = "Frisbee: Smart, Cloud-Native Testbed!"
+site-url = "https://carv-ics-forth.github.io/frisbee/"
+
+ghrepo = "https://github.com/CARV-ICS-FORTH/frisbee"
+
+github_repo = "https://github.com/CARV-ICS-FORTH/frisbee/issues/new/choose"
+
+ghdocsrepo = "https://github.com/CARV-ICS-FORTH/frisbee/tree/main/docs"
+
+forum = "https://github.com/CARV-ICS-FORTH/frisbee/discussions"
+
+
+#googleAnalyticsId = "UA-42867143-2"
+#googleSiteVerification = "dCa3wS47cErhx0IpaxbB85NfcOP-vFxevknVk6fzf5I"
+#twittersite = "helmpack"
+#twittertype = "summary"
+#twitterimage = "img/og-image.png"
+
+jsFiles = [
+  "foundation",
+  "foundation.accordion",
+  "foundation.dropdown",
+  "foundation.offcanvas",
+  "foundation.slider",
+  "foundation.tooltip",
+  "modernizr",
+  "clipboard.min",
+  "app"
+]
+
+
+# Multilingual configuration
+defaultContentLanguage = "en"
+disableLanguages = ["el"]
+
+# English
+[languages.en]
+contentDir = "content/en"
+languageName = "English"
+weight = 1
+
+
+

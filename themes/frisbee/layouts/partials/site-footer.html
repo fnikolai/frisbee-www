@@ -1,0 +1,21 @@
+<footer class="bg-primary-color-dark ph4-ns pt4 relative w-100" role="contentinfo">
+    <div class="center flex-ns flex-wrap justify-between mw9 w-90">
+      <div class="pb3 pt4 w-100 w-50-ns">
+
+          <h3 class="b f3 mv0 light-gray">
+              This project has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement No. 894204 (Ether, H2020-MSCA-IF-2019)
+          </h3>
+
+      </div>
+
+      <div class="w-50 w-50-l"> 
+        {{ partial "home-page-sections/sponsors.html" (dict "cx" .  "gtag" "footer" "classes_section" "pb3 w-100" "classes_copy" "f7 w-90-ns") }}
+      </div>
+
+    </div>
+
+    <div class="bg-primary-color-dark bottom-0 left-0 right-0 dn-l fixed pb3 ph3 pt3 w-100">
+      {{- partial "nav-mobile.html" . -}}
+    </div>
+
+</footer>

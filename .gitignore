@@ -1,0 +1,6 @@
+# Ignore cached resources
+resources
+
+
+.hugo_build.lock
+.idea
