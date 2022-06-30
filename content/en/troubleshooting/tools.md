@@ -13,6 +13,6 @@ menu:
 weight: 10
 sections_weight: 20
 draft: false
-aliases: [/troubleshooting/tools,/docs]
+aliases: [/troubleshooting/tools]
 toc: true
 ---

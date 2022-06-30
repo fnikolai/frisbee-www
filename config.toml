@@ -33,7 +33,6 @@ code = "/:filename/"
 [params]
 title = "Helm"
 description = "Frisbee: Smart, Cloud-Native Testbed!"
-site-url = "https://carv-ics-forth.github.io/frisbee/"
 
 ghrepo = "https://github.com/CARV-ICS-FORTH/frisbee"
 
