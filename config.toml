@@ -1,4 +1,4 @@
-baseURL = "https://fnikolai.github.io/frisbee-www"
+baseURL = "https://frisbee.dev"
 languageCode = "en-us"
 theme = "frisbee"
 
@@ -31,8 +31,8 @@ code = "/:filename/"
 
 
 [params]
-title = "Helm"
-description = "Frisbee: Smart, Cloud-Native Testbed!"
+title = "Frisbee"
+description = "Smart, Cloud-Native Testbed!"
 
 ghrepo = "https://github.com/CARV-ICS-FORTH/frisbee"
 

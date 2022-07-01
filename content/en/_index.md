@@ -34,4 +34,4 @@ features:
 
 ---
 
-The Kubernetes Native Platform for exploring, testing, and benchmarking distributed applications.
+Frisbee is a Kubernetes-Native Platform for exploring, testing, and benchmarking distributed applications.
