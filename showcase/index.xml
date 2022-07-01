@@ -2,44 +2,44 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Showcase on </title>
-    <link>https://fnikolai.github.io/frisbee-www/showcase/</link>
+    <link>https://frisbee.dev/showcase/</link>
     <description>Recent content in Showcase on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://fnikolai.github.io/frisbee-www/showcase/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://frisbee.dev/showcase/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Flower</title>
-      <link>https://fnikolai.github.io/frisbee-www/showcase/flower/</link>
+      <link>https://frisbee.dev/showcase/flower/</link>
       <pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://fnikolai.github.io/frisbee-www/showcase/flower/</guid>
+      <guid>https://frisbee.dev/showcase/flower/</guid>
       <description>The description of the Flower chart should go here</description>
     </item>
     
     <item>
       <title>iPerf3</title>
-      <link>https://fnikolai.github.io/frisbee-www/showcase/iperf3/</link>
+      <link>https://frisbee.dev/showcase/iperf3/</link>
       <pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://fnikolai.github.io/frisbee-www/showcase/iperf3/</guid>
+      <guid>https://frisbee.dev/showcase/iperf3/</guid>
       <description>The description of the Iperf3 chart should go here</description>
     </item>
     
     <item>
       <title>Redis</title>
-      <link>https://fnikolai.github.io/frisbee-www/showcase/redis/</link>
+      <link>https://frisbee.dev/showcase/redis/</link>
       <pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://fnikolai.github.io/frisbee-www/showcase/redis/</guid>
+      <guid>https://frisbee.dev/showcase/redis/</guid>
       <description>The description of the Redis chart should go here</description>
     </item>
     
     <item>
       <title>CockroachDB</title>
-      <link>https://fnikolai.github.io/frisbee-www/showcase/cockroach/</link>
+      <link>https://frisbee.dev/showcase/cockroach/</link>
       <pubDate>Thu, 22 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://fnikolai.github.io/frisbee-www/showcase/cockroach/</guid>
+      <guid>https://frisbee.dev/showcase/cockroach/</guid>
       <description>The description of the Cockroach chart should go here</description>
     </item>
     

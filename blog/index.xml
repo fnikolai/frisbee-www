@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blog on </title>
-    <link>https://fnikolai.github.io/frisbee-www/blog/</link>
+    <link>https://frisbee.dev/blog/</link>
     <description>Recent content in Blog on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 30 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://fnikolai.github.io/frisbee-www/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://frisbee.dev/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Testing CockroachDB</title>
-      <link>https://fnikolai.github.io/frisbee-www/blog/testing-cockroachdb/</link>
+      <link>https://frisbee.dev/blog/testing-cockroachdb/</link>
       <pubDate>Thu, 30 Jun 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://fnikolai.github.io/frisbee-www/blog/testing-cockroachdb/</guid>
+      <guid>https://frisbee.dev/blog/testing-cockroachdb/</guid>
       <description>1. Baseline Single Start a standalone Cockroach database server Load the database with keys Run a sequence of YCSB workloads in the following order (A,B, C,F, D, E) Observations Nothing strange 2. Baseline Cluster Deterministic Start a set of individual Cockroach servers Combine the individual servers into a Cockroach cluster. Run a sequence of YCSB workloads (A,B, C,F, D, E), sending traffic to masters-0 Observations If we run the load with 400 threads then the entire system blocks after 66.</description>
     </item>
     
     <item>
       <title>Testing Flower</title>
-      <link>https://fnikolai.github.io/frisbee-www/blog/testing-flower/</link>
+      <link>https://frisbee.dev/blog/testing-flower/</link>
       <pubDate>Thu, 30 Jun 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://fnikolai.github.io/frisbee-www/blog/testing-flower/</guid>
+      <guid>https://frisbee.dev/blog/testing-flower/</guid>
       <description>1. Baseline Start server Download the dataset into a shared volume that will be shared with the clients. Start 2 clients History (~4m) Loss Distributed round 1 1.9984407424926758 round 2 1.677626609802246 round 3 1.5497934818267822 Observations ... Metrics Average CPU Usage
 Page faults
 Accessed Sectors

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Get Started on </title>
-    <link>https://fnikolai.github.io/frisbee-www/docs/getting-started/</link>
+    <link>https://frisbee.dev/docs/getting-started/</link>
     <description>Recent content in Get Started on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 Feb 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://fnikolai.github.io/frisbee-www/docs/getting-started/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Feb 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://frisbee.dev/docs/getting-started/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Quick Start</title>
-      <link>https://fnikolai.github.io/frisbee-www/docs/getting-started/quick-start/</link>
+      <link>https://frisbee.dev/docs/getting-started/quick-start/</link>
       <pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://fnikolai.github.io/frisbee-www/docs/getting-started/quick-start/</guid>
+      <guid>https://frisbee.dev/docs/getting-started/quick-start/</guid>
       <description>Step 1: Install Kubernetes and &amp;amp; Helm Microk8s is the simplest production-grade conformant K8s. It runs entirely on your workstation or edge device.
 Helm is a package manager for Kubernetes. Helm uses a packaging format called charts.
 # Install microk8s v.1.24 &amp;gt;&amp;gt; sudo snap install microk8s --classic --channel=1.24/stable # Use microk8s config as the default kubernetes config &amp;gt;&amp;gt; microk8s config &amp;gt; ~/.kube/config # Start microk8s &amp;gt;&amp;gt; microk8s start # Enable Dependencies &amp;gt;&amp;gt; microk8s enable dns ingress helm3 # Create aliases &amp;gt;&amp;gt; sudo snap alias microk8s.</description>
@@ -20,10 +20,10 @@ Helm is a package manager for Kubernetes. Helm uses a packaging format called ch
     
     <item>
       <title>Install Frisbee</title>
-      <link>https://fnikolai.github.io/frisbee-www/docs/getting-started/installing/</link>
+      <link>https://frisbee.dev/docs/getting-started/installing/</link>
       <pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://fnikolai.github.io/frisbee-www/docs/getting-started/installing/</guid>
+      <guid>https://frisbee.dev/docs/getting-started/installing/</guid>
       <description>There is lots of talk about &amp;quot;Hugo being written in Go&amp;quot;, but you don&#39;t need to install Go to enjoy Hugo. Just grab a precompiled binary!
 Hugo is written in Go with support for multiple platforms. The latest release can be found at Hugo Releases.
 Hugo currently provides pre-built binaries for the following:
@@ -32,10 +32,10 @@ macOS (Darwin) for x64, i386, and ARM architectures Windows Linux OpenBSD FreeBS
     
     <item>
       <title>Basic Usage</title>
-      <link>https://fnikolai.github.io/frisbee-www/docs/getting-started/usage/</link>
+      <link>https://frisbee.dev/docs/getting-started/usage/</link>
       <pubDate>Wed, 01 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://fnikolai.github.io/frisbee-www/docs/getting-started/usage/</guid>
+      <guid>https://frisbee.dev/docs/getting-started/usage/</guid>
       <description>The following is a description of the most common commands you will use while developing your Hugo project. See the Command Line Reference for a comprehensive view of Hugo&#39;s CLI.
 Test Installation Once you have installed Hugo, make sure it is in your PATH. You can test that Hugo has been installed correctly via the help command:
 hugo help The output you see in your console should be similar to the following:</description>
@@ -43,10 +43,10 @@ hugo help The output you see in your console should be similar to the following:
     
     <item>
       <title>Configure Hugo</title>
-      <link>https://fnikolai.github.io/frisbee-www/docs/getting-started/configuration/</link>
+      <link>https://frisbee.dev/docs/getting-started/configuration/</link>
       <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://fnikolai.github.io/frisbee-www/docs/getting-started/configuration/</guid>
+      <guid>https://frisbee.dev/docs/getting-started/configuration/</guid>
       <description>Configuration File Hugo uses the config.toml, config.yaml, or config.json (if found in the site root) as the default site config file.
 The user can choose to override that default with one or more site config files using the command line --config switch.
 Examples:
