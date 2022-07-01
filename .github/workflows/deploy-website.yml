@@ -42,3 +42,4 @@ jobs:
           # external_repository: username/external-repository
           publish_branch: gh-pages
           publish_dir: public
+          cname: frisbee.dev
