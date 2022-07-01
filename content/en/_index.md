@@ -19,7 +19,7 @@ features:
 
   - heading: Detect SLA Violations
     image_path: /images/icon-built-in-templates.svg
-    tagline: Are you sure about your SLA?
+    tagline: Can you meet your SLA?
     copy: Assert your SLAs using the Frisbee's metrics-driven architecture
 
   - heading: Identify Weaknesses & Potential Outages
