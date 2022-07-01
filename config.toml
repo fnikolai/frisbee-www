@@ -36,9 +36,9 @@ description = "Smart, Cloud-Native Testbed!"
 
 ghrepo = "https://github.com/CARV-ICS-FORTH/frisbee"
 
-website = "https://fnikolai.github.io/frisbee-www"
+website = "https://frisbee.dev"
 
-docsrepo = "https://fnikolai.github.io/frisbee-www/docs"
+docsrepo = "https://frisbee.dev/docs"
 
 forum = "https://github.com/CARV-ICS-FORTH/frisbee/discussions"
 
