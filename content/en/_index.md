@@ -30,7 +30,7 @@ features:
   - heading: AI-Driven Testing
     image_path: /images/icon-shortcodes.svg
     tagline: Are you confident about your test-cases?
-    copy: Reduce variability by determing if tests are flaky before merging the code.
+    copy: Reduce variability by determining if tests are flaky before merging the code.
 
 ---
 

@@ -17,7 +17,7 @@ toc: true
 
 
 
-This document describes the basic features of Frisbee, including [Actions](#actions), [Testing Workflows](#testing-workflows), [Visualized Operations](#visualized-operations), and [Security Guarantees](#security-guarantess).
+This document describes the basic features of Frisbee, including [Actions](#actions), [Testing Workflows](#testing-workflows), [Visualized Operations](#visualized-operations), and [Security Guarantees](#security-guarantees).
 
 
 
