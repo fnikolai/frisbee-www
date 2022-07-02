@@ -8,7 +8,7 @@ lastmod: 2022-06-28
 layout: single
 menu:
     docs:
-        parent: "chart-guide"
+        parent: "users-guide"
         weight: 8
 weight: 10
 sections_weight: 10

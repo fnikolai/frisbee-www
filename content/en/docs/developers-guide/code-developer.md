@@ -1,4 +1,23 @@
-# Guide for the Frisbee Platform Developers
+---
+title:  Develop a Controller 
+linktitle: Develop a Controller
+description: This guide explains how you can modify the source of a Frisbee controller.
+date: 2022-06-28
+publishdate: 2022-06-28
+lastmod: 2022-06-28
+layout: single
+menu:
+    docs:
+        parent: "developers-guide"
+        weight: 8
+weight: 10
+sections_weight: 10
+draft: false
+aliases: []
+toc: true
+---
+
+
 
 <!-- toc -->
 

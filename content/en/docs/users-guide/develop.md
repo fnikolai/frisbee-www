@@ -8,12 +8,12 @@ lastmod: 2022-06-28
 layout: single
 menu:
     docs:
-        parent: "chart-guide"
+        parent: "users-guide"
         weight: 10
 weight: 10
 sections_weight: 10
 draft: false
-aliases: [/overview/source-directory/,/overview/development/]
+aliases: []
 toc: true
 ---
 
