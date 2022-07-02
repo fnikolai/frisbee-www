@@ -10,7 +10,7 @@
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>Develop a new Chart For Frisbee | </title>
+  <title>Develop a Chart | </title>
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
   <meta name="generator" content="Hugo 0.101.0" />
@@ -32,7 +32,7 @@
   
 
   <meta name="description"
-  content="Guide for the Frisbee Chart Developers">
+  content="This guide explains how to create a new Helm Chart for Frisbee">
 
   
 
@@ -57,20 +57,20 @@
 <link rel="manifest" href="/manifest.json">
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0594cb">
 <meta name="theme-color" content="#ffffff">
-<meta property="og:title" content="Develop a new Chart For Frisbee" />
-<meta property="og:description" content="Guide for the Frisbee Chart Developers" />
+<meta property="og:title" content="Develop a Chart" />
+<meta property="og:description" content="This guide explains how to create a new Helm Chart for Frisbee" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://frisbee.dev/docs/users-guide/develop/" /><meta property="og:image" content="https://frisbee.dev/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_13213782874548603496.png"/><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://frisbee.dev/docs/developers-guide/new-chart/" /><meta property="og:image" content="https://frisbee.dev/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_10670360514073610153.png"/><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2022-06-28T00:00:00+00:00" />
 <meta property="article:modified_time" content="2022-06-28T00:00:00+00:00" /><meta property="og:site_name" content="Frisbee" />
-<meta itemprop="name" content="Develop a new Chart For Frisbee">
-<meta itemprop="description" content="Guide for the Frisbee Chart Developers"><meta itemprop="datePublished" content="2022-06-28T00:00:00+00:00" />
+<meta itemprop="name" content="Develop a Chart">
+<meta itemprop="description" content="This guide explains how to create a new Helm Chart for Frisbee"><meta itemprop="datePublished" content="2022-06-28T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-06-28T00:00:00+00:00" />
-<meta itemprop="wordCount" content="3009">
+<meta itemprop="wordCount" content="3105">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://frisbee.dev/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_13213782874548603496.png"/>
-<meta name="twitter:title" content="Develop a new Chart For Frisbee"/>
-<meta name="twitter:description" content="Guide for the Frisbee Chart Developers"/>
+<meta name="twitter:image" content="https://frisbee.dev/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_10670360514073610153.png"/>
+<meta name="twitter:title" content="Develop a Chart"/>
+<meta name="twitter:description" content="This guide explains how to create a new Helm Chart for Frisbee"/>
 
 
 </head>
@@ -250,9 +250,17 @@
 
 	<div date-pref>
 		
+			<a href="https://frisbee.dev/docs/developers-guide/documentation/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Frisbee Documentation ">
+				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+
+			</a>
+		
 
 		
-			<a href="https://frisbee.dev/docs/users-guide/fields/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Field Reference">
+			<a href="https://frisbee.dev/docs/developers-guide/new-controller/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Develop a Controller">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -271,13 +279,13 @@
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Develop a new Chart For Frisbee</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Develop a Chart</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      Guide for the Frisbee Chart Developers
+      This guide explains how to create a new Helm Chart for Frisbee
     </div>
   
 
@@ -288,6 +296,67 @@
 
 <div class="prose" id="prose">
 
+<!-- raw HTML omitted -->
+<ul>
+<li><a href="#what-is-a-helm-chart-">What is a Helm Chart ?</a>
+<ul>
+<li><a href="#lint-charts">Lint Charts</a></li>
+<li><a href="#working-with-microk8s-built-in-registry">Working with MicroK8s’ built-in registry</a></li>
+</ul>
+</li>
+<li><a href="#run-a-test">Run a Test</a>
+<ul>
+<li><a href="#debugging-an-installation">Debugging an Installation</a></li>
+</ul>
+</li>
+<li><a href="#debug-a-test">Debug a Test</a></li>
+<li><a href="#write-a-test">Write a test</a></li>
+<li><a href="#change-the-code">Change the Code</a>
+<ul>
+<li><a href="#run-a-test-1">Run a test</a>
+<ul>
+<li><a href="#step-1--install-dependencies">Step 1:  Install Dependencies</a></li>
+<li><a href="#step-2-update-helm-repo">Step 2: Update Helm repo</a></li>
+<li><a href="#step-3">Step 3:</a></li>
+<li><a href="#this-step-will-install-the-following-components">This step will install the following components:</a></li>
+<li><a href="#step-4--install-the-testing-components">Step 4:  Install the testing components</a></li>
+<li><a href="#step-5-run-the-test-plan">Step 5: Run the Test Plan</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#observe-a-testplan">Observe a Testplan</a>
+<ul>
+<li><a href="#kubernetes-dashboard">Kubernetes Dashboard</a>
+<ul>
+<li><a href="#controller-logs">Controller Logs</a></li>
+</ul>
+</li>
+<li><a href="#grafana-dashboard--alerts">Grafana Dashboard &amp; Alerts</a></li>
+</ul>
+</li>
+<li><a href="#helm">HELM</a>
+<ul>
+<li><a href="#baseline">Baseline</a>
+<ul>
+<li><a href="#ycsb">YCSB</a></li>
+<li><a href="#fio">FIO</a></li>
+</ul>
+</li>
+<li><a href="#stress">Stress</a></li>
+<li><a href="#scaleout">Scaleout</a></li>
+<li><a href="#elasticity">Elasticity</a></li>
+<li><a href="#chaos">Chaos</a></li>
+<li><a href="#guide-for-the-frisbee-plan-developers">Guide for the Frisbee Plan Developers</a></li>
+</ul>
+</li>
+<li><a href="#periodically-kill-some-nodes">Periodically kill some nodes.</a>
+<ul>
+<li><a href="#do-not-set-dependencies-on-cascades">Do not set dependencies on cascades</a></li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
 <p>This is a guide for those who wish to contribute new Charts in Frisbee.</p>
 <p>Because there is an overlap, we advise you to have a look at the Guide for Code Developers first.</p>
 <h2 id="what-is-a-helm-chart-">What is a Helm Chart ? <a class="header-link" href="#what-is-a-helm-chart-"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2>
@@ -901,15 +970,15 @@ use as many inputs as the number of instances -- or omit instances.</p>
       </li>
       
       <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
-        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2  primary-color" data-target=".users-guide">User&#39;s Guide</a>
-        <ul class="users-guide desktopmenu animated fadeIn list pl0 bg-light-gray db">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".users-guide">User&#39;s Guide</a>
+        <ul class="users-guide desktopmenu animated fadeIn list pl0 bg-light-gray dn">
           <li class="f6 fw4">
             <a href="/docs/users-guide/deploy/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Use an existing Chart
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/users-guide/develop/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 primary-color ">
+            <a href="/docs/users-guide/develop/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Develop a new Chart
             </a>
           </li>
@@ -922,10 +991,10 @@ use as many inputs as the number of instances -- or omit instances.</p>
       </li>
       
       <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
-        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".developers-guide">Developer&#39;s Guide</a>
-        <ul class="developers-guide desktopmenu animated fadeIn list pl0 bg-light-gray dn">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2  primary-color" data-target=".developers-guide">Developer&#39;s Guide</a>
+        <ul class="developers-guide desktopmenu animated fadeIn list pl0 bg-light-gray db">
           <li class="f6 fw4">
-            <a href="/docs/developers-guide/new-chart/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+            <a href="/docs/developers-guide/new-chart/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 primary-color ">
               Develop a Chart
             </a>
           </li>
@@ -981,7 +1050,7 @@ use as many inputs as the number of instances -- or omit instances.</p>
   Last updated: June 28, 2022
 </h6>
 
-      <a href="https://github.com/CARV-ICS-FORTH/frisbee/edit/master/content/en/docs/users-guide/develop.md" class="
+      <a href="https://github.com/CARV-ICS-FORTH/frisbee/edit/master/content/en/docs/developers-guide/new-chart/index.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 ">Improve this page</a>
 

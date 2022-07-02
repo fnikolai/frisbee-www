@@ -23,13 +23,23 @@ Below you will find some of the most common and helpful pages from our documenta
     </item>
     
     <item>
-      <title>Develop a Controller</title>
-      <link>https://frisbee.dev/docs/developers-guide/code-developer/</link>
+      <title>Develop a Chart</title>
+      <link>https://frisbee.dev/docs/developers-guide/new-chart/</link>
       <pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://frisbee.dev/docs/developers-guide/code-developer/</guid>
-      <description>Change the Code Make a new release Step 1: Change the version in the VERSION file Step 2: Update the controller&#39;s container Step 3: Update the Github repo Step 4: Create GitHub release Step 5: Validate release Change the Code # Fetch Frisbee &amp;gt;&amp;gt; git clone git@github.com:CARV-ICS-FORTH/frisbee.git &amp;gt;&amp;gt; cd frisbee There are two ways to run a Frisbee controller.
-As Go program outside a cluster. As a container inside a Kubernetes cluster.</description>
+      <guid>https://frisbee.dev/docs/developers-guide/new-chart/</guid>
+      <description>What is a Helm Chart ? Lint Charts Working with MicroK8s’ built-in registry Run a Test Debugging an Installation Debug a Test Write a test Change the Code Run a test Step 1: Install Dependencies Step 2: Update Helm repo Step 3: This step will install the following components: Step 4: Install the testing components Step 5: Run the Test Plan Observe a Testplan Kubernetes Dashboard Controller Logs Grafana Dashboard &amp;amp; Alerts HELM Baseline YCSB FIO Stress Scaleout Elasticity Chaos Guide for the Frisbee Plan Developers Periodically kill some nodes.</description>
+    </item>
+    
+    <item>
+      <title>Develop a Controller</title>
+      <link>https://frisbee.dev/docs/developers-guide/new-controller/</link>
+      <pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://frisbee.dev/docs/developers-guide/new-controller/</guid>
+      <description>Change the Code # Fetch Frisbee &amp;gt;&amp;gt; git clone git@github.com:CARV-ICS-FORTH/frisbee.git &amp;gt;&amp;gt; cd frisbee There are two ways to run a Frisbee controller.
+As Go program outside a cluster. As a container inside a Kubernetes cluster. By default, Frisbee prefers the second way.
+However, when debugging a few feature it is impractical to have to create and deploy the container all the time. In such cases, it is preferable to run the controller outside the cluster, as shown next.</description>
     </item>
     
   </channel>
