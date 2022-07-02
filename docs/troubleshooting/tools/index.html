@@ -197,7 +197,7 @@
 
 	<div date-pref>
 		
-			<a href="https://frisbee.dev/docs/about/overview/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Frisbee Overview ">
+			<a href="https://frisbee.dev/docs/troubleshooting/faq/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Frequently Asked Questions ">
 				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -206,14 +206,6 @@
 			</a>
 		
 
-		
-			<a href="https://frisbee.dev/docs/chart-guide/deploy/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Chart Guide">
-			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-</svg>
-
-			</a>
 		
 	</div>
 
@@ -260,8 +252,8 @@
         <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".about">About Frisbee</a>
         <ul class="about desktopmenu animated fadeIn list pl0 bg-light-gray dn">
           <li class="f6 fw4">
-            <a href="/docs/about/overview/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Overview
+            <a href="/docs/about/what-is-frisbee/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              What is Frisbee
             </a>
           </li>
           <li class="f6 fw4">
@@ -304,23 +296,46 @@
       </li>
       
       <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
-        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".chart-guide">Chart Guide</a>
-        <ul class="chart-guide desktopmenu animated fadeIn list pl0 bg-light-gray dn">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".users-guide">User&#39;s Guide</a>
+        <ul class="users-guide desktopmenu animated fadeIn list pl0 bg-light-gray dn">
           <li class="f6 fw4">
-            <a href="/docs/chart-guide/deploy/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+            <a href="/docs/users-guide/deploy/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Use an existing Chart
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/chart-guide/develop/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+            <a href="/docs/users-guide/develop/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Develop a new Chart
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/users-guide/fields/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Field Reference
+            </a>
+          </li>
+        </ul>
+      </li>
+      
+      <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".developers-guide">Developer&#39;s Guide</a>
+        <ul class="developers-guide desktopmenu animated fadeIn list pl0 bg-light-gray dn">
+          <li class="f6 fw4">
+            <a href="/docs/developers-guide/code-developer/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Develop a Controller
             </a>
           </li>
         </ul>
       </li>
       
       <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8 mb1 bb b--moon-gray">
-        <a href="/commands/" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".commands">CLI</a>
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".operators-manual">Operators&#39;s Manual</a>
+        <ul class="operators-manual desktopmenu animated fadeIn list pl0 bg-light-gray dn">
+          <li class="f6 fw4">
+            <a href="/docs/operators-manual/install/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              SomePost
+            </a>
+          </li>
+        </ul>
       </li>
       
       <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
@@ -337,10 +352,6 @@
             </a>
           </li>
         </ul>
-      </li>
-      
-      <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
-        <a href="/hosting-and-deployment/" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".hosting-and-deployment">Hosting &amp; Deployment</a>
       </li>
       
       <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8 mb1 bb b--moon-gray">
@@ -486,26 +497,26 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
     </li>
   
     <li  class="tl dib ma0 hover-bg-black w-100">
-        <a href="/chart-guide/" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
-          Chart Guide
+        <a href="/users-guide/" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
+          User&#39;s Guide
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/developers-guide/" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
+          Developer&#39;s Guide
         </a>
     </li>
   
     <li  class="tl dib ma0 hover-bg-black w-100 mb2 bb b--mid-gray">
-        <a href="/commands/" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
-          CLI
+        <a href="/operators-manual/" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
+          Operators&#39;s Manual
         </a>
     </li>
   
     <li  class="tl dib ma0 hover-bg-black w-100">
         <a href="/troubleshooting/" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
           Troubleshooting
-        </a>
-    </li>
-  
-    <li  class="tl dib ma0 hover-bg-black w-100">
-        <a href="/hosting-and-deployment/" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
-          Hosting &amp; Deployment
         </a>
     </li>
   

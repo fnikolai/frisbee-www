@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>User&#39;s Guide on </title>
+    <link>https://frisbee.dev/docs/users-guide/</link>
+    <description>Recent content in User&#39;s Guide on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 28 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://frisbee.dev/docs/users-guide/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Develop a new Chart For Frisbee</title>
+      <link>https://frisbee.dev/docs/users-guide/develop/</link>
+      <pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://frisbee.dev/docs/users-guide/develop/</guid>
+      <description>This is a guide for those who wish to contribute new Charts in Frisbee.
+Because there is an overlap, we advise you to have a look at the Guide for Code Developers first.
+What is a Helm Chart ? Helm is a package manager for Kubernetes.
+Helm uses a packaging format called charts. A chart is a collection of files that describe a related set of Kubernetes resources. A single chart might be used to deploy something simple, like a memcached pod, or something complex, like a full web app stack with HTTP servers, databases, caches, and so on.</description>
+    </item>
+    
+    <item>
+      <title>Field Reference</title>
+      <link>https://frisbee.dev/docs/users-guide/fields/</link>
+      <pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://frisbee.dev/docs/users-guide/fields/</guid>
+      <description>Packages:
+frisbee.io/v1alpha1 frisbee.io/v1alpha1 Package v1alpha1 is the v1alpha1 version of the API.
+Resource Types: Action (Appears on:TestPlanSpec) Action delegates arguments to the proper action handler.
+Field Description action ActionType name string Name is a unique identifier of the action
+depends WaitSpec (Optional) DependsOn defines the conditions for the execution of this action
+assert ConditionalExpr (Optional) Assert defines the conditions under which the Plan will terminate with a &amp;ldquo;passed&amp;rdquo; or &amp;ldquo;failed&amp;rdquo; message</description>
+    </item>
+    
+    <item>
+      <title>Chart Guide</title>
+      <link>https://frisbee.dev/docs/users-guide/deploy/</link>
+      <pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://frisbee.dev/docs/users-guide/deploy/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

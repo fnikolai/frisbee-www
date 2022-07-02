@@ -2,27 +2,48 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://frisbee.dev/docs/</loc>
-    <lastmod>2017-02-01T00:00:00+00:00</lastmod>
+    <loc>https://frisbee.dev/docs/getting-started/</loc>
+    <lastmod>2022-06-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://frisbee.dev/docs/documentation/</loc>
+    <loc>https://frisbee.dev/docs/developers-guide/</loc>
+    <lastmod>2022-06-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://frisbee.dev/docs/operators-manual/</loc>
+    <lastmod>2022-06-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://frisbee.dev/docs/troubleshooting/</loc>
+    <lastmod>2022-06-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://frisbee.dev/docs/users-guide/</loc>
+    <lastmod>2022-06-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://frisbee.dev/docs/developers-guide/documentation/</loc>
   </url><url>
     <loc>https://frisbee.dev/docs/getting-started/quick-start/</loc>
     <lastmod>2022-06-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://frisbee.dev/docs/chart-guide/develop/</loc>
+    <loc>https://frisbee.dev/docs/developers-guide/code-developer/</loc>
+    <lastmod>2022-06-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://frisbee.dev/docs/users-guide/develop/</loc>
     <lastmod>2022-06-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://frisbee.dev/docs/troubleshooting/faq/</loc>
     <lastmod>2022-06-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://frisbee.dev/docs/about/overview/</loc>
+    <loc>https://frisbee.dev/docs/users-guide/fields/</loc>
+    <lastmod>2022-06-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://frisbee.dev/docs/operators-manual/install/</loc>
     <lastmod>2022-06-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://frisbee.dev/docs/troubleshooting/tools/</loc>
     <lastmod>2022-06-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://frisbee.dev/docs/chart-guide/deploy/</loc>
+    <loc>https://frisbee.dev/docs/users-guide/deploy/</loc>
+    <lastmod>2022-06-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://frisbee.dev/docs/about/what-is-frisbee/</loc>
     <lastmod>2022-06-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://frisbee.dev/docs/about/features/</loc>
@@ -41,6 +62,9 @@
     <lastmod>2017-03-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://frisbee.dev/blog/</loc>
+    <lastmod>2022-06-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://frisbee.dev/docs/</loc>
     <lastmod>2022-06-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://frisbee.dev/blog/testing-cockroachdb/</loc>
@@ -75,7 +99,5 @@
   </url><url>
     <loc>https://frisbee.dev/</loc>
     <lastmod>2017-03-02T12:00:00-05:00</lastmod>
-  </url><url>
-    <loc>https://frisbee.dev/docs/chart-guide/code-developer/</loc>
   </url>
 </urlset>
