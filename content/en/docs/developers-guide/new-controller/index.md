@@ -19,18 +19,6 @@ toc: true
 
 
 
-<!-- toc -->
-
-- [Change the Code](#change-the-code)
-- [Make a new release](#make-a-new-release)
-    - [Step 1: Change the version in the VERSION file](#step-1-change-the-version-in-the-version-file)
-    - [Step 2: Update the controller's container](#step-2-update-the-controllers-container)
-    - [Step 3: Update the Github repo](#step-3-update-the-github-repo)
-    - [Step 4: Create  GitHub release](#step-4-create--github-release)
-    - [Step 5: Validate release](#step-5-validate-release)
-
-<!-- /toc -->
-
 
 ## Change the Code
 
