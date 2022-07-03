@@ -19,35 +19,56 @@ Helm is a package manager for Kubernetes. Helm uses a packaging format called ch
     </item>
     
     <item>
-      <title>Install Frisbee</title>
-      <link>https://frisbee.dev/docs/getting-started/installing/</link>
-      <pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate>
+      <title>Hello World</title>
+      <link>https://frisbee.dev/docs/getting-started/hello-world/</link>
+      <pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://frisbee.dev/docs/getting-started/installing/</guid>
-      <description>There is lots of talk about &amp;quot;Hugo being written in Go&amp;quot;, but you don&#39;t need to install Go to enjoy Hugo. Just grab a precompiled binary!
-Hugo is written in Go with support for multiple platforms. The latest release can be found at Hugo Releases.
-Hugo currently provides pre-built binaries for the following:
-macOS (Darwin) for x64, i386, and ARM architectures Windows Linux OpenBSD FreeBSD Hugo may also be compiled from source wherever the Go toolchain can run; e.</description>
+      <guid>https://frisbee.dev/docs/getting-started/hello-world/</guid>
+      <description>Let&#39;s start by creating a very simple workflow template to echo &amp;quot;hello world&amp;quot; using the docker/whalesay container image from Docker Hub.
+You can run this directly from your shell with a simple docker command:
+$ docker run docker/whalesay cowsay &amp;#34;hello world&amp;#34; _____________ &amp;lt; hello world &amp;gt; ------------- \ \ \ ## . ## ## ## == ## ## ## ## === /&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;&amp;#34;___/ === ~~~ {~~ ~~~~ ~~~ ~~~~ ~~ ~ / ===- ~~~ \______ o __/ \ \ __/ \____\______/ Hello from Docker!</description>
     </item>
     
     <item>
-      <title>Basic Usage</title>
-      <link>https://frisbee.dev/docs/getting-started/usage/</link>
-      <pubDate>Wed, 01 Feb 2017 00:00:00 +0000</pubDate>
+      <title>Parameters</title>
+      <link>https://frisbee.dev/docs/getting-started/parameters/</link>
+      <pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://frisbee.dev/docs/getting-started/usage/</guid>
-      <description>The following is a description of the most common commands you will use while developing your Hugo project. See the Command Line Reference for a comprehensive view of Hugo&#39;s CLI.
-Test Installation Once you have installed Hugo, make sure it is in your PATH. You can test that Hugo has been installed correctly via the help command:
-hugo help The output you see in your console should be similar to the following:</description>
+      <guid>https://frisbee.dev/docs/getting-started/parameters/</guid>
+      <description>Let&#39;s look at a slightly more complex workflow spec with parameters.
+Parameterized Template apiVersion: frisbee.io/v1alpha1 kind: Template	metadata: name: whalesay	spec: # invoke the whalesay template with # &amp;#34;hello world&amp;#34; as the default argument # to the message parameter inputs:	parameters: message: &amp;#34;hello-world&amp;#34; service: containers: - name: app image: docker/whalesay command: [cowsay] args: [{{&amp;#34;{{.Inputs.Parameters.message&amp;#34;}}] This time, the whalesay template takes an input parameter named message that is passed as the args to the cowsay command.</description>
     </item>
     
     <item>
-      <title>Configure Hugo</title>
-      <link>https://frisbee.dev/docs/getting-started/configuration/</link>
-      <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
+      <title>Clustering</title>
+      <link>https://frisbee.dev/docs/getting-started/clustering/</link>
+      <pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://frisbee.dev/docs/getting-started/configuration/</guid>
-      <description>Configuration File </description>
+      <guid>https://frisbee.dev/docs/getting-started/clustering/</guid>
+      <description>When writing testing scenarios, it is often very useful to be able to run multiple services in a shared execution context.
+Create Clustered Services There are two ways to create services in a cluster: by instances and by inputs.
+By instances apiVersion: frisbee.io/v1alpha1 kind: TestPlan metadata: name: whales-say spec: actions: - action: Cluster	name: whales-say cluster: templateRef: whalesay instances: 4	# number of services The above snippet will create 4 identical services initialized with the default values of the whalesay template.</description>
+    </item>
+    
+    <item>
+      <title>Dependencies</title>
+      <link>https://frisbee.dev/docs/getting-started/dependencies/</link>
+      <pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://frisbee.dev/docs/getting-started/dependencies/</guid>
+      <description>Frisbee allows you to define the workflow as a directed-acyclic graph (DAG) by specifying the dependencies of each task. This can be simpler to maintain for complex workflows and allows for a greater range of test-cases.
+Run Sequentially In the following workflow, step A runs first, as it has no dependencies. Once A has finished, steps B and C run in parallel. Finally, once B and C have completed, step D can run.</description>
+    </item>
+    
+    <item>
+      <title>Naming and Addressing</title>
+      <link>https://frisbee.dev/docs/getting-started/naming/</link>
+      <pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://frisbee.dev/docs/getting-started/naming/</guid>
+      <description>In contrast to other Workflow enginers like Argo that use dynamically generated names, all objects in Frisbee follow a predictable naming pattern. This makes it possible to create communicating services.
+Reference an Object In case of communicating services, such as a client-server architecture, we need the client to know the name of the server in other to establish a communication case.
+apiVersion: frisbee.io/v1alpha1 kind: TestPlan metadata: name: server-client spec: actions: - action: Service name: server service: templateRef: iperf2.</description>
     </item>
     
   </channel>

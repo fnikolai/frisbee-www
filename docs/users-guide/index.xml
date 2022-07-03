@@ -26,11 +26,11 @@ Helm uses a packaging format called charts. A chart is a collection of files tha
       
       <guid>https://frisbee.dev/docs/users-guide/fields/</guid>
       <description>Packages:
-frisbee.io/v1alpha1 frisbee.io/v1alpha1 Package v1alpha1 is the v1alpha1 version of the API.
-Resource Types: Action (Appears on:TestPlanSpec) Action delegates arguments to the proper action handler.
-Field Description action ActionType name string Name is a unique identifier of the action
-depends WaitSpec (Optional) DependsOn defines the conditions for the execution of this action
-assert ConditionalExpr (Optional) Assert defines the conditions under which the Plan will terminate with a &amp;ldquo;passed&amp;rdquo; or &amp;ldquo;failed&amp;rdquo; message</description>
+frisbee.io/v1alpha1 frisbee.io/v1alpha1 Package v1alpha1 is the v1alpha1 version of the Frisbee API.
+Resource Types: Action (Appears on:TestPlanSpec) Action is a step in a workflow that defines a particular part of a testing process.
+Field Description action ActionType ActionType refers to a category of actions that can be associated with a specific controller.
+name string Name is a unique identifier of the action
+depends WaitSpec (Optional) DependsOn defines the conditions for the execution of this action</description>
     </item>
     
     <item>

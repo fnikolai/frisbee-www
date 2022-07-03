@@ -2,20 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://frisbee.dev/docs/getting-started/</loc>
-    <lastmod>2022-06-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://frisbee.dev/docs/developers-guide/</loc>
-    <lastmod>2022-06-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://frisbee.dev/docs/operators-manual/</loc>
-    <lastmod>2022-06-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://frisbee.dev/docs/troubleshooting/</loc>
-    <lastmod>2022-06-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://frisbee.dev/docs/users-guide/</loc>
-    <lastmod>2022-06-28T00:00:00+00:00</lastmod>
+    <loc>https://frisbee.dev/docs/about/</loc>
+    <lastmod>2022-06-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://frisbee.dev/docs/developers-guide/documentation/</loc>
   </url><url>
@@ -49,19 +37,49 @@
     <loc>https://frisbee.dev/docs/about/what-is-frisbee/</loc>
     <lastmod>2022-06-28T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://frisbee.dev/docs/getting-started/hello-world/</loc>
+    <lastmod>2022-06-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://frisbee.dev/docs/getting-started/parameters/</loc>
+    <lastmod>2022-06-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://frisbee.dev/docs/getting-started/clustering/</loc>
+    <lastmod>2022-06-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://frisbee.dev/docs/getting-started/dependencies/</loc>
+    <lastmod>2022-06-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://frisbee.dev/docs/getting-started/naming/</loc>
+    <lastmod>2022-06-29T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://frisbee.dev/docs/about/features/</loc>
     <lastmod>2022-06-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://frisbee.dev/docs/getting-started/installing/</loc>
+    <loc>https://frisbee.dev/docs/getting-started/</loc>
+    <lastmod>2022-06-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://frisbee.dev/docs/operators-manual/installing/</loc>
     <lastmod>2022-06-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://frisbee.dev/docs/getting-started/usage/</loc>
+    <loc>https://frisbee.dev/docs/users-guide/</loc>
+    <lastmod>2022-06-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://frisbee.dev/docs/developers-guide/</loc>
+    <lastmod>2022-06-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://frisbee.dev/docs/operators-manual/usage/</loc>
     <lastmod>2017-02-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://frisbee.dev/docs/operators-manual/</loc>
+    <lastmod>2022-06-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://frisbee.dev/docs/about/license/</loc>
     <lastmod>2022-06-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://frisbee.dev/docs/getting-started/configuration/</loc>
+    <loc>https://frisbee.dev/docs/troubleshooting/</loc>
+    <lastmod>2022-06-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://frisbee.dev/docs/operators-manual/configuration/</loc>
     <lastmod>2017-03-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://frisbee.dev/blog/</loc>

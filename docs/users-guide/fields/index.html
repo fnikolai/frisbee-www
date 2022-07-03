@@ -66,7 +66,7 @@
 <meta itemprop="name" content="Field Reference">
 <meta itemprop="description" content="This document describes the fields for building a Frisbee experiment."><meta itemprop="datePublished" content="2022-06-28T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-06-28T00:00:00+00:00" />
-<meta itemprop="wordCount" content="3272">
+<meta itemprop="wordCount" content="3370">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://frisbee.dev/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_7774928419837818019.png"/>
 <meta name="twitter:title" content="Field Reference"/>
@@ -245,6 +245,7 @@
 
 
 
+
 <p>Packages:</p>
 <ul>
 <li>
@@ -253,7 +254,7 @@
 </ul>
 <h2 id="frisbee.io/v1alpha1">frisbee.io/v1alpha1</h2>
 <div>
-<p>Package v1alpha1 is the v1alpha1 version of the API.</p>
+<p>Package v1alpha1 is the v1alpha1 version of the Frisbee API.</p>
 </div>
 Resource Types:
 <ul></ul>
@@ -263,7 +264,7 @@ Resource Types:
 (<em>Appears on:</em><a href="#frisbee.io/v1alpha1.TestPlanSpec">TestPlanSpec</a>)
 </p>
 <div>
-<p>Action delegates arguments to the proper action handler.</p>
+<p>Action is a step in a workflow that defines a particular part of a testing process.</p>
 </div>
 <table>
 <thead>
@@ -283,6 +284,7 @@ ActionType
 </em>
 </td>
 <td>
+<p>ActionType refers to a category of actions that can be associated with a specific controller.</p>
 </td>
 </tr>
 <tr>
@@ -356,17 +358,23 @@ EmbedActions
 </tr>
 </thead>
 <tbody><tr><td><p>&#34;Call&#34;</p></td>
-<td></td>
+<td><p>ActionCall starts a remote process execution, from the controller to the targeted services.</p>
+</td>
 </tr><tr><td><p>&#34;Cascade&#34;</p></td>
-<td></td>
+<td><p>ActionCascade injects multiple failures into the running system.</p>
+</td>
 </tr><tr><td><p>&#34;Chaos&#34;</p></td>
-<td></td>
+<td><p>ActionChaos injects failures into the running system.</p>
+</td>
 </tr><tr><td><p>&#34;Cluster&#34;</p></td>
-<td></td>
+<td><p>ActionCluster creates multiple services running in a shared context.</p>
+</td>
 </tr><tr><td><p>&#34;Delete&#34;</p></td>
-<td></td>
+<td><p>ActionDelete deletes a created Frisbee resource (i.e services, clusters,).</p>
+</td>
 </tr><tr><td><p>&#34;Service&#34;</p></td>
-<td></td>
+<td><p>ActionService creates a new service.</p>
+</td>
 </tr></tbody>
 </table>
 <h3 id="frisbee.io/v1alpha1.Call">Call
@@ -1468,7 +1476,7 @@ Shall be defined using .Lifecycle() methods. The methods account only jobs that 
 (<em>Appears on:</em><a href="#frisbee.io/v1alpha1.ServiceSpec">ServiceSpec</a>)
 </p>
 <div>
-<p>Decorators takes in a PodSpec, add some functionality and returns it.</p>
+<p>Decorators takes-in a PodSpec, add some functionality and returns it.</p>
 </div>
 <table>
 <thead>
@@ -1807,6 +1815,9 @@ ChaosSpec
 (<em>Appears on:</em><a href="#frisbee.io/v1alpha1.Requirements">Requirements</a>)
 </p>
 <div>
+<p>EphemeralVolumeSpec defines an ephemeral volume that has the  lifetime of a pod,
+It&rsquo;s use for application that need additional storage but don&rsquo;t care whether
+that data is stored persistently across restarts.</p>
 </div>
 <table>
 <thead>
@@ -2299,6 +2310,7 @@ to restart any of these Jobs.</p>
 (<em>Appears on:</em><a href="#frisbee.io/v1alpha1.ClusterSpec">ClusterSpec</a>)
 </p>
 <div>
+<p>PlacementSpec defines rules for placing the containers across the available nodes.</p>
 </div>
 <table>
 <thead>
@@ -2381,8 +2393,7 @@ EphemeralVolumeSpec
 </td>
 <td>
 <em>(Optional)</em>
-<p>EphemeralVolume create an ephemeral volume. It&rsquo;s use for application that need additional storage but don&rsquo;t care whether
-that data is stored persistently across restarts.</p>
+<p>EphemeralVolume creates an ephemeral volume type.</p>
 </td>
 </tr>
 <tr>
@@ -3422,7 +3433,7 @@ Kubernetes meta/v1.Duration
 <hr/>
 <p><em>
 Generated with <code>gen-crd-api-reference-docs</code>
-on git commit <code>9941b89</code>.
+on git commit <code>e10f12d</code>.
 </em></p>
 
 </div>
@@ -3467,18 +3478,28 @@ on git commit <code>9941b89</code>.
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/getting-started/installing/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Install Frisbee
+            <a href="/docs/getting-started/hello-world/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Hello World
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/getting-started/usage/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Basic Usage
+            <a href="/docs/getting-started/parameters/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Parameters
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/getting-started/configuration/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Configuration
+            <a href="/docs/getting-started/clustering/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Clustering
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/getting-started/dependencies/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Dependencies
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/getting-started/naming/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Naming and Addressing
             </a>
           </li>
         </ul>
@@ -3527,6 +3548,21 @@ on git commit <code>9941b89</code>.
           <li class="f6 fw4">
             <a href="/docs/operators-manual/install/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               SomePost
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/operators-manual/installing/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Install Frisbee
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/operators-manual/usage/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Basic Usage
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/operators-manual/configuration/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Configuration
             </a>
           </li>
         </ul>

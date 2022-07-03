@@ -223,18 +223,28 @@
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/getting-started/installing/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Install Frisbee
+            <a href="/docs/getting-started/hello-world/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Hello World
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/getting-started/usage/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Basic Usage
+            <a href="/docs/getting-started/parameters/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Parameters
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/getting-started/configuration/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Configuration
+            <a href="/docs/getting-started/clustering/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Clustering
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/getting-started/dependencies/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Dependencies
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/getting-started/naming/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Naming and Addressing
             </a>
           </li>
         </ul>
@@ -283,6 +293,21 @@
           <li class="f6 fw4">
             <a href="/docs/operators-manual/install/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               SomePost
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/operators-manual/installing/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Install Frisbee
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/operators-manual/usage/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Basic Usage
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/operators-manual/configuration/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Configuration
             </a>
           </li>
         </ul>
@@ -353,6 +378,139 @@
 </div>
 
           
+            <div class="relative  weight-11">
+
+  <div class="bg-white mb2 pa3 pa4-l gray">
+    
+
+    <h1 class="near-black f3">
+      <a href="/docs/getting-started/hello-world/" class="link primary-color dim">Hello World</a>
+    </h1>
+
+    <div class="lh-copy links">
+      
+          Let's start by creating a very simple workflow template to echo &quot;hello world&quot; using the docker/whalesay container image from Docker Hub.
+You can run this directly from your shell with a simple docker command:
+$ docker run docker/whalesay cowsay &#34;hello world&#34; _____________ &lt; hello world &gt; ------------- \ \ \ ## . ## ## ## == ## ## ## ## === /&#34;&#34;&#34;&#34;&#34;&#34;&#34;&#34;&#34;&#34;&#34;&#34;&#34;&#34;&#34;&#34;___/ === ~~~ {~~ ~~~~ ~~~ ~~~~ ~~ ~ / ===- ~~~ \______ o __/ \ \ __/ \____\______/ Hello from Docker!
+      
+
+        <a href="/docs/getting-started/hello-world/" class="f6 mt2 db link primary-color dim">
+          Read More &raquo;
+        </a>
+
+    </div>
+
+
+  </div>
+</div>
+
+          
+            <div class="relative  weight-12">
+
+  <div class="bg-white mb2 pa3 pa4-l gray">
+    
+
+    <h1 class="near-black f3">
+      <a href="/docs/getting-started/parameters/" class="link primary-color dim">Parameters</a>
+    </h1>
+
+    <div class="lh-copy links">
+      
+          Let's look at a slightly more complex workflow spec with parameters.
+Parameterized Template apiVersion: frisbee.io/v1alpha1 kind: Template	metadata: name: whalesay	spec: # invoke the whalesay template with # &#34;hello world&#34; as the default argument # to the message parameter inputs:	parameters: message: &#34;hello-world&#34; service: containers: - name: app image: docker/whalesay command: [cowsay] args: [{{&#34;{{.Inputs.Parameters.message&#34;}}] This time, the whalesay template takes an input parameter named message that is passed as the args to the cowsay command.
+      
+
+        <a href="/docs/getting-started/parameters/" class="f6 mt2 db link primary-color dim">
+          Read More &raquo;
+        </a>
+
+    </div>
+
+
+  </div>
+</div>
+
+          
+            <div class="relative  weight-13">
+
+  <div class="bg-white mb2 pa3 pa4-l gray">
+    
+
+    <h1 class="near-black f3">
+      <a href="/docs/getting-started/clustering/" class="link primary-color dim">Clustering</a>
+    </h1>
+
+    <div class="lh-copy links">
+      
+          When writing testing scenarios, it is often very useful to be able to run multiple services in a shared execution context.
+Create Clustered Services There are two ways to create services in a cluster: by instances and by inputs.
+By instances apiVersion: frisbee.io/v1alpha1 kind: TestPlan metadata: name: whales-say spec: actions: - action: Cluster	name: whales-say cluster: templateRef: whalesay instances: 4	# number of services The above snippet will create 4 identical services initialized with the default values of the whalesay template.
+      
+
+        <a href="/docs/getting-started/clustering/" class="f6 mt2 db link primary-color dim">
+          Read More &raquo;
+        </a>
+
+    </div>
+
+
+  </div>
+</div>
+
+          
+            <div class="relative  weight-13">
+
+  <div class="bg-white mb2 pa3 pa4-l gray">
+    
+
+    <h1 class="near-black f3">
+      <a href="/docs/getting-started/dependencies/" class="link primary-color dim">Dependencies</a>
+    </h1>
+
+    <div class="lh-copy links">
+      
+          Frisbee allows you to define the workflow as a directed-acyclic graph (DAG) by specifying the dependencies of each task. This can be simpler to maintain for complex workflows and allows for a greater range of test-cases.
+Run Sequentially In the following workflow, step A runs first, as it has no dependencies. Once A has finished, steps B and C run in parallel. Finally, once B and C have completed, step D can run.
+      
+
+        <a href="/docs/getting-started/dependencies/" class="f6 mt2 db link primary-color dim">
+          Read More &raquo;
+        </a>
+
+    </div>
+
+
+  </div>
+</div>
+
+          
+            <div class="relative  weight-13">
+
+  <div class="bg-white mb2 pa3 pa4-l gray">
+    
+
+    <h1 class="near-black f3">
+      <a href="/docs/getting-started/naming/" class="link primary-color dim">Naming and Addressing</a>
+    </h1>
+
+    <div class="lh-copy links">
+      
+          In contrast to other Workflow enginers like Argo that use dynamically generated names, all objects in Frisbee follow a predictable naming pattern. This makes it possible to create communicating services.
+Reference an Object In case of communicating services, such as a client-server architecture, we need the client to know the name of the server in other to establish a communication case.
+apiVersion: frisbee.io/v1alpha1 kind: TestPlan metadata: name: server-client spec: actions: - action: Service name: server service: templateRef: iperf2.
+      
+
+        <a href="/docs/getting-started/naming/" class="f6 mt2 db link primary-color dim">
+          Read More &raquo;
+        </a>
+
+    </div>
+
+
+  </div>
+</div>
+
+          
             <div class="relative  weight-20">
 
   <div class="bg-white mb2 pa3 pa4-l gray">
@@ -385,7 +543,7 @@ Templates Templates define minimally constraining skeletons for Services and Fau
     
 
     <h1 class="near-black f3">
-      <a href="/docs/getting-started/installing/" class="link primary-color dim">Install Frisbee</a>
+      <a href="/docs/operators-manual/installing/" class="link primary-color dim">Install Frisbee</a>
     </h1>
 
     <div class="lh-copy links">
@@ -393,7 +551,7 @@ Templates Templates define minimally constraining skeletons for Services and Fau
           Install Frisbee on Local workstation, on bare-metal cluster, or wherever Kubernetes can run.
         
 
-        <a href="/docs/getting-started/installing/" class="f6 mt2 db link primary-color dim">
+        <a href="/docs/operators-manual/installing/" class="f6 mt2 db link primary-color dim">
           Read More &raquo;
         </a>
 
@@ -410,7 +568,7 @@ Templates Templates define minimally constraining skeletons for Services and Fau
     
 
     <h1 class="near-black f3">
-      <a href="/docs/getting-started/usage/" class="link primary-color dim">Basic Usage</a>
+      <a href="/docs/operators-manual/usage/" class="link primary-color dim">Basic Usage</a>
     </h1>
 
     <div class="lh-copy links">
@@ -418,7 +576,7 @@ Templates Templates define minimally constraining skeletons for Services and Fau
           Hugo's CLI is fully featured but simple to use, even for those who have very limited experience working from the command line.
         
 
-        <a href="/docs/getting-started/usage/" class="f6 mt2 db link primary-color dim">
+        <a href="/docs/operators-manual/usage/" class="f6 mt2 db link primary-color dim">
           Read More &raquo;
         </a>
 
@@ -444,31 +602,6 @@ Templates Templates define minimally constraining skeletons for Services and Fau
         
 
         <a href="/docs/about/license/" class="f6 mt2 db link primary-color dim">
-          Read More &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-          
-            <div class="relative  weight-60">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/docs/getting-started/configuration/" class="link primary-color dim">Configure Hugo</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          How to configure your Hugo site.
-        
-
-        <a href="/docs/getting-started/configuration/" class="f6 mt2 db link primary-color dim">
           Read More &raquo;
         </a>
 
