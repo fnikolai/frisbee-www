@@ -18,14 +18,19 @@ aliases: [/quickstart/,/overview/quickstart/]
 toc: true
 ---
 
-## Step 1: Install Kubernetes and & Helm
 
-* [Microk8s](https://microk8s.io/docs)  is the simplest production-grade conformant K8s.  **It runs entirely on your
-workstation or edge device.**
 
-* [Helm](https://helm.sh/docs/intro/install/)  is a package manager for Kubernetes. Helm uses **a packaging format
-called
-charts**.
+This document describes how to quickly start Frisbee in a test or local environment.
+
+
+
+
+
+## Step 1. Environment preparation
+
+Please ensure that the Kubernetes cluster and Helm package manager are deployed before the trial. If they are, go to Step 2.
+
+
 
 ```bash
 # Install microk8s v.1.24
@@ -44,6 +49,16 @@ charts**.
 >> sudo snap alias microk8s.kubectl kubectl
 >> sudo snap alias microk8s.helm3 helm
 ```
+
+
+
+The above will deploy a Kubernetes environment based on [Microk8s](https://microk8s.io/). *MicroK8s* is a CNCF certified upstream Kubernetes deployment that runs entirely on your workstation or edge device. Other environments can be:
+
+- [Kubernetes](https://kubernetes.io/docs/setup/): configure a production-grade Kubernetes deployment on bare-metal.
+- [minikube](https://minikube.sigs.k8s.io/docs/start/): *minikube* quickly sets up a local *Kubernetes* cluster on macOS, Linux, and Windows.
+- [kind](https://kind.sigs.k8s.io/docs/user/quick-start/): *kind* is a tool for running local *Kubernetes* clusters using Docker container “nodes”. *kind* was primarily designed for testing *Kubernetes*.
+- [K3s](https://rancher.com/docs/k3s/latest/en/quick-start/): K3s is a highly available, certified        Kubernetes distribution designed        for production workloads in        unattended, resource-constrained,        remote locations or inside        IoT appliances.
+
 
 
 ## Step 2: Install Frisbee
@@ -305,7 +320,7 @@ For example:
 
 Notice that for every experiment, we start a new dedicated monitoring stack.
 
-## Step 3: Uninstall Frisbee
+## Step 4: Uninstall Frisbee
 
 
 #### 1. Delete all the namespaces you created
