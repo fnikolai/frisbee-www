@@ -66,7 +66,7 @@
 <meta itemprop="name" content="Quick Start">
 <meta itemprop="description" content="This tutorial will guide you through deploying and running Frisbee on a local Kubernetes installation."><meta itemprop="datePublished" content="2022-06-29T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-06-29T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1260">
+<meta itemprop="wordCount" content="1359">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://frisbee.dev/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_13771684703296284199.png"/>
 <meta name="twitter:title" content="Quick Start"/>
@@ -194,7 +194,7 @@
 		<p class="b">What's on this Page</p>
   	<nav id="TableOfContents">
   <ul>
-    <li><a href="#step-1-install-kubernetes-and--helm">Step 1: Install Kubernetes and &amp; Helm</a></li>
+    <li><a href="#step-1-environment-preparation">Step 1. Environment preparation</a></li>
     <li><a href="#step-2-install-frisbee">Step 2: Install Frisbee</a></li>
     <li><a href="#testing-a-system">Testing a System</a>
       <ul>
@@ -206,7 +206,7 @@
         <li></li>
       </ul>
     </li>
-    <li><a href="#step-3-uninstall-frisbee">Step 3: Uninstall Frisbee</a>
+    <li><a href="#step-4-uninstall-frisbee">Step 4: Uninstall Frisbee</a>
       <ul>
         <li></li>
       </ul>
@@ -261,18 +261,9 @@
 
 <div class="prose" id="prose">
 
-<h2 id="step-1-install-kubernetes-and--helm">Step 1: Install Kubernetes and &amp; Helm <a class="header-link" href="#step-1-install-kubernetes-and--helm"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2>
-<ul>
-<li>
-<p><a href="https://microk8s.io/docs">Microk8s</a>  is the simplest production-grade conformant K8s.  <strong>It runs entirely on your
-workstation or edge device.</strong></p>
-</li>
-<li>
-<p><a href="https://helm.sh/docs/intro/install/">Helm</a>  is a package manager for Kubernetes. Helm uses <strong>a packaging format
-called
-charts</strong>.</p>
-</li>
-</ul>
+<p>This document describes how to quickly start Frisbee in a test or local environment.</p>
+<h2 id="step-1-environment-preparation">Step 1. Environment preparation <a class="header-link" href="#step-1-environment-preparation"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2>
+<p>Please ensure that the Kubernetes cluster and Helm package manager are deployed before the trial. If they are, go to Step 2.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># Install microk8s v.1.24</span>
 </span></span><span style="display:flex;"><span>&gt;&gt; sudo snap install microk8s --classic --channel<span style="color:#555">=</span>1.24/stable
 </span></span><span style="display:flex;"><span>
@@ -288,7 +279,14 @@ charts</strong>.</p>
 </span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># Create aliases</span>
 </span></span><span style="display:flex;"><span>&gt;&gt; sudo snap <span style="color:#366">alias</span> microk8s.kubectl kubectl
 </span></span><span style="display:flex;"><span>&gt;&gt; sudo snap <span style="color:#366">alias</span> microk8s.helm3 helm
-</span></span></code></pre></div><h2 id="step-2-install-frisbee">Step 2: Install Frisbee <a class="header-link" href="#step-2-install-frisbee"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2>
+</span></span></code></pre></div><p>The above will deploy a Kubernetes environment based on <a href="https://microk8s.io/">Microk8s</a>. <em>MicroK8s</em> is a CNCF certified upstream Kubernetes deployment that runs entirely on your workstation or edge device. Other environments can be:</p>
+<ul>
+<li><a href="https://kubernetes.io/docs/setup/">Kubernetes</a>: configure a production-grade Kubernetes deployment on bare-metal.</li>
+<li><a href="https://minikube.sigs.k8s.io/docs/start/">minikube</a>: <em>minikube</em> quickly sets up a local <em>Kubernetes</em> cluster on macOS, Linux, and Windows.</li>
+<li><a href="https://kind.sigs.k8s.io/docs/user/quick-start/">kind</a>: <em>kind</em> is a tool for running local <em>Kubernetes</em> clusters using Docker container “nodes”. <em>kind</em> was primarily designed for testing <em>Kubernetes</em>.</li>
+<li><a href="https://rancher.com/docs/k3s/latest/en/quick-start/">K3s</a>: K3s is a highly available, certified        Kubernetes distribution designed        for production workloads in        unattended, resource-constrained,        remote locations or inside        IoT appliances.</li>
+</ul>
+<h2 id="step-2-install-frisbee">Step 2: Install Frisbee <a class="header-link" href="#step-2-install-frisbee"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2>
 <p>Although Frisbee can be installed directly from a Helm repository, for demonstration purposes we favor the git-based
 method.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># Download the source code</span>
@@ -521,7 +519,7 @@ happen in the background. Use this flag if you want to run sequential tests, wit
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># go to http://grafana-mytest2.localhost/d/crdb-console-runtime/crdb-console-runtime</span>
 </span></span></code></pre></div><p>Notice that for every experiment, we start a new dedicated monitoring stack.</p>
-<h2 id="step-3-uninstall-frisbee">Step 3: Uninstall Frisbee <a class="header-link" href="#step-3-uninstall-frisbee"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2>
+<h2 id="step-4-uninstall-frisbee">Step 4: Uninstall Frisbee <a class="header-link" href="#step-4-uninstall-frisbee"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2>
 <h4 id="1-delete-all-the-namespaces-you-created">1. Delete all the namespaces you created <a class="header-link" href="#1-delete-all-the-namespaces-you-created"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
 <p>By deleting the namespaces, you also delete all the installed components.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&gt;&gt; kubectl delete namespace mytest mytest2 --wait
