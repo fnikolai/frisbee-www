@@ -7,8 +7,8 @@ publishdate: 2022-28-06
 menu:
   main:
     parent: "section name"
-    weight: 01
-weight: 01	#rem
+    weight: 40
+weight: 40	#rem
 draft: false
 slug:
 aliases: []

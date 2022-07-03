@@ -10,7 +10,7 @@ authors: [Fotis NIKOLAIDIS]
 keywords: [install,kubernetes,helm]
 menu:
   docs:
-    parent: "getting-started"
+    parent: "operators-manual"
     weight: 30
 weight: 30
 sections_weight: 30

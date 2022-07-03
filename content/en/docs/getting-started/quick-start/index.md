@@ -249,7 +249,7 @@ testplan.frisbee.io/cockroach-bitrot condition met
 Indeed, the condition is met, meaning that the test has failed. We can visually verify it from
 the [Dashboard](https://dashboard-frisbee.localhost) .
 
-![image-20220525170302089](tutorial.assets/image-20220525170302089.png)
+![dashboard](images/dashboard.png)
 
 To reduce the noise when debugging a failed test, *Frisbee* automatically deletes all the jobs, expect for the failed
 one (masters-1), and the telemetry stack (grafana/prometheus).

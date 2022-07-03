@@ -1,17 +1,17 @@
 ---
-title: Get Started
-linktitle: Get Started
-description: To get started quickly
+title: About 
+linktitle: About
+description: General Information about Frisbee
 date: 2022-28-06
 publishdate: 2022-28-06
 menu:
   main:
     parent: "section name"
-    weight: 20
-weight: 20
+    weight: 01
+weight: 01	#rem
 draft: false
 slug:
-aliases: []
+aliases: [/about]
 toc: false
 layout: documentation-home
 ---
