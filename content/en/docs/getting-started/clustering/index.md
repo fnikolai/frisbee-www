@@ -27,8 +27,8 @@ There are two ways to create services in a cluster: by instances and by inputs.
 #### By instances
 
 ```yaml
-apiVersion: frisbee.io/v1alpha1
-kind: TestPlan
+apiVersion: frisbee.dev/v1alpha1
+kind: Scenario
 metadata:
   name: whales-say
 spec:
@@ -45,8 +45,8 @@ The above snippet will create 4 identical services initialized with the default 
 #### By inputs
 
 ```yaml
-apiVersion: frisbee.io/v1alpha1
-kind: TestPlan
+apiVersion: frisbee.dev/v1alpha1
+kind: Scenario
 metadata:
   name: whales-say
 spec:
@@ -80,8 +80,8 @@ In this case, we use a single set of `inputs` to define the custom values, and t
 
 
 ```yaml
-apiVersion: frisbee.io/v1alpha1
-kind: TestPlan
+apiVersion: frisbee.dev/v1alpha1
+kind: Scenario
 metadata:
   name: whales-say
 spec:
@@ -106,8 +106,8 @@ spec:
 Users may also set the creation policy to construct variable workloads and dynamically changing topologies for elastic experiments. The next snippet shows how to schedule the creation of new services, using a cron-like syntax.
 
 ```yaml
-apiVersion: frisbee.io/v1alpha1
-kind: TestPlan
+apiVersion: frisbee.dev/v1alpha1
+kind: Scenario
 metadata:
   name: whales-say
 spec:

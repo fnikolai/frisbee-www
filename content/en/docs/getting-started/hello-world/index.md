@@ -52,7 +52,7 @@ Below, we run the same container on a Kubernetes cluster using an Frisbee workfl
 Templates define minimally constraining skeletons for services. This strategy allows us to create a library of frequently-used specifications and use them to generate objects on-demand throughout the experiment. The spec below contains a single `template` called `whalesay` which runs the `docker/whalesay` container and invokes `cowsay "hello world"`. 
 
 ```yaml
-apiVersion: frisbee.io/v1alpha1
+apiVersion: frisbee.dev/v1alpha1
 kind: Template				# new type of k8s spec
 metadata:
   name: whalesay			# name of the template spec
@@ -72,8 +72,8 @@ spec:
 Frisbee adds a new `kind` of Kubernetes spec called a `Workflow`. 
 
 ```yaml
-apiVersion: frisbee.io/v1alpha1
-kind: TestPlan
+apiVersion: frisbee.dev/v1alpha1
+kind: Scenario
 metadata:
   name: hello-world
 spec:

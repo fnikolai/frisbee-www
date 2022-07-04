@@ -1,7 +1,7 @@
 ---
-title:  Develop a Controller 
-linktitle: Develop a Controller
-description: This guide explains how you can modify the source of a Frisbee controller.
+title:  Add New Frisbee Controller¶
+linktitle: Add New Frisbee Controller¶
+description:
 date: 2022-06-28
 publishdate: 2022-06-28
 lastmod: 2022-06-28
@@ -19,6 +19,27 @@ toc: true
 
 
 
+There are two ways to run a Frisbee controller.
+
+- As a container inside a Kubernetes cluster.
+- As Go program outside a cluster.
+
+
+
+The container approach is production-ready and does not require any compilation or dependencies. 
+
+Unfortunately though, bugs may arise and features may be needed. 
+
+And since it is inconvenient to create and deploy a new container while you are still debugging the controller, the second approach is preffered for development purposes.
+
+
+
+
+
+
+
+
+
 
 ## Change the Code
 
@@ -28,10 +49,7 @@ toc: true
 >> cd frisbee
 ```
 
-There are two ways to run a Frisbee controller.
 
-- As Go program outside a cluster.
-- As a container inside a Kubernetes cluster.
 
 By default, Frisbee prefers the second way.
 
@@ -65,7 +83,7 @@ This may take a while as it has to take download the Go dependencies and compile
 
 If everything went fine, you should see something like the following.
 
-![image-20211217192114704](developers.assets/image-20211217192114704.png)
+![started](images/started.png)
 
 
 > Tip: Beware the different between `charts/platform` and  `frisbee/platform`.
@@ -127,7 +145,7 @@ that is everything is successful.
 
 Then go to the [tags](https://github.com/CARV-ICS-FORTH/frisbee/tags) and create a new release for the latest tag.
 
-![image-20211217145923170](developers.assets/image-20211217145923170.png)
+![release](images/release.png)
 
 #### Step 5: Validate release
 

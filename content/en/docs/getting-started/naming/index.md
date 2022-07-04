@@ -23,8 +23,8 @@ In contrast to other Workflow enginers like Argo that use dynamically generated 
 In case of communicating services, such as a client-server architecture, we need the client to know the name of the server in other to establish a communication case. 
 
 ```yaml
-apiVersion: frisbee.io/v1alpha1
-kind: TestPlan
+apiVersion: frisbee.dev/v1alpha1
+kind: Scenario
 metadata:
   name: server-client
 spec:
@@ -50,8 +50,8 @@ spec:
 The `Cluster` is a Frisbee abstraction for grouping multiple services in a shared execution context. The services running within a cluster can be reference using the `sequential naming` pattern. For example, `servers-0, servers-1, ...servers-n`. 
 
 ```yaml
-apiVersion: frisbee.io/v1alpha1
-kind: TestPlan
+apiVersion: frisbee.dev/v1alpha1
+kind: Scenario
 metadata:
   name: server-client
 spec:
@@ -94,8 +94,8 @@ The resource is the type of a Frisbee action, such as `service`, or `cluster.` T
 
 
 ```yaml
-apiVersion: frisbee.io/v1alpha1
-kind: TestPlan
+apiVersion: frisbee.dev/v1alpha1
+kind: Scenario
 metadata:
   name: server-client
 spec:

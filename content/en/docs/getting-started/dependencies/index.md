@@ -25,8 +25,8 @@ Frisbee allows you to define the  workflow as a directed-acyclic graph (DAG) by 
 In the following workflow, step `A` runs first, as it has no dependencies. Once `A` has finished, steps `B` and `C` run in parallel. Finally, once `B` and `C` have completed, step `D` can run.
 
 ```yaml
-apiVersion: frisbee.io/v1alpha1
-kind: TestPlan
+apiVersion: frisbee.dev/v1alpha1
+kind: Scenario
 metadata:
   name: dag-diamond
 spec:
@@ -74,8 +74,8 @@ The DAG logic has a built-in `fail fast` feature to abort the workflow as soon a
 In the above workflow, one action starts after a previous action is complete. This kind of semantic is useful for batch jobs, but not for distributed computing. This is because services (and servers in general) are usually long-running that never complete.  
 
 ```yaml
-apiVersion: frisbee.io/v1alpha1
-kind: TestPlan
+apiVersion: frisbee.dev/v1alpha1
+kind: Scenario
 metadata:
   name: dag-diamond
 spec:
@@ -135,8 +135,8 @@ Dependencies may be among any Frisbee action.
 
 
 ```yaml
-apiVersion: frisbee.io/v1alpha1
-kind: TestPlan
+apiVersion: frisbee.dev/v1alpha1
+kind: Scenario
 metadata:
   name: whales-say
 spec:

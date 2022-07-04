@@ -20,41 +20,6 @@ toc: true
 
 
 
-<!-- toc -->
-
-  - [What is a Helm Chart ?](#what-is-a-helm-chart-)
-      - [Lint Charts](#lint-charts)
-      - [Working with MicroK8s’ built-in registry](#working-with-microk8s-built-in-registry)
-  - [Run a Test](#run-a-test)
-    - [Debugging an Installation](#debugging-an-installation)
-  - [Debug a Test](#debug-a-test)
-  - [Write a test](#write-a-test)
-- [Change the Code](#change-the-code)
-  - [Run a test](#run-a-test-1)
-      - [Step 1:  Install Dependencies](#step-1--install-dependencies)
-      - [Step 2: Update Helm repo](#step-2-update-helm-repo)
-      - [Step 3:](#step-3)
-      - [This step will install the following components:](#this-step-will-install-the-following-components)
-      - [Step 4:  Install the testing components](#step-4--install-the-testing-components)
-      - [Step 5: Run the Test Plan](#step-5-run-the-test-plan)
-- [Observe a Testplan](#observe-a-testplan)
-    - [Kubernetes Dashboard](#kubernetes-dashboard)
-      - [Controller Logs](#controller-logs)
-    - [Grafana Dashboard &amp; Alerts](#grafana-dashboard--alerts)
-- [HELM](#helm)
-  - [Baseline](#baseline)
-      - [YCSB](#ycsb)
-      - [FIO](#fio)
-  - [Stress](#stress)
-  - [Scaleout](#scaleout)
-  - [Elasticity](#elasticity)
-  - [Chaos](#chaos)
-  - [Guide for the Frisbee Plan Developers](#guide-for-the-frisbee-plan-developers)
-- [Periodically kill some nodes.](#periodically-kill-some-nodes)
-    - [Do not set dependencies on cascades](#do-not-set-dependencies-on-cascades)
-
-<!-- /toc -->
-
 
 This is a guide for those who wish to contribute new Charts in Frisbee.
 
@@ -74,7 +39,7 @@ Control how to visualize the services.
 
 ```
 // DrawAs hints how to mark points on the Grafana dashboard.
-DrawAs string = "frisbee.io/draw/"
+DrawAs string = "frisbee.dev/draw/"
 
 // DrawAsPoint will mark the creation and deletion of a service as distinct events.
 DrawAsPoint string = "pointInTime"
@@ -168,17 +133,17 @@ For TikV, the dependencies are:
 
 ### Debugging an Installation
 
-Error: UPGRADE FAILED: unable to recognize "": no matches for kind "Template" in version "frisbee.io/v1alpha1"
+Error: UPGRADE FAILED: unable to recognize "": no matches for kind "Template" in version "frisbee.dev/v1alpha1"
 
 In the next step, you should validate that CRDs are successfully installed.
 
 ```bash
 # Validate the CRDs are properly installed
->> kubectl get crds  | grep frisbee.io
+>> kubectl get crds  | grep frisbee.dev
 ```
 
-chaos.frisbee.io 2021-12-17T12:30:06Z clusters.frisbee.io 2021-12-17T12:30:06Z services.frisbee.io 2021-12-17T12:30:07Z
-telemetries.frisbee.io 2021-12-17T12:30:07Z workflows.frisbee.io 2021-12-17T12:30:07Z
+chaos.frisbee.dev 2021-12-17T12:30:06Z clusters.frisbee.dev 2021-12-17T12:30:06Z services.frisbee.dev 2021-12-17T12:30:07Z
+telemetries.frisbee.dev 2021-12-17T12:30:07Z workflows.frisbee.dev 2021-12-17T12:30:07Z
 
 ## Debug a Test
 
@@ -208,7 +173,7 @@ The easiest way to begin with is by have a look at the examples. It consists of 
 * **Templates:** are libraries of frequently-used specifications that are reusable throughout the testing plan.
 * **Testplans:** are lists of actions that define what will happen throughout the test.
 
-We will use the `examples/testplans/3.failover.yml` as a reference.
+We will use the `examples/scenarios/3.failover.yml` as a reference.
 
 This plans uses the following templates:
 
@@ -224,8 +189,8 @@ check [here](docs/singlenode-deployment.md).)
 
 ```yaml
 # Standard Kubernetes boilerplate
-apiVersion: frisbee.io/v1alpha1
-kind: TestPlan
+apiVersion: frisbee.dev/v1alpha1
+kind: Scenario
 metadata:
 name: redis-failover
 spec:
@@ -336,9 +301,9 @@ On the other terminal, you can issue requests.
 # Create a dedicated Frisbee name
 >> kubectl create namespace frisbee
 
-# Run a testplan (from Frisbee directory)
->> kubectl -n frisbee apply -f examples/testplans/3.failover.yml
-workflow.frisbee.io/redis-failover created
+# Run a scenario (from Frisbee directory)
+>> kubectl -n frisbee apply -f examples/scenarios/3.failover.yml
+workflow.frisbee.dev/redis-failover created
 
 # Confirm that the workflow is running.
 >> kubectl -n frisbee get pods
@@ -352,7 +317,7 @@ sentinel     1/1     Running   0          11m
 
 
 # Wait until the test oracle is triggered.
->> kubectl -n frisbee wait --for=condition=oracle workflows.frisbee.io/redis-failover
+>> kubectl -n frisbee wait --for=condition=oracle workflows.frisbee.dev/redis-failover
 ...
 ```
 
@@ -361,7 +326,7 @@ sentinel     1/1     Running   0          11m
 One way, is to access the workflow's description
 
 ```bash
->> kubectl -n frisbee describe workflows.frisbee.io/validate-local
+>> kubectl -n frisbee describe workflows.frisbee.dev/validate-local
 ```
 
 But why bother if you can access Grafana directly ?
@@ -636,7 +601,7 @@ that models the deployment scenario for a software product, the test strategy, t
 testing, and the Key Performance Indicators required to ensure that a product or system meets its design specifications
 and other requirements.
 
-By codifying the test plan in a YAML-based syntax, Frisbee carriers three main benefits to teams:
+By codifying the scenario in a YAML-based syntax, Frisbee carriers three main benefits to teams:
 
 1. Help people outside the test team such as developers, business managers, customers **understand** the details of
 testing.
@@ -647,7 +612,7 @@ testing.
 scope,[Test Strategy](https://www.guru99.com/how-to-create-test-strategy-document.html)are **documented** in Test
 Plan, so it can be reviewed by Management Team and re-used for other projects.
 
-A test plan may include a strategy for one or more of the following:
+A scenario may include a strategy for one or more of the following:
 
 * Baseline: to be performed during the development or approval stages of the product, typically on a small sample of
 units.

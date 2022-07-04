@@ -23,7 +23,7 @@ Let's look at a slightly more complex workflow spec with parameters.
 ## Parameterized  Template
 
 ```yaml
-apiVersion: frisbee.io/v1alpha1
+apiVersion: frisbee.dev/v1alpha1
 kind: Template				
 metadata:
   name: whalesay			
@@ -57,8 +57,8 @@ This time, the `whalesay` template takes an input parameter named `message` that
 Workflow parameters can be used to override the default parameters of the templates. The spec below demonstrates a scenario with two `whalesay` services, one invoked with parameters and one without. 
 
 ```yaml
-apiVersion: frisbee.io/v1alpha1
-kind: TestPlan
+apiVersion: frisbee.dev/v1alpha1
+kind: Scenario
 metadata:
   name: hello-world
 spec:
