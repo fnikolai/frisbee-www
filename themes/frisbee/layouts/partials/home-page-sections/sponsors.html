@@ -2,9 +2,8 @@
 {{$gtag := .gtag | default "unknown" }}
 {{ with .cx.Site.Data.sponsors }}
   <section class="{{ $.classes_section | default "bg-primary-color-dark b--dark-gray bb bt ph5 pv4 w-100"}}">
-    <div class="center mw9"> 
-
-      <div class="flex-ns flex-wrap center justify-between pt3">
+    <div class="center mw9">
+      <div class="flex-ns flex-wrap center">
         {{ range .banners }}
           {{ $banner := . }}
           {{if .logo}}
