@@ -66,7 +66,7 @@
 <meta itemprop="name" content="Quick Start">
 <meta itemprop="description" content="This tutorial will guide you through deploying and running Frisbee on a local Kubernetes installation."><meta itemprop="datePublished" content="2022-06-29T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-06-29T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1359">
+<meta itemprop="wordCount" content="1358">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://frisbee.dev/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_13771684703296284199.png"/>
 <meta name="twitter:title" content="Quick Start"/>
@@ -349,7 +349,7 @@ command.</p>
 </span></span></code></pre></div><p>Let's run a <strong>bitrot</strong> scenario.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&gt;&gt; kubectl -f ./charts/cockroachdb/examples/10.bitrot.yml apply -n mytest
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>testplan.frisbee.io/cockroach-bitrot created
+</span></span><span style="display:flex;"><span>scenario.frisbee.dev/cockroach-bitrot created
 </span></span></code></pre></div><h4 id="5-exploratory-testing-observe-the-progress">5. Exploratory Testing (Observe the Progress) <a class="header-link" href="#5-exploratory-testing-observe-the-progress"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
 <p><em>Frisbee</em> provides 3 methods for observing the progress of a test.</p>
 <hr>
@@ -390,8 +390,8 @@ If the test is deleted, the volume will be garbage collected automatically.</p>
 <p>The above tools are for understanding the behavior of a system, but do not help with test automation.</p>
 <p>Besides the visual information, we need something that can be used in external scripts.</p>
 <p>We will use <code>kubectl</code> since is the most common CLI interface between Kubernetes API and third-party applications.</p>
-<p>Firstly, let's inspect the test plan.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&gt;&gt; kubectl describe testplan.frisbee.io/cockroach-bitrot -n mytest
+<p>Firstly, let's inspect the scenario.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&gt;&gt; kubectl describe scenario.frisbee.dev/cockroach-bitrot -n mytest
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>...
 </span></span><span style="display:flex;"><span>Status:
@@ -476,9 +476,9 @@ various stages the Test has been through.</p>
 <p>To avoid continuous inspection via polling, we use the <code>wait</code> function of <code>kubectl</code>.</p>
 <p>In the specific <strong>bitrot</strong> scenario, the test will pass only it has reached an <strong>UnexpectedTermination</strong> within 10
 minutes of execution.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&gt;&gt; kubectl <span style="color:#366">wait</span> --for<span style="color:#555">=</span><span style="color:#033">condition</span><span style="color:#555">=</span>UnexpectedTermination --timeout<span style="color:#555">=</span>10m testplan.frisbee.io/cockroach-bitrot -n mytest
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&gt;&gt; kubectl <span style="color:#366">wait</span> --for<span style="color:#555">=</span><span style="color:#033">condition</span><span style="color:#555">=</span>UnexpectedTermination --timeout<span style="color:#555">=</span>10m scenario.frisbee.dev/cockroach-bitrot -n mytest
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>testplan.frisbee.io/cockroach-bitrot condition met
+</span></span><span style="display:flex;"><span>scenario.frisbee.dev/cockroach-bitrot condition met
 </span></span></code></pre></div><p>Indeed, the condition is met, meaning that the test has failed. We can visually verify it from
 the <a href="https://dashboard-frisbee.localhost">Dashboard</a> .</p>
 <p><img src="images/dashboard.png" alt="dashboard"></p>
@@ -487,13 +487,13 @@ one (masters-1), and the telemetry stack (grafana/prometheus).</p>
 <blockquote>
 <p>If the condition is not met within the specified timeout, <code>kubectl</code> will exit with failure code (1) and the following
 error message:</p>
-<p>&quot;error: timed out waiting for the condition on testplans/cockroach-bitrot&quot;</p>
+<p>&quot;error: timed out waiting for the condition on scenarios/cockroach-bitrot&quot;</p>
 </blockquote>
 <h4 id="7-delete-a-test">7. Delete a Test <a class="header-link" href="#7-delete-a-test"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
 <p>The deletion is as simple as the creation of a test.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&gt;&gt; kubectl -f /charts/cockroachdb/examples/10.bitrot.yml -n mytest delete --cascade<span style="color:#555">=</span>foreground
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>testplan.frisbee.io <span style="color:#c30">&#34;cockroach-bitrot&#34;</span> deleted
+</span></span><span style="display:flex;"><span>scenario.frisbee.dev <span style="color:#c30">&#34;cockroach-bitrot&#34;</span> deleted
 </span></span></code></pre></div><p>The flag <code>cascade=foreground</code> will wait until the experiment is actually deleted. Without this flag, the deletion will
 happen in the background. Use this flag if you want to run sequential tests, without interference.</p>
 <h4 id="8-parallel-tests">8. Parallel Tests <a class="header-link" href="#8-parallel-tests"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
@@ -528,7 +528,7 @@ happen in the background. Use this flag if you want to run sequential tests, wit
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&gt;&gt; helm  uninstall my-frisbee --debug -n default
 </span></span></code></pre></div><h4 id="3-remove-frisbee-crds">3. Remove Frisbee CRDS <a class="header-link" href="#3-remove-frisbee-crds"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
 <p>Because Helm does not delete CRDs for secure reasons, we must do it manually.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&gt;&gt; kubectl get crds | awk /frisbee.io/<span style="color:#c30">&#39;{print $1}&#39;</span> | xargs -I<span style="color:#555">{}</span> kubectl delete crds  <span style="color:#555">{}</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&gt;&gt; kubectl get crds | awk /frisbee.dev/<span style="color:#c30">&#39;{print $1}&#39;</span> | xargs -I<span style="color:#555">{}</span> kubectl delete crds  <span style="color:#555">{}</span>
 </span></span></code></pre></div>
 </div>
 
@@ -615,12 +615,7 @@ happen in the background. Use this flag if you want to run sequential tests, wit
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/users-guide/develop/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Develop a new Chart
-            </a>
-          </li>
-          <li class="f6 fw4">
-            <a href="/docs/users-guide/fields/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+            <a href="/docs/fields/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Field Reference
             </a>
           </li>
@@ -631,13 +626,13 @@ happen in the background. Use this flag if you want to run sequential tests, wit
         <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".developers-guide">Developer&#39;s Guide</a>
         <ul class="developers-guide desktopmenu animated fadeIn list pl0 bg-light-gray dn">
           <li class="f6 fw4">
-            <a href="/docs/developers-guide/new-chart/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Develop a Chart
+            <a href="/docs/developers-guide/new-controller/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Add New Frisbee Controller¶
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/developers-guide/new-controller/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Develop a Controller
+            <a href="/docs/developers-guide/new-chart/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Develop a Chart
             </a>
           </li>
         </ul>

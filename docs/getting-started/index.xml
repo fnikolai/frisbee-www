@@ -36,7 +36,7 @@ $ docker run docker/whalesay cowsay &amp;#34;hello world&amp;#34; _____________ 
       
       <guid>https://frisbee.dev/docs/getting-started/parameters/</guid>
       <description>Let&#39;s look at a slightly more complex workflow spec with parameters.
-Parameterized Template apiVersion: frisbee.io/v1alpha1 kind: Template	metadata: name: whalesay	spec: # invoke the whalesay template with # &amp;#34;hello world&amp;#34; as the default argument # to the message parameter inputs:	parameters: message: &amp;#34;hello-world&amp;#34; service: containers: - name: app image: docker/whalesay command: [cowsay] args: [{{&amp;#34;{{.Inputs.Parameters.message&amp;#34;}}] This time, the whalesay template takes an input parameter named message that is passed as the args to the cowsay command.</description>
+Parameterized Template apiVersion: frisbee.dev/v1alpha1 kind: Template	metadata: name: whalesay	spec: # invoke the whalesay template with # &amp;#34;hello world&amp;#34; as the default argument # to the message parameter inputs:	parameters: message: &amp;#34;hello-world&amp;#34; service: containers: - name: app image: docker/whalesay command: [cowsay] args: [{{&amp;#34;{{.Inputs.Parameters.message&amp;#34;}}] This time, the whalesay template takes an input parameter named message that is passed as the args to the cowsay command.</description>
     </item>
     
     <item>
@@ -47,7 +47,7 @@ Parameterized Template apiVersion: frisbee.io/v1alpha1 kind: Template	metadata: 
       <guid>https://frisbee.dev/docs/getting-started/clustering/</guid>
       <description>When writing testing scenarios, it is often very useful to be able to run multiple services in a shared execution context.
 Create Clustered Services There are two ways to create services in a cluster: by instances and by inputs.
-By instances apiVersion: frisbee.io/v1alpha1 kind: TestPlan metadata: name: whales-say spec: actions: - action: Cluster	name: whales-say cluster: templateRef: whalesay instances: 4	# number of services The above snippet will create 4 identical services initialized with the default values of the whalesay template.</description>
+By instances apiVersion: frisbee.dev/v1alpha1 kind: Scenario metadata: name: whales-say spec: actions: - action: Cluster	name: whales-say cluster: templateRef: whalesay instances: 4	# number of services The above snippet will create 4 identical services initialized with the default values of the whalesay template.</description>
     </item>
     
     <item>
@@ -68,7 +68,7 @@ Run Sequentially In the following workflow, step A runs first, as it has no depe
       <guid>https://frisbee.dev/docs/getting-started/naming/</guid>
       <description>In contrast to other Workflow enginers like Argo that use dynamically generated names, all objects in Frisbee follow a predictable naming pattern. This makes it possible to create communicating services.
 Reference an Object In case of communicating services, such as a client-server architecture, we need the client to know the name of the server in other to establish a communication case.
-apiVersion: frisbee.io/v1alpha1 kind: TestPlan metadata: name: server-client spec: actions: - action: Service name: server service: templateRef: iperf2.</description>
+apiVersion: frisbee.dev/v1alpha1 kind: Scenario metadata: name: server-client spec: actions: - action: Service name: server service: templateRef: iperf2.</description>
     </item>
     
   </channel>

@@ -7,5 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 30 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://frisbee.dev/docs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Field Reference</title>
+      <link>https://frisbee.dev/docs/fields/</link>
+      <pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://frisbee.dev/docs/fields/</guid>
+      <description>Packages:
+frisbee.dev/v1alpha1 frisbee.dev/v1alpha1 Package v1alpha1 is the v1alpha1 version of the Frisbee API.
+Resource Types: Action (Appears on:ScenarioSpec) Action is a step in a workflow that defines a particular part of a testing process.
+Field Description action ActionType ActionType refers to a category of actions that can be associated with a specific controller.
+name string Name is a unique identifier of the action
+depends WaitSpec (Optional) DependsOn defines the conditions for the execution of this action</description>
+    </item>
+    
   </channel>
 </rss>

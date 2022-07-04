@@ -10,7 +10,7 @@
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>Develop a Controller | </title>
+  <title>Add New Frisbee Controller¶ | </title>
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
   <meta name="generator" content="Hugo 0.101.0" />
@@ -32,7 +32,7 @@
   
 
   <meta name="description"
-  content="This guide explains how you can modify the source of a Frisbee controller.">
+  content="Smart, Cloud-Native Testbed!">
 
   
 
@@ -57,20 +57,29 @@
 <link rel="manifest" href="/manifest.json">
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0594cb">
 <meta name="theme-color" content="#ffffff">
-<meta property="og:title" content="Develop a Controller" />
-<meta property="og:description" content="This guide explains how you can modify the source of a Frisbee controller." />
+<meta property="og:title" content="Add New Frisbee Controller¶" />
+<meta property="og:description" content="There are two ways to run a Frisbee controller.
+As a container inside a Kubernetes cluster. As Go program outside a cluster. The container approach is production-ready and does not require any compilation or dependencies.
+Unfortunately though, bugs may arise and features may be needed.
+And since it is inconvenient to create and deploy a new container while you are still debugging the controller, the second approach is preffered for development purposes." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://frisbee.dev/docs/developers-guide/new-controller/" /><meta property="og:image" content="https://frisbee.dev/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_12171518827487284868.png"/><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://frisbee.dev/docs/developers-guide/new-controller/" /><meta property="og:image" content="https://frisbee.dev/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_3904585036880616514.png"/><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2022-06-28T00:00:00+00:00" />
 <meta property="article:modified_time" content="2022-06-28T00:00:00+00:00" /><meta property="og:site_name" content="Frisbee" />
-<meta itemprop="name" content="Develop a Controller">
-<meta itemprop="description" content="This guide explains how you can modify the source of a Frisbee controller."><meta itemprop="datePublished" content="2022-06-28T00:00:00+00:00" />
+<meta itemprop="name" content="Add New Frisbee Controller¶">
+<meta itemprop="description" content="There are two ways to run a Frisbee controller.
+As a container inside a Kubernetes cluster. As Go program outside a cluster. The container approach is production-ready and does not require any compilation or dependencies.
+Unfortunately though, bugs may arise and features may be needed.
+And since it is inconvenient to create and deploy a new container while you are still debugging the controller, the second approach is preffered for development purposes."><meta itemprop="datePublished" content="2022-06-28T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-06-28T00:00:00+00:00" />
-<meta itemprop="wordCount" content="518">
+<meta itemprop="wordCount" content="568">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://frisbee.dev/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_12171518827487284868.png"/>
-<meta name="twitter:title" content="Develop a Controller"/>
-<meta name="twitter:description" content="This guide explains how you can modify the source of a Frisbee controller."/>
+<meta name="twitter:image" content="https://frisbee.dev/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_3904585036880616514.png"/>
+<meta name="twitter:title" content="Add New Frisbee Controller¶"/>
+<meta name="twitter:description" content="There are two ways to run a Frisbee controller.
+As a container inside a Kubernetes cluster. As Go program outside a cluster. The container approach is production-ready and does not require any compilation or dependencies.
+Unfortunately though, bugs may arise and features may be needed.
+And since it is inconvenient to create and deploy a new container while you are still debugging the controller, the second approach is preffered for development purposes."/>
 
 
 </head>
@@ -206,15 +215,15 @@
 
 	<div date-pref>
 		
-			<a href="https://frisbee.dev/docs/developers-guide/new-chart/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Develop a Chart ">
-				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+
+		
+			<a href="https://frisbee.dev/docs/developers-guide/new-chart/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Develop a Chart">
+			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
 </svg>
 
 			</a>
-		
-
 		
 	</div>
 
@@ -227,14 +236,10 @@
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Develop a Controller</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Add New Frisbee Controller¶</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
-  
-    <div class="f4 fw4 lh-copy">
-      This guide explains how you can modify the source of a Frisbee controller.
-    </div>
   
 
   
@@ -244,16 +249,19 @@
 
 <div class="prose" id="prose">
 
+<p>There are two ways to run a Frisbee controller.</p>
+<ul>
+<li>As a container inside a Kubernetes cluster.</li>
+<li>As Go program outside a cluster.</li>
+</ul>
+<p>The container approach is production-ready and does not require any compilation or dependencies.</p>
+<p>Unfortunately though, bugs may arise and features may be needed.</p>
+<p>And since it is inconvenient to create and deploy a new container while you are still debugging the controller, the second approach is preffered for development purposes.</p>
 <h2 id="change-the-code">Change the Code <a class="header-link" href="#change-the-code"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># Fetch Frisbee</span>
 </span></span><span style="display:flex;"><span>&gt;&gt; git clone git@github.com:CARV-ICS-FORTH/frisbee.git
 </span></span><span style="display:flex;"><span>&gt;&gt; <span style="color:#366">cd</span> frisbee
-</span></span></code></pre></div><p>There are two ways to run a Frisbee controller.</p>
-<ul>
-<li>As Go program outside a cluster.</li>
-<li>As a container inside a Kubernetes cluster.</li>
-</ul>
-<p>By default, Frisbee prefers the second way.</p>
+</span></span></code></pre></div><p>By default, Frisbee prefers the second way.</p>
 <p>However, when debugging a few feature it is impractical to have to create and deploy the container all the time. In such
 cases, it is preferable to run the controller outside the cluster, as shown next.</p>
 <p><strong>Step 1:</strong></p>
@@ -269,7 +277,7 @@ controller.</p>
 </span></span><span style="display:flex;"><span>&gt;&gt; make run
 </span></span></code></pre></div><p>This may take a while as it has to take download the Go dependencies and compile the binary.</p>
 <p>If everything went fine, you should see something like the following.</p>
-<p><img src="developers.assets/image-20211217192114704.png" alt="image-20211217192114704"></p>
+<p><img src="images/started.png" alt="started"></p>
 <blockquote>
 <p>Tip: Beware the different between <code>charts/platform</code> and  <code>frisbee/platform</code>.</p>
 </blockquote>
@@ -309,7 +317,7 @@ under the name <a href="https://hub.docker.com/repository/docker/icsforth/frisbe
 <p>The previous must have triggered some GitHub Actions. Go to <a href="https://github.com/CARV-ICS-FORTH/frisbee/actions">https://github.com/CARV-ICS-FORTH/frisbee/actions</a> and check
 that is everything is successful.</p>
 <p>Then go to the <a href="https://github.com/CARV-ICS-FORTH/frisbee/tags">tags</a> and create a new release for the latest tag.</p>
-<p><img src="developers.assets/image-20211217145923170.png" alt="image-20211217145923170"></p>
+<p><img src="images/release.png" alt="release"></p>
 <h4 id="step-5-validate-release">Step 5: Validate release <a class="header-link" href="#step-5-validate-release"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
 <p>The previous step have triggered the appropriate action for creating new charts.</p>
 <p>To confirm that they have been actually created, you can use the  <code>helm</code> tool to search the repo.</p>
@@ -395,12 +403,7 @@ that is everything is successful.</p>
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/users-guide/develop/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Develop a new Chart
-            </a>
-          </li>
-          <li class="f6 fw4">
-            <a href="/docs/users-guide/fields/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+            <a href="/docs/fields/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Field Reference
             </a>
           </li>
@@ -411,13 +414,13 @@ that is everything is successful.</p>
         <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2  primary-color" data-target=".developers-guide">Developer&#39;s Guide</a>
         <ul class="developers-guide desktopmenu animated fadeIn list pl0 bg-light-gray db">
           <li class="f6 fw4">
-            <a href="/docs/developers-guide/new-chart/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Develop a Chart
+            <a href="/docs/developers-guide/new-controller/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 primary-color ">
+              Add New Frisbee Controller¶
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/developers-guide/new-controller/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 primary-color ">
-              Develop a Controller
+            <a href="/docs/developers-guide/new-chart/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Develop a Chart
             </a>
           </li>
         </ul>

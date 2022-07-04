@@ -8,18 +8,15 @@
     <language>en-us</language>
     <lastBuildDate>Tue, 28 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://frisbee.dev/docs/developers-guide/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Frisbee Documentation</title>
-      <link>https://frisbee.dev/docs/developers-guide/documentation/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>Add New Frisbee Controller¶</title>
+      <link>https://frisbee.dev/docs/developers-guide/new-controller/</link>
+      <pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://frisbee.dev/docs/developers-guide/documentation/</guid>
-      <description>The effort being put in automating tests should not take over delivering value to users. Frisbee makes it possible to:
-Setup initial dependency stack – easily!
-Test against actual, close to production software - no mocks!
-Replay complex workloads written in an intuitive language!
-Combine Chaos Engineering with large-scale performance testing!
-Assert actual program behavior and side effects
-Below you will find some of the most common and helpful pages from our documentation.</description>
+      <guid>https://frisbee.dev/docs/developers-guide/new-controller/</guid>
+      <description>There are two ways to run a Frisbee controller.
+As a container inside a Kubernetes cluster. As Go program outside a cluster. The container approach is production-ready and does not require any compilation or dependencies.
+Unfortunately though, bugs may arise and features may be needed.
+And since it is inconvenient to create and deploy a new container while you are still debugging the controller, the second approach is preffered for development purposes.</description>
     </item>
     
     <item>
@@ -28,18 +25,10 @@ Below you will find some of the most common and helpful pages from our documenta
       <pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>https://frisbee.dev/docs/developers-guide/new-chart/</guid>
-      <description>What is a Helm Chart ? Lint Charts Working with MicroK8s’ built-in registry Run a Test Debugging an Installation Debug a Test Write a test Change the Code Run a test Step 1: Install Dependencies Step 2: Update Helm repo Step 3: This step will install the following components: Step 4: Install the testing components Step 5: Run the Test Plan Observe a Testplan Kubernetes Dashboard Controller Logs Grafana Dashboard &amp;amp; Alerts HELM Baseline YCSB FIO Stress Scaleout Elasticity Chaos Guide for the Frisbee Plan Developers Periodically kill some nodes.</description>
-    </item>
-    
-    <item>
-      <title>Develop a Controller</title>
-      <link>https://frisbee.dev/docs/developers-guide/new-controller/</link>
-      <pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://frisbee.dev/docs/developers-guide/new-controller/</guid>
-      <description>Change the Code # Fetch Frisbee &amp;gt;&amp;gt; git clone git@github.com:CARV-ICS-FORTH/frisbee.git &amp;gt;&amp;gt; cd frisbee There are two ways to run a Frisbee controller.
-As Go program outside a cluster. As a container inside a Kubernetes cluster. By default, Frisbee prefers the second way.
-However, when debugging a few feature it is impractical to have to create and deploy the container all the time. In such cases, it is preferable to run the controller outside the cluster, as shown next.</description>
+      <description>This is a guide for those who wish to contribute new Charts in Frisbee.
+Because there is an overlap, we advise you to have a look at the Guide for Code Developers first.
+What is a Helm Chart ? Helm is a package manager for Kubernetes.
+Helm uses a packaging format called charts. A chart is a collection of files that describe a related set of Kubernetes resources. A single chart might be used to deploy something simple, like a memcached pod, or something complex, like a full web app stack with HTTP servers, databases, caches, and so on.</description>
     </item>
     
   </channel>

@@ -259,12 +259,7 @@
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/users-guide/develop/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Develop a new Chart
-            </a>
-          </li>
-          <li class="f6 fw4">
-            <a href="/docs/users-guide/fields/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+            <a href="/docs/fields/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Field Reference
             </a>
           </li>
@@ -275,13 +270,13 @@
         <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".developers-guide">Developer&#39;s Guide</a>
         <ul class="developers-guide desktopmenu animated fadeIn list pl0 bg-light-gray dn">
           <li class="f6 fw4">
-            <a href="/docs/developers-guide/new-chart/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Develop a Chart
+            <a href="/docs/developers-guide/new-controller/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Add New Frisbee Controller¶
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/developers-guide/new-controller/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Develop a Controller
+            <a href="/docs/developers-guide/new-chart/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Develop a Chart
             </a>
           </li>
         </ul>
@@ -343,7 +338,26 @@
           Developer&#39;s Guide
         </h1>
         <div class=" mid-gray f5 f4-l">
-          
+          <p>The effort being put in automating tests should not take over delivering value to users. Frisbee makes it possible to:</p>
+<ul>
+<li>
+<p>Setup initial dependency stack – easily!</p>
+</li>
+<li>
+<p>Test against actual, close to production software - no mocks!</p>
+</li>
+<li>
+<p>Replay complex workloads written in an intuitive language!</p>
+</li>
+<li>
+<p>Combine Chaos Engineering with large-scale performance testing!</p>
+</li>
+<li>
+<p>Assert actual program behavior and side effects</p>
+</li>
+</ul>
+<p>Below you will find some of the most common and helpful pages from our documentation.</p>
+
         </div>
       </article>
 
@@ -352,58 +366,6 @@
       <div class="flex flex-wrap">
         
         <section class="flex-ns flex-wrap justify-between w-100">
-          
-            <div class="relative  weight-10">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/docs/about/what-is-frisbee/" class="link primary-color dim">Frisbee Overview</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          This document describes the concepts, use cases, core strengths, and the architecture of Frisbee.
-        
-
-        <a href="/docs/about/what-is-frisbee/" class="f6 mt2 db link primary-color dim">
-          Read More &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-          
-            <div class="relative  weight-11">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/docs/getting-started/hello-world/" class="link primary-color dim">Hello World</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          Let's start by creating a very simple workflow template to echo &quot;hello world&quot; using the docker/whalesay container image from Docker Hub.
-You can run this directly from your shell with a simple docker command:
-$ docker run docker/whalesay cowsay &#34;hello world&#34; _____________ &lt; hello world &gt; ------------- \ \ \ ## . ## ## ## == ## ## ## ## === /&#34;&#34;&#34;&#34;&#34;&#34;&#34;&#34;&#34;&#34;&#34;&#34;&#34;&#34;&#34;&#34;___/ === ~~~ {~~ ~~~~ ~~~ ~~~~ ~~ ~ / ===- ~~~ \______ o __/ \ \ __/ \____\______/ Hello from Docker!
-      
-
-        <a href="/docs/getting-started/hello-world/" class="f6 mt2 db link primary-color dim">
-          Read More &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
           
             <div class="relative  weight-12">
 
@@ -417,7 +379,7 @@ $ docker run docker/whalesay cowsay &#34;hello world&#34; _____________ &lt; hel
     <div class="lh-copy links">
       
           Let's look at a slightly more complex workflow spec with parameters.
-Parameterized Template apiVersion: frisbee.io/v1alpha1 kind: Template	metadata: name: whalesay	spec: # invoke the whalesay template with # &#34;hello world&#34; as the default argument # to the message parameter inputs:	parameters: message: &#34;hello-world&#34; service: containers: - name: app image: docker/whalesay command: [cowsay] args: [{{&#34;{{.Inputs.Parameters.message&#34;}}] This time, the whalesay template takes an input parameter named message that is passed as the args to the cowsay command.
+Parameterized Template apiVersion: frisbee.dev/v1alpha1 kind: Template	metadata: name: whalesay	spec: # invoke the whalesay template with # &#34;hello world&#34; as the default argument # to the message parameter inputs:	parameters: message: &#34;hello-world&#34; service: containers: - name: app image: docker/whalesay command: [cowsay] args: [{{&#34;{{.Inputs.Parameters.message&#34;}}] This time, the whalesay template takes an input parameter named message that is passed as the args to the cowsay command.
       
 
         <a href="/docs/getting-started/parameters/" class="f6 mt2 db link primary-color dim">
@@ -444,7 +406,7 @@ Parameterized Template apiVersion: frisbee.io/v1alpha1 kind: Template	metadata: 
       
           When writing testing scenarios, it is often very useful to be able to run multiple services in a shared execution context.
 Create Clustered Services There are two ways to create services in a cluster: by instances and by inputs.
-By instances apiVersion: frisbee.io/v1alpha1 kind: TestPlan metadata: name: whales-say spec: actions: - action: Cluster	name: whales-say cluster: templateRef: whalesay instances: 4	# number of services The above snippet will create 4 identical services initialized with the default values of the whalesay template.
+By instances apiVersion: frisbee.dev/v1alpha1 kind: Scenario metadata: name: whales-say spec: actions: - action: Cluster	name: whales-say cluster: templateRef: whalesay instances: 4	# number of services The above snippet will create 4 identical services initialized with the default values of the whalesay template.
       
 
         <a href="/docs/getting-started/clustering/" class="f6 mt2 db link primary-color dim">
@@ -497,7 +459,7 @@ Run Sequentially In the following workflow, step A runs first, as it has no depe
       
           In contrast to other Workflow enginers like Argo that use dynamically generated names, all objects in Frisbee follow a predictable naming pattern. This makes it possible to create communicating services.
 Reference an Object In case of communicating services, such as a client-server architecture, we need the client to know the name of the server in other to establish a communication case.
-apiVersion: frisbee.io/v1alpha1 kind: TestPlan metadata: name: server-client spec: actions: - action: Service name: server service: templateRef: iperf2.
+apiVersion: frisbee.dev/v1alpha1 kind: Scenario metadata: name: server-client spec: actions: - action: Service name: server service: templateRef: iperf2.
       
 
         <a href="/docs/getting-started/naming/" class="f6 mt2 db link primary-color dim">
@@ -602,6 +564,31 @@ Templates Templates define minimally constraining skeletons for Services and Fau
         
 
         <a href="/docs/about/license/" class="f6 mt2 db link primary-color dim">
+          Read More &raquo;
+        </a>
+
+    </div>
+
+
+  </div>
+</div>
+
+          
+            <div class="relative  weight-60">
+
+  <div class="bg-white mb2 pa3 pa4-l gray">
+    
+
+    <h1 class="near-black f3">
+      <a href="/docs/operators-manual/configuration/" class="link primary-color dim">Configure Hugo</a>
+    </h1>
+
+    <div class="lh-copy links">
+      
+          How to configure your Hugo site.
+        
+
+        <a href="/docs/operators-manual/configuration/" class="f6 mt2 db link primary-color dim">
           Read More &raquo;
         </a>
 

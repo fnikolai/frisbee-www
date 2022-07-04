@@ -66,7 +66,7 @@
 <meta itemprop="name" content="Develop a Chart">
 <meta itemprop="description" content="This guide explains how to create a new Helm Chart for Frisbee"><meta itemprop="datePublished" content="2022-06-28T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-06-28T00:00:00+00:00" />
-<meta itemprop="wordCount" content="3105">
+<meta itemprop="wordCount" content="3007">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://frisbee.dev/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_10670360514073610153.png"/>
 <meta name="twitter:title" content="Develop a Chart"/>
@@ -250,7 +250,7 @@
 
 	<div date-pref>
 		
-			<a href="https://frisbee.dev/docs/developers-guide/documentation/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Frisbee Documentation ">
+			<a href="https://frisbee.dev/docs/developers-guide/new-controller/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Add New Frisbee Controller¶ ">
 				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -259,14 +259,6 @@
 			</a>
 		
 
-		
-			<a href="https://frisbee.dev/docs/developers-guide/new-controller/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Develop a Controller">
-			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-</svg>
-
-			</a>
 		
 	</div>
 
@@ -296,67 +288,6 @@
 
 <div class="prose" id="prose">
 
-<!-- raw HTML omitted -->
-<ul>
-<li><a href="#what-is-a-helm-chart-">What is a Helm Chart ?</a>
-<ul>
-<li><a href="#lint-charts">Lint Charts</a></li>
-<li><a href="#working-with-microk8s-built-in-registry">Working with MicroK8s’ built-in registry</a></li>
-</ul>
-</li>
-<li><a href="#run-a-test">Run a Test</a>
-<ul>
-<li><a href="#debugging-an-installation">Debugging an Installation</a></li>
-</ul>
-</li>
-<li><a href="#debug-a-test">Debug a Test</a></li>
-<li><a href="#write-a-test">Write a test</a></li>
-<li><a href="#change-the-code">Change the Code</a>
-<ul>
-<li><a href="#run-a-test-1">Run a test</a>
-<ul>
-<li><a href="#step-1--install-dependencies">Step 1:  Install Dependencies</a></li>
-<li><a href="#step-2-update-helm-repo">Step 2: Update Helm repo</a></li>
-<li><a href="#step-3">Step 3:</a></li>
-<li><a href="#this-step-will-install-the-following-components">This step will install the following components:</a></li>
-<li><a href="#step-4--install-the-testing-components">Step 4:  Install the testing components</a></li>
-<li><a href="#step-5-run-the-test-plan">Step 5: Run the Test Plan</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#observe-a-testplan">Observe a Testplan</a>
-<ul>
-<li><a href="#kubernetes-dashboard">Kubernetes Dashboard</a>
-<ul>
-<li><a href="#controller-logs">Controller Logs</a></li>
-</ul>
-</li>
-<li><a href="#grafana-dashboard--alerts">Grafana Dashboard &amp; Alerts</a></li>
-</ul>
-</li>
-<li><a href="#helm">HELM</a>
-<ul>
-<li><a href="#baseline">Baseline</a>
-<ul>
-<li><a href="#ycsb">YCSB</a></li>
-<li><a href="#fio">FIO</a></li>
-</ul>
-</li>
-<li><a href="#stress">Stress</a></li>
-<li><a href="#scaleout">Scaleout</a></li>
-<li><a href="#elasticity">Elasticity</a></li>
-<li><a href="#chaos">Chaos</a></li>
-<li><a href="#guide-for-the-frisbee-plan-developers">Guide for the Frisbee Plan Developers</a></li>
-</ul>
-</li>
-<li><a href="#periodically-kill-some-nodes">Periodically kill some nodes.</a>
-<ul>
-<li><a href="#do-not-set-dependencies-on-cascades">Do not set dependencies on cascades</a></li>
-</ul>
-</li>
-</ul>
-<!-- raw HTML omitted -->
 <p>This is a guide for those who wish to contribute new Charts in Frisbee.</p>
 <p>Because there is an overlap, we advise you to have a look at the Guide for Code Developers first.</p>
 <h2 id="what-is-a-helm-chart-">What is a Helm Chart ? <a class="header-link" href="#what-is-a-helm-chart-"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2>
@@ -367,7 +298,7 @@ complex, like a full web app stack with HTTP servers, databases, caches, and so 
 <p>The best way to start is by reading the official <a href="https://helm.sh/docs/">Helm documentation</a>.</p>
 <p>Control how to visualize the services.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>// DrawAs hints how to mark points on the Grafana dashboard.
-</span></span><span style="display:flex;"><span>DrawAs string = &#34;frisbee.io/draw/&#34;
+</span></span><span style="display:flex;"><span>DrawAs string = &#34;frisbee.dev/draw/&#34;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>// DrawAsPoint will mark the creation and deletion of a service as distinct events.
 </span></span><span style="display:flex;"><span>DrawAsPoint string = &#34;pointInTime&#34;
@@ -436,12 +367,12 @@ trust this registry.</p>
 </ol>
 </blockquote>
 <h3 id="debugging-an-installation">Debugging an Installation <a class="header-link" href="#debugging-an-installation"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3>
-<p>Error: UPGRADE FAILED: unable to recognize &quot;&quot;: no matches for kind &quot;Template&quot; in version &quot;frisbee.io/v1alpha1&quot;</p>
+<p>Error: UPGRADE FAILED: unable to recognize &quot;&quot;: no matches for kind &quot;Template&quot; in version &quot;frisbee.dev/v1alpha1&quot;</p>
 <p>In the next step, you should validate that CRDs are successfully installed.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># Validate the CRDs are properly installed</span>
-</span></span><span style="display:flex;"><span>&gt;&gt; kubectl get crds  | grep frisbee.io
-</span></span></code></pre></div><p>chaos.frisbee.io 2021-12-17T12:30:06Z clusters.frisbee.io 2021-12-17T12:30:06Z services.frisbee.io 2021-12-17T12:30:07Z
-telemetries.frisbee.io 2021-12-17T12:30:07Z workflows.frisbee.io 2021-12-17T12:30:07Z</p>
+</span></span><span style="display:flex;"><span>&gt;&gt; kubectl get crds  | grep frisbee.dev
+</span></span></code></pre></div><p>chaos.frisbee.dev 2021-12-17T12:30:06Z clusters.frisbee.dev 2021-12-17T12:30:06Z services.frisbee.dev 2021-12-17T12:30:07Z
+telemetries.frisbee.dev 2021-12-17T12:30:07Z workflows.frisbee.dev 2021-12-17T12:30:07Z</p>
 <h2 id="debug-a-test">Debug a Test <a class="header-link" href="#debug-a-test"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2>
 <p>At this point, the workflow is installed. You can go to the controller's terminal and see some progress.</p>
 <p>If anything fails, you will it see it from there.</p>
@@ -457,7 +388,7 @@ telemetries.frisbee.io 2021-12-17T12:30:07Z workflows.frisbee.io 2021-12-17T12:3
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#555">*</span><span style="color:#bbb"> </span><span style="color:#555">**</span>Templates:<span style="color:#555">**</span><span style="color:#bbb"> </span>are<span style="color:#bbb"> </span>libraries<span style="color:#bbb"> </span>of<span style="color:#bbb"> </span>frequently<span style="color:#555">-</span>used<span style="color:#bbb"> </span>specifications<span style="color:#bbb"> </span>that<span style="color:#bbb"> </span>are<span style="color:#bbb"> </span>reusable<span style="color:#bbb"> </span>throughout<span style="color:#bbb"> </span>the<span style="color:#bbb"> </span>testing<span style="color:#bbb"> </span>plan.<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#555">*</span><span style="color:#bbb"> </span><span style="color:#555">**</span>Testplans:<span style="color:#555">**</span><span style="color:#bbb"> </span>are<span style="color:#bbb"> </span>lists<span style="color:#bbb"> </span>of<span style="color:#bbb"> </span>actions<span style="color:#bbb"> </span>that<span style="color:#bbb"> </span>define<span style="color:#bbb"> </span>what<span style="color:#bbb"> </span>will<span style="color:#bbb"> </span>happen<span style="color:#bbb"> </span>throughout<span style="color:#bbb"> </span>the<span style="color:#bbb"> </span>test.<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>We<span style="color:#bbb"> </span>will<span style="color:#bbb"> </span><span style="color:#069;font-weight:bold">use</span><span style="color:#bbb"> </span>the<span style="color:#bbb"> </span><span style="color:#555">`</span>examples<span style="color:#555">/</span>testplans<span style="color:#555">/</span><span style="color:#f60">3</span>.failover.yml<span style="color:#555">`</span><span style="color:#bbb"> </span><span style="color:#069;font-weight:bold">as</span><span style="color:#bbb"> </span>a<span style="color:#bbb"> </span>reference.<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>We<span style="color:#bbb"> </span>will<span style="color:#bbb"> </span><span style="color:#069;font-weight:bold">use</span><span style="color:#bbb"> </span>the<span style="color:#bbb"> </span><span style="color:#555">`</span>examples<span style="color:#555">/</span>scenarios<span style="color:#555">/</span><span style="color:#f60">3</span>.failover.yml<span style="color:#555">`</span><span style="color:#bbb"> </span><span style="color:#069;font-weight:bold">as</span><span style="color:#bbb"> </span>a<span style="color:#bbb"> </span>reference.<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>This<span style="color:#bbb"> </span>plans<span style="color:#bbb"> </span>uses<span style="color:#bbb"> </span>the<span style="color:#bbb"> </span>following<span style="color:#bbb"> </span>templates:<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">
@@ -473,8 +404,8 @@ telemetries.frisbee.io 2021-12-17T12:30:07Z workflows.frisbee.io 2021-12-17T12:3
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#555">```</span>yaml<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#09f;font-style:italic"># Standard Kubernetes boilerplate
-</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"></span>apiVersion:<span style="color:#bbb"> </span>frisbee.io<span style="color:#555">/</span>v1alpha1<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>kind:<span style="color:#bbb"> </span>TestPlan<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"></span>apiVersion:<span style="color:#bbb"> </span>frisbee.dev<span style="color:#555">/</span>v1alpha1<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>kind:<span style="color:#bbb"> </span>Scenario<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>metadata:<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>name:<span style="color:#bbb"> </span>redis<span style="color:#555">-</span>failover<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>spec:<span style="color:#bbb">
@@ -585,9 +516,9 @@ telemetries.frisbee.io 2021-12-17T12:30:07Z workflows.frisbee.io 2021-12-17T12:3
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#09f;font-style:italic"># Create a dedicated Frisbee name
 </span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"></span><span style="color:#555">&gt;&gt;</span><span style="color:#bbb"> </span>kubectl<span style="color:#bbb"> </span><span style="color:#069;font-weight:bold">create</span><span style="color:#bbb"> </span>namespace<span style="color:#bbb"> </span>frisbee<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#09f;font-style:italic"># Run a testplan (from Frisbee directory)
-</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"></span><span style="color:#555">&gt;&gt;</span><span style="color:#bbb"> </span>kubectl<span style="color:#bbb"> </span><span style="color:#555">-</span>n<span style="color:#bbb"> </span>frisbee<span style="color:#bbb"> </span>apply<span style="color:#bbb"> </span><span style="color:#555">-</span>f<span style="color:#bbb"> </span>examples<span style="color:#555">/</span>testplans<span style="color:#555">/</span><span style="color:#f60">3</span>.failover.yml<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>workflow.frisbee.io<span style="color:#555">/</span>redis<span style="color:#555">-</span>failover<span style="color:#bbb"> </span>created<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#09f;font-style:italic"># Run a scenario (from Frisbee directory)
+</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"></span><span style="color:#555">&gt;&gt;</span><span style="color:#bbb"> </span>kubectl<span style="color:#bbb"> </span><span style="color:#555">-</span>n<span style="color:#bbb"> </span>frisbee<span style="color:#bbb"> </span>apply<span style="color:#bbb"> </span><span style="color:#555">-</span>f<span style="color:#bbb"> </span>examples<span style="color:#555">/</span>scenarios<span style="color:#555">/</span><span style="color:#f60">3</span>.failover.yml<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>workflow.frisbee.dev<span style="color:#555">/</span>redis<span style="color:#555">-</span>failover<span style="color:#bbb"> </span>created<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#09f;font-style:italic"># Confirm that the workflow is running.
 </span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"></span><span style="color:#555">&gt;&gt;</span><span style="color:#bbb"> </span>kubectl<span style="color:#bbb"> </span><span style="color:#555">-</span>n<span style="color:#bbb"> </span>frisbee<span style="color:#bbb"> </span>get<span style="color:#bbb"> </span>pods<span style="color:#bbb">
@@ -601,7 +532,7 @@ telemetries.frisbee.io 2021-12-17T12:30:07Z workflows.frisbee.io 2021-12-17T12:3
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#09f;font-style:italic"># Wait until the test oracle is triggered.
-</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"></span><span style="color:#555">&gt;&gt;</span><span style="color:#bbb"> </span>kubectl<span style="color:#bbb"> </span><span style="color:#555">-</span>n<span style="color:#bbb"> </span>frisbee<span style="color:#bbb"> </span>wait<span style="color:#bbb"> </span><span style="color:#555">--</span><span style="color:#069;font-weight:bold">for</span><span style="color:#555">=</span><span style="color:#069;font-weight:bold">condition</span><span style="color:#555">=</span>oracle<span style="color:#bbb"> </span>workflows.frisbee.io<span style="color:#555">/</span>redis<span style="color:#555">-</span>failover<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"></span><span style="color:#555">&gt;&gt;</span><span style="color:#bbb"> </span>kubectl<span style="color:#bbb"> </span><span style="color:#555">-</span>n<span style="color:#bbb"> </span>frisbee<span style="color:#bbb"> </span>wait<span style="color:#bbb"> </span><span style="color:#555">--</span><span style="color:#069;font-weight:bold">for</span><span style="color:#555">=</span><span style="color:#069;font-weight:bold">condition</span><span style="color:#555">=</span>oracle<span style="color:#bbb"> </span>workflows.frisbee.dev<span style="color:#555">/</span>redis<span style="color:#555">-</span>failover<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>...<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#555">```</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">
@@ -610,7 +541,7 @@ telemetries.frisbee.io 2021-12-17T12:30:07Z workflows.frisbee.io 2021-12-17T12:3
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>One<span style="color:#bbb"> </span>way,<span style="color:#bbb"> </span><span style="color:#069;font-weight:bold">is</span><span style="color:#bbb"> </span><span style="color:#069;font-weight:bold">to</span><span style="color:#bbb"> </span>access<span style="color:#bbb"> </span>the<span style="color:#bbb"> </span>workflow<span style="color:#c30">&#39;s description
 </span></span></span><span style="display:flex;"><span><span style="color:#c30">
 </span></span></span><span style="display:flex;"><span><span style="color:#c30">```bash
-</span></span></span><span style="display:flex;"><span><span style="color:#c30">&gt;&gt; kubectl -n frisbee describe workflows.frisbee.io/validate-local
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">&gt;&gt; kubectl -n frisbee describe workflows.frisbee.dev/validate-local
 </span></span></span><span style="display:flex;"><span><span style="color:#c30">```
 </span></span></span><span style="display:flex;"><span><span style="color:#c30">
 </span></span></span><span style="display:flex;"><span><span style="color:#c30">But why bother if you can access Grafana directly ?
@@ -816,7 +747,7 @@ a <a href="https://en.wikipedia.org/wiki/Software">software</a> product.</p>
 that models the deployment scenario for a software product, the test strategy, the resources required to perform
 testing, and the Key Performance Indicators required to ensure that a product or system meets its design specifications
 and other requirements.</p>
-<p>By codifying the test plan in a YAML-based syntax, Frisbee carriers three main benefits to teams:</p>
+<p>By codifying the scenario in a YAML-based syntax, Frisbee carriers three main benefits to teams:</p>
 <ol>
 <li>
 <p>Help people outside the test team such as developers, business managers, customers <strong>understand</strong> the details of
@@ -831,7 +762,7 @@ scope,<a href="https://www.guru99.com/how-to-create-test-strategy-document.html"
 Plan, so it can be reviewed by Management Team and re-used for other projects.</p>
 </li>
 </ol>
-<p>A test plan may include a strategy for one or more of the following:</p>
+<p>A scenario may include a strategy for one or more of the following:</p>
 <ul>
 <li>Baseline: to be performed during the development or approval stages of the product, typically on a small sample of
 units.</li>
@@ -988,12 +919,7 @@ use as many inputs as the number of instances -- or omit instances.</p>
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/users-guide/develop/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Develop a new Chart
-            </a>
-          </li>
-          <li class="f6 fw4">
-            <a href="/docs/users-guide/fields/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+            <a href="/docs/fields/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Field Reference
             </a>
           </li>
@@ -1004,13 +930,13 @@ use as many inputs as the number of instances -- or omit instances.</p>
         <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2  primary-color" data-target=".developers-guide">Developer&#39;s Guide</a>
         <ul class="developers-guide desktopmenu animated fadeIn list pl0 bg-light-gray db">
           <li class="f6 fw4">
-            <a href="/docs/developers-guide/new-chart/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 primary-color ">
-              Develop a Chart
+            <a href="/docs/developers-guide/new-controller/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Add New Frisbee Controller¶
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/developers-guide/new-controller/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Develop a Controller
+            <a href="/docs/developers-guide/new-chart/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 primary-color ">
+              Develop a Chart
             </a>
           </li>
         </ul>
