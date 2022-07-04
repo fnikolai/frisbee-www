@@ -274,11 +274,6 @@
               Add New Frisbee Controller¶
             </a>
           </li>
-          <li class="f6 fw4">
-            <a href="/docs/developers-guide/new-chart/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Develop a Chart
-            </a>
-          </li>
         </ul>
       </li>
       
@@ -391,31 +386,6 @@ And since it is inconvenient to create and deploy a new container while you are 
       
 
         <a href="/docs/developers-guide/new-controller/" class="f6 mt2 db link primary-color dim">
-          Read More &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-          
-            <div class="relative  weight-10">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/docs/developers-guide/new-chart/" class="link primary-color dim">Develop a Chart</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          This guide explains how to create a new Helm Chart for Frisbee
-        
-
-        <a href="/docs/developers-guide/new-chart/" class="f6 mt2 db link primary-color dim">
           Read More &raquo;
         </a>
 
@@ -603,6 +573,32 @@ $ docker run docker/whalesay cowsay &#34;hello world&#34; _____________ &lt; hel
 </div>
 
           
+            <div class="relative  weight-12">
+
+  <div class="bg-white mb2 pa3 pa4-l gray">
+    
+
+    <h1 class="near-black f3">
+      <a href="/docs/getting-started/parameters/" class="link primary-color dim">Parameters</a>
+    </h1>
+
+    <div class="lh-copy links">
+      
+          Let's look at a slightly more complex workflow spec with parameters.
+Parameterized Template apiVersion: frisbee.dev/v1alpha1 kind: Template	metadata: name: whalesay	spec: # invoke the whalesay template with # &#34;hello world&#34; as the default argument # to the message parameter inputs:	parameters: message: &#34;hello-world&#34; service: containers: - name: app image: docker/whalesay command: [cowsay] args: [{{&#34;{{.Inputs.Parameters.message&#34;}}] This time, the whalesay template takes an input parameter named message that is passed as the args to the cowsay command.
+      
+
+        <a href="/docs/getting-started/parameters/" class="f6 mt2 db link primary-color dim">
+          Read More &raquo;
+        </a>
+
+    </div>
+
+
+  </div>
+</div>
+
+          
         </section>
       </div>
 
@@ -628,9 +624,8 @@ $ docker run docker/whalesay cowsay &#34;hello world&#34; _____________ &lt; hel
 
 
   <section class="pb3 w-100">
-    <div class="center mw9"> 
-
-      <div class="flex-ns flex-wrap center justify-between pt3">
+    <div class="center mw9">
+      <div class="flex-ns flex-wrap center">
         
           
           

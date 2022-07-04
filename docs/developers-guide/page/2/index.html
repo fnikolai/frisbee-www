@@ -274,11 +274,6 @@
               Add New Frisbee Controller¶
             </a>
           </li>
-          <li class="f6 fw4">
-            <a href="/docs/developers-guide/new-chart/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Develop a Chart
-            </a>
-          </li>
         </ul>
       </li>
       
@@ -366,32 +361,6 @@
       <div class="flex flex-wrap">
         
         <section class="flex-ns flex-wrap justify-between w-100">
-          
-            <div class="relative  weight-12">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/docs/getting-started/parameters/" class="link primary-color dim">Parameters</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          Let's look at a slightly more complex workflow spec with parameters.
-Parameterized Template apiVersion: frisbee.dev/v1alpha1 kind: Template	metadata: name: whalesay	spec: # invoke the whalesay template with # &#34;hello world&#34; as the default argument # to the message parameter inputs:	parameters: message: &#34;hello-world&#34; service: containers: - name: app image: docker/whalesay command: [cowsay] args: [{{&#34;{{.Inputs.Parameters.message&#34;}}] This time, the whalesay template takes an input parameter named message that is passed as the args to the cowsay command.
-      
-
-        <a href="/docs/getting-started/parameters/" class="f6 mt2 db link primary-color dim">
-          Read More &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
           
             <div class="relative  weight-13">
 
@@ -599,6 +568,31 @@ Templates Templates define minimally constraining skeletons for Services and Fau
 </div>
 
           
+            <div class="relative  weight-0">
+
+  <div class="bg-white mb2 pa3 pa4-l gray">
+    
+
+    <h1 class="near-black f3">
+      <a href="/docs/users-guide/develop/" class="link primary-color dim"></a>
+    </h1>
+
+    <div class="lh-copy links">
+      
+          
+      
+
+        <a href="/docs/users-guide/develop/" class="f6 mt2 db link primary-color dim">
+          Read More &raquo;
+        </a>
+
+    </div>
+
+
+  </div>
+</div>
+
+          
         </section>
       </div>
 
@@ -624,9 +618,8 @@ Templates Templates define minimally constraining skeletons for Services and Fau
 
 
   <section class="pb3 w-100">
-    <div class="center mw9"> 
-
-      <div class="flex-ns flex-wrap center justify-between pt3">
+    <div class="center mw9">
+      <div class="flex-ns flex-wrap center">
         
           
           
