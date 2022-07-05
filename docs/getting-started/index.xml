@@ -36,7 +36,7 @@ $ docker run docker/whalesay cowsay &amp;#34;hello world&amp;#34; _____________ 
       
       <guid>https://frisbee.dev/docs/getting-started/parameters/</guid>
       <description>Let&#39;s look at a slightly more complex workflow spec with parameters.
-Parameterized Template apiVersion: frisbee.dev/v1alpha1 kind: Template	metadata: name: whalesay	spec: # invoke the whalesay template with # &amp;#34;hello world&amp;#34; as the default argument # to the message parameter inputs:	parameters: message: &amp;#34;hello-world&amp;#34; service: containers: - name: app image: docker/whalesay command: [cowsay] args: [{{&amp;#34;{{.Inputs.Parameters.message&amp;#34;}}] This time, the whalesay template takes an input parameter named message that is passed as the args to the cowsay command.</description>
+Parameterized Template apiVersion: frisbee.dev/v1alpha1 kind: Template	metadata: name: whalesay	spec: # invoke the whalesay template with # &amp;#34;hello world&amp;#34; as the default argument # to the message parameter inputs:	parameters: message: &amp;#34;hello-world&amp;#34; service: containers: - name: app image: docker/whalesay command: [cowsay] args: [{{&amp;#34;{{.Inputs.Parameters.message}}&amp;#34;}}] This time, the whalesay template takes an input parameter named message that is passed as the args to the cowsay command.</description>
     </item>
     
     <item>

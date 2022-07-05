@@ -59,21 +59,21 @@
 <meta name="theme-color" content="#ffffff">
 <meta property="og:title" content="Parameters" />
 <meta property="og:description" content="Let&#39;s look at a slightly more complex workflow spec with parameters.
-Parameterized Template apiVersion: frisbee.dev/v1alpha1 kind: Template	metadata: name: whalesay	spec: # invoke the whalesay template with # &#34;hello world&#34; as the default argument # to the message parameter inputs:	parameters: message: &#34;hello-world&#34; service: containers: - name: app image: docker/whalesay command: [cowsay] args: [{{&#34;{{.Inputs.Parameters.message&#34;}}] This time, the whalesay template takes an input parameter named message that is passed as the args to the cowsay command." />
+Parameterized Template apiVersion: frisbee.dev/v1alpha1 kind: Template	metadata: name: whalesay	spec: # invoke the whalesay template with # &#34;hello world&#34; as the default argument # to the message parameter inputs:	parameters: message: &#34;hello-world&#34; service: containers: - name: app image: docker/whalesay command: [cowsay] args: [{{&#34;{{.Inputs.Parameters.message}}&#34;}}] This time, the whalesay template takes an input parameter named message that is passed as the args to the cowsay command." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://frisbee.dev/docs/getting-started/parameters/" /><meta property="og:image" content="https://frisbee.dev/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_11312889431537301234.png"/><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2022-06-29T00:00:00+00:00" />
 <meta property="article:modified_time" content="2022-06-29T00:00:00+00:00" /><meta property="og:site_name" content="Frisbee" />
 <meta itemprop="name" content="Parameters">
 <meta itemprop="description" content="Let&#39;s look at a slightly more complex workflow spec with parameters.
-Parameterized Template apiVersion: frisbee.dev/v1alpha1 kind: Template	metadata: name: whalesay	spec: # invoke the whalesay template with # &#34;hello world&#34; as the default argument # to the message parameter inputs:	parameters: message: &#34;hello-world&#34; service: containers: - name: app image: docker/whalesay command: [cowsay] args: [{{&#34;{{.Inputs.Parameters.message&#34;}}] This time, the whalesay template takes an input parameter named message that is passed as the args to the cowsay command."><meta itemprop="datePublished" content="2022-06-29T00:00:00+00:00" />
+Parameterized Template apiVersion: frisbee.dev/v1alpha1 kind: Template	metadata: name: whalesay	spec: # invoke the whalesay template with # &#34;hello world&#34; as the default argument # to the message parameter inputs:	parameters: message: &#34;hello-world&#34; service: containers: - name: app image: docker/whalesay command: [cowsay] args: [{{&#34;{{.Inputs.Parameters.message}}&#34;}}] This time, the whalesay template takes an input parameter named message that is passed as the args to the cowsay command."><meta itemprop="datePublished" content="2022-06-29T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-06-29T00:00:00+00:00" />
 <meta itemprop="wordCount" content="198">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://frisbee.dev/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_11312889431537301234.png"/>
 <meta name="twitter:title" content="Parameters"/>
 <meta name="twitter:description" content="Let&#39;s look at a slightly more complex workflow spec with parameters.
-Parameterized Template apiVersion: frisbee.dev/v1alpha1 kind: Template	metadata: name: whalesay	spec: # invoke the whalesay template with # &#34;hello world&#34; as the default argument # to the message parameter inputs:	parameters: message: &#34;hello-world&#34; service: containers: - name: app image: docker/whalesay command: [cowsay] args: [{{&#34;{{.Inputs.Parameters.message&#34;}}] This time, the whalesay template takes an input parameter named message that is passed as the args to the cowsay command."/>
+Parameterized Template apiVersion: frisbee.dev/v1alpha1 kind: Template	metadata: name: whalesay	spec: # invoke the whalesay template with # &#34;hello world&#34; as the default argument # to the message parameter inputs:	parameters: message: &#34;hello-world&#34; service: containers: - name: app image: docker/whalesay command: [cowsay] args: [{{&#34;{{.Inputs.Parameters.message}}&#34;}}] This time, the whalesay template takes an input parameter named message that is passed as the args to the cowsay command."/>
 
 
 </head>
@@ -265,7 +265,7 @@ Parameterized Template apiVersion: frisbee.dev/v1alpha1 kind: Template	metadata:
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span>- <span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>app<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">image</span>:<span style="color:#bbb">  </span>docker/whalesay <span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">command</span>:<span style="color:#bbb"> </span>[cowsay]<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">args</span>:<span style="color:#bbb"> </span>[{{<span style="color:#c30">&#34;{{.Inputs.Parameters.message&#34;</span>}}]<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">args</span>:<span style="color:#bbb"> </span>[{{<span style="color:#c30">&#34;{{.Inputs.Parameters.message}}&#34;</span>}}]<span style="color:#bbb">
 </span></span></span></code></pre></div><p>This time, the <code>whalesay</code> template takes an input parameter named <code>message</code> that is passed as the <code>args</code> to the <code>cowsay</code> command. In order to reference parameters (e.g., <code>&quot;{{&quot;{{inputs.parameters.message}}&quot;}}&quot;</code>), the parameters must be enclosed in double set of brackets to escape the curly braces in YAML.</p>
 <blockquote>
 <p>Frisbee uses both installation time and runtime evaluated templated. The outer brackers <code>{{...}}</code> are evaluated by Helm at installation time. The inner brackers <code>{{&quot;{{..}}&quot;}}</code> are evaluated by the Frisbee controller at runtime.</p>

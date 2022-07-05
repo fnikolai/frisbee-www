@@ -604,7 +604,7 @@ $ docker run docker/whalesay cowsay &#34;hello world&#34; _____________ &lt; hel
     <div class="lh-copy links">
       
           Let's look at a slightly more complex workflow spec with parameters.
-Parameterized Template apiVersion: frisbee.dev/v1alpha1 kind: Template	metadata: name: whalesay	spec: # invoke the whalesay template with # &#34;hello world&#34; as the default argument # to the message parameter inputs:	parameters: message: &#34;hello-world&#34; service: containers: - name: app image: docker/whalesay command: [cowsay] args: [{{&#34;{{.Inputs.Parameters.message&#34;}}] This time, the whalesay template takes an input parameter named message that is passed as the args to the cowsay command.
+Parameterized Template apiVersion: frisbee.dev/v1alpha1 kind: Template	metadata: name: whalesay	spec: # invoke the whalesay template with # &#34;hello world&#34; as the default argument # to the message parameter inputs:	parameters: message: &#34;hello-world&#34; service: containers: - name: app image: docker/whalesay command: [cowsay] args: [{{&#34;{{.Inputs.Parameters.message}}&#34;}}] This time, the whalesay template takes an input parameter named message that is passed as the args to the cowsay command.
       
 
         <a href="/docs/getting-started/parameters/" class="f6 mt2 db link primary-color dim">
