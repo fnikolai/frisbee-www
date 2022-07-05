@@ -39,7 +39,7 @@ spec:
       - name: app
         image:  docker/whalesay 
         command: [cowsay]
-        args: [{{"{{.Inputs.Parameters.message"}}]
+        args: [{{"{{.Inputs.Parameters.message}}"}}]
 ```
 
 

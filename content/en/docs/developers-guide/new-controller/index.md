@@ -160,3 +160,7 @@ To confirm that they have been actually created, you can use the  `helm` tool to
 
 Then, you see that the `latest` Chart version is equal to the latest `git tag`, and in accordance to the VERSION file.
 
+
+
+
+
