@@ -59,3 +59,42 @@ kubectl get secret controller-certificate -o json | jq -r '.data["tls.key"]' | b
 ENABLE_WEBHOOKS="true" make run
 ```
 
+```
+https://tech.paulcz.net/blog/creating-self-signed-certs-on-kubernetes/
+```
+
+
+
+
+
+#### Validate the certificates against the CA
+
+```
+openssl verify -CAfile <(kubectl get secret ca-tls -o jsonpath='{.data.ca\.crt}' | base64 -d) <(kubectl get secret webhook-tls -o jsonpath='{.data.tls\.crt}' | base64 -d)
+```
+
+
+
+
+
+#### **Validate the Client / Server authentication**
+
+```bash
+# Run server
+openssl s_server \
+  -cert <(kubectl get secret webhook-tls -o jsonpath='{.data.tls\.crt}' | base64 -d) \
+  -key <(kubectl get secret webhook-tls -o jsonpath='{.data.tls\.key}' | base64 -d) \
+  -CAfile <(kubectl get secret ca-tls -o jsonpath='{.data.ca\.crt}' | base64 -d) \
+  -WWW -port 12345  \
+  -verify_return_error -Verify 1 &
+  
+  
+# Run client
+echo -e 'GET /test.txt HTTP/1.1\r\n\r\n' | \
+  openssl s_client \
+  -cert <(kubectl get secret sandbox2-client-tls -o jsonpath='{.data.tls\.crt}' | base64 -d) \
+  -key <(kubectl get secret sandbox2-client-tls -o jsonpath='{.data.tls\.key}' | base64 -d) \
+  -CAfile <(kubectl get secret sandbox2-client-tls -o jsonpath='{.data.ca\.crt}' | base64 -d) \
+  -connect localhost:12345 -quiet
+```
+

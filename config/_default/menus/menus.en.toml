@@ -40,6 +40,12 @@
 # LOW LEVEL ITEMS
 
 [[docs]]
+  name = "Field References"
+  weight = 80
+  identifier = "fields"
+  url = "/fields/"
+
+[[docs]]
   name = "Troubleshooting"
   weight = 80
   identifier = "troubleshooting"
