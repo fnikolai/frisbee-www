@@ -16,16 +16,5 @@
       <description>For details about release notes, you need to go here: https://github.com/CARV-ICS-FORTH/frisbee/releases -- see this for an Atom feed: https://github.com/CARV-ICS-FORTH/frisbee/releases.atom</description>
     </item>
     
-    <item>
-      <title>Let’s celebrate Hugo’s 5th birthday</title>
-      <link>https://frisbee.dev/news/lets-celebrate-hugos-5th-birthday/</link>
-      <pubDate>Wed, 04 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://frisbee.dev/news/lets-celebrate-hugos-5th-birthday/</guid>
-      <description>By Bjørn Erik Pedersen (@bepsays / @bep), Hugo Lead
-Five years ago today, Steve Francia made his first commit on the Hugo project: &amp;quot;Hugo: A Fast and Flexible Static Site Generator built with love by spf13 in GoLang&amp;quot;.
-Steve was writing that on a train commute to New York. I&#39;m writing this article running Hugo v0.43-DEV, the preview version of the next Hugo release. The release is scheduled for Monday and adds a powerful assets pipeline, with SCSS/SASS support, assets minification, fingerprinting/subresource integrity, ad-hoc image processing and much more.</description>
-    </item>
-    
   </channel>
 </rss>
