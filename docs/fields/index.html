@@ -66,7 +66,7 @@
 <meta itemprop="name" content="Field Reference">
 <meta itemprop="description" content="This document describes the fields for building a Frisbee experiment."><meta itemprop="datePublished" content="2022-06-28T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-06-28T00:00:00+00:00" />
-<meta itemprop="wordCount" content="3369">
+<meta itemprop="wordCount" content="3488">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://frisbee.dev/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_7774928419837818019.png"/>
 <meta name="twitter:title" content="Field Reference"/>
@@ -219,8 +219,6 @@
 
 
 <div class="prose" id="prose">
-
-
 
 <p>Packages:</p>
 <ul>
@@ -417,6 +415,21 @@ string
 </tr>
 <tr>
 <td>
+<code>expect</code><br/>
+<em>
+<a href="#frisbee.dev/v1alpha1.MatchOutputs">
+[]MatchOutputs
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Expect declares a list of expected outputs. The number of expected outputs must be the same
+as the number of defined services.</p>
+</td>
+</tr>
+<tr>
+<td>
 <code>until</code><br/>
 <em>
 <a href="#frisbee.dev/v1alpha1.ConditionalExpr">
@@ -510,6 +523,21 @@ string
 </td>
 <td>
 <p>Services is a list of services that will be stopped.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>expect</code><br/>
+<em>
+<a href="#frisbee.dev/v1alpha1.MatchOutputs">
+[]MatchOutputs
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Expect declares a list of expected outputs. The number of expected outputs must be the same
+as the number of defined services.</p>
 </td>
 </tr>
 <tr>
@@ -2171,6 +2199,49 @@ map[string]string
 </tr>
 </tbody>
 </table>
+<h3 id="frisbee.dev/v1alpha1.MatchOutputs">MatchOutputs
+</h3>
+<p>
+(<em>Appears on:</em><a href="#frisbee.dev/v1alpha1.CallSpec">CallSpec</a>)
+</p>
+<div>
+<p>MatchOutputs defined a set of remote command outputs that must be matched. The limit for both Stdout and Stderr
+is 1024 characters.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>stdout</code><br/>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Stdout is a regex that describes the expected output from stdout. It cannot be longer than 1024 characters.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>stderr</code><br/>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Stderr is a regex that describes the expected output from stderr. It cannot be longer than 1024 characters.</p>
+</td>
+</tr>
+</tbody>
+</table>
 <h3 id="frisbee.dev/v1alpha1.Mode">Mode
 (<code>string</code> alias)</h3>
 <p>
@@ -3409,7 +3480,7 @@ Kubernetes meta/v1.Duration
 <hr/>
 <p><em>
 Generated with <code>gen-crd-api-reference-docs</code>
-on git commit <code>e526204</code>.
+on git commit <code>92c476c</code>.
 </em></p>
 
 </div>
@@ -3482,16 +3553,11 @@ on git commit <code>e526204</code>.
       </li>
       
       <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
-        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2  primary-color" data-target=".users-guide">User&#39;s Guide</a>
-        <ul class="users-guide desktopmenu animated fadeIn list pl0 bg-light-gray db">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".users-guide">User&#39;s Guide</a>
+        <ul class="users-guide desktopmenu animated fadeIn list pl0 bg-light-gray dn">
           <li class="f6 fw4">
             <a href="/docs/users-guide/deploy/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Use an existing Chart
-            </a>
-          </li>
-          <li class="f6 fw4">
-            <a href="/docs/fields/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 primary-color ">
-              Field Reference
             </a>
           </li>
         </ul>
@@ -3532,6 +3598,10 @@ on git commit <code>e526204</code>.
             </a>
           </li>
         </ul>
+      </li>
+      
+      <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
+        <a href="/fields/" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".fields">Field References</a>
       </li>
       
       <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
@@ -3706,6 +3776,12 @@ f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
     <li  class="tl dib ma0 hover-bg-black w-100 mb2 bb b--mid-gray">
         <a href="/operators-manual/" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
           Operators&#39;s Manual
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/fields/" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
+          Field References
         </a>
     </li>
   
