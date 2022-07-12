@@ -8,7 +8,7 @@
       {{ .Content }}
     </div>
   </article>
-    <section class="flex-ns flex-wrap justify-between w-100 v-top">
+    <section class="flex-ns flex-wrap justify-between w-80 v-top">
       {{ range (.Paginate (.Pages | shuffle ) 20).Pages  }}
         {{template "showcase_items" .}}
       {{ end }}
