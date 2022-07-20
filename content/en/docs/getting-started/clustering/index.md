@@ -7,9 +7,9 @@ authors: [Fotis NIKOLAIDIS]
 menu:
     docs:
         parent: "getting-started"
-        weight: 13
-weight: 13
-sections_weight: 13
+        weight: 15
+weight: 15
+sections_weight: 15
 draft: false
 toc: true
 ---
@@ -22,108 +22,86 @@ When writing testing scenarios, it is often very useful to be able to run multip
 
 ## Create Clustered Services
 
-There are two ways to create services in a cluster: by instances and by inputs. 
+There are two ways to create multiple services in a cluster: identical and parameterized.
 
-#### By instances
+#### Multiple Identical Services
 
-```yaml
-apiVersion: frisbee.dev/v1alpha1
-kind: Scenario
-metadata:
-  name: whales-say
-spec:
-  actions:
-    - action: Cluster	 
-      name: whales-say
-      cluster:
-        templateRef: whalesay 
-        instances: 4	# number of services
-```
-
-The above snippet will create 4 identical services initialized with the default values of the `whalesay` template. 
-
-#### By inputs
+The following snippet will create 4 identical services initialized with the given input (in the input is not defined, the default template values will be used).
 
 ```yaml
 apiVersion: frisbee.dev/v1alpha1
 kind: Scenario
 metadata:
-  name: whales-say
+  name: clustering
 spec:
   actions:
-    - action: Cluster	 
-      name: whales-say
+    # Create an iperf server
+    - action: Service
+      name: server
+      service:
+        templateRef: iperf.server
+
+    # Create a set of iperf clients
+    - action: Cluster
+      name: client
+      depends: { running: [ server ] }
       cluster:
-        templateRef: whalesay 
-        # inputs specifies the list to iterate over
+        templateRef: iperf.client
+        instances: 3 # Create multiple identical services
         inputs: 
-          - { message: "I am A" } 
-          - { message: "I am B" } 
-          - { message: "I am C" } 
-          - { message: "I am D" } 
+          - { target: server }
 ```
 
-The above snippet will create 4 parameterized services, with each service initialized with different values of the `whalesay` template. 
-
-> When inputs are defined, the `instances` variable is automatically set to the number of specified inputs.
 
 
-
-#### By custom inputs
-
-There are cases in which we want to create identical services, but whose parameters are different from the template's default values. 
-
-In this case, we use a single set of `inputs` to define the custom values, and then we specify the number of desired instances. 
+As you may notice, another benefit of the `cluster` is that users can set dependencies on the entire cluster rather than individual services, thus greatly simplifying the dependency graph. 
 
 
 
+#### Multiple Parameterized Services
 
+The following snippet will create 3 parameterized services, with each service initialized with different `duration` values.
 
 ```yaml
 apiVersion: frisbee.dev/v1alpha1
 kind: Scenario
 metadata:
-  name: whales-say
+  name: clustering
 spec:
   actions:
-    - action: Cluster	 
-      name: whales-say
+    # Create an iperf server
+    - action: Service
+      name: server
+      service:
+        templateRef: iperf.server
+
+    # Create a set of iperf clients
+    - action: Cluster
+      name: clients
+      depends: { running: [ server ] }
       cluster:
-        templateRef: whalesay 
-        instances: 4
+        templateRef: iperf.client
         inputs: 
-          - { message: "I am Groot" } 
+        	# Iterate over the inputs to create parameterized services.
+        	# Because the templates always expect `strings`, the duration 
+        # should be put in double quotes. Otherwise, you will a json error.
+          - { target: server, duration: "10" }
+          - { target: server, duration: "20" }
+          - { target: server, duration: "30" }
 ```
 
 
 
-> When `inputs` and `instances` are used in parallel, only one set of `inputs` can be defined. Otherwise, the scenario will abort immediately.
+#### Rules for mixing  `inputs` and `instances`.
+
+| Instances  | Inputs      | Result                                                       |
+| ---------- | ----------- | ------------------------------------------------------------ |
+| N          | Undefined   | N `Instances` are created with the default tempalte values.  |
+| Undefined  | N           | N `Instances` are created with custom `Inputs`.              |
+| N (e.g 10) | <N (e.g 2)  | 10 `Instances` are created. Every 2 instances, the `Inputs` are repeated. |
+| N (e.g 10) | <N (e.g 12) | Abort                                                        |
 
 
-
-## Scheduling Services
-
-Users may also set the creation policy to construct variable workloads and dynamically changing topologies for elastic experiments. The next snippet shows how to schedule the creation of new services, using a cron-like syntax.
-
-```yaml
-apiVersion: frisbee.dev/v1alpha1
-kind: Scenario
-metadata:
-  name: whales-say
-spec:
-  actions:
-    - action: Cluster	 
-      name: whales-say
-      cluster:
-        templateRef: whalesay 
-        inputs: 
-          - { message: "I am A" } 
-          - { message: "I am B" } 
-          - { message: "I am C" } 
-          - { message: "I am D" } 
-        schedule: # Create the service periodically
-      		cron: "@every 1m"
-```
 
 
 

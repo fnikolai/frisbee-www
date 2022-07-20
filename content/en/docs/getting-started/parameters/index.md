@@ -39,16 +39,14 @@ spec:
       - name: app
         image:  docker/whalesay 
         command: [cowsay]
-        args: [{{"{{.Inputs.Parameters.message}}"}}]
+        args: ["{{.Inputs.Parameters.message}}"]
 ```
 
-
-
-This time, the `whalesay` template takes an input parameter named `message` that is passed as the `args` to the `cowsay` command. In order to reference parameters (e.g., `"{{"{{inputs.parameters.message}}"}}"`), the parameters must be enclosed in double set of brackets to escape the curly braces in YAML.
+This time, the `whalesay` template takes an input parameter named `message` that is passed as the `args` to the `cowsay` command.  
 
 
 
-> Frisbee uses both installation time and runtime evaluated templated. The outer brackers `{{...}}` are evaluated by Helm at installation time. The inner brackers `{{"{{..}}"}}` are evaluated by the Frisbee controller at runtime. 
+> the part {{.Inputs.Parameters.}} is case-sensitive and should be in this form. the last part, the parameter, is always lowercase.
 
 
 
@@ -60,7 +58,7 @@ Workflow parameters can be used to override the default parameters of the templa
 apiVersion: frisbee.dev/v1alpha1
 kind: Scenario
 metadata:
-  name: hello-world
+  name: parameters
 spec:
   actions:
     - action: Service
@@ -75,6 +73,5 @@ spec:
         inputs:
           - { message: "Thanks for all the fish!" }
 ```
-
 
 

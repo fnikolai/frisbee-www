@@ -84,4 +84,3 @@ spec:
       service:
         templateRef: whalesay  
 ```
-

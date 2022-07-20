@@ -165,7 +165,7 @@ scenario.frisbee.dev/cockroach-bitrot created
 
 ----------------------------
 
-**Event-based**: Consumes information from the Kubernetes API
+**Resource-based**: Consumes information from the Kubernetes API
 
 * [Dashboard](https://dashboard-frisbee.localhost/#/pod?namespace=mytest):  is a web-based Kubernetes user interface.
 You can use Dashboard to deploy containerized applications to a Kubernetes cluster, troubleshoot your containerized
@@ -184,12 +184,26 @@ via `grep token  ~/.kube/config`.
 
 ------------------------------------------------
 
-* **Log-based:** Consumes information from distributed logs.
+**Log-based:** Consumes information from distributed logs.
 
 * [Logviewer](http://logviewer-mytest.localhost) (admin/admin)
 
->
-> You may notice that it takes **long time for the experiment to start**. This is due to preparing the NFS volume for
+------------------------------------------------
+
+**Event-based:** Consumes information from `kubectl get events`. You should a similar output
+
+```bash
+LAST SEEN   TYPE     REASON      OBJECT         MESSAGE
+2m13s       Normal   Scheduled   pod/whalesay   Successfully assigned karvdash-fnikol/whalesay to k8s-node3
+2m13s       Normal   Pulling     pod/whalesay   Pulling image "docker/whalesay"
+118s        Normal   Pulled      pod/whalesay   Successfully pulled image "docker/whalesay" in 14.534703599s
+118s        Normal   Created     pod/whalesay   Created container app
+117s        Normal   Started     pod/whalesay   Started container app
+```
+
+
+
+>You may notice that it takes **long time for the experiment to start**. This is due to preparing the NFS volume for
 > collecting the logs from the various services. Also note that the lifecycle of the volume is bind to that of the test.
 > If the test is deleted, the volume will be garbage collected automatically.
 
