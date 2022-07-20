@@ -35,13 +35,28 @@
     <loc>https://frisbee.dev/docs/getting-started/parameters/</loc>
     <lastmod>2022-06-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://frisbee.dev/docs/getting-started/clustering/</loc>
-    <lastmod>2022-06-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://frisbee.dev/docs/getting-started/dependencies/</loc>
+    <loc>https://frisbee.dev/docs/getting-started/execution-order/</loc>
     <lastmod>2022-06-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://frisbee.dev/docs/getting-started/naming/</loc>
+    <lastmod>2022-06-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://frisbee.dev/docs/getting-started/dependency-order/</loc>
+    <lastmod>2022-06-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://frisbee.dev/docs/getting-started/clustering/</loc>
+    <lastmod>2022-06-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://frisbee.dev/docs/getting-started/scheduling/</loc>
+    <lastmod>2022-06-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://frisbee.dev/docs/getting-started/conditionals/</loc>
+    <lastmod>2022-06-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://frisbee.dev/docs/getting-started/tolerate-failures/</loc>
+    <lastmod>2022-06-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://frisbee.dev/docs/getting-started/resource-throttling/</loc>
     <lastmod>2022-06-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://frisbee.dev/docs/about/features/</loc>

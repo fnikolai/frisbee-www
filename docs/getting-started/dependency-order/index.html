@@ -10,7 +10,7 @@
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>Troubleshooting | </title>
+  <title>Dependency Order | </title>
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
   <meta name="generator" content="Hugo 0.101.0" />
@@ -19,7 +19,6 @@
   <meta name="robots" content="noindex, nofollow">
   
 
-  <link rel="alternate" type="application/rss&#43;xml" href="https://frisbee.dev/docs/troubleshooting/index.xml">
   
   
   
@@ -33,7 +32,7 @@
   
 
   <meta name="description"
-  content="This is the guide for troubleshooting the Frisbee ecosystem">
+  content="Smart, Cloud-Native Testbed!">
 
   
 
@@ -58,15 +57,26 @@
 <link rel="manifest" href="/manifest.json">
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0594cb">
 <meta name="theme-color" content="#ffffff">
-<meta property="og:title" content="Troubleshooting" />
-<meta property="og:description" content="This is the guide for troubleshooting the Frisbee ecosystem" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://frisbee.dev/docs/troubleshooting/" /><meta property="og:image" content="https://frisbee.dev/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_3258812932726615123.png"/><meta property="og:site_name" content="Frisbee" />
-<meta itemprop="name" content="Troubleshooting">
-<meta itemprop="description" content="This is the guide for troubleshooting the Frisbee ecosystem"><meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://frisbee.dev/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_3258812932726615123.png"/>
-<meta name="twitter:title" content="Troubleshooting"/>
-<meta name="twitter:description" content="This is the guide for troubleshooting the Frisbee ecosystem"/>
+<meta property="og:title" content="Dependency Order" />
+<meta property="og:description" content="In the Execution Order example, one action starts after a previous action is complete. This kind of semantic is useful for batch jobs, but not for distributed computing. This is because services (and servers in general) are usually long-running that never complete.
+In addition to the success semantics, Frisbee workflows also support running semantics. If used, a new action starts after a previous action is still running.
+Iperf Templates Similarly to what we did in the hello-world example, we must create the templates that will be used in the testing scenario." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://frisbee.dev/docs/getting-started/dependency-order/" /><meta property="og:image" content="https://frisbee.dev/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_11831318422471112986.png"/><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2022-06-29T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-06-29T00:00:00+00:00" /><meta property="og:site_name" content="Frisbee" />
+<meta itemprop="name" content="Dependency Order">
+<meta itemprop="description" content="In the Execution Order example, one action starts after a previous action is complete. This kind of semantic is useful for batch jobs, but not for distributed computing. This is because services (and servers in general) are usually long-running that never complete.
+In addition to the success semantics, Frisbee workflows also support running semantics. If used, a new action starts after a previous action is still running.
+Iperf Templates Similarly to what we did in the hello-world example, we must create the templates that will be used in the testing scenario."><meta itemprop="datePublished" content="2022-06-29T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-06-29T00:00:00+00:00" />
+<meta itemprop="wordCount" content="270">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://frisbee.dev/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_11831318422471112986.png"/>
+<meta name="twitter:title" content="Dependency Order"/>
+<meta name="twitter:description" content="In the Execution Order example, one action starts after a previous action is complete. This kind of semantic is useful for batch jobs, but not for distributed computing. This is because services (and servers in general) are usually long-running that never complete.
+In addition to the success semantics, Frisbee workflows also support running semantics. If used, a new action starts after a previous action is still running.
+Iperf Templates Similarly to what we did in the hello-world example, we must create the templates that will be used in the testing scenario."/>
 
 
 </head>
@@ -181,13 +191,134 @@
   
   <main role="main" class="content-with-sidebar min-vh-100 pb7 pb0-ns">
     
-  
-  
-  
-  <div class="w-100 ph4 pb5 pb6-ns pt1 mt4 pt3-ns">
+  <article class="w-100 ph4 pb5 pb6-ns pt1 pt5-ns">
+    <div class="flex-l">
 
-  <div class="flex">
-    <div class="dn db-l w-20">
+      <div class="order-2 w-100 w-20-l ph5-m ph0-l mb4 sticky">
+<aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
+	
+		<p class="b">What's on this Page</p>
+  	<nav id="TableOfContents">
+  <ul>
+    <li><a href="#iperf-templates">Iperf Templates</a></li>
+    <li><a href="#dag-client-server">DAG (Client-Server)</a></li>
+  </ul>
+</nav>
+	
+
+	<div date-pref>
+		
+			<a href="https://frisbee.dev/docs/getting-started/naming/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Naming and Addressing ">
+				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+
+			</a>
+		
+
+		
+			<a href="https://frisbee.dev/docs/getting-started/clustering/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Clustering">
+			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+
+			</a>
+		
+	</div>
+
+</aside>
+</div>
+
+      <div class="order-1 w-60-l mw7 ph0 ph5-ns mid-gray nested-copy-line-height no-underline nested-links nested-img nested-copy-separator nested-blockquote mt0-ns" style="flex-grow:1;">
+        <div class="documentation-copy center measure-wide-l">
+          <div id="readout" class="fixed right-0 bottom-0">
+          </div>
+          <header class="flex-none w-100">
+  
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Dependency Order</h1>
+</header>
+
+<aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
+  
+
+  
+</aside>
+
+
+
+<div class="prose" id="prose">
+
+<p>In the <code>Execution Order</code> example, one action starts after a previous action is complete. This kind of semantic is useful for batch jobs, but not for distributed computing. This is because services (and servers in general) are usually long-running that never complete.</p>
+<p>In addition to the <code>success</code> semantics, Frisbee workflows also support <code>running</code> semantics. If used, a new action starts after a previous action is still running.</p>
+<h2 id="iperf-templates">Iperf Templates <a class="header-link" href="#iperf-templates"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2>
+<p>Similarly to what we did in the <code>hello-world</code> example, we must create the templates that will be used in the testing scenario.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#0cf;font-weight:bold">---</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">apiVersion</span>:<span style="color:#bbb"> </span>frisbee.dev/v1alpha1<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">kind</span>:<span style="color:#bbb"> </span>Template<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">metadata</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>iperf.server<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">spec</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">service</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#309;font-weight:bold">containers</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span>- <span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>app<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">image</span>:<span style="color:#bbb">  </span>czero/iperf2<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">command</span>:<span style="color:#bbb"> </span>[iperf]<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">args</span>:<span style="color:#bbb"> </span>[<span style="color:#c30">&#34;-s&#34;</span>,<span style="color:#bbb"> </span><span style="color:#c30">&#34;-f&#34;</span>,<span style="color:#bbb"> </span><span style="color:#c30">&#34;m&#34;</span>,<span style="color:#bbb"> </span><span style="color:#c30">&#34;-i&#34;</span>,<span style="color:#bbb"> </span><span style="color:#c30">&#34;5&#34;</span>]<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#0cf;font-weight:bold">---</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">apiVersion</span>:<span style="color:#bbb"> </span>frisbee.dev/v1alpha1<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">kind</span>:<span style="color:#bbb"> </span>Template<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">metadata</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>iperf.client<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">spec</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">inputs</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#309;font-weight:bold">parameters</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">target</span>:<span style="color:#bbb"> </span>localhost<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">service</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#309;font-weight:bold">containers</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span>- <span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>app<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">image</span>:<span style="color:#bbb">  </span>czero/iperf2<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">command</span>:<span style="color:#bbb"> </span>[iperf]<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">args</span>:<span style="color:#bbb"> </span>[<span style="color:#c30">&#34;-c&#34;</span>,<span style="color:#bbb"> </span><span style="color:#c30">&#34;{{.Inputs.Parameters.target}}&#34;</span><span style="color:#bbb"> </span>]<span style="color:#bbb">
+</span></span></span></code></pre></div><h2 id="dag-client-server">DAG (Client-Server) <a class="header-link" href="#dag-client-server"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2>
+<p>As we see , <code>running</code> dependencies can be extremely helpful in server-client architectures, where the client must start only after the server is up and running.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#0cf;font-weight:bold">---</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">apiVersion</span>:<span style="color:#bbb"> </span>frisbee.dev/v1alpha1<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">kind</span>:<span style="color:#bbb"> </span>Scenario<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">metadata</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>dependency-order<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">spec</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">actions</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#09f;font-style:italic"># Create an iperf server</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>- <span style="color:#309;font-weight:bold">action</span>:<span style="color:#bbb"> </span>Service<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>server<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">service</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">templateRef</span>:<span style="color:#bbb"> </span>iperf.server<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#09f;font-style:italic"># Create an iperf client</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>- <span style="color:#309;font-weight:bold">action</span>:<span style="color:#bbb"> </span>Service<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>client<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">depends</span>:<span style="color:#bbb"> </span>{<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">running</span>:<span style="color:#bbb"> </span>[<span style="color:#bbb"> </span>server ] }<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">service</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">templateRef</span>:<span style="color:#bbb"> </span>iperf.client<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">inputs</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">target</span>:<span style="color:#bbb"> </span>server }<span style="color:#bbb">
+</span></span></span></code></pre></div><p>To see the logs use the <code>kubectl logs</code> command.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>kubectl logs server<span style="color:#bbb">
+</span></span></span></code></pre></div><blockquote>
+<p>Combining <code>success</code> and <code>running</code> on the same dependencies set can be tricky. If, for example, B completes before C, then the evaluation of<code>{ running: [ B ], success: [ C] ] }</code> will fail since B is no longer running.</p>
+</blockquote>
+
+</div>
+
+          
+
+        </div>
+      </div>
+      <div class="order-0 w-20 dn db-l">
         
 <nav role="navigation">
   <ul class="list pa0 nl2">
@@ -215,8 +346,8 @@
       </li>
       
       <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8 mb1 bb b--moon-gray">
-        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".getting-started">Getting Started</a>
-        <ul class="getting-started desktopmenu animated fadeIn list pl0 bg-light-gray dn">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2  primary-color" data-target=".getting-started">Getting Started</a>
+        <ul class="getting-started desktopmenu animated fadeIn list pl0 bg-light-gray db">
           <li class="f6 fw4">
             <a href="/docs/getting-started/quick-start/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Quick Start
@@ -243,7 +374,7 @@
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/getting-started/dependency-order/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+            <a href="/docs/getting-started/dependency-order/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 primary-color ">
               Dependency Order
             </a>
           </li>
@@ -349,289 +480,26 @@
   </ul>
 </nav>
 
-    </div>
-
-    <div class="w-100 w-80-l ph0 ph4-l">
-      <article class="w-100 nested-copy-line-height nested-links nested-img">
-        <h1 class="primary-color-dark f2">
-          Troubleshooting
-        </h1>
-        <div class=" mid-gray f5 f4-l">
-          
-        </div>
-      </article>
-
-      
-
-      <div class="flex flex-wrap">
-        
-        <section class="flex-ns flex-wrap justify-between w-100">
-          
-            <div class="relative flex-auto w-100 w-40-l mr3 mb3 bg-white ba b--moon-gray nested-copy-line-height weight10">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/docs/getting-started/quick-start/" class="link primary-color dim">Quick Start</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          This tutorial will guide you through deploying and running Frisbee on a local Kubernetes installation.
-        
-
-        <a href="/docs/getting-started/quick-start/" class="f6 mt2 db link primary-color dim">
-          Read More &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-          
-            <div class="relative flex-auto w-100 w-40-l mr3 mb3 bg-white ba b--moon-gray nested-copy-line-height weight10">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/docs/developers-guide/new-controller/" class="link primary-color dim">Add New Frisbee Controller¶</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          There are two ways to run a Frisbee controller.
-As a container inside a Kubernetes cluster. As Go program outside a cluster. The container approach is production-ready and does not require any compilation or dependencies.
-Unfortunately though, bugs may arise and features may be needed.
-And since it is inconvenient to create and deploy a new container while you are still debugging the controller, the second approach is preffered for development purposes.
-      
-
-        <a href="/docs/developers-guide/new-controller/" class="f6 mt2 db link primary-color dim">
-          Read More &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-          
-            <div class="relative flex-auto w-100 w-40-l mr3 mb3 bg-white ba b--moon-gray nested-copy-line-height weight10">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/docs/troubleshooting/faq/" class="link primary-color dim">Frequently Asked Questions</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          Answers to frequent questions.
-        
-
-        <a href="/docs/troubleshooting/faq/" class="f6 mt2 db link primary-color dim">
-          Read More &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-          
-            <div class="relative flex-auto w-100 w-40-l mr3 mb3 bg-white ba b--moon-gray nested-copy-line-height weight10">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/docs/fields/" class="link primary-color dim">Field Reference</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          This document describes the fields for building a Frisbee experiment.
-        
-
-        <a href="/docs/fields/" class="f6 mt2 db link primary-color dim">
-          Read More &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-          
-            <div class="relative flex-auto w-100 w-40-l mr3 mb3 bg-white ba b--moon-gray nested-copy-line-height weight10">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/docs/operators-manual/install/" class="link primary-color dim">SomePost</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          SomePost
-        
-
-        <a href="/docs/operators-manual/install/" class="f6 mt2 db link primary-color dim">
-          Read More &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-          
-            <div class="relative flex-auto w-100 w-40-l mr3 mb3 bg-white ba b--moon-gray nested-copy-line-height weight10">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/docs/troubleshooting/tools/" class="link primary-color dim">Tools for debugging</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          A list of supported tools for debugging
-        
-
-        <a href="/docs/troubleshooting/tools/" class="f6 mt2 db link primary-color dim">
-          Read More &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-          
-            <div class="relative flex-auto w-100 w-40-l mr3 mb3 bg-white ba b--moon-gray nested-copy-line-height weight10">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/docs/users-guide/deploy/" class="link primary-color dim">Chart Guide</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          Guide for the Frisbee Chart Developers
-        
-
-        <a href="/docs/users-guide/deploy/" class="f6 mt2 db link primary-color dim">
-          Read More &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-          
-            <div class="relative flex-auto w-100 w-40-l mr3 mb3 bg-white ba b--moon-gray nested-copy-line-height weight10">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/docs/about/what-is-frisbee/" class="link primary-color dim">Frisbee Overview</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          This document describes the concepts, use cases, core strengths, and the architecture of Frisbee.
-        
-
-        <a href="/docs/about/what-is-frisbee/" class="f6 mt2 db link primary-color dim">
-          Read More &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-          
-            <div class="relative flex-auto w-100 w-40-l mr3 mb3 bg-white ba b--moon-gray nested-copy-line-height weight10">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/docs/getting-started/hello-world/" class="link primary-color dim">Hello World</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          Let's start by creating a very simple workflow template to echo &quot;hello world&quot; using the docker/whalesay container image from Docker Hub.
-You can run this directly from your shell with a simple docker command:
-$ docker run docker/whalesay cowsay &#34;hello world&#34; _____________ &lt; hello world &gt; ------------- \ \ \ ## . ## ## ## == ## ## ## ## === /&#34;&#34;&#34;&#34;&#34;&#34;&#34;&#34;&#34;&#34;&#34;&#34;&#34;&#34;&#34;&#34;___/ === ~~~ {~~ ~~~~ ~~~ ~~~~ ~~ ~ / ===- ~~~ \______ o __/ \ \ __/ \____\______/ Hello from Docker!
-      
-
-        <a href="/docs/getting-started/hello-world/" class="f6 mt2 db link primary-color dim">
-          Read More &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-          
-            <div class="relative flex-auto w-100 w-40-l mr3 mb3 bg-white ba b--moon-gray nested-copy-line-height weight10">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/docs/getting-started/parameters/" class="link primary-color dim">Parameters</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          Let's look at a slightly more complex workflow spec with parameters.
-Parameterized Template apiVersion: frisbee.dev/v1alpha1 kind: Template	metadata: name: whalesay	spec: # invoke the whalesay template with # &#34;hello world&#34; as the default argument # to the message parameter inputs:	parameters: message: &#34;hello-world&#34; service: containers: - name: app image: docker/whalesay command: [cowsay] args: [&#34;{{.Inputs.Parameters.message}}&#34;] This time, the whalesay template takes an input parameter named message that is passed as the args to the cowsay command.
-      
-
-        <a href="/docs/getting-started/parameters/" class="f6 mt2 db link primary-color dim">
-          Read More &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-          
-        </section>
       </div>
 
     </div>
+  </article>
 
+  <div class="w-100 bg-light-gray">
+    <div class="mw7 pa4 center nested-lh-copy lh-copy">
+      <h6 class="f6 dark-gray mb2">
+  Last updated: June 29, 2022
+</h6>
+
+      <a href="https://github.com/CARV-ICS-FORTH/frisbee/edit/master/content/en/docs/getting-started/dependency-order/index.md" class="
+f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
+">Improve this page</a>
+
+      
+
+
+    </div>
   </div>
-
-</div>
-
 
   </main>
 

@@ -66,7 +66,7 @@
 <meta itemprop="name" content="Field Reference">
 <meta itemprop="description" content="This document describes the fields for building a Frisbee experiment."><meta itemprop="datePublished" content="2022-06-28T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-06-28T00:00:00+00:00" />
-<meta itemprop="wordCount" content="3488">
+<meta itemprop="wordCount" content="3620">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://frisbee.dev/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_7774928419837818019.png"/>
 <meta name="twitter:title" content="Field Reference"/>
@@ -430,6 +430,21 @@ as the number of defined services.</p>
 </tr>
 <tr>
 <td>
+<code>tolerate</code><br/>
+<em>
+<a href="#frisbee.dev/v1alpha1.TolerateSpec">
+TolerateSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Tolerate specifies the conditions under which the call will fail. If undefined, the call fails
+immediately when a call to service has failed.</p>
+</td>
+</tr>
+<tr>
+<td>
 <code>until</code><br/>
 <em>
 <a href="#frisbee.dev/v1alpha1.ConditionalExpr">
@@ -538,6 +553,21 @@ string
 <em>(Optional)</em>
 <p>Expect declares a list of expected outputs. The number of expected outputs must be the same
 as the number of defined services.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>tolerate</code><br/>
+<em>
+<a href="#frisbee.dev/v1alpha1.TolerateSpec">
+TolerateSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Tolerate specifies the conditions under which the call will fail. If undefined, the call fails
+immediately when a call to service has failed.</p>
 </td>
 </tr>
 <tr>
@@ -1555,6 +1585,10 @@ Agents are sidecar services will be deployed in the same Pod as the Service cont
 </tr>
 </tbody>
 </table>
+<h3 id="frisbee.dev/v1alpha1.DefaultClassifier">DefaultClassifier
+</h3>
+<div>
+</div>
 <h3 id="frisbee.dev/v1alpha1.DeleteSpec">DeleteSpec
 </h3>
 <p>
@@ -2038,7 +2072,7 @@ int
 <em>(Optional)</em>
 <p>MaxInstances dictate the number of objects to be created for the CR.
 If no inputs are defined, then all instances will be initiated using the default parameters of the template.
-Conditions used in conjunction with Until, MaxInstances as a max bound.</p>
+Event used in conjunction with Until, MaxInstances as a max bound.</p>
 </td>
 </tr>
 <tr>
@@ -2051,7 +2085,7 @@ Conditions used in conjunction with Until, MaxInstances as a max bound.</p>
 <td>
 <em>(Optional)</em>
 <p>Inputs are list of inputs passed to the objects.
-Conditions used in conjunction with instances, if the number of instances is larger that the number of inputs,
+Event used in conjunction with instances, if the number of instances is larger that the number of inputs,
 then inputs are recursively iteration.</p>
 </td>
 </tr>
@@ -2060,7 +2094,7 @@ then inputs are recursively iteration.</p>
 <h3 id="frisbee.dev/v1alpha1.Inputs">Inputs
 </h3>
 <p>
-(<em>Appears on:</em><a href="#frisbee.dev/v1alpha1.TemplateSpec">TemplateSpec</a>)
+(<em>Appears on:</em><a href="#frisbee.dev/v1alpha1.Scheme">Scheme</a>, <a href="#frisbee.dev/v1alpha1.TemplateSpec">TemplateSpec</a>)
 </p>
 <div>
 </div>
@@ -2314,6 +2348,10 @@ string
 </tr>
 </tbody>
 </table>
+<h3 id="frisbee.dev/v1alpha1.OnTime">OnTime
+</h3>
+<div>
+</div>
 <h3 id="frisbee.dev/v1alpha1.Phase">Phase
 (<code>string</code> alias)</h3>
 <p>
@@ -2770,7 +2808,7 @@ time for any reason. if we miss this deadline, we&rsquo;ll just wait till the ne
 </tr>
 <tr>
 <td>
-<code>conditions</code><br/>
+<code>event</code><br/>
 <em>
 <a href="#frisbee.dev/v1alpha1.ConditionalExpr">
 ConditionalExpr
@@ -2779,6 +2817,72 @@ ConditionalExpr
 </td>
 <td>
 <em>(Optional)</em>
+<p>Event schedules a new every when an event has happened.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="frisbee.dev/v1alpha1.Scheme">Scheme
+</h3>
+<div>
+</div>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>scenario</code><br/>
+<em>
+string
+</em>
+</td>
+<td>
+<p>Scenario returns the name of the scenario that invokes the template.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>namespace</code><br/>
+<em>
+string
+</em>
+</td>
+<td>
+<p>Returns the namespace where the scenario is running</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>inputs</code><br/>
+<em>
+<a href="#frisbee.dev/v1alpha1.Inputs">
+Inputs
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Inputs are dynamic fields that populate the spec.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>spec</code><br/>
+<em>
+[]byte
+</em>
+</td>
+<td>
+<p>Spec is the specification whose values will be replaced by parameters.</p>
+<br/>
+<br/>
+<table>
+</table>
 </td>
 </tr>
 </tbody>
@@ -3126,6 +3230,11 @@ string
 </tr>
 </tbody>
 </table>
+<h3 id="frisbee.dev/v1alpha1.StateAggregationFunctions">StateAggregationFunctions
+</h3>
+<div>
+<p>StateAggregationFunctions is a set of aggregation functions for managing the lifecycle of different resources.</p>
+</div>
 <h3 id="frisbee.dev/v1alpha1.Template">Template
 </h3>
 <div>
@@ -3297,7 +3406,7 @@ Lifecycle
 <h3 id="frisbee.dev/v1alpha1.TolerateSpec">TolerateSpec
 </h3>
 <p>
-(<em>Appears on:</em><a href="#frisbee.dev/v1alpha1.ClusterSpec">ClusterSpec</a>)
+(<em>Appears on:</em><a href="#frisbee.dev/v1alpha1.CallSpec">CallSpec</a>, <a href="#frisbee.dev/v1alpha1.ClusterSpec">ClusterSpec</a>)
 </p>
 <div>
 <p>TolerateSpec specifies the system&rsquo;s ability to continue operating despite failures or malfunctions.
@@ -3314,13 +3423,14 @@ Such failures are likely to happen as part of a Chaos experiment.</p>
 <tbody>
 <tr>
 <td>
-<code>failedServices</code><br/>
+<code>failedJobs</code><br/>
 <em>
 int
 </em>
 </td>
 <td>
-<p>FailedServices indicate the number of services that may fail before the cluster fails itself.</p>
+<em>(Optional)</em>
+<p>FailedJobs indicate the number of services that may fail before the cluster fails itself.</p>
 </td>
 </tr>
 </tbody>
@@ -3480,7 +3590,7 @@ Kubernetes meta/v1.Duration
 <hr/>
 <p><em>
 Generated with <code>gen-crd-api-reference-docs</code>
-on git commit <code>92c476c</code>.
+on git commit <code>793b683</code>.
 </em></p>
 
 </div>
@@ -3535,18 +3645,43 @@ on git commit <code>92c476c</code>.
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/getting-started/clustering/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Clustering
-            </a>
-          </li>
-          <li class="f6 fw4">
-            <a href="/docs/getting-started/dependencies/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Dependencies
+            <a href="/docs/getting-started/execution-order/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Execution Order
             </a>
           </li>
           <li class="f6 fw4">
             <a href="/docs/getting-started/naming/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Naming and Addressing
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/getting-started/dependency-order/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Dependency Order
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/getting-started/clustering/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Clustering
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/getting-started/scheduling/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Scheduling
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/getting-started/conditionals/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Conditionals
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/getting-started/tolerate-failures/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Tolerate Failures
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/getting-started/resource-throttling/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Resource Throttling
             </a>
           </li>
         </ul>

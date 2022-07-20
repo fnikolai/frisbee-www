@@ -66,7 +66,7 @@
 <meta itemprop="name" content="Quick Start">
 <meta itemprop="description" content="This tutorial will guide you through deploying and running Frisbee on a local Kubernetes installation."><meta itemprop="datePublished" content="2022-06-29T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-06-29T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1358">
+<meta itemprop="wordCount" content="1416">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://frisbee.dev/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_13771684703296284199.png"/>
 <meta name="twitter:title" content="Quick Start"/>
@@ -353,7 +353,7 @@ command.</p>
 </span></span></code></pre></div><h4 id="5-exploratory-testing-observe-the-progress">5. Exploratory Testing (Observe the Progress) <a class="header-link" href="#5-exploratory-testing-observe-the-progress"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
 <p><em>Frisbee</em> provides 3 methods for observing the progress of a test.</p>
 <hr>
-<p><strong>Event-based</strong>: Consumes information from the Kubernetes API</p>
+<p><strong>Resource-based</strong>: Consumes information from the Kubernetes API</p>
 <ul>
 <li>
 <p><a href="https://dashboard-frisbee.localhost/#/pod?namespace=mytest">Dashboard</a>:  is a web-based Kubernetes user interface.
@@ -373,15 +373,19 @@ via <code>grep token  ~/.kube/config</code>.</p>
 <li><a href="http://grafana-mytest.localhost/d/crdb-console-runtime/crdb-console-runtime">Grafana</a></li>
 </ul>
 <hr>
-<ul>
-<li>
 <p><strong>Log-based:</strong> Consumes information from distributed logs.</p>
-</li>
-<li>
-<p><a href="http://logviewer-mytest.localhost">Logviewer</a> (admin/admin)</p>
-</li>
+<ul>
+<li><a href="http://logviewer-mytest.localhost">Logviewer</a> (admin/admin)</li>
 </ul>
-<blockquote>
+<hr>
+<p><strong>Event-based:</strong> Consumes information from <code>kubectl get events</code>. You should a similar output</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>LAST SEEN   TYPE     REASON      OBJECT         MESSAGE
+</span></span><span style="display:flex;"><span>2m13s       Normal   Scheduled   pod/whalesay   Successfully assigned karvdash-fnikol/whalesay to k8s-node3
+</span></span><span style="display:flex;"><span>2m13s       Normal   Pulling     pod/whalesay   Pulling image <span style="color:#c30">&#34;docker/whalesay&#34;</span>
+</span></span><span style="display:flex;"><span>118s        Normal   Pulled      pod/whalesay   Successfully pulled image <span style="color:#c30">&#34;docker/whalesay&#34;</span> in 14.534703599s
+</span></span><span style="display:flex;"><span>118s        Normal   Created     pod/whalesay   Created container app
+</span></span><span style="display:flex;"><span>117s        Normal   Started     pod/whalesay   Started container app
+</span></span></code></pre></div><blockquote>
 <p>You may notice that it takes <strong>long time for the experiment to start</strong>. This is due to preparing the NFS volume for
 collecting the logs from the various services. Also note that the lifecycle of the volume is bind to that of the test.
 If the test is deleted, the volume will be garbage collected automatically.</p>
@@ -589,18 +593,43 @@ happen in the background. Use this flag if you want to run sequential tests, wit
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/getting-started/clustering/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Clustering
-            </a>
-          </li>
-          <li class="f6 fw4">
-            <a href="/docs/getting-started/dependencies/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Dependencies
+            <a href="/docs/getting-started/execution-order/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Execution Order
             </a>
           </li>
           <li class="f6 fw4">
             <a href="/docs/getting-started/naming/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Naming and Addressing
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/getting-started/dependency-order/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Dependency Order
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/getting-started/clustering/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Clustering
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/getting-started/scheduling/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Scheduling
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/getting-started/conditionals/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Conditionals
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/getting-started/tolerate-failures/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Tolerate Failures
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/getting-started/resource-throttling/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Resource Throttling
             </a>
           </li>
         </ul>

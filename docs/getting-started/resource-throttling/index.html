@@ -10,7 +10,7 @@
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>Tools for debugging | </title>
+  <title>Resource Throttling | </title>
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
   <meta name="generator" content="Hugo 0.101.0" />
@@ -32,7 +32,7 @@
   
 
   <meta name="description"
-  content="A list of supported tools for debugging">
+  content="Smart, Cloud-Native Testbed!">
 
   
 
@@ -57,20 +57,29 @@
 <link rel="manifest" href="/manifest.json">
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0594cb">
 <meta name="theme-color" content="#ffffff">
-<meta property="og:title" content="Tools for debugging" />
-<meta property="og:description" content="A list of supported tools for debugging" />
+<meta property="og:title" content="Resource Throttling" />
+<meta property="og:description" content="In Kubernetes, when you create a specification for a pod, you can optionally specify how many resources each container is allowed to use on a Kubernetes node. The most common resources are CPU and memory (RAM), but you can also specify others.
+But, what happens when you have parameterized services? How can you give parameterized resources?
+Frisbee address this issue via tha decorators abstraction.
+Decorators rewrite the pod&#39;s specification according to some rules, before submitting the pod for creation." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://frisbee.dev/docs/troubleshooting/tools/" /><meta property="og:image" content="https://frisbee.dev/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_9051797909751621950.png"/><meta property="article:section" content="docs" />
-<meta property="article:published_time" content="2022-06-28T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-06-28T00:00:00+00:00" /><meta property="og:site_name" content="Frisbee" />
-<meta itemprop="name" content="Tools for debugging">
-<meta itemprop="description" content="A list of supported tools for debugging"><meta itemprop="datePublished" content="2022-06-28T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2022-06-28T00:00:00+00:00" />
-<meta itemprop="wordCount" content="0">
+<meta property="og:url" content="https://frisbee.dev/docs/getting-started/resource-throttling/" /><meta property="og:image" content="https://frisbee.dev/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_13615093195665541311.png"/><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2022-06-29T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-06-29T00:00:00+00:00" /><meta property="og:site_name" content="Frisbee" />
+<meta itemprop="name" content="Resource Throttling">
+<meta itemprop="description" content="In Kubernetes, when you create a specification for a pod, you can optionally specify how many resources each container is allowed to use on a Kubernetes node. The most common resources are CPU and memory (RAM), but you can also specify others.
+But, what happens when you have parameterized services? How can you give parameterized resources?
+Frisbee address this issue via tha decorators abstraction.
+Decorators rewrite the pod&#39;s specification according to some rules, before submitting the pod for creation."><meta itemprop="datePublished" content="2022-06-29T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-06-29T00:00:00+00:00" />
+<meta itemprop="wordCount" content="279">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://frisbee.dev/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_9051797909751621950.png"/>
-<meta name="twitter:title" content="Tools for debugging"/>
-<meta name="twitter:description" content="A list of supported tools for debugging"/>
+<meta name="twitter:image" content="https://frisbee.dev/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_13615093195665541311.png"/>
+<meta name="twitter:title" content="Resource Throttling"/>
+<meta name="twitter:description" content="In Kubernetes, when you create a specification for a pod, you can optionally specify how many resources each container is allowed to use on a Kubernetes node. The most common resources are CPU and memory (RAM), but you can also specify others.
+But, what happens when you have parameterized services? How can you give parameterized resources?
+Frisbee address this issue via tha decorators abstraction.
+Decorators rewrite the pod&#39;s specification according to some rules, before submitting the pod for creation."/>
 
 
 </head>
@@ -192,12 +201,17 @@
 <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
 	
 		<p class="b">What's on this Page</p>
-  	<nav id="TableOfContents"></nav>
+  	<nav id="TableOfContents">
+  <ul>
+    <li><a href="#parameterized-resources">Parameterized Resources</a></li>
+    <li><a href="#resource-throttling">Resource Throttling</a></li>
+  </ul>
+</nav>
 	
 
 	<div date-pref>
 		
-			<a href="https://frisbee.dev/docs/troubleshooting/faq/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Frequently Asked Questions ">
+			<a href="https://frisbee.dev/docs/getting-started/tolerate-failures/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Tolerate Failures ">
 				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -218,14 +232,10 @@
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Tools for debugging</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Resource Throttling</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
-  
-    <div class="f4 fw4 lh-copy">
-      A list of supported tools for debugging
-    </div>
   
 
   
@@ -235,6 +245,63 @@
 
 <div class="prose" id="prose">
 
+<p>In Kubernetes, when you create a specification for a pod, you can optionally specify how many resources each container is allowed to use on a <a href="https://komodor.com/learn/kubernetes-nodes-complete-guide/">Kubernetes node</a>. The most common resources are CPU and memory (RAM), but you can also specify others.</p>
+<p>But, what happens when you have parameterized services? How can you give parameterized resources?</p>
+<p>Frisbee address this issue via tha <code>decorators</code> abstraction.</p>
+<ul>
+<li><strong>Decorators</strong> rewrite the pod's specification according to some rules, before submitting the pod for creation. This way, we can provide automation for adding telemetry agents and mounting volumes without exposing these concerns to the end-user.</li>
+</ul>
+<h2 id="parameterized-resources">Parameterized Resources <a class="header-link" href="#parameterized-resources"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#0cf;font-weight:bold">---</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">apiVersion</span>:<span style="color:#bbb"> </span>frisbee.dev/v1alpha1<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">kind</span>:<span style="color:#bbb"> </span>Template<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">metadata</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>iperf.server<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">spec</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">inputs</span>:<span style="color:#bbb">       </span><span style="color:#09f;font-style:italic"># Inputs allows for parameterized resources</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#309;font-weight:bold">parameters</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">memory</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">cpu</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">service</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#309;font-weight:bold">decorators</span>:<span style="color:#bbb"> </span><span style="color:#09f;font-style:italic"># Decorators wrap Pod definitions with some nice features</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">resources</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">cpu</span>:<span style="color:#bbb"> </span>{<span style="color:#bbb"> </span>{<span style="color:#bbb"> </span><span style="color:#c30">&#34;{{.Inputs.Parameters.cpu}}&#34;</span><span style="color:#bbb"> </span>}<span style="color:#bbb"> </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">memory</span>:<span style="color:#bbb"> </span>{<span style="color:#bbb"> </span>{<span style="color:#bbb"> </span><span style="color:#c30">&#34;{{.Inputs.Parameters.memory}}&#34;</span><span style="color:#bbb"> </span>}<span style="color:#bbb"> </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#309;font-weight:bold">containers</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span>- <span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>app<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">image</span>:<span style="color:#bbb"> </span>czero/iperf2<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">command</span>:<span style="color:#bbb"> </span>[<span style="color:#bbb"> </span>iperf ]<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">args</span>:<span style="color:#bbb"> </span>[<span style="color:#bbb"> </span><span style="color:#c30">&#34;-s&#34;</span>,<span style="color:#bbb"> </span><span style="color:#c30">&#34;-f&#34;</span>,<span style="color:#bbb"> </span><span style="color:#c30">&#34;m&#34;</span>,<span style="color:#bbb"> </span><span style="color:#c30">&#34;-i&#34;</span>,<span style="color:#bbb"> </span><span style="color:#c30">&#34;5&#34;</span><span style="color:#bbb"> </span>]<span style="color:#bbb">
+</span></span></span></code></pre></div><h2 id="resource-throttling">Resource Throttling <a class="header-link" href="#resource-throttling"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#309;font-weight:bold">apiVersion</span>:<span style="color:#bbb"> </span>frisbee.dev/v1alpha1<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">kind</span>:<span style="color:#bbb"> </span>Scenario<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">metadata</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>conditionals<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">spec</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">actions</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#09f;font-style:italic"># Create an iperf server</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>- <span style="color:#309;font-weight:bold">action</span>:<span style="color:#bbb"> </span>Service<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>server<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">service</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">templateRef</span>:<span style="color:#bbb"> </span>iperf.server<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#09f;font-style:italic"># Create a set of iperf clients</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>- <span style="color:#309;font-weight:bold">action</span>:<span style="color:#bbb"> </span>Cluster<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>clients<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">depends</span>:<span style="color:#bbb"> </span>{<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">running</span>:<span style="color:#bbb"> </span>[<span style="color:#bbb"> </span>server ] }<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">assert</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">until</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span><span style="color:#309;font-weight:bold">state</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#39;{{.NumSuccessfulJobs}} &gt;= 6&#39;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">cluster</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">templateRef</span>:<span style="color:#bbb"> </span>iperf.client<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">instances</span>:<span style="color:#bbb"> </span><span style="color:#f60">10</span><span style="color:#bbb"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">inputs</span>:<span style="color:#bbb"> </span><span style="color:#09f;font-style:italic"># Resources can be given as mere arguments</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">target: server, duration</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;10&#34;</span><span style="color:#309;font-weight:bold">, cpu</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;0.4&#34;</span><span style="color:#309;font-weight:bold">, memory</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;50Mi&#34;</span><span style="color:#bbb">  </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">target: server, duration</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;20&#34;</span><span style="color:#309;font-weight:bold">, cpu</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;1&#34;</span><span style="color:#309;font-weight:bold">, memory</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;50i&#34;</span><span style="color:#bbb">  </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">target: server, duration</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;30&#34;</span><span style="color:#309;font-weight:bold">, cpu</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;1.2&#34;</span><span style="color:#309;font-weight:bold">, memory</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;50i&#34;</span><span style="color:#bbb">  </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">schedule</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span><span style="color:#309;font-weight:bold">cron</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;@every 1m&#34;</span><span style="color:#bbb">
+</span></span></span></code></pre></div><p>As can be seen, it is fairly easy to create numerous resources with random resources.</p>
 
 </div>
 
@@ -270,8 +337,8 @@
       </li>
       
       <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8 mb1 bb b--moon-gray">
-        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".getting-started">Getting Started</a>
-        <ul class="getting-started desktopmenu animated fadeIn list pl0 bg-light-gray dn">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2  primary-color" data-target=".getting-started">Getting Started</a>
+        <ul class="getting-started desktopmenu animated fadeIn list pl0 bg-light-gray db">
           <li class="f6 fw4">
             <a href="/docs/getting-started/quick-start/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Quick Start
@@ -323,7 +390,7 @@
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/getting-started/resource-throttling/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+            <a href="/docs/getting-started/resource-throttling/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 primary-color ">
               Resource Throttling
             </a>
           </li>
@@ -383,15 +450,15 @@
       </li>
       
       <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
-        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2  primary-color" data-target=".troubleshooting">Troubleshooting</a>
-        <ul class="troubleshooting desktopmenu animated fadeIn list pl0 bg-light-gray db">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".troubleshooting">Troubleshooting</a>
+        <ul class="troubleshooting desktopmenu animated fadeIn list pl0 bg-light-gray dn">
           <li class="f6 fw4">
             <a href="/docs/troubleshooting/faq/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               FAQ
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/troubleshooting/tools/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 primary-color ">
+            <a href="/docs/troubleshooting/tools/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Tools
             </a>
           </li>
@@ -412,10 +479,10 @@
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa4 center nested-lh-copy lh-copy">
       <h6 class="f6 dark-gray mb2">
-  Last updated: June 28, 2022
+  Last updated: June 29, 2022
 </h6>
 
-      <a href="https://github.com/CARV-ICS-FORTH/frisbee/edit/master/content/en/docs/troubleshooting/tools.md" class="
+      <a href="https://github.com/CARV-ICS-FORTH/frisbee/edit/master/content/en/docs/getting-started/resource-throttling/index.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 ">Improve this page</a>
 

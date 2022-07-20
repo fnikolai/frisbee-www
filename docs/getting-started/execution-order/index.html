@@ -10,7 +10,7 @@
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>Dependencies | </title>
+  <title>Execution Order | </title>
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
   <meta name="generator" content="Hugo 0.101.0" />
@@ -57,23 +57,20 @@
 <link rel="manifest" href="/manifest.json">
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0594cb">
 <meta name="theme-color" content="#ffffff">
-<meta property="og:title" content="Dependencies" />
-<meta property="og:description" content="Frisbee allows you to define the workflow as a directed-acyclic graph (DAG) by specifying the dependencies of each task. This can be simpler to maintain for complex workflows and allows for a greater range of test-cases.
-Run Sequentially In the following workflow, step A runs first, as it has no dependencies. Once A has finished, steps B and C run in parallel. Finally, once B and C have completed, step D can run." />
+<meta property="og:title" content="Execution Order" />
+<meta property="og:description" content="Frisbee allows you to define the workflow as a directed-acyclic graph (DAG) by specifying the dependencies of each action. When you do so, the Frisbee scheduler ensures that your action is run only after the specified dependencies have successfully completed. After they succeed, the dependent action transitions from UNINTIALIZED to PENDING and then to RUNNING. If any of the job dependencies fail, the scenario automatically transitions from PENDING to FAILED." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://frisbee.dev/docs/getting-started/dependencies/" /><meta property="og:image" content="https://frisbee.dev/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_3884578457771846709.png"/><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://frisbee.dev/docs/getting-started/execution-order/" /><meta property="og:image" content="https://frisbee.dev/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_9249708267790666274.png"/><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2022-06-29T00:00:00+00:00" />
 <meta property="article:modified_time" content="2022-06-29T00:00:00+00:00" /><meta property="og:site_name" content="Frisbee" />
-<meta itemprop="name" content="Dependencies">
-<meta itemprop="description" content="Frisbee allows you to define the workflow as a directed-acyclic graph (DAG) by specifying the dependencies of each task. This can be simpler to maintain for complex workflows and allows for a greater range of test-cases.
-Run Sequentially In the following workflow, step A runs first, as it has no dependencies. Once A has finished, steps B and C run in parallel. Finally, once B and C have completed, step D can run."><meta itemprop="datePublished" content="2022-06-29T00:00:00+00:00" />
+<meta itemprop="name" content="Execution Order">
+<meta itemprop="description" content="Frisbee allows you to define the workflow as a directed-acyclic graph (DAG) by specifying the dependencies of each action. When you do so, the Frisbee scheduler ensures that your action is run only after the specified dependencies have successfully completed. After they succeed, the dependent action transitions from UNINTIALIZED to PENDING and then to RUNNING. If any of the job dependencies fail, the scenario automatically transitions from PENDING to FAILED."><meta itemprop="datePublished" content="2022-06-29T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-06-29T00:00:00+00:00" />
-<meta itemprop="wordCount" content="598">
+<meta itemprop="wordCount" content="233">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://frisbee.dev/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_3884578457771846709.png"/>
-<meta name="twitter:title" content="Dependencies"/>
-<meta name="twitter:description" content="Frisbee allows you to define the workflow as a directed-acyclic graph (DAG) by specifying the dependencies of each task. This can be simpler to maintain for complex workflows and allows for a greater range of test-cases.
-Run Sequentially In the following workflow, step A runs first, as it has no dependencies. Once A has finished, steps B and C run in parallel. Finally, once B and C have completed, step D can run."/>
+<meta name="twitter:image" content="https://frisbee.dev/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_9249708267790666274.png"/>
+<meta name="twitter:title" content="Execution Order"/>
+<meta name="twitter:description" content="Frisbee allows you to define the workflow as a directed-acyclic graph (DAG) by specifying the dependencies of each action. When you do so, the Frisbee scheduler ensures that your action is run only after the specified dependencies have successfully completed. After they succeed, the dependent action transitions from UNINTIALIZED to PENDING and then to RUNNING. If any of the job dependencies fail, the scenario automatically transitions from PENDING to FAILED."/>
 
 
 </head>
@@ -197,16 +194,14 @@ Run Sequentially In the following workflow, step A runs first, as it has no depe
 		<p class="b">What's on this Page</p>
   	<nav id="TableOfContents">
   <ul>
-    <li><a href="#run-sequentially">Run Sequentially</a></li>
-    <li><a href="#run-in-parallel">Run In Parallel</a></li>
-    <li><a href="#cluster-dependencies">Cluster Dependencies</a></li>
+    <li><a href="#dag-workflow-stages">DAG (Workflow Stages)</a></li>
   </ul>
 </nav>
 	
 
 	<div date-pref>
 		
-			<a href="https://frisbee.dev/docs/getting-started/clustering/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Clustering ">
+			<a href="https://frisbee.dev/docs/getting-started/parameters/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Parameters ">
 				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -235,7 +230,7 @@ Run Sequentially In the following workflow, step A runs first, as it has no depe
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Dependencies</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Execution Order</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
@@ -248,8 +243,11 @@ Run Sequentially In the following workflow, step A runs first, as it has no depe
 
 <div class="prose" id="prose">
 
-<p>Frisbee allows you to define the  workflow as a directed-acyclic graph (DAG) by specifying the  dependencies of each task. This can be simpler to maintain for complex  workflows and allows for a greater range of test-cases.</p>
-<h2 id="run-sequentially">Run Sequentially <a class="header-link" href="#run-sequentially"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2>
+<p>Frisbee allows you to define the  workflow as a directed-acyclic graph (DAG) by specifying the  dependencies of each action. When you do so, the Frisbee  scheduler ensures that your action is run only after the specified dependencies have successfully completed. After they  succeed, the dependent action transitions from <code>UNINTIALIZED</code> to <code>PENDING</code> and then to <code>RUNNING</code>. If any of the job dependencies fail, the scenario automatically transitions from  <code>PENDING</code> to <code>FAILED</code>.</p>
+<blockquote>
+<p>For intended failures, such as services crashing as part of a Chaos experiment, see see <code>TolerateSpec</code> in the <code>Cluster</code> CRD. More info and example about this feature at [here](add link).</p>
+</blockquote>
+<h2 id="dag-workflow-stages">DAG (Workflow Stages) <a class="header-link" href="#dag-workflow-stages"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2>
 <p>In the following workflow, step <code>A</code> runs first, as it has no dependencies. Once <code>A</code> has finished, steps <code>B</code> and <code>C</code> run in parallel. Finally, once <code>B</code> and <code>C</code> have completed, step <code>D</code> can run.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#309;font-weight:bold">apiVersion</span>:<span style="color:#bbb"> </span>frisbee.dev/v1alpha1<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">kind</span>:<span style="color:#bbb"> </span>Scenario<span style="color:#bbb">
@@ -258,110 +256,36 @@ Run Sequentially In the following workflow, step A runs first, as it has no depe
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">spec</span>:<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">actions</span>:<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>- <span style="color:#309;font-weight:bold">action</span>:<span style="color:#bbb"> </span>Service<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>A<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">service</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">templateRef</span>:<span style="color:#bbb"> </span>whalesay <span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">inputs</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">msg</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;I am A&#34;</span><span style="color:#bbb"> </span>}<span style="color:#bbb">        
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>- <span style="color:#309;font-weight:bold">action</span>:<span style="color:#bbb"> </span>Service<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>B<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">depends</span>:<span style="color:#bbb"> </span>{<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">success</span>:<span style="color:#bbb"> </span>[<span style="color:#bbb"> </span>A ] }<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>a<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">service</span>:<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">templateRef</span>:<span style="color:#bbb"> </span>whalesay<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">inputs</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">msg</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;I am B&#34;</span><span style="color:#bbb"> </span>}<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>- <span style="color:#309;font-weight:bold">action</span>:<span style="color:#bbb"> </span>Service<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>C<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">depends</span>:<span style="color:#bbb"> </span>{<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">success</span>:<span style="color:#bbb"> </span>[<span style="color:#bbb"> </span>A ] }<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">service</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">templateRef</span>:<span style="color:#bbb"> </span>whalesay<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">inputs</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">msg</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;I am C&#34;</span><span style="color:#bbb"> </span>}<span style="color:#bbb">          
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">message</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;I am A&#34;</span><span style="color:#bbb"> </span>}<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>- <span style="color:#309;font-weight:bold">action</span>:<span style="color:#bbb"> </span>Service<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>D<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">depends</span>:<span style="color:#bbb"> </span>{<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">success</span>:<span style="color:#bbb"> </span>[<span style="color:#bbb"> </span>B, C ] }<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>b<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">depends</span>:<span style="color:#bbb"> </span>{<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">success</span>:<span style="color:#bbb"> </span>[<span style="color:#bbb"> </span>a ] }<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">service</span>:<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">templateRef</span>:<span style="color:#bbb"> </span>whalesay<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">inputs</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">msg</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;I am D&#34;</span><span style="color:#bbb"> </span>}<span style="color:#bbb">   
-</span></span></span></code></pre></div><p>The DAG logic has a built-in <code>fail fast</code> feature to abort the workflow as soon as it detects that one of the DAG nodes is failed. For intended failures, such as services crashing as part of a Chaos experiment, see see <code>TolerateSpec</code> in the <code>Cluster</code> CRD. More info and example about this feature at [here](add link).</p>
-<h2 id="run-in-parallel">Run In Parallel <a class="header-link" href="#run-in-parallel"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2>
-<p>In the above workflow, one action starts after a previous action is complete. This kind of semantic is useful for batch jobs, but not for distributed computing. This is because services (and servers in general) are usually long-running that never complete.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#309;font-weight:bold">apiVersion</span>:<span style="color:#bbb"> </span>frisbee.dev/v1alpha1<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">kind</span>:<span style="color:#bbb"> </span>Scenario<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">metadata</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>dag-diamond<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">spec</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">actions</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  	</span><span style="color:#09f;font-style:italic"># A runs before the following steps.</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>- <span style="color:#309;font-weight:bold">action</span>:<span style="color:#bbb"> </span>Service <span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>A<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">service</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">templateRef</span>:<span style="color:#bbb"> </span>whalesay <span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">inputs</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">msg</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;I am B&#34;</span><span style="color:#309;font-weight:bold">, delay</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;10s&#34;</span><span style="color:#bbb"> </span>}<span style="color:#bbb">        
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  	</span><span style="color:#09f;font-style:italic"># B runs in parallel with A.</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>- <span style="color:#309;font-weight:bold">action</span>:<span style="color:#bbb"> </span>Service<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>B<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">depends</span>:<span style="color:#bbb"> </span>{<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">running</span>:<span style="color:#bbb"> </span>[<span style="color:#bbb"> </span>A ] }<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">service</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">templateRef</span>:<span style="color:#bbb"> </span>whalesay<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">inputs</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">msg</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;I am B&#34;</span><span style="color:#309;font-weight:bold">,  delay</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;40s&#34;</span><span style="color:#bbb">  </span>}<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span><span style="color:#09f;font-style:italic"># C runs after A is complete.</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>- <span style="color:#309;font-weight:bold">action</span>:<span style="color:#bbb"> </span>Service<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>C<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">depends</span>:<span style="color:#bbb"> </span>{<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">success</span>:<span style="color:#bbb"> </span>[<span style="color:#bbb"> </span>A ] }<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">service</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">templateRef</span>:<span style="color:#bbb"> </span>whalesay<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">inputs</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">msg</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;I am C&#34;</span><span style="color:#309;font-weight:bold">, delay</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;20s&#34;</span><span style="color:#bbb">  </span>}<span style="color:#bbb">         
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">message</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;I am B&#34;</span><span style="color:#bbb"> </span>}<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span><span style="color:#09f;font-style:italic"># D runs after C is complete, and while B is still running.</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>- <span style="color:#309;font-weight:bold">action</span>:<span style="color:#bbb"> </span>Service<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>D<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">depends</span>:<span style="color:#bbb"> </span>{<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">running: [ B ], success</span>:<span style="color:#bbb"> </span>[<span style="color:#bbb"> </span>C] }<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>c<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">depends</span>:<span style="color:#bbb"> </span>{<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">success</span>:<span style="color:#bbb"> </span>[<span style="color:#bbb"> </span>a ] }<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">service</span>:<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">templateRef</span>:<span style="color:#bbb"> </span>whalesay<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">inputs</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">msg</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;I am D&#34;</span><span style="color:#bbb"> </span>}<span style="color:#bbb">   
-</span></span></span></code></pre></div><p>In addition to the <code>success</code> semantics, Frisbee workflows also support <code>running</code> semantics. If used, a new action starts after a previous action is still running. As we will see <a href="macros">next</a>, this is an extremely useful features for handling dependencies in server-client architectures, where the client must start only after the server is up and running.</p>
-<blockquote>
-<p>Combining <code>success</code> and <code>running</code> on the same dependencies set can be tricky. If, for example, B completes before C, then the evaluation of<code>{ running: [ B ], success: [ C] ] }</code> will fail since B is no longer running.</p>
-</blockquote>
-<h2 id="cluster-dependencies">Cluster Dependencies <a class="header-link" href="#cluster-dependencies"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2>
-<p>Dependencies may be among any Frisbee action.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#309;font-weight:bold">apiVersion</span>:<span style="color:#bbb"> </span>frisbee.dev/v1alpha1<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">kind</span>:<span style="color:#bbb"> </span>Scenario<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">metadata</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>whales-say<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">spec</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">actions</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span>- <span style="color:#309;font-weight:bold">action</span>:<span style="color:#bbb"> </span>Cluster	 <span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>one-group<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">cluster</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">templateRef</span>:<span style="color:#bbb"> </span>whalesay <span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">inputs</span>:<span style="color:#bbb"> 
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">message</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;I am A&#34;</span><span style="color:#bbb"> </span>}<span style="color:#bbb"> 
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">message</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;I am B&#34;</span><span style="color:#bbb"> </span>}<span style="color:#bbb">  
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span>- <span style="color:#309;font-weight:bold">action</span>:<span style="color:#bbb"> </span>Cluster	 <span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>another-group<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">depends</span>:<span style="color:#bbb"> </span>{<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">success</span>:<span style="color:#bbb"> </span>[one-group] }<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">cluster</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">templateRef</span>:<span style="color:#bbb"> </span>whalesay <span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">inputs</span>:<span style="color:#bbb"> 
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">message</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;I am C&#34;</span><span style="color:#bbb"> </span>}<span style="color:#bbb"> 
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">message</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;I am D&#34;</span><span style="color:#bbb"> </span>}<span style="color:#bbb">           
-</span></span></span></code></pre></div><p>As you may notice, another benefit of the <code>cluster</code> is that users can set dependencies on the entire cluster rather than individual services, thus greatly simplifying the dependency graph.</p>
-
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">message</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;I am C&#34;</span><span style="color:#bbb"> </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>- <span style="color:#309;font-weight:bold">action</span>:<span style="color:#bbb"> </span>Service<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>d<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">depends</span>:<span style="color:#bbb"> </span>{<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">success</span>:<span style="color:#bbb"> </span>[<span style="color:#bbb"> </span>b, c ] }<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">service</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">templateRef</span>:<span style="color:#bbb"> </span>whalesay<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">inputs</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">message</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;I am D&#34;</span><span style="color:#bbb"> </span>}<span style="color:#bbb">
+</span></span></span></code></pre></div>
 </div>
 
           
@@ -414,18 +338,43 @@ Run Sequentially In the following workflow, step A runs first, as it has no depe
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/getting-started/clustering/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Clustering
-            </a>
-          </li>
-          <li class="f6 fw4">
-            <a href="/docs/getting-started/dependencies/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 primary-color ">
-              Dependencies
+            <a href="/docs/getting-started/execution-order/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 primary-color ">
+              Execution Order
             </a>
           </li>
           <li class="f6 fw4">
             <a href="/docs/getting-started/naming/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Naming and Addressing
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/getting-started/dependency-order/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Dependency Order
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/getting-started/clustering/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Clustering
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/getting-started/scheduling/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Scheduling
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/getting-started/conditionals/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Conditionals
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/getting-started/tolerate-failures/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Tolerate Failures
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/getting-started/resource-throttling/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Resource Throttling
             </a>
           </li>
         </ul>
@@ -516,7 +465,7 @@ Run Sequentially In the following workflow, step A runs first, as it has no depe
   Last updated: June 29, 2022
 </h6>
 
-      <a href="https://github.com/CARV-ICS-FORTH/frisbee/edit/master/content/en/docs/getting-started/dependencies/index.md" class="
+      <a href="https://github.com/CARV-ICS-FORTH/frisbee/edit/master/content/en/docs/getting-started/execution-order/index.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 ">Improve this page</a>
 

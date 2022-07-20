@@ -10,7 +10,7 @@
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>Troubleshooting | </title>
+  <title>Conditionals | </title>
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
   <meta name="generator" content="Hugo 0.101.0" />
@@ -19,7 +19,6 @@
   <meta name="robots" content="noindex, nofollow">
   
 
-  <link rel="alternate" type="application/rss&#43;xml" href="https://frisbee.dev/docs/troubleshooting/index.xml">
   
   
   
@@ -33,7 +32,7 @@
   
 
   <meta name="description"
-  content="This is the guide for troubleshooting the Frisbee ecosystem">
+  content="Smart, Cloud-Native Testbed!">
 
   
 
@@ -58,15 +57,23 @@
 <link rel="manifest" href="/manifest.json">
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0594cb">
 <meta name="theme-color" content="#ffffff">
-<meta property="og:title" content="Troubleshooting" />
-<meta property="og:description" content="This is the guide for troubleshooting the Frisbee ecosystem" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://frisbee.dev/docs/troubleshooting/" /><meta property="og:image" content="https://frisbee.dev/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_3258812932726615123.png"/><meta property="og:site_name" content="Frisbee" />
-<meta itemprop="name" content="Troubleshooting">
-<meta itemprop="description" content="This is the guide for troubleshooting the Frisbee ecosystem"><meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://frisbee.dev/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_3258812932726615123.png"/>
-<meta name="twitter:title" content="Troubleshooting"/>
-<meta name="twitter:description" content="This is the guide for troubleshooting the Frisbee ecosystem"/>
+<meta property="og:title" content="Conditionals" />
+<meta property="og:description" content="We also support conditional execution. The syntax is implemented by govaluate which offers the support for complex syntax.
+Conditionals apiVersion: frisbee.dev/v1alpha1 kind: Scenario metadata: name: conditionals spec: actions: - action: Service name: server service: templateRef: iperf.server - action: Cluster name: clients depends: { running: [ server ] } cluster: templateRef: iperf.client instances: 10 inputs: - { target: server, duration: &#34;10&#34; } - { target: server, duration: &#34;20&#34; } - { target: server, duration: &#34;30&#34; } schedule: cron: &#34;@every 1m&#34; # Suspend the execution if more than 6 clients are created until: state: &#39;{{." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://frisbee.dev/docs/getting-started/conditionals/" /><meta property="og:image" content="https://frisbee.dev/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_11904909195339203350.png"/><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2022-06-29T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-06-29T00:00:00+00:00" /><meta property="og:site_name" content="Frisbee" />
+<meta itemprop="name" content="Conditionals">
+<meta itemprop="description" content="We also support conditional execution. The syntax is implemented by govaluate which offers the support for complex syntax.
+Conditionals apiVersion: frisbee.dev/v1alpha1 kind: Scenario metadata: name: conditionals spec: actions: - action: Service name: server service: templateRef: iperf.server - action: Cluster name: clients depends: { running: [ server ] } cluster: templateRef: iperf.client instances: 10 inputs: - { target: server, duration: &#34;10&#34; } - { target: server, duration: &#34;20&#34; } - { target: server, duration: &#34;30&#34; } schedule: cron: &#34;@every 1m&#34; # Suspend the execution if more than 6 clients are created until: state: &#39;{{."><meta itemprop="datePublished" content="2022-06-29T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-06-29T00:00:00+00:00" />
+<meta itemprop="wordCount" content="151">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://frisbee.dev/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_11904909195339203350.png"/>
+<meta name="twitter:title" content="Conditionals"/>
+<meta name="twitter:description" content="We also support conditional execution. The syntax is implemented by govaluate which offers the support for complex syntax.
+Conditionals apiVersion: frisbee.dev/v1alpha1 kind: Scenario metadata: name: conditionals spec: actions: - action: Service name: server service: templateRef: iperf.server - action: Cluster name: clients depends: { running: [ server ] } cluster: templateRef: iperf.client instances: 10 inputs: - { target: server, duration: &#34;10&#34; } - { target: server, duration: &#34;20&#34; } - { target: server, duration: &#34;30&#34; } schedule: cron: &#34;@every 1m&#34; # Suspend the execution if more than 6 clients are created until: state: &#39;{{."/>
 
 
 </head>
@@ -181,13 +188,104 @@
   
   <main role="main" class="content-with-sidebar min-vh-100 pb7 pb0-ns">
     
-  
-  
-  
-  <div class="w-100 ph4 pb5 pb6-ns pt1 mt4 pt3-ns">
+  <article class="w-100 ph4 pb5 pb6-ns pt1 pt5-ns">
+    <div class="flex-l">
 
-  <div class="flex">
-    <div class="dn db-l w-20">
+      <div class="order-2 w-100 w-20-l ph5-m ph0-l mb4 sticky">
+<aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
+	
+		<p class="b">What's on this Page</p>
+  	<nav id="TableOfContents">
+  <ul>
+    <li><a href="#conditionals">Conditionals</a></li>
+  </ul>
+</nav>
+	
+
+	<div date-pref>
+		
+			<a href="https://frisbee.dev/docs/getting-started/scheduling/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Scheduling ">
+				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+
+			</a>
+		
+
+		
+			<a href="https://frisbee.dev/docs/getting-started/tolerate-failures/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Tolerate Failures">
+			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+
+			</a>
+		
+	</div>
+
+</aside>
+</div>
+
+      <div class="order-1 w-60-l mw7 ph0 ph5-ns mid-gray nested-copy-line-height no-underline nested-links nested-img nested-copy-separator nested-blockquote mt0-ns" style="flex-grow:1;">
+        <div class="documentation-copy center measure-wide-l">
+          <div id="readout" class="fixed right-0 bottom-0">
+          </div>
+          <header class="flex-none w-100">
+  
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Conditionals</h1>
+</header>
+
+<aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
+  
+
+  
+</aside>
+
+
+
+<div class="prose" id="prose">
+
+<p>We also support conditional execution. The syntax is implemented by <a href="https://github.com/Knetic/govaluate"><code>govaluate</code></a> which offers the support for complex <a href="https://github.com/Knetic/govaluate/blob/master/MANUAL.md">syntax</a>.</p>
+<h2 id="conditionals">Conditionals <a class="header-link" href="#conditionals"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#309;font-weight:bold">apiVersion</span>:<span style="color:#bbb"> </span>frisbee.dev/v1alpha1<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">kind</span>:<span style="color:#bbb"> </span>Scenario<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">metadata</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>conditionals<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">spec</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">actions</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>- <span style="color:#309;font-weight:bold">action</span>:<span style="color:#bbb"> </span>Service<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>server<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">service</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">templateRef</span>:<span style="color:#bbb"> </span>iperf.server<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>- <span style="color:#309;font-weight:bold">action</span>:<span style="color:#bbb"> </span>Cluster<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>clients<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">depends</span>:<span style="color:#bbb"> </span>{<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">running</span>:<span style="color:#bbb"> </span>[<span style="color:#bbb"> </span>server ] }<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">cluster</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">templateRef</span>:<span style="color:#bbb"> </span>iperf.client<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">instances</span>:<span style="color:#bbb"> </span><span style="color:#f60">10</span><span style="color:#bbb"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">inputs</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">target: server, duration</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;10&#34;</span><span style="color:#bbb"> </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">target: server, duration</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;20&#34;</span><span style="color:#bbb"> </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">target: server, duration</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;30&#34;</span><span style="color:#bbb"> </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">schedule</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span><span style="color:#309;font-weight:bold">cron</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;@every 1m&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">		</span><span style="color:#09f;font-style:italic"># Suspend the execution if more than 6 clients are created</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">until</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span><span style="color:#309;font-weight:bold">state</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#39;{{.NumSuccessfulJobs}} &gt;= 6&#39;</span><span style="color:#bbb">
+</span></span></span></code></pre></div><p>In this scenario, Frisbee will keep spawning clients, either it reaches 6 clients, after which it will be <code>suspended</code>. If suspended, the cluster will stop spawning new clients, but the old clients will remain active.</p>
+<blockquote>
+<p>NOTE: the expression <code>{{.NumSuccessfulJobs}} &gt;= 6</code> is <strong>local</strong> to the <code>Cluster</code> and refers to the jobs managed by the <code>Cluster</code> controller.</p>
+</blockquote>
+
+</div>
+
+          
+
+        </div>
+      </div>
+      <div class="order-0 w-20 dn db-l">
         
 <nav role="navigation">
   <ul class="list pa0 nl2">
@@ -215,8 +313,8 @@
       </li>
       
       <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8 mb1 bb b--moon-gray">
-        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".getting-started">Getting Started</a>
-        <ul class="getting-started desktopmenu animated fadeIn list pl0 bg-light-gray dn">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2  primary-color" data-target=".getting-started">Getting Started</a>
+        <ul class="getting-started desktopmenu animated fadeIn list pl0 bg-light-gray db">
           <li class="f6 fw4">
             <a href="/docs/getting-started/quick-start/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Quick Start
@@ -258,7 +356,7 @@
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/getting-started/conditionals/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+            <a href="/docs/getting-started/conditionals/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 primary-color ">
               Conditionals
             </a>
           </li>
@@ -349,289 +447,26 @@
   </ul>
 </nav>
 
-    </div>
-
-    <div class="w-100 w-80-l ph0 ph4-l">
-      <article class="w-100 nested-copy-line-height nested-links nested-img">
-        <h1 class="primary-color-dark f2">
-          Troubleshooting
-        </h1>
-        <div class=" mid-gray f5 f4-l">
-          
-        </div>
-      </article>
-
-      
-
-      <div class="flex flex-wrap">
-        
-        <section class="flex-ns flex-wrap justify-between w-100">
-          
-            <div class="relative flex-auto w-100 w-40-l mr3 mb3 bg-white ba b--moon-gray nested-copy-line-height weight10">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/docs/getting-started/quick-start/" class="link primary-color dim">Quick Start</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          This tutorial will guide you through deploying and running Frisbee on a local Kubernetes installation.
-        
-
-        <a href="/docs/getting-started/quick-start/" class="f6 mt2 db link primary-color dim">
-          Read More &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-          
-            <div class="relative flex-auto w-100 w-40-l mr3 mb3 bg-white ba b--moon-gray nested-copy-line-height weight10">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/docs/developers-guide/new-controller/" class="link primary-color dim">Add New Frisbee Controller¶</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          There are two ways to run a Frisbee controller.
-As a container inside a Kubernetes cluster. As Go program outside a cluster. The container approach is production-ready and does not require any compilation or dependencies.
-Unfortunately though, bugs may arise and features may be needed.
-And since it is inconvenient to create and deploy a new container while you are still debugging the controller, the second approach is preffered for development purposes.
-      
-
-        <a href="/docs/developers-guide/new-controller/" class="f6 mt2 db link primary-color dim">
-          Read More &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-          
-            <div class="relative flex-auto w-100 w-40-l mr3 mb3 bg-white ba b--moon-gray nested-copy-line-height weight10">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/docs/troubleshooting/faq/" class="link primary-color dim">Frequently Asked Questions</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          Answers to frequent questions.
-        
-
-        <a href="/docs/troubleshooting/faq/" class="f6 mt2 db link primary-color dim">
-          Read More &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-          
-            <div class="relative flex-auto w-100 w-40-l mr3 mb3 bg-white ba b--moon-gray nested-copy-line-height weight10">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/docs/fields/" class="link primary-color dim">Field Reference</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          This document describes the fields for building a Frisbee experiment.
-        
-
-        <a href="/docs/fields/" class="f6 mt2 db link primary-color dim">
-          Read More &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-          
-            <div class="relative flex-auto w-100 w-40-l mr3 mb3 bg-white ba b--moon-gray nested-copy-line-height weight10">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/docs/operators-manual/install/" class="link primary-color dim">SomePost</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          SomePost
-        
-
-        <a href="/docs/operators-manual/install/" class="f6 mt2 db link primary-color dim">
-          Read More &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-          
-            <div class="relative flex-auto w-100 w-40-l mr3 mb3 bg-white ba b--moon-gray nested-copy-line-height weight10">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/docs/troubleshooting/tools/" class="link primary-color dim">Tools for debugging</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          A list of supported tools for debugging
-        
-
-        <a href="/docs/troubleshooting/tools/" class="f6 mt2 db link primary-color dim">
-          Read More &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-          
-            <div class="relative flex-auto w-100 w-40-l mr3 mb3 bg-white ba b--moon-gray nested-copy-line-height weight10">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/docs/users-guide/deploy/" class="link primary-color dim">Chart Guide</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          Guide for the Frisbee Chart Developers
-        
-
-        <a href="/docs/users-guide/deploy/" class="f6 mt2 db link primary-color dim">
-          Read More &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-          
-            <div class="relative flex-auto w-100 w-40-l mr3 mb3 bg-white ba b--moon-gray nested-copy-line-height weight10">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/docs/about/what-is-frisbee/" class="link primary-color dim">Frisbee Overview</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          This document describes the concepts, use cases, core strengths, and the architecture of Frisbee.
-        
-
-        <a href="/docs/about/what-is-frisbee/" class="f6 mt2 db link primary-color dim">
-          Read More &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-          
-            <div class="relative flex-auto w-100 w-40-l mr3 mb3 bg-white ba b--moon-gray nested-copy-line-height weight10">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/docs/getting-started/hello-world/" class="link primary-color dim">Hello World</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          Let's start by creating a very simple workflow template to echo &quot;hello world&quot; using the docker/whalesay container image from Docker Hub.
-You can run this directly from your shell with a simple docker command:
-$ docker run docker/whalesay cowsay &#34;hello world&#34; _____________ &lt; hello world &gt; ------------- \ \ \ ## . ## ## ## == ## ## ## ## === /&#34;&#34;&#34;&#34;&#34;&#34;&#34;&#34;&#34;&#34;&#34;&#34;&#34;&#34;&#34;&#34;___/ === ~~~ {~~ ~~~~ ~~~ ~~~~ ~~ ~ / ===- ~~~ \______ o __/ \ \ __/ \____\______/ Hello from Docker!
-      
-
-        <a href="/docs/getting-started/hello-world/" class="f6 mt2 db link primary-color dim">
-          Read More &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-          
-            <div class="relative flex-auto w-100 w-40-l mr3 mb3 bg-white ba b--moon-gray nested-copy-line-height weight10">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/docs/getting-started/parameters/" class="link primary-color dim">Parameters</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          Let's look at a slightly more complex workflow spec with parameters.
-Parameterized Template apiVersion: frisbee.dev/v1alpha1 kind: Template	metadata: name: whalesay	spec: # invoke the whalesay template with # &#34;hello world&#34; as the default argument # to the message parameter inputs:	parameters: message: &#34;hello-world&#34; service: containers: - name: app image: docker/whalesay command: [cowsay] args: [&#34;{{.Inputs.Parameters.message}}&#34;] This time, the whalesay template takes an input parameter named message that is passed as the args to the cowsay command.
-      
-
-        <a href="/docs/getting-started/parameters/" class="f6 mt2 db link primary-color dim">
-          Read More &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-          
-        </section>
       </div>
 
     </div>
+  </article>
 
+  <div class="w-100 bg-light-gray">
+    <div class="mw7 pa4 center nested-lh-copy lh-copy">
+      <h6 class="f6 dark-gray mb2">
+  Last updated: June 29, 2022
+</h6>
+
+      <a href="https://github.com/CARV-ICS-FORTH/frisbee/edit/master/content/en/docs/getting-started/conditionals/index.md" class="
+f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
+">Improve this page</a>
+
+      
+
+
+    </div>
   </div>
-
-</div>
-
 
   </main>
 

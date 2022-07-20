@@ -10,7 +10,7 @@
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>Parameters | </title>
+  <title>Tolerate Failures | </title>
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
   <meta name="generator" content="Hugo 0.101.0" />
@@ -57,23 +57,32 @@
 <link rel="manifest" href="/manifest.json">
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0594cb">
 <meta name="theme-color" content="#ffffff">
-<meta property="og:title" content="Parameters" />
-<meta property="og:description" content="Let&#39;s look at a slightly more complex workflow spec with parameters.
-Parameterized Template apiVersion: frisbee.dev/v1alpha1 kind: Template	metadata: name: whalesay	spec: # invoke the whalesay template with # &#34;hello world&#34; as the default argument # to the message parameter inputs:	parameters: message: &#34;hello-world&#34; service: containers: - name: app image: docker/whalesay command: [cowsay] args: [&#34;{{.Inputs.Parameters.message}}&#34;] This time, the whalesay template takes an input parameter named message that is passed as the args to the cowsay command." />
+<meta property="og:title" content="Tolerate Failures" />
+<meta property="og:description" content="Systems fail. After all, this is what testing is about.
+By default, Frisbee has a builtin fail-fast mechanism that aborts the experiment when a fault is sensed.
+Tolerate Failures Template Instead of waiting for a service to fail, let&#39;s give it some boost.
+We have modified the previous template to take the exit code as an input.
+--- apiVersion: frisbee.dev/v1alpha1 kind: Template metadata: name: iperf.client spec: inputs: parameters: target: localhost duration: &#34;60&#34; exit: &#34;false&#34; # Take exit code as an input service: containers: - name: app image: czero/iperf2 command: - /bin/sh # Run shell - -c # Read from string - | # Multi-line str # Compare the input, and exit if needed [[ {{." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://frisbee.dev/docs/getting-started/parameters/" /><meta property="og:image" content="https://frisbee.dev/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_11312889431537301234.png"/><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://frisbee.dev/docs/getting-started/tolerate-failures/" /><meta property="og:image" content="https://frisbee.dev/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_2947868749383407356.png"/><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2022-06-29T00:00:00+00:00" />
 <meta property="article:modified_time" content="2022-06-29T00:00:00+00:00" /><meta property="og:site_name" content="Frisbee" />
-<meta itemprop="name" content="Parameters">
-<meta itemprop="description" content="Let&#39;s look at a slightly more complex workflow spec with parameters.
-Parameterized Template apiVersion: frisbee.dev/v1alpha1 kind: Template	metadata: name: whalesay	spec: # invoke the whalesay template with # &#34;hello world&#34; as the default argument # to the message parameter inputs:	parameters: message: &#34;hello-world&#34; service: containers: - name: app image: docker/whalesay command: [cowsay] args: [&#34;{{.Inputs.Parameters.message}}&#34;] This time, the whalesay template takes an input parameter named message that is passed as the args to the cowsay command."><meta itemprop="datePublished" content="2022-06-29T00:00:00+00:00" />
+<meta itemprop="name" content="Tolerate Failures">
+<meta itemprop="description" content="Systems fail. After all, this is what testing is about.
+By default, Frisbee has a builtin fail-fast mechanism that aborts the experiment when a fault is sensed.
+Tolerate Failures Template Instead of waiting for a service to fail, let&#39;s give it some boost.
+We have modified the previous template to take the exit code as an input.
+--- apiVersion: frisbee.dev/v1alpha1 kind: Template metadata: name: iperf.client spec: inputs: parameters: target: localhost duration: &#34;60&#34; exit: &#34;false&#34; # Take exit code as an input service: containers: - name: app image: czero/iperf2 command: - /bin/sh # Run shell - -c # Read from string - | # Multi-line str # Compare the input, and exit if needed [[ {{."><meta itemprop="datePublished" content="2022-06-29T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-06-29T00:00:00+00:00" />
-<meta itemprop="wordCount" content="161">
+<meta itemprop="wordCount" content="389">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://frisbee.dev/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_11312889431537301234.png"/>
-<meta name="twitter:title" content="Parameters"/>
-<meta name="twitter:description" content="Let&#39;s look at a slightly more complex workflow spec with parameters.
-Parameterized Template apiVersion: frisbee.dev/v1alpha1 kind: Template	metadata: name: whalesay	spec: # invoke the whalesay template with # &#34;hello world&#34; as the default argument # to the message parameter inputs:	parameters: message: &#34;hello-world&#34; service: containers: - name: app image: docker/whalesay command: [cowsay] args: [&#34;{{.Inputs.Parameters.message}}&#34;] This time, the whalesay template takes an input parameter named message that is passed as the args to the cowsay command."/>
+<meta name="twitter:image" content="https://frisbee.dev/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_2947868749383407356.png"/>
+<meta name="twitter:title" content="Tolerate Failures"/>
+<meta name="twitter:description" content="Systems fail. After all, this is what testing is about.
+By default, Frisbee has a builtin fail-fast mechanism that aborts the experiment when a fault is sensed.
+Tolerate Failures Template Instead of waiting for a service to fail, let&#39;s give it some boost.
+We have modified the previous template to take the exit code as an input.
+--- apiVersion: frisbee.dev/v1alpha1 kind: Template metadata: name: iperf.client spec: inputs: parameters: target: localhost duration: &#34;60&#34; exit: &#34;false&#34; # Take exit code as an input service: containers: - name: app image: czero/iperf2 command: - /bin/sh # Run shell - -c # Read from string - | # Multi-line str # Compare the input, and exit if needed [[ {{."/>
 
 
 </head>
@@ -197,15 +206,18 @@ Parameterized Template apiVersion: frisbee.dev/v1alpha1 kind: Template	metadata:
 		<p class="b">What's on this Page</p>
   	<nav id="TableOfContents">
   <ul>
-    <li><a href="#parameterized--template">Parameterized  Template</a></li>
-    <li><a href="#parameterized-workflow">Parameterized Workflow</a></li>
+    <li><a href="#tolerate-failures">Tolerate Failures</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 	
 
 	<div date-pref>
 		
-			<a href="https://frisbee.dev/docs/getting-started/hello-world/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Hello World ">
+			<a href="https://frisbee.dev/docs/getting-started/conditionals/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Conditionals ">
 				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -215,7 +227,7 @@ Parameterized Template apiVersion: frisbee.dev/v1alpha1 kind: Template	metadata:
 		
 
 		
-			<a href="https://frisbee.dev/docs/getting-started/execution-order/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Execution Order">
+			<a href="https://frisbee.dev/docs/getting-started/resource-throttling/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Resource Throttling">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -234,7 +246,7 @@ Parameterized Template apiVersion: frisbee.dev/v1alpha1 kind: Template	metadata:
           </div>
           <header class="flex-none w-100">
   
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Parameters</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Tolerate Failures</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
@@ -247,49 +259,109 @@ Parameterized Template apiVersion: frisbee.dev/v1alpha1 kind: Template	metadata:
 
 <div class="prose" id="prose">
 
-<p>Let's look at a slightly more complex workflow spec with parameters.</p>
-<h2 id="parameterized--template">Parameterized  Template <a class="header-link" href="#parameterized--template"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#309;font-weight:bold">apiVersion</span>:<span style="color:#bbb"> </span>frisbee.dev/v1alpha1<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">kind</span>:<span style="color:#bbb"> </span>Template				<span style="color:#bbb">
+<p>Systems fail. After all, this is what testing is about.</p>
+<p>By default, Frisbee has  a builtin <code>fail-fast</code> mechanism that aborts the experiment when a fault is sensed.</p>
+<h2 id="tolerate-failures">Tolerate Failures <a class="header-link" href="#tolerate-failures"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2>
+<h4 id="template">Template <a class="header-link" href="#template"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<p>Instead of waiting for a <code>service</code> to fail, let's give it some boost.</p>
+<p>We have modified the previous template to take the exit code as an input.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#0cf;font-weight:bold">---</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">apiVersion</span>:<span style="color:#bbb"> </span>frisbee.dev/v1alpha1<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">kind</span>:<span style="color:#bbb"> </span>Template<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">metadata</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>whalesay			<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>iperf.client<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">spec</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#09f;font-style:italic"># invoke the whalesay template with</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#09f;font-style:italic"># &#34;hello world&#34; as the default argument</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#09f;font-style:italic"># to the message parameter</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>inputs:					<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">inputs</span>:<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#309;font-weight:bold">parameters</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">message</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;hello-world&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">target</span>:<span style="color:#bbb"> </span>localhost<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">duration</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;60&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">exit</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;false&#34;</span><span style="color:#bbb"> </span><span style="color:#09f;font-style:italic"># Take exit code as an input</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">service</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#309;font-weight:bold">containers</span>:<span style="color:#bbb"> 			
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#309;font-weight:bold">containers</span>:<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span>- <span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>app<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">image</span>:<span style="color:#bbb">  </span>docker/whalesay <span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">command</span>:<span style="color:#bbb"> </span>[cowsay]<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">args</span>:<span style="color:#bbb"> </span>[<span style="color:#c30">&#34;{{.Inputs.Parameters.message}}&#34;</span>]<span style="color:#bbb">
-</span></span></span></code></pre></div><p>This time, the <code>whalesay</code> template takes an input parameter named <code>message</code> that is passed as the <code>args</code> to the <code>cowsay</code> command.</p>
-<blockquote>
-<p>the part {{.Inputs.Parameters.}} is case-sensitive and should be in this form. the last part, the parameter, is always lowercase.</p>
-</blockquote>
-<h2 id="parameterized-workflow">Parameterized Workflow <a class="header-link" href="#parameterized-workflow"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2>
-<p>Workflow parameters can be used to override the default parameters of the templates. The spec below demonstrates a scenario with two <code>whalesay</code> services, one invoked with parameters and one without.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#309;font-weight:bold">apiVersion</span>:<span style="color:#bbb"> </span>frisbee.dev/v1alpha1<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">image</span>:<span style="color:#bbb"> </span>czero/iperf2<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">command</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- /bin/sh  <span style="color:#bbb"> </span><span style="color:#09f;font-style:italic"># Run shell</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- -c       <span style="color:#bbb"> </span><span style="color:#09f;font-style:italic"># Read from string</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- |        <span style="color:#bbb"> </span><span style="color:#09f;font-style:italic"># Multi-line str</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span><span style="color:#09f;font-style:italic"># Compare the input, and exit if needed</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>[[<span style="color:#bbb"> </span>{{.Inputs.Parameters.exit}} == &#34;true&#34; ]] &amp;&amp; exit -1<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span><span style="color:#09f;font-style:italic"># Otherwise, continue as normal</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>iperf -c {{.Inputs.Parameters.target}} -t {{.Inputs.Parameters.duration}} <span style="color:#bbb">
+</span></span></span></code></pre></div><p>Note that instead of the default <code>command: [ iperf ]</code>, we are starting the container using a custom script.</p>
+<h4 id="non-failure-tolerant-scenario">Non failure-tolerant Scenario <a class="header-link" href="#non-failure-tolerant-scenario"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#0cf;font-weight:bold">---</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">apiVersion</span>:<span style="color:#bbb"> </span>frisbee.dev/v1alpha1<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">kind</span>:<span style="color:#bbb"> </span>Scenario<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">metadata</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>parameters<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>tolerate-failures<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">spec</span>:<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">actions</span>:<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>- <span style="color:#309;font-weight:bold">action</span>:<span style="color:#bbb"> </span>Service<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>default-parameters<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>server<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">service</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">templateRef</span>:<span style="color:#bbb"> </span>whalesay  <span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>- <span style="color:#309;font-weight:bold">action</span>:<span style="color:#bbb"> </span>Service<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>custom-parameters<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">service</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">templateRef</span>:<span style="color:#bbb"> </span>whalesay<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">templateRef</span>:<span style="color:#bbb"> </span>iperf.server<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>- <span style="color:#309;font-weight:bold">action</span>:<span style="color:#bbb"> </span>Cluster<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>clients<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">depends</span>:<span style="color:#bbb"> </span>{<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">running</span>:<span style="color:#bbb"> </span>[<span style="color:#bbb"> </span>server ] }<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">cluster</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">templateRef</span>:<span style="color:#bbb"> </span>iperf.client<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">instances</span>:<span style="color:#bbb"> </span><span style="color:#f60">10</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">inputs</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">message</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;Thanks for all the fish!&#34;</span><span style="color:#bbb"> </span>}<span style="color:#bbb">
-</span></span></span></code></pre></div>
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">target: server, duration</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;10&#34;</span><span style="color:#bbb"> </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">target: server, duration</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;20&#34;</span><span style="color:#309;font-weight:bold">, exit</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;true&#34;</span><span style="color:#bbb"> </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">target: server, duration</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;30&#34;</span><span style="color:#bbb"> </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">schedule</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span><span style="color:#309;font-weight:bold">cron</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;@every 1m&#34;</span><span style="color:#bbb">
+</span></span></span></code></pre></div><p>Very roughly the execution sequence will be:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tex" data-lang="tex"><span style="display:flex;"><span>0-1m: sleep
+</span></span><span style="display:flex;"><span>1m: create clients-1
+</span></span><span style="display:flex;"><span>2m: create clients-2 (failed)
+</span></span><span style="display:flex;"><span>-- Frisbee aborts the experiment --
+</span></span></code></pre></div><p>You can confirm that by inspecting the status of the scenario:</p>
+<p><code>kubectl get scenarios tolerate-failures  -o jsonpath='{.status.phase}'</code></p>
+<p>For more automation, use</p>
+<p><code>watch -d (date +TIME:%H:%M:%S &amp;&amp; kubectl get scenarios tolerate-failures  -o jsonpath={.status.phase}) | tee /tmp/logs</code></p>
+<h4 id="failure-tolerant-scenario">Failure-tolerant Scenario <a class="header-link" href="#failure-tolerant-scenario"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#0cf;font-weight:bold">---</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">apiVersion</span>:<span style="color:#bbb"> </span>frisbee.dev/v1alpha1<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">kind</span>:<span style="color:#bbb"> </span>Scenario<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">metadata</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>tolerate-failures<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">spec</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">actions</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>- <span style="color:#309;font-weight:bold">action</span>:<span style="color:#bbb"> </span>Service<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>server<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">service</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">templateRef</span>:<span style="color:#bbb"> </span>iperf.server<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>- <span style="color:#309;font-weight:bold">action</span>:<span style="color:#bbb"> </span>Cluster<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>clients<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">depends</span>:<span style="color:#bbb"> </span>{<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">running</span>:<span style="color:#bbb"> </span>[<span style="color:#bbb"> </span>server ] }<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">cluster</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">templateRef</span>:<span style="color:#bbb"> </span>iperf.client<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">instances</span>:<span style="color:#bbb"> </span><span style="color:#f60">10</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">inputs</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">target: server, duration</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;10&#34;</span><span style="color:#bbb">  </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">target: server, duration</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;20&#34;</span><span style="color:#309;font-weight:bold">, exit</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;true&#34;</span><span style="color:#bbb"> </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">target: server, duration</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;30&#34;</span><span style="color:#bbb"> </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">schedule</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span><span style="color:#309;font-weight:bold">cron</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;@every 1m&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#09f;font-style:italic"># Tolerate up to 2 failing clients, before the cluster fails itself</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">tolerate</span>:<span style="color:#bbb"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span><span style="color:#309;font-weight:bold">failedJobs</span>:<span style="color:#bbb"> </span><span style="color:#f60">3</span><span style="color:#bbb">
+</span></span></span></code></pre></div><p>Very roughly the execution sequence will be:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tex" data-lang="tex"><span style="display:flex;"><span>0-1m: sleep
+</span></span><span style="display:flex;"><span>1m: create clients-1
+</span></span><span style="display:flex;"><span>2m: create clients-2 (failed)
+</span></span><span style="display:flex;"><span>3m: create clients-3
+</span></span><span style="display:flex;"><span>4m: create clients-4 (failed)
+</span></span><span style="display:flex;"><span>5m: create clients-5
+</span></span><span style="display:flex;"><span>6m: create clients-6 (failed)
+</span></span><span style="display:flex;"><span>-- Frisbee aborts the experiment --
+</span></span></code></pre></div>
 </div>
 
           
@@ -337,7 +409,7 @@ Parameterized Template apiVersion: frisbee.dev/v1alpha1 kind: Template	metadata:
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/getting-started/parameters/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 primary-color ">
+            <a href="/docs/getting-started/parameters/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Parameters
             </a>
           </li>
@@ -372,7 +444,7 @@ Parameterized Template apiVersion: frisbee.dev/v1alpha1 kind: Template	metadata:
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/getting-started/tolerate-failures/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+            <a href="/docs/getting-started/tolerate-failures/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 primary-color ">
               Tolerate Failures
             </a>
           </li>
@@ -469,7 +541,7 @@ Parameterized Template apiVersion: frisbee.dev/v1alpha1 kind: Template	metadata:
   Last updated: June 29, 2022
 </h6>
 
-      <a href="https://github.com/CARV-ICS-FORTH/frisbee/edit/master/content/en/docs/getting-started/parameters/index.md" class="
+      <a href="https://github.com/CARV-ICS-FORTH/frisbee/edit/master/content/en/docs/getting-started/tolerate-failures/index.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 ">Improve this page</a>
 
