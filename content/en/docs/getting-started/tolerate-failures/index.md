@@ -111,7 +111,7 @@ You can confirm that by inspecting the status of the scenario:
 
 `kubectl get scenarios tolerate-failures  -o jsonpath='{.status.phase}'`
 
-For more automation, use 
+For more automation, use: 
 
 `watch -d (date +TIME:%H:%M:%S && kubectl get scenarios tolerate-failures  -o jsonpath={.status.phase}) | tee /tmp/logs`
 

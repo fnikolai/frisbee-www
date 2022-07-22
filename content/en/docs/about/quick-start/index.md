@@ -9,10 +9,10 @@ keywords: [quick start,usage]
 authors: [Fotis NIKOLAIDIS]
 menu:
     docs:
-        parent: "getting-started"
-        weight: 10
-weight: 10
-sections_weight: 10
+        parent: "about"
+        weight: 25
+weight: 25
+sections_weight: 25
 draft: false
 aliases: [/quickstart/,/overview/quickstart/]
 toc: true

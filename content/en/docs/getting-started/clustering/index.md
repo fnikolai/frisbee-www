@@ -84,7 +84,7 @@ spec:
         inputs: 
         	# Iterate over the inputs to create parameterized services.
         	# Because the templates always expect `strings`, the duration 
-        # should be put in double quotes. Otherwise, you will a json error.
+        	# should be put in double quotes. Otherwise, you will a json error.
           - { target: server, duration: "10" }
           - { target: server, duration: "20" }
           - { target: server, duration: "30" }
@@ -95,7 +95,7 @@ spec:
 #### Rules for mixing  `inputs` and `instances`.
 
 | Instances  | Inputs      | Result                                                       |
-| ---------- | ----------- | ------------------------------------------------------------ |
+| :--------- | :---------- | :----------------------------------------------------------- |
 | N          | Undefined   | N `Instances` are created with the default tempalte values.  |
 | Undefined  | N           | N `Instances` are created with custom `Inputs`.              |
 | N (e.g 10) | <N (e.g 2)  | 10 `Instances` are created. Every 2 instances, the `Inputs` are repeated. |

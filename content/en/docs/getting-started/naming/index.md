@@ -7,9 +7,9 @@ authors: [Fotis NIKOLAIDIS]
 menu:
     docs:
         parent: "getting-started"
-        weight: 13
-weight: 13
-sections_weight: 13
+        weight: 23
+weight: 23
+sections_weight: 23
 draft: false
 toc: true
 ---
@@ -78,10 +78,6 @@ spec:
         inputs: 
           - { server: "servers-1"} # Direct Reference 
 ```
-
-
-
-
 
 
 

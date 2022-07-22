@@ -1,6 +1,6 @@
 ---
-title: Basic Features
-linktitle: Basic Features
+title: Basic Concepts
+linktitle: Basic Concepts
 description: 
 date: 2022-06-30
 publishdate: 2022-06-30
@@ -69,13 +69,9 @@ Currently, Frisbee workflows provide the following features:
 
 
 
-
-
 ## Visualized Operations
 
 Frisbee provides an extended suite for visualizing operations, which greatly simplifies the understanding of a system under testing. 
-
-
 
 
 
