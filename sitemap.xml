@@ -5,9 +5,6 @@
     <loc>https://frisbee.dev/docs/about/</loc>
     <lastmod>2022-06-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://frisbee.dev/docs/getting-started/quick-start/</loc>
-    <lastmod>2022-06-29T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://frisbee.dev/docs/developers-guide/new-controller/</loc>
     <lastmod>2022-06-28T00:00:00+00:00</lastmod>
   </url><url>
@@ -38,9 +35,6 @@
     <loc>https://frisbee.dev/docs/getting-started/execution-order/</loc>
     <lastmod>2022-06-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://frisbee.dev/docs/getting-started/naming/</loc>
-    <lastmod>2022-06-29T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://frisbee.dev/docs/getting-started/dependency-order/</loc>
     <lastmod>2022-06-29T00:00:00+00:00</lastmod>
   </url><url>
@@ -59,10 +53,22 @@
     <loc>https://frisbee.dev/docs/getting-started/resource-throttling/</loc>
     <lastmod>2022-06-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://frisbee.dev/docs/about/features/</loc>
+    <loc>https://frisbee.dev/docs/about/concepts/</loc>
     <lastmod>2022-06-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://frisbee.dev/docs/getting-started/</loc>
+    <lastmod>2022-06-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://frisbee.dev/docs/getting-started/placement/</loc>
+    <lastmod>2022-06-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://frisbee.dev/docs/getting-started/remote-calls/</loc>
+    <lastmod>2022-06-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://frisbee.dev/docs/getting-started/naming/</loc>
+    <lastmod>2022-06-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://frisbee.dev/docs/about/quick-start/</loc>
     <lastmod>2022-06-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://frisbee.dev/docs/operators-manual/installing/</loc>

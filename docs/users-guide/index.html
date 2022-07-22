@@ -202,8 +202,13 @@
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/about/features/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Basic Features
+            <a href="/docs/about/concepts/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Basic Concepts
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/about/quick-start/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Quick Start
             </a>
           </li>
           <li class="f6 fw4">
@@ -218,11 +223,6 @@
         <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".getting-started">Getting Started</a>
         <ul class="getting-started desktopmenu animated fadeIn list pl0 bg-light-gray dn">
           <li class="f6 fw4">
-            <a href="/docs/getting-started/quick-start/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Quick Start
-            </a>
-          </li>
-          <li class="f6 fw4">
             <a href="/docs/getting-started/hello-world/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Hello World
             </a>
@@ -235,11 +235,6 @@
           <li class="f6 fw4">
             <a href="/docs/getting-started/execution-order/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Execution Order
-            </a>
-          </li>
-          <li class="f6 fw4">
-            <a href="/docs/getting-started/naming/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Naming and Addressing
             </a>
           </li>
           <li class="f6 fw4">
@@ -270,6 +265,21 @@
           <li class="f6 fw4">
             <a href="/docs/getting-started/resource-throttling/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Resource Throttling
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/getting-started/placement/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Placement
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/getting-started/remote-calls/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Remote Calls
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/getting-started/naming/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Naming and Addressing
             </a>
           </li>
         </ul>
@@ -366,31 +376,6 @@
       <div class="flex flex-wrap">
         
         <section class="flex-ns flex-wrap justify-between w-100">
-          
-            <div class="relative flex-auto w-100 w-40-l mr3 mb3 bg-white ba b--moon-gray nested-copy-line-height weight10">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/docs/getting-started/quick-start/" class="link primary-color dim">Quick Start</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          This tutorial will guide you through deploying and running Frisbee on a local Kubernetes installation.
-        
-
-        <a href="/docs/getting-started/quick-start/" class="f6 mt2 db link primary-color dim">
-          Read More &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
           
             <div class="relative flex-auto w-100 w-40-l mr3 mb3 bg-white ba b--moon-gray nested-copy-line-height weight10">
 
@@ -613,6 +598,31 @@ Parameterized Template apiVersion: frisbee.dev/v1alpha1 kind: Template	metadata:
       
 
         <a href="/docs/getting-started/parameters/" class="f6 mt2 db link primary-color dim">
+          Read More &raquo;
+        </a>
+
+    </div>
+
+
+  </div>
+</div>
+
+          
+            <div class="relative flex-auto w-100 w-40-l mr3 mb3 bg-white ba b--moon-gray nested-copy-line-height weight10">
+
+  <div class="bg-white mb2 pa3 pa4-l gray">
+    
+
+    <h1 class="near-black f3">
+      <a href="/docs/getting-started/execution-order/" class="link primary-color dim">Execution Order</a>
+    </h1>
+
+    <div class="lh-copy links">
+      
+          Frisbee allows you to define the workflow as a directed-acyclic graph (DAG) by specifying the dependencies of each action. When you do so, the Frisbee scheduler ensures that your action is run only after the specified dependencies have successfully completed. After they succeed, the dependent action transitions from UNINTIALIZED to PENDING and then to RUNNING. If any of the job dependencies fail, the scenario automatically transitions from PENDING to FAILED.
+      
+
+        <a href="/docs/getting-started/execution-order/" class="f6 mt2 db link primary-color dim">
           Read More &raquo;
         </a>
 

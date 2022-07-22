@@ -18,13 +18,24 @@ Cloud Databases Federated Learning Frameworks Telecommunication services Blockch
     </item>
     
     <item>
-      <title>Basic Features</title>
-      <link>https://frisbee.dev/docs/about/features/</link>
+      <title>Basic Concepts</title>
+      <link>https://frisbee.dev/docs/about/concepts/</link>
       <pubDate>Thu, 30 Jun 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://frisbee.dev/docs/about/features/</guid>
+      <guid>https://frisbee.dev/docs/about/concepts/</guid>
       <description>This document describes the basic features of Frisbee, including Templates, Actions, Scenarios, Visualized Operations, and Security Guarantees.
 Templates Templates define minimally constraining skeletons for Services and Faults. When called without parameters, templates generate services initialized with reasonable defaults. With parameters, templates generate the customized configuration by replacing the placeholders (denoted as {{...}}) with the given input. Unlike other engines that evaluate templates at deployment time, Frisbee evaluates them at runtime. This strategy allows us to create a library of frequently-used specifications and use them to generate objects on-demand throughout the experiment.</description>
+    </item>
+    
+    <item>
+      <title>Quick Start</title>
+      <link>https://frisbee.dev/docs/about/quick-start/</link>
+      <pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://frisbee.dev/docs/about/quick-start/</guid>
+      <description>This document describes how to quickly start Frisbee in a test or local environment.
+Step 1. Environment preparation Please ensure that the Kubernetes cluster and Helm package manager are deployed before the trial. If they are, go to Step 2.
+# Install microk8s v.1.24 &amp;gt;&amp;gt; sudo snap install microk8s --classic --channel=1.24/stable # Use microk8s config as the default kubernetes config &amp;gt;&amp;gt; microk8s config &amp;gt; ~/.kube/config # Start microk8s &amp;gt;&amp;gt; microk8s start # Enable Dependencies &amp;gt;&amp;gt; microk8s enable dns ingress helm3 # Create aliases &amp;gt;&amp;gt; sudo snap alias microk8s.</description>
     </item>
     
     <item>

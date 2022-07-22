@@ -8,17 +8,6 @@
     <language>en-us</language>
     <lastBuildDate>Wed, 29 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://frisbee.dev/docs/getting-started/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Quick Start</title>
-      <link>https://frisbee.dev/docs/getting-started/quick-start/</link>
-      <pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://frisbee.dev/docs/getting-started/quick-start/</guid>
-      <description>This document describes how to quickly start Frisbee in a test or local environment.
-Step 1. Environment preparation Please ensure that the Kubernetes cluster and Helm package manager are deployed before the trial. If they are, go to Step 2.
-# Install microk8s v.1.24 &amp;gt;&amp;gt; sudo snap install microk8s --classic --channel=1.24/stable # Use microk8s config as the default kubernetes config &amp;gt;&amp;gt; microk8s config &amp;gt; ~/.kube/config # Start microk8s &amp;gt;&amp;gt; microk8s start # Enable Dependencies &amp;gt;&amp;gt; microk8s enable dns ingress helm3 # Create aliases &amp;gt;&amp;gt; sudo snap alias microk8s.</description>
-    </item>
-    
-    <item>
       <title>Hello World</title>
       <link>https://frisbee.dev/docs/getting-started/hello-world/</link>
       <pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate>
@@ -46,17 +35,6 @@ Parameterized Template apiVersion: frisbee.dev/v1alpha1 kind: Template	metadata:
       
       <guid>https://frisbee.dev/docs/getting-started/execution-order/</guid>
       <description>Frisbee allows you to define the workflow as a directed-acyclic graph (DAG) by specifying the dependencies of each action. When you do so, the Frisbee scheduler ensures that your action is run only after the specified dependencies have successfully completed. After they succeed, the dependent action transitions from UNINTIALIZED to PENDING and then to RUNNING. If any of the job dependencies fail, the scenario automatically transitions from PENDING to FAILED.</description>
-    </item>
-    
-    <item>
-      <title>Naming and Addressing</title>
-      <link>https://frisbee.dev/docs/getting-started/naming/</link>
-      <pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://frisbee.dev/docs/getting-started/naming/</guid>
-      <description>In contrast to other Workflow enginers like Argo that use dynamically generated names, all objects in Frisbee follow a predictable naming pattern. This makes it possible to create communicating services.
-Reference an Object In case of communicating services, such as a client-server architecture, we need the client to know the name of the server in other to establish a communication case.
-apiVersion: frisbee.dev/v1alpha1 kind: Scenario metadata: name: server-client spec: actions: - action: Service name: server service: templateRef: iperf2.</description>
     </item>
     
     <item>
@@ -126,6 +104,39 @@ We have modified the previous template to take the exit code as an input.
 But, what happens when you have parameterized services? How can you give parameterized resources?
 Frisbee address this issue via tha decorators abstraction.
 Decorators rewrite the pod&#39;s specification according to some rules, before submitting the pod for creation.</description>
+    </item>
+    
+    <item>
+      <title>Placement</title>
+      <link>https://frisbee.dev/docs/getting-started/placement/</link>
+      <pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://frisbee.dev/docs/getting-started/placement/</guid>
+      <description>Kubernetes already provide a powerful mechanism control which node the Pod deploys to. For example, to ensure that a Pod ends up on a node with an SSD attached to it, or to co-locate Pods from two different services that communicate a lot into the same availability zone.
+However, configuring these mechanisms is cumbersome. Especially when we talk about tens of dynamically created services. For this reason, Frisbee provides simple abstraction for controlling the placement at the level of a cluster.</description>
+    </item>
+    
+    <item>
+      <title>Remote Calls</title>
+      <link>https://frisbee.dev/docs/getting-started/remote-calls/</link>
+      <pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://frisbee.dev/docs/getting-started/remote-calls/</guid>
+      <description>There are cases where you need to get a shell to a running container.
+For this reason, Frisbee provides the Call primitive.
+Hints:
+The number of expected outputs must be the same as the number of defined services. Because the Call primitive is synchronous, it may block the scenario if the referenced services does not exist. The expected output for and stdout and stderr is a regex. For &amp;quot;raw&amp;quot; matching, the expression cannot be more than 1024 characters.</description>
+    </item>
+    
+    <item>
+      <title>Naming and Addressing</title>
+      <link>https://frisbee.dev/docs/getting-started/naming/</link>
+      <pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://frisbee.dev/docs/getting-started/naming/</guid>
+      <description>In contrast to other Workflow enginers like Argo that use dynamically generated names, all objects in Frisbee follow a predictable naming pattern. This makes it possible to create communicating services.
+Reference an Object In case of communicating services, such as a client-server architecture, we need the client to know the name of the server in other to establish a communication case.
+apiVersion: frisbee.dev/v1alpha1 kind: Scenario metadata: name: server-client spec: actions: - action: Service name: server service: templateRef: iperf2.</description>
     </item>
     
   </channel>

@@ -202,8 +202,13 @@
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/about/features/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Basic Features
+            <a href="/docs/about/concepts/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Basic Concepts
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/about/quick-start/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Quick Start
             </a>
           </li>
           <li class="f6 fw4">
@@ -218,11 +223,6 @@
         <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".getting-started">Getting Started</a>
         <ul class="getting-started desktopmenu animated fadeIn list pl0 bg-light-gray dn">
           <li class="f6 fw4">
-            <a href="/docs/getting-started/quick-start/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Quick Start
-            </a>
-          </li>
-          <li class="f6 fw4">
             <a href="/docs/getting-started/hello-world/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Hello World
             </a>
@@ -235,11 +235,6 @@
           <li class="f6 fw4">
             <a href="/docs/getting-started/execution-order/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Execution Order
-            </a>
-          </li>
-          <li class="f6 fw4">
-            <a href="/docs/getting-started/naming/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Naming and Addressing
             </a>
           </li>
           <li class="f6 fw4">
@@ -270,6 +265,21 @@
           <li class="f6 fw4">
             <a href="/docs/getting-started/resource-throttling/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Resource Throttling
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/getting-started/placement/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Placement
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/getting-started/remote-calls/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Remote Calls
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/getting-started/naming/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Naming and Addressing
             </a>
           </li>
         </ul>
@@ -366,58 +376,6 @@
       <div class="flex flex-wrap">
         
         <section class="flex-ns flex-wrap justify-between w-100">
-          
-            <div class="relative flex-auto w-100 w-40-l mr3 mb3 bg-white ba b--moon-gray nested-copy-line-height weight10">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/docs/getting-started/execution-order/" class="link primary-color dim">Execution Order</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          Frisbee allows you to define the workflow as a directed-acyclic graph (DAG) by specifying the dependencies of each action. When you do so, the Frisbee scheduler ensures that your action is run only after the specified dependencies have successfully completed. After they succeed, the dependent action transitions from UNINTIALIZED to PENDING and then to RUNNING. If any of the job dependencies fail, the scenario automatically transitions from PENDING to FAILED.
-      
-
-        <a href="/docs/getting-started/execution-order/" class="f6 mt2 db link primary-color dim">
-          Read More &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
-          
-            <div class="relative flex-auto w-100 w-40-l mr3 mb3 bg-white ba b--moon-gray nested-copy-line-height weight10">
-
-  <div class="bg-white mb2 pa3 pa4-l gray">
-    
-
-    <h1 class="near-black f3">
-      <a href="/docs/getting-started/naming/" class="link primary-color dim">Naming and Addressing</a>
-    </h1>
-
-    <div class="lh-copy links">
-      
-          In contrast to other Workflow enginers like Argo that use dynamically generated names, all objects in Frisbee follow a predictable naming pattern. This makes it possible to create communicating services.
-Reference an Object In case of communicating services, such as a client-server architecture, we need the client to know the name of the server in other to establish a communication case.
-apiVersion: frisbee.dev/v1alpha1 kind: Scenario metadata: name: server-client spec: actions: - action: Service name: server service: templateRef: iperf2.
-      
-
-        <a href="/docs/getting-started/naming/" class="f6 mt2 db link primary-color dim">
-          Read More &raquo;
-        </a>
-
-    </div>
-
-
-  </div>
-</div>
-
           
             <div class="relative flex-auto w-100 w-40-l mr3 mb3 bg-white ba b--moon-gray nested-copy-line-height weight10">
 
@@ -590,7 +548,7 @@ Decorators rewrite the pod's specification according to some rules, before submi
     
 
     <h1 class="near-black f3">
-      <a href="/docs/about/features/" class="link primary-color dim">Basic Features</a>
+      <a href="/docs/about/concepts/" class="link primary-color dim">Basic Concepts</a>
     </h1>
 
     <div class="lh-copy links">
@@ -599,7 +557,7 @@ Decorators rewrite the pod's specification according to some rules, before submi
 Templates Templates define minimally constraining skeletons for Services and Faults. When called without parameters, templates generate services initialized with reasonable defaults. With parameters, templates generate the customized configuration by replacing the placeholders (denoted as {{...}}) with the given input. Unlike other engines that evaluate templates at deployment time, Frisbee evaluates them at runtime. This strategy allows us to create a library of frequently-used specifications and use them to generate objects on-demand throughout the experiment.
       
 
-        <a href="/docs/about/features/" class="f6 mt2 db link primary-color dim">
+        <a href="/docs/about/concepts/" class="f6 mt2 db link primary-color dim">
           Read More &raquo;
         </a>
 
@@ -616,15 +574,71 @@ Templates Templates define minimally constraining skeletons for Services and Fau
     
 
     <h1 class="near-black f3">
-      <a href="/docs/operators-manual/installing/" class="link primary-color dim">Install Frisbee</a>
+      <a href="/docs/getting-started/placement/" class="link primary-color dim">Placement</a>
     </h1>
 
     <div class="lh-copy links">
       
-          Install Frisbee on Local workstation, on bare-metal cluster, or wherever Kubernetes can run.
-        
+          Kubernetes already provide a powerful mechanism control which node the Pod deploys to. For example, to ensure that a Pod ends up on a node with an SSD attached to it, or to co-locate Pods from two different services that communicate a lot into the same availability zone.
+However, configuring these mechanisms is cumbersome. Especially when we talk about tens of dynamically created services. For this reason, Frisbee provides simple abstraction for controlling the placement at the level of a cluster.
+      
 
-        <a href="/docs/operators-manual/installing/" class="f6 mt2 db link primary-color dim">
+        <a href="/docs/getting-started/placement/" class="f6 mt2 db link primary-color dim">
+          Read More &raquo;
+        </a>
+
+    </div>
+
+
+  </div>
+</div>
+
+          
+            <div class="relative flex-auto w-100 w-40-l mr3 mb3 bg-white ba b--moon-gray nested-copy-line-height weight10">
+
+  <div class="bg-white mb2 pa3 pa4-l gray">
+    
+
+    <h1 class="near-black f3">
+      <a href="/docs/getting-started/remote-calls/" class="link primary-color dim">Remote Calls</a>
+    </h1>
+
+    <div class="lh-copy links">
+      
+          There are cases where you need to get a shell to a running container.
+For this reason, Frisbee provides the Call primitive.
+Hints:
+The number of expected outputs must be the same as the number of defined services. Because the Call primitive is synchronous, it may block the scenario if the referenced services does not exist. The expected output for and stdout and stderr is a regex. For &quot;raw&quot; matching, the expression cannot be more than 1024 characters.
+      
+
+        <a href="/docs/getting-started/remote-calls/" class="f6 mt2 db link primary-color dim">
+          Read More &raquo;
+        </a>
+
+    </div>
+
+
+  </div>
+</div>
+
+          
+            <div class="relative flex-auto w-100 w-40-l mr3 mb3 bg-white ba b--moon-gray nested-copy-line-height weight10">
+
+  <div class="bg-white mb2 pa3 pa4-l gray">
+    
+
+    <h1 class="near-black f3">
+      <a href="/docs/getting-started/naming/" class="link primary-color dim">Naming and Addressing</a>
+    </h1>
+
+    <div class="lh-copy links">
+      
+          In contrast to other Workflow enginers like Argo that use dynamically generated names, all objects in Frisbee follow a predictable naming pattern. This makes it possible to create communicating services.
+Reference an Object In case of communicating services, such as a client-server architecture, we need the client to know the name of the server in other to establish a communication case.
+apiVersion: frisbee.dev/v1alpha1 kind: Scenario metadata: name: server-client spec: actions: - action: Service name: server service: templateRef: iperf2.
+      
+
+        <a href="/docs/getting-started/naming/" class="f6 mt2 db link primary-color dim">
           Read More &raquo;
         </a>
 

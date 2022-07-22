@@ -306,7 +306,7 @@ apiVersion: frisbee.dev/v1alpha1 kind: Scenario metadata: name: clustering spec:
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">inputs</span>:<span style="color:#bbb"> 
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">        	</span><span style="color:#09f;font-style:italic"># Iterate over the inputs to create parameterized services.</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">        	</span><span style="color:#09f;font-style:italic"># Because the templates always expect `strings`, the duration </span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#09f;font-style:italic"># should be put in double quotes. Otherwise, you will a json error.</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        	</span><span style="color:#09f;font-style:italic"># should be put in double quotes. Otherwise, you will a json error.</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">target: server, duration</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;10&#34;</span><span style="color:#bbb"> </span>}<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">target: server, duration</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;20&#34;</span><span style="color:#bbb"> </span>}<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">target: server, duration</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;30&#34;</span><span style="color:#bbb"> </span>}<span style="color:#bbb">
@@ -314,31 +314,31 @@ apiVersion: frisbee.dev/v1alpha1 kind: Scenario metadata: name: clustering spec:
 <table>
 <thead>
 <tr>
-<th>Instances</th>
-<th>Inputs</th>
-<th>Result</th>
+<th style="text-align:left">Instances</th>
+<th style="text-align:left">Inputs</th>
+<th style="text-align:left">Result</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>N</td>
-<td>Undefined</td>
-<td>N <code>Instances</code> are created with the default tempalte values.</td>
+<td style="text-align:left">N</td>
+<td style="text-align:left">Undefined</td>
+<td style="text-align:left">N <code>Instances</code> are created with the default tempalte values.</td>
 </tr>
 <tr>
-<td>Undefined</td>
-<td>N</td>
-<td>N <code>Instances</code> are created with custom <code>Inputs</code>.</td>
+<td style="text-align:left">Undefined</td>
+<td style="text-align:left">N</td>
+<td style="text-align:left">N <code>Instances</code> are created with custom <code>Inputs</code>.</td>
 </tr>
 <tr>
-<td>N (e.g 10)</td>
-<td>&lt;N (e.g 2)</td>
-<td>10 <code>Instances</code> are created. Every 2 instances, the <code>Inputs</code> are repeated.</td>
+<td style="text-align:left">N (e.g 10)</td>
+<td style="text-align:left">&lt;N (e.g 2)</td>
+<td style="text-align:left">10 <code>Instances</code> are created. Every 2 instances, the <code>Inputs</code> are repeated.</td>
 </tr>
 <tr>
-<td>N (e.g 10)</td>
-<td>&lt;N (e.g 12)</td>
-<td>Abort</td>
+<td style="text-align:left">N (e.g 10)</td>
+<td style="text-align:left">&lt;N (e.g 12)</td>
+<td style="text-align:left">Abort</td>
 </tr>
 </tbody>
 </table>
@@ -364,8 +364,13 @@ apiVersion: frisbee.dev/v1alpha1 kind: Scenario metadata: name: clustering spec:
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/about/features/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Basic Features
+            <a href="/docs/about/concepts/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Basic Concepts
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/about/quick-start/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Quick Start
             </a>
           </li>
           <li class="f6 fw4">
@@ -380,11 +385,6 @@ apiVersion: frisbee.dev/v1alpha1 kind: Scenario metadata: name: clustering spec:
         <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2  primary-color" data-target=".getting-started">Getting Started</a>
         <ul class="getting-started desktopmenu animated fadeIn list pl0 bg-light-gray db">
           <li class="f6 fw4">
-            <a href="/docs/getting-started/quick-start/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Quick Start
-            </a>
-          </li>
-          <li class="f6 fw4">
             <a href="/docs/getting-started/hello-world/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Hello World
             </a>
@@ -397,11 +397,6 @@ apiVersion: frisbee.dev/v1alpha1 kind: Scenario metadata: name: clustering spec:
           <li class="f6 fw4">
             <a href="/docs/getting-started/execution-order/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Execution Order
-            </a>
-          </li>
-          <li class="f6 fw4">
-            <a href="/docs/getting-started/naming/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Naming and Addressing
             </a>
           </li>
           <li class="f6 fw4">
@@ -432,6 +427,21 @@ apiVersion: frisbee.dev/v1alpha1 kind: Scenario metadata: name: clustering spec:
           <li class="f6 fw4">
             <a href="/docs/getting-started/resource-throttling/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Resource Throttling
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/getting-started/placement/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Placement
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/getting-started/remote-calls/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Remote Calls
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/getting-started/naming/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Naming and Addressing
             </a>
           </li>
         </ul>
