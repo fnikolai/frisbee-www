@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>features on </title>
+    <link>https://frisbee.dev/categories/features/</link>
+    <description>Recent content in features on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 30 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://frisbee.dev/categories/features/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Basic Concepts</title>
+      <link>https://frisbee.dev/docs/about/concepts/</link>
+      <pubDate>Thu, 30 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://frisbee.dev/docs/about/concepts/</guid>
+      <description>This document describes the basic features of Frisbee, including Templates, Actions, Scenarios, Visualized Operations, and Security Guarantees.
+Templates Templates define minimally constraining skeletons for Services and Faults. When called without parameters, templates generate services initialized with reasonable defaults. With parameters, templates generate the customized configuration by replacing the placeholders (denoted as {{...}}) with the given input. Unlike other engines that evaluate templates at deployment time, Frisbee evaluates them at runtime. This strategy allows us to create a library of frequently-used specifications and use them to generate objects on-demand throughout the experiment.</description>
+    </item>
+    
+  </channel>
+</rss>

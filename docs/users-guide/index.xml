@@ -6,22 +6,13 @@
     <description>Recent content in User&#39;s Guide on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://frisbee.dev/docs/users-guide/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://frisbee.dev/docs/users-guide/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Chart Guide</title>
-      <link>https://frisbee.dev/docs/users-guide/deploy/</link>
-      <pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate>
+      <title>Users-Guide Feature-1</title>
+      <link>https://frisbee.dev/docs/users-guide/feature-1/</link>
+      <pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://frisbee.dev/docs/users-guide/deploy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://frisbee.dev/docs/users-guide/develop/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://frisbee.dev/docs/users-guide/develop/</guid>
+      <guid>https://frisbee.dev/docs/users-guide/feature-1/</guid>
       <description></description>
     </item>
     

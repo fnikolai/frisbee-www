@@ -6,17 +6,14 @@
     <description>Recent content in Developer&#39;s Guide on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://frisbee.dev/docs/developers-guide/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://frisbee.dev/docs/developers-guide/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Add New Frisbee Controller¶</title>
-      <link>https://frisbee.dev/docs/developers-guide/new-controller/</link>
-      <pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate>
+      <title>Developers-Guide Feature-1</title>
+      <link>https://frisbee.dev/docs/developers-guide/feature-1/</link>
+      <pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://frisbee.dev/docs/developers-guide/new-controller/</guid>
-      <description>There are two ways to run a Frisbee controller.
-As a container inside a Kubernetes cluster. As Go program outside a cluster. The container approach is production-ready and does not require any compilation or dependencies.
-Unfortunately though, bugs may arise and features may be needed.
-And since it is inconvenient to create and deploy a new container while you are still debugging the controller, the second approach is preffered for development purposes.</description>
+      <guid>https://frisbee.dev/docs/developers-guide/feature-1/</guid>
+      <description></description>
     </item>
     
   </channel>

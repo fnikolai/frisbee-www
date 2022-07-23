@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>getting started on </title>
+    <link>https://frisbee.dev/categories/getting-started/</link>
+    <description>Recent content in getting started on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 29 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://frisbee.dev/categories/getting-started/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Quick Start</title>
+      <link>https://frisbee.dev/docs/quick-start/</link>
+      <pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://frisbee.dev/docs/quick-start/</guid>
+      <description>This document describes how to quickly start Frisbee in a test or local environment.
+Step 1. Environment preparation Please ensure that the Kubernetes cluster and Helm package manager are deployed before the trial. If they are, go to Step 2.
+# Install microk8s v.1.24 &amp;gt;&amp;gt; sudo snap install microk8s --classic --channel=1.24/stable # Use microk8s config as the default kubernetes config &amp;gt;&amp;gt; microk8s config &amp;gt; ~/.kube/config # Start microk8s &amp;gt;&amp;gt; microk8s start # Enable Dependencies &amp;gt;&amp;gt; microk8s enable dns ingress helm3 # Create aliases &amp;gt;&amp;gt; sudo snap alias microk8s.</description>
+    </item>
+    
+  </channel>
+</rss>
