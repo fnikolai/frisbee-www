@@ -5,14 +5,14 @@ description: Frisbee is released under the Apache 2.0 license.
 date: 2022-06-28
 publishdate: 2022-06-28
 lastmod: 2022-06-28
-categories: ["about frisbee"]
+categories: ["about Frisbee"]
 keywords: ["License","apache"]
 menu:
   docs:
     parent: "about"
-    weight: 60
-weight: 60
-sections_weight: 60
+    weight: 14
+weight: 14
+sections_weight: 14
 aliases: [/meta/license]
 toc: true
 ---

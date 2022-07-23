@@ -1,19 +1,22 @@
 ---
 title: Basic Concepts
 linktitle: Basic Concepts
-description: 
+description: Basic Feautes of Frisbee
 date: 2022-06-30
 publishdate: 2022-06-30
-lastmod: 2022-06-30
+authors: [Fotis NIKOLAIDIS]
+categories: [about, features]
+layout: single
 menu:
   docs:
     parent: "about"
-    weight: 20
-weight: 20
-sections_weight: 20
+    weight: 11
+weight: 11
+sections_weight: 11
 draft: false
 toc: true
 ---
+
 
 
 

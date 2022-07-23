@@ -4,7 +4,7 @@ linktitle: What is Frisbee
 description: This document describes the concepts, use cases, core strengths, and the architecture of Frisbee.
 date: 2022-06-28
 publishdate: 2022-06-28
-lastmod: 2022-06-28
+authors: [Fotis NIKOLAIDIS]
 layout: single
 menu:
   docs:
@@ -12,10 +12,11 @@ menu:
     weight: 10
 weight: 10
 sections_weight: 10
+categories: [about]
 draft: false
+aliases: []
 toc: true
 ---
-
 
 
 ## Frisbee Overview
@@ -51,6 +52,7 @@ Unlike all prior tools, Frisbee delivers a fully automated testing environment.
 - Replay complex workloads written in an intuitive language!
 - Combine Chaos Engineering with large-scale performance testing!
 - Assert actual program behavior and side effects
+
 
 
 
