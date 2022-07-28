@@ -1494,7 +1494,7 @@ The termination refers to both Success and Fail.</p>
 <h3 id="frisbee.dev/v1alpha1.ConditionalExpr">ConditionalExpr
 </h3>
 <p>
-(<em>Appears on:</em><a href="#frisbee.dev/v1alpha1.Action">Action</a>, <a href="#frisbee.dev/v1alpha1.CallSpec">CallSpec</a>, <a href="#frisbee.dev/v1alpha1.GenerateFromTemplate">GenerateFromTemplate</a>, <a href="#frisbee.dev/v1alpha1.ScenarioStatus">ScenarioStatus</a>, <a href="#frisbee.dev/v1alpha1.SchedulerSpec">SchedulerSpec</a>)
+(<em>Appears on:</em><a href="#frisbee.dev/v1alpha1.Action">Action</a>, <a href="#frisbee.dev/v1alpha1.CallSpec">CallSpec</a>, <a href="#frisbee.dev/v1alpha1.GenerateFromTemplate">GenerateFromTemplate</a>, <a href="#frisbee.dev/v1alpha1.SchedulerSpec">SchedulerSpec</a>)
 </p>
 <div>
 <p>ConditionalExpr is a source of information about whether the state of the workflow after a given time is correct or not.
@@ -2761,16 +2761,14 @@ Lifecycle
 </tr>
 <tr>
 <td>
-<code>executedActions</code><br/>
+<code>scheduledJobs</code><br/>
 <em>
-<a href="#frisbee.dev/v1alpha1.ConditionalExpr">
-map[string]./api/v1alpha1.ConditionalExpr
-</a>
+[]string
 </em>
 </td>
 <td>
 <em>(Optional)</em>
-<p>ExecutedActions is a list of executed actions.</p>
+<p>ScheduledJobs is a list of references to the names of executed actions.</p>
 </td>
 </tr>
 <tr>
@@ -2967,10 +2965,10 @@ ServiceSpec
 <table>
 <tr>
 <td>
-<code>requirements</code><br/>
+<code>decorators</code><br/>
 <em>
-<a href="#frisbee.dev/v1alpha1.Requirements">
-Requirements
+<a href="#frisbee.dev/v1alpha1.Decorators">
+Decorators
 </a>
 </em>
 </td>
@@ -2980,10 +2978,10 @@ Requirements
 </tr>
 <tr>
 <td>
-<code>decorators</code><br/>
+<code>requirements</code><br/>
 <em>
-<a href="#frisbee.dev/v1alpha1.Decorators">
-Decorators
+<a href="#frisbee.dev/v1alpha1.Requirements">
+Requirements
 </a>
 </em>
 </td>
@@ -3128,10 +3126,10 @@ Macro conflicts with any other parameter.</p>
 <tbody>
 <tr>
 <td>
-<code>requirements</code><br/>
+<code>decorators</code><br/>
 <em>
-<a href="#frisbee.dev/v1alpha1.Requirements">
-Requirements
+<a href="#frisbee.dev/v1alpha1.Decorators">
+Decorators
 </a>
 </em>
 </td>
@@ -3141,10 +3139,10 @@ Requirements
 </tr>
 <tr>
 <td>
-<code>decorators</code><br/>
+<code>requirements</code><br/>
 <em>
-<a href="#frisbee.dev/v1alpha1.Decorators">
-Decorators
+<a href="#frisbee.dev/v1alpha1.Requirements">
+Requirements
 </a>
 </em>
 </td>
@@ -3476,8 +3474,8 @@ int
 <h3 id="frisbee.dev/v1alpha1.VirtualObject">VirtualObject
 </h3>
 <div>
-<p>VirtualObject is a wrapper for jobs that do not actually create something on the system. For example, Deletion jobs.
-These jobs do not have a dedicated controller, but their fields are set manually.</p>
+<p>VirtualObject is a CRD without a dedicated controller. Practically, it is just an entry in the Kubernetes API
+that is used as placeholder for action like Delete and Call.</p>
 </div>
 <table>
 <thead>
@@ -3628,7 +3626,7 @@ Kubernetes meta/v1.Duration
 <hr/>
 <p><em>
 Generated with <code>gen-crd-api-reference-docs</code>
-on git commit <code>741a9de</code>.
+on git commit <code>4917904</code>.
 </em></p>
 
 </div>
@@ -3677,63 +3675,73 @@ on git commit <code>741a9de</code>.
         <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".walkthrough">Walkthrough</a>
         <ul class="walkthrough desktopmenu animated fadeIn list pl0 bg-light-gray dn">
           <li class="f6 fw4">
-            <a href="/docs/walkthrough/hello-world/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+            <a href="/docs/walkthrough/1.hello-world/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Hello World
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/walkthrough/parameters/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+            <a href="/docs/walkthrough/2.parameters/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Parameters
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/walkthrough/execution-order/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+            <a href="/docs/walkthrough/3.execution-order/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Execution Order
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/walkthrough/dependency-order/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+            <a href="/docs/walkthrough/4.dependency-order/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Dependency Order
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/walkthrough/clustering/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+            <a href="/docs/walkthrough/5.clustering/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Clustering
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/walkthrough/scheduling/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+            <a href="/docs/walkthrough/6.scheduling/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Scheduling
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/walkthrough/conditionals/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+            <a href="/docs/walkthrough/7.conditionals/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Conditionals
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/walkthrough/tolerate-failures/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+            <a href="/docs/walkthrough/8.tolerate-failures/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Tolerate Failures
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/walkthrough/resource-throttling/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+            <a href="/docs/walkthrough/9.resource-throttling/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Resource Throttling
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/walkthrough/placement/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+            <a href="/docs/walkthrough/10.placement/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Placement
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/walkthrough/remote-calls/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+            <a href="/docs/walkthrough/11.remote-calls/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Remote Calls
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/walkthrough/assertions/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+            <a href="/docs/walkthrough/12.assertions/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Assertions
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/walkthrough/13.deletions/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Deletions
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/walkthrough/14.monitoring/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Live Monitoring
             </a>
           </li>
           <li class="f6 fw4">
@@ -3758,6 +3766,11 @@ on git commit <code>741a9de</code>.
       <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
         <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".developers-guide">Developer&#39;s Guide</a>
         <ul class="developers-guide desktopmenu animated fadeIn list pl0 bg-light-gray dn">
+          <li class="f6 fw4">
+            <a href="/docs/developers-guide/visualizations/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Create Custom Visualizations
+            </a>
+          </li>
           <li class="f6 fw4">
             <a href="/docs/developers-guide/feature-1/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Developers-Guide Feature-1

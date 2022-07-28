@@ -10,7 +10,7 @@
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>Resource Throttling | </title>
+  <title>Create Custom Visualizations | </title>
 
   <meta name="viewport" content="width=device-width,minimum-scale=1">
   <meta name="generator" content="Hugo 0.101.0" />
@@ -32,7 +32,7 @@
   
 
   <meta name="description"
-  content="Learn how to control the resources allocated to a container">
+  content="Create Custom Visualizations">
 
   
 
@@ -57,20 +57,20 @@
 <link rel="manifest" href="/manifest.json">
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0594cb">
 <meta name="theme-color" content="#ffffff">
-<meta property="og:title" content="Resource Throttling" />
-<meta property="og:description" content="Learn how to control the resources allocated to a container" />
+<meta property="og:title" content="Create Custom Visualizations" />
+<meta property="og:description" content="Create Custom Visualizations" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://frisbee.dev/docs/walkthrough/resource-throttling/" /><meta property="og:image" content="https://frisbee.dev/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_13615093195665541311.png"/><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://frisbee.dev/docs/developers-guide/visualizations/" /><meta property="og:image" content="https://frisbee.dev/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_14495085656920433920.png"/><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2022-06-29T00:00:00+00:00" />
 <meta property="article:modified_time" content="2022-06-29T00:00:00+00:00" /><meta property="og:site_name" content="Frisbee" />
-<meta itemprop="name" content="Resource Throttling">
-<meta itemprop="description" content="Learn how to control the resources allocated to a container"><meta itemprop="datePublished" content="2022-06-29T00:00:00+00:00" />
+<meta itemprop="name" content="Create Custom Visualizations">
+<meta itemprop="description" content="Create Custom Visualizations"><meta itemprop="datePublished" content="2022-06-29T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-06-29T00:00:00+00:00" />
-<meta itemprop="wordCount" content="279">
+<meta itemprop="wordCount" content="255">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://frisbee.dev/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_13615093195665541311.png"/>
-<meta name="twitter:title" content="Resource Throttling"/>
-<meta name="twitter:description" content="Learn how to control the resources allocated to a container"/>
+<meta name="twitter:image" content="https://frisbee.dev/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_14495085656920433920.png"/>
+<meta name="twitter:title" content="Create Custom Visualizations"/>
+<meta name="twitter:description" content="Create Custom Visualizations"/>
 
 
 </head>
@@ -194,25 +194,20 @@
 		<p class="b">What's on this Page</p>
   	<nav id="TableOfContents">
   <ul>
-    <li><a href="#parameterized-resources">Parameterized Resources</a></li>
-    <li><a href="#resource-throttling">Resource Throttling</a></li>
+    <li><a href="#create-custom-visualizations">Create Custom Visualizations</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 	
 
 	<div date-pref>
 		
-			<a href="https://frisbee.dev/docs/walkthrough/tolerate-failures/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Tolerate Failures ">
-				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-</svg>
-
-			</a>
-		
 
 		
-			<a href="https://frisbee.dev/docs/walkthrough/placement/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Placement">
+			<a href="https://frisbee.dev/docs/developers-guide/feature-1/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Developers-Guide Feature-1">
 			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
@@ -231,23 +226,13 @@
           </div>
           <header class="flex-none w-100">
   
-    
-      <a href="/categories/testing" class="f6 fw8 mb0 link mid-gray dim mr3">
-        TESTING
-      </a>
-    
-      <a href="/categories/fundamentals" class="f6 fw8 mb0 link mid-gray dim mr3">
-        FUNDAMENTALS
-      </a>
-    
-  
-  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Resource Throttling</h1>
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Create Custom Visualizations</h1>
 </header>
 
 <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
   
     <div class="f4 fw4 lh-copy">
-      Learn how to control the resources allocated to a container
+      Create Custom Visualizations
     </div>
   
 
@@ -258,63 +243,48 @@
 
 <div class="prose" id="prose">
 
-<p>In Kubernetes, when you create a specification for a pod, you can optionally specify how many resources each container is allowed to use on a <a href="https://komodor.com/learn/kubernetes-nodes-complete-guide/">Kubernetes node</a>. The most common resources are CPU and memory (RAM), but you can also specify others.</p>
-<p>But, what happens when you have parameterized services? How can you give parameterized resources?</p>
-<p>Frisbee address this issue via tha <code>decorators</code> abstraction.</p>
-<ul>
-<li><strong>Decorators</strong> rewrite the pod's specification according to some rules, before submitting the pod for creation. This way, we can provide automation for adding telemetry agents and mounting volumes without exposing these concerns to the end-user.</li>
-</ul>
-<h2 id="parameterized-resources">Parameterized Resources <a class="header-link" href="#parameterized-resources"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#0cf;font-weight:bold">---</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">apiVersion</span>:<span style="color:#bbb"> </span>frisbee.dev/v1alpha1<span style="color:#bbb">
+<h2 id="create-custom-visualizations">Create Custom Visualizations <a class="header-link" href="#create-custom-visualizations"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2>
+<h4 id="package-structure">Package Structure <a class="header-link" href="#package-structure"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<p>If you go to <code>charts/system</code> you will see the following structure.</p>
+<p><img src="index.assets/tree.png" alt="tree"></p>
+<p>The <code>dashboards</code> directory,  containers the default (or custom) <code>Grafana Dashboards</code>.</p>
+<p>The templates, provide the templates for the <code>Telemetry Agents</code> as well as for the  <code>Grafana and Prometheus Services</code>. The <code>Chaos</code> and <code>tools</code> templates are describe common fault-injection and debugging tools that can be used out-of-the-box.</p>
+<h4 id="add-custom-telemetry-agent">Add Custom Telemetry Agent <a class="header-link" href="#add-custom-telemetry-agent"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<p>To understand how to integrate a new telemetry agent, let's use a simplified version of the the <code>systems.telemetry.agent</code> found in <code>charts/system/</code>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#309;font-weight:bold">apiVersion</span>:<span style="color:#bbb"> </span>frisbee.dev/v1alpha1<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">kind</span>:<span style="color:#bbb"> </span>Template<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">metadata</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>iperf.server<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>system.telemetry.agent<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">spec</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">inputs</span>:<span style="color:#bbb">       </span><span style="color:#09f;font-style:italic"># Inputs allows for parameterized resources</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#309;font-weight:bold">parameters</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">memory</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;&#34;</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">cpu</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;&#34;</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">service</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#309;font-weight:bold">decorators</span>:<span style="color:#bbb"> </span><span style="color:#09f;font-style:italic"># Decorators wrap Pod definitions with some nice features</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">resources</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">cpu</span>:<span style="color:#bbb"> </span>{<span style="color:#bbb"> </span>{<span style="color:#bbb"> </span><span style="color:#c30">&#34;{{.Inputs.Parameters.cpu}}&#34;</span><span style="color:#bbb"> </span>}<span style="color:#bbb"> </span>}<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">memory</span>:<span style="color:#bbb"> </span>{<span style="color:#bbb"> </span>{<span style="color:#bbb"> </span><span style="color:#c30">&#34;{{.Inputs.Parameters.memory}}&#34;</span><span style="color:#bbb"> </span>}<span style="color:#bbb"> </span>}<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#309;font-weight:bold">containers</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span>- <span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>app<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">image</span>:<span style="color:#bbb"> </span>czero/iperf2<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">command</span>:<span style="color:#bbb"> </span>[<span style="color:#bbb"> </span>iperf ]<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">args</span>:<span style="color:#bbb"> </span>[<span style="color:#bbb"> </span><span style="color:#c30">&#34;-s&#34;</span>,<span style="color:#bbb"> </span><span style="color:#c30">&#34;-f&#34;</span>,<span style="color:#bbb"> </span><span style="color:#c30">&#34;m&#34;</span>,<span style="color:#bbb"> </span><span style="color:#c30">&#34;-i&#34;</span>,<span style="color:#bbb"> </span><span style="color:#c30">&#34;5&#34;</span><span style="color:#bbb"> </span>]<span style="color:#bbb">
-</span></span></span></code></pre></div><h2 id="resource-throttling">Resource Throttling <a class="header-link" href="#resource-throttling"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#309;font-weight:bold">apiVersion</span>:<span style="color:#bbb"> </span>frisbee.dev/v1alpha1<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">kind</span>:<span style="color:#bbb"> </span>Scenario<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span>- <span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>cadvisor<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">image</span>:<span style="color:#bbb"> </span>gcr.io/cadvisor/cadvisor:v0.44.0<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">ports</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- <span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>tel-sys	# Prometheus-scanned<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span><span style="color:#309;font-weight:bold">containerPort</span>:<span style="color:#bbb"> </span><span style="color:#f60">9442</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">command</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- /bin/sh <span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- -c <span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- |  <span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">			</span>...<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">			</span><span style="color:#09f;font-style:italic"># The telemetry agent</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>cadvisor --port=9442  ... <span style="color:#bbb">
+</span></span></span></code></pre></div><ul>
+<li><strong>Ports:</strong> are filtered by Prometheus.  They should be <code>prefixed</code> with <code>tel-</code>. Otherwise they are ignored</li>
+<li><strong>Agent</strong>: the binary responsive for collecting metrics and expose them to Prometheus.</li>
+</ul>
+<h4 id="bind-agent-with-dashboard">Bind Agent With Dashboard <a class="header-link" href="#bind-agent-with-dashboard"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<p>For the Visualization to be effective, the <code>Dashboard</code> should be able to understand and correctly parse the metrics collected by the <code>Agent</code>. However, because the <code>Agents</code> and the <code>Dashboards</code> are independent components, more frequently than you wish, you will find yourself tuning the output of the <code>Agents</code> and the input of the <code>Dashboard</code>. With Frisbee, we save ourselves by simply correlating the <code>Dashboards</code> to the specified <code>Agents</code>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#0cf;font-weight:bold">---</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">apiVersion</span>:<span style="color:#bbb"> </span>v1<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">kind</span>:<span style="color:#bbb"> </span>ConfigMap<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">metadata</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>conditionals<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">spec</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">actions</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#09f;font-style:italic"># Create an iperf server</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>- <span style="color:#309;font-weight:bold">action</span>:<span style="color:#bbb"> </span>Service<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>server<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">service</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">templateRef</span>:<span style="color:#bbb"> </span>iperf.server<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#09f;font-style:italic"># Create a set of iperf clients</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>- <span style="color:#309;font-weight:bold">action</span>:<span style="color:#bbb"> </span>Cluster<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>clients<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">depends</span>:<span style="color:#bbb"> </span>{<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">running</span>:<span style="color:#bbb"> </span>[<span style="color:#bbb"> </span>server ] }<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">assert</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">until</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span><span style="color:#309;font-weight:bold">state</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#39;{{.NumSuccessfulJobs}} &gt;= 6&#39;</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">cluster</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">templateRef</span>:<span style="color:#bbb"> </span>iperf.client<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">instances</span>:<span style="color:#bbb"> </span><span style="color:#f60">10</span><span style="color:#bbb"> 
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">inputs</span>:<span style="color:#bbb"> </span><span style="color:#09f;font-style:italic"># Resources can be given as mere arguments</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">target: server, duration</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;10&#34;</span><span style="color:#309;font-weight:bold">, cpu</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;0.4&#34;</span><span style="color:#309;font-weight:bold">, memory</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;50Mi&#34;</span><span style="color:#bbb">  </span>}<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">target: server, duration</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;20&#34;</span><span style="color:#309;font-weight:bold">, cpu</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;1&#34;</span><span style="color:#309;font-weight:bold">, memory</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;50i&#34;</span><span style="color:#bbb">  </span>}<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">target: server, duration</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;30&#34;</span><span style="color:#309;font-weight:bold">, cpu</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;1.2&#34;</span><span style="color:#309;font-weight:bold">, memory</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;50i&#34;</span><span style="color:#bbb">  </span>}<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">schedule</span>:<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span><span style="color:#309;font-weight:bold">cron</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;@every 1m&#34;</span><span style="color:#bbb">
-</span></span></span></code></pre></div><p>As can be seen, it is fairly easy to create numerous resources with random resources.</p>
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>system.telemetry.agent.config<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">data</span>:<span style="color:#bbb"> </span>{{(.Files.Glob &#34;dashboards/*.json&#34;).AsConfig | nindent 2}}<span style="color:#bbb">
+</span></span></span></code></pre></div><blockquote>
+<p><strong>NOTE:</strong> We know that a dashboard belongs to an agent if it follows the pattern <code>{{agentName}}.config</code>. For example, <code>system.telemetry.agent.config</code>.</p>
+</blockquote>
 
 </div>
 
@@ -359,66 +329,76 @@
       </li>
       
       <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8 mb1 bb b--moon-gray">
-        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2  primary-color" data-target=".walkthrough">Walkthrough</a>
-        <ul class="walkthrough desktopmenu animated fadeIn list pl0 bg-light-gray db">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".walkthrough">Walkthrough</a>
+        <ul class="walkthrough desktopmenu animated fadeIn list pl0 bg-light-gray dn">
           <li class="f6 fw4">
-            <a href="/docs/walkthrough/hello-world/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+            <a href="/docs/walkthrough/1.hello-world/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Hello World
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/walkthrough/parameters/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+            <a href="/docs/walkthrough/2.parameters/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Parameters
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/walkthrough/execution-order/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+            <a href="/docs/walkthrough/3.execution-order/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Execution Order
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/walkthrough/dependency-order/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+            <a href="/docs/walkthrough/4.dependency-order/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Dependency Order
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/walkthrough/clustering/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+            <a href="/docs/walkthrough/5.clustering/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Clustering
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/walkthrough/scheduling/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+            <a href="/docs/walkthrough/6.scheduling/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Scheduling
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/walkthrough/conditionals/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+            <a href="/docs/walkthrough/7.conditionals/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Conditionals
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/walkthrough/tolerate-failures/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+            <a href="/docs/walkthrough/8.tolerate-failures/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Tolerate Failures
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/walkthrough/resource-throttling/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 primary-color ">
+            <a href="/docs/walkthrough/9.resource-throttling/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Resource Throttling
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/walkthrough/placement/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+            <a href="/docs/walkthrough/10.placement/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Placement
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/walkthrough/remote-calls/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+            <a href="/docs/walkthrough/11.remote-calls/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Remote Calls
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/walkthrough/assertions/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+            <a href="/docs/walkthrough/12.assertions/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Assertions
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/walkthrough/13.deletions/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Deletions
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/walkthrough/14.monitoring/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Live Monitoring
             </a>
           </li>
           <li class="f6 fw4">
@@ -441,8 +421,13 @@
       </li>
       
       <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
-        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".developers-guide">Developer&#39;s Guide</a>
-        <ul class="developers-guide desktopmenu animated fadeIn list pl0 bg-light-gray dn">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2  primary-color" data-target=".developers-guide">Developer&#39;s Guide</a>
+        <ul class="developers-guide desktopmenu animated fadeIn list pl0 bg-light-gray db">
+          <li class="f6 fw4">
+            <a href="/docs/developers-guide/visualizations/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 primary-color ">
+              Create Custom Visualizations
+            </a>
+          </li>
           <li class="f6 fw4">
             <a href="/docs/developers-guide/feature-1/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Developers-Guide Feature-1
@@ -495,7 +480,7 @@
   Last updated: June 29, 2022
 </h6>
 
-      <a href="https://github.com/CARV-ICS-FORTH/frisbee/edit/master/content/en/docs/walkthrough/resource-throttling/index.md" class="
+      <a href="https://github.com/CARV-ICS-FORTH/frisbee/edit/master/content/en/docs/developers-guide/visualizations/index.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 ">Improve this page</a>
 

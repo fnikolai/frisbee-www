@@ -8,6 +8,18 @@
     <language>en-us</language>
     <lastBuildDate>Wed, 29 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://frisbee.dev/docs/developers-guide/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Create Custom Visualizations</title>
+      <link>https://frisbee.dev/docs/developers-guide/visualizations/</link>
+      <pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://frisbee.dev/docs/developers-guide/visualizations/</guid>
+      <description>Create Custom Visualizations Package Structure If you go to charts/system you will see the following structure.
+The dashboards directory, containers the default (or custom) Grafana Dashboards.
+The templates, provide the templates for the Telemetry Agents as well as for the Grafana and Prometheus Services. The Chaos and tools templates are describe common fault-injection and debugging tools that can be used out-of-the-box.
+Add Custom Telemetry Agent To understand how to integrate a new telemetry agent, let&#39;s use a simplified version of the the systems.</description>
+    </item>
+    
+    <item>
       <title>Developers-Guide Feature-1</title>
       <link>https://frisbee.dev/docs/developers-guide/feature-1/</link>
       <pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate>

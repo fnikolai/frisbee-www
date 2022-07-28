@@ -20,6 +20,9 @@
     <loc>https://frisbee.dev/docs/troubleshooting/</loc>
     <lastmod>2022-06-28T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://frisbee.dev/docs/developers-guide/visualizations/</loc>
+    <lastmod>2022-06-29T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://frisbee.dev/docs/developers-guide/feature-1/</loc>
     <lastmod>2022-06-29T00:00:00+00:00</lastmod>
   </url><url>
@@ -44,48 +47,54 @@
     <loc>https://frisbee.dev/docs/about/concepts/</loc>
     <lastmod>2022-06-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://frisbee.dev/docs/walkthrough/hello-world/</loc>
+    <loc>https://frisbee.dev/docs/walkthrough/1.hello-world/</loc>
     <lastmod>2022-06-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://frisbee.dev/docs/walkthrough/parameters/</loc>
+    <loc>https://frisbee.dev/docs/walkthrough/2.parameters/</loc>
     <lastmod>2022-06-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://frisbee.dev/docs/quick-start/</loc>
     <lastmod>2022-06-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://frisbee.dev/docs/walkthrough/execution-order/</loc>
+    <loc>https://frisbee.dev/docs/walkthrough/3.execution-order/</loc>
     <lastmod>2022-06-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://frisbee.dev/docs/walkthrough/dependency-order/</loc>
+    <loc>https://frisbee.dev/docs/walkthrough/4.dependency-order/</loc>
     <lastmod>2022-06-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://frisbee.dev/docs/about/license/</loc>
     <lastmod>2022-06-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://frisbee.dev/docs/walkthrough/clustering/</loc>
+    <loc>https://frisbee.dev/docs/walkthrough/5.clustering/</loc>
     <lastmod>2022-06-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://frisbee.dev/docs/about/contribute/</loc>
   </url><url>
-    <loc>https://frisbee.dev/docs/walkthrough/scheduling/</loc>
+    <loc>https://frisbee.dev/docs/walkthrough/6.scheduling/</loc>
     <lastmod>2022-06-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://frisbee.dev/docs/walkthrough/conditionals/</loc>
+    <loc>https://frisbee.dev/docs/walkthrough/7.conditionals/</loc>
     <lastmod>2022-06-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://frisbee.dev/docs/walkthrough/tolerate-failures/</loc>
+    <loc>https://frisbee.dev/docs/walkthrough/8.tolerate-failures/</loc>
     <lastmod>2022-06-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://frisbee.dev/docs/walkthrough/resource-throttling/</loc>
+    <loc>https://frisbee.dev/docs/walkthrough/9.resource-throttling/</loc>
     <lastmod>2022-06-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://frisbee.dev/docs/walkthrough/placement/</loc>
+    <loc>https://frisbee.dev/docs/walkthrough/10.placement/</loc>
     <lastmod>2022-06-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://frisbee.dev/docs/walkthrough/remote-calls/</loc>
+    <loc>https://frisbee.dev/docs/walkthrough/11.remote-calls/</loc>
     <lastmod>2022-06-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://frisbee.dev/docs/walkthrough/assertions/</loc>
+    <loc>https://frisbee.dev/docs/walkthrough/12.assertions/</loc>
+    <lastmod>2022-06-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://frisbee.dev/docs/walkthrough/13.deletions/</loc>
+    <lastmod>2022-06-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://frisbee.dev/docs/walkthrough/14.monitoring/</loc>
     <lastmod>2022-06-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://frisbee.dev/docs/walkthrough/naming/</loc>
