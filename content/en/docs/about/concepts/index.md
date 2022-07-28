@@ -74,7 +74,9 @@ Currently, Frisbee workflows provide the following features:
 
 ## Visualized Operations
 
-Frisbee provides an extended suite for visualizing operations, which greatly simplifies the understanding of a system under testing. 
+Frisbee provides an extended suite for visualizing operations, which greatly simplifies the understanding of a system under testing.  To keep everything nit and clean, we use the [Helm](https://helm.sh/) packages. All the templates that are need are placed within a single `reusable` package, called `Chart`. 
+
+
 
 
 

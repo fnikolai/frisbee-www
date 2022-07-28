@@ -6,9 +6,9 @@ publishdate: 2022-06-28
 lastmod: 2022-06-28
 layout: single
 menu:
-    main:
-        parent:  "section name"
-        weight: 10
+main:
+parent:  "section name"
+weight: 10
 weight: 10
 draft: false
 aliases: [/fields]
@@ -1273,7 +1273,7 @@ The termination refers to both Success and Fail.</p>
 <h3 id="frisbee.dev/v1alpha1.ConditionalExpr">ConditionalExpr
 </h3>
 <p>
-(<em>Appears on:</em><a href="#frisbee.dev/v1alpha1.Action">Action</a>, <a href="#frisbee.dev/v1alpha1.CallSpec">CallSpec</a>, <a href="#frisbee.dev/v1alpha1.GenerateFromTemplate">GenerateFromTemplate</a>, <a href="#frisbee.dev/v1alpha1.ScenarioStatus">ScenarioStatus</a>, <a href="#frisbee.dev/v1alpha1.SchedulerSpec">SchedulerSpec</a>)
+(<em>Appears on:</em><a href="#frisbee.dev/v1alpha1.Action">Action</a>, <a href="#frisbee.dev/v1alpha1.CallSpec">CallSpec</a>, <a href="#frisbee.dev/v1alpha1.GenerateFromTemplate">GenerateFromTemplate</a>, <a href="#frisbee.dev/v1alpha1.SchedulerSpec">SchedulerSpec</a>)
 </p>
 <div>
 <p>ConditionalExpr is a source of information about whether the state of the workflow after a given time is correct or not.
@@ -2540,16 +2540,14 @@ Lifecycle
 </tr>
 <tr>
 <td>
-<code>executedActions</code><br/>
+<code>scheduledJobs</code><br/>
 <em>
-<a href="#frisbee.dev/v1alpha1.ConditionalExpr">
-map[string]./api/v1alpha1.ConditionalExpr
-</a>
+[]string
 </em>
 </td>
 <td>
 <em>(Optional)</em>
-<p>ExecutedActions is a list of executed actions.</p>
+<p>ScheduledJobs is a list of references to the names of executed actions.</p>
 </td>
 </tr>
 <tr>
@@ -2746,10 +2744,10 @@ ServiceSpec
 <table>
 <tr>
 <td>
-<code>requirements</code><br/>
+<code>decorators</code><br/>
 <em>
-<a href="#frisbee.dev/v1alpha1.Requirements">
-Requirements
+<a href="#frisbee.dev/v1alpha1.Decorators">
+Decorators
 </a>
 </em>
 </td>
@@ -2759,10 +2757,10 @@ Requirements
 </tr>
 <tr>
 <td>
-<code>decorators</code><br/>
+<code>requirements</code><br/>
 <em>
-<a href="#frisbee.dev/v1alpha1.Decorators">
-Decorators
+<a href="#frisbee.dev/v1alpha1.Requirements">
+Requirements
 </a>
 </em>
 </td>
@@ -2907,10 +2905,10 @@ Macro conflicts with any other parameter.</p>
 <tbody>
 <tr>
 <td>
-<code>requirements</code><br/>
+<code>decorators</code><br/>
 <em>
-<a href="#frisbee.dev/v1alpha1.Requirements">
-Requirements
+<a href="#frisbee.dev/v1alpha1.Decorators">
+Decorators
 </a>
 </em>
 </td>
@@ -2920,10 +2918,10 @@ Requirements
 </tr>
 <tr>
 <td>
-<code>decorators</code><br/>
+<code>requirements</code><br/>
 <em>
-<a href="#frisbee.dev/v1alpha1.Decorators">
-Decorators
+<a href="#frisbee.dev/v1alpha1.Requirements">
+Requirements
 </a>
 </em>
 </td>
@@ -3255,8 +3253,8 @@ int
 <h3 id="frisbee.dev/v1alpha1.VirtualObject">VirtualObject
 </h3>
 <div>
-<p>VirtualObject is a wrapper for jobs that do not actually create something on the system. For example, Deletion jobs.
-These jobs do not have a dedicated controller, but their fields are set manually.</p>
+<p>VirtualObject is a CRD without a dedicated controller. Practically, it is just an entry in the Kubernetes API
+that is used as placeholder for action like Delete and Call.</p>
 </div>
 <table>
 <thead>
@@ -3407,5 +3405,5 @@ Kubernetes meta/v1.Duration
 <hr/>
 <p><em>
 Generated with <code>gen-crd-api-reference-docs</code>
-on git commit <code>741a9de</code>.
+on git commit <code>4917904</code>.
 </em></p>
