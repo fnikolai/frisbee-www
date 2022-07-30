@@ -32,6 +32,9 @@ code = "/:filename/"
 
 [params]
 title = "Frisbee"
+
+keywords = "testing, Kubernetes-Native Platform,benchmarking distributed applications  "
+
 description = "Smart, Cloud-Native Testbed!"
 
 ghrepo = "https://github.com/CARV-ICS-FORTH/frisbee"
