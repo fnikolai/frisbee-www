@@ -91,7 +91,8 @@ ConditionalExpr
 </td>
 <td>
 <em>(Optional)</em>
-<p>Assert defines the conditions under which the Scenario will terminate with a &ldquo;passed&rdquo; or &ldquo;failed&rdquo; message</p>
+<p>Assert defines the conditions that must be maintained after the action has been started.
+If the evaluation of the condition is false, the Scenario will abort immediately.</p>
 </td>
 </tr>
 <tr>
@@ -224,6 +225,21 @@ as the number of defined services.</p>
 </tr>
 <tr>
 <td>
+<code>tolerate</code><br/>
+<em>
+<a href="#frisbee.dev/v1alpha1.TolerateSpec">
+TolerateSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Tolerate specifies the conditions under which the call will fail. If undefined, the call fails
+immediately when a call to service has failed.</p>
+</td>
+</tr>
+<tr>
+<td>
 <code>until</code><br/>
 <em>
 <a href="#frisbee.dev/v1alpha1.ConditionalExpr">
@@ -332,6 +348,21 @@ string
 <em>(Optional)</em>
 <p>Expect declares a list of expected outputs. The number of expected outputs must be the same
 as the number of defined services.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>tolerate</code><br/>
+<em>
+<a href="#frisbee.dev/v1alpha1.TolerateSpec">
+TolerateSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Tolerate specifies the conditions under which the call will fail. If undefined, the call fails
+immediately when a call to service has failed.</p>
 </td>
 </tr>
 <tr>
@@ -1185,6 +1216,25 @@ Kubernetes meta/v1.Time
 </tr>
 </tbody>
 </table>
+<h3 id="frisbee.dev/v1alpha1.Component">Component
+(<code>string</code> alias)</h3>
+<div>
+</div>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr><td><p>&#34;SUT&#34;</p></td>
+<td><p>ComponentSUT is a component that belongs to the system under testing</p>
+</td>
+</tr><tr><td><p>&#34;SYS&#34;</p></td>
+<td><p>ComponentSys is a component that belongs to Frisbee. Such components can be excluded from Chaos events.</p>
+</td>
+</tr></tbody>
+</table>
 <h3 id="frisbee.dev/v1alpha1.ConditionType">ConditionType
 (<code>string</code> alias)</h3>
 <div>
@@ -1205,6 +1255,9 @@ Jobs may refer to actions of a scenario, services of a cluster, chaos events of 
 <td><p>ConditionAllJobsAreScheduled indicates that all jobs have been successfully scheduled.
 Jobs may refer to actions of a scenario, services of a cluster, chaos events of a cascade, etc.</p>
 </td>
+</tr><tr><td><p>&#34;Assert&#34;</p></td>
+<td><p>ConditionAssert indicate that an assertion condition is false.</p>
+</td>
 </tr><tr><td><p>&#34;Initialized&#34;</p></td>
 <td><p>ConditionCRInitialized indicates whether the workflow has been initialized</p>
 </td>
@@ -1212,15 +1265,15 @@ Jobs may refer to actions of a scenario, services of a cluster, chaos events of 
 <td><p>ConditionJobUnexpectedTermination is used for a job that has been unexpectedly terminated.
 The termination refers to both Success and Fail.</p>
 </td>
-</tr><tr><td><p>&#34;Terminated&#34;</p></td>
-<td><p>ConditionTerminated indicates the user-defined conditions are met.</p>
+</tr><tr><td><p>&#34;PerformanceAlert&#34;</p></td>
+<td><p>ConditionPerformanceAlert indicates an alert received by Grafana concerning the real-time performance of the system.</p>
 </td>
 </tr></tbody>
 </table>
 <h3 id="frisbee.dev/v1alpha1.ConditionalExpr">ConditionalExpr
 </h3>
 <p>
-(<em>Appears on:</em><a href="#frisbee.dev/v1alpha1.Action">Action</a>, <a href="#frisbee.dev/v1alpha1.CallSpec">CallSpec</a>, <a href="#frisbee.dev/v1alpha1.GenerateFromTemplate">GenerateFromTemplate</a>, <a href="#frisbee.dev/v1alpha1.ScenarioStatus">ScenarioStatus</a>, <a href="#frisbee.dev/v1alpha1.SchedulerSpec">SchedulerSpec</a>)
+(<em>Appears on:</em><a href="#frisbee.dev/v1alpha1.Action">Action</a>, <a href="#frisbee.dev/v1alpha1.CallSpec">CallSpec</a>, <a href="#frisbee.dev/v1alpha1.GenerateFromTemplate">GenerateFromTemplate</a>, <a href="#frisbee.dev/v1alpha1.SchedulerSpec">SchedulerSpec</a>)
 </p>
 <div>
 <p>ConditionalExpr is a source of information about whether the state of the workflow after a given time is correct or not.
@@ -1349,6 +1402,10 @@ Agents are sidecar services will be deployed in the same Pod as the Service cont
 </tr>
 </tbody>
 </table>
+<h3 id="frisbee.dev/v1alpha1.DefaultClassifier">DefaultClassifier
+</h3>
+<div>
+</div>
 <h3 id="frisbee.dev/v1alpha1.DeleteSpec">DeleteSpec
 </h3>
 <p>
@@ -1832,7 +1889,7 @@ int
 <em>(Optional)</em>
 <p>MaxInstances dictate the number of objects to be created for the CR.
 If no inputs are defined, then all instances will be initiated using the default parameters of the template.
-Conditions used in conjunction with Until, MaxInstances as a max bound.</p>
+Event used in conjunction with Until, MaxInstances as a max bound.</p>
 </td>
 </tr>
 <tr>
@@ -1845,7 +1902,7 @@ Conditions used in conjunction with Until, MaxInstances as a max bound.</p>
 <td>
 <em>(Optional)</em>
 <p>Inputs are list of inputs passed to the objects.
-Conditions used in conjunction with instances, if the number of instances is larger that the number of inputs,
+Event used in conjunction with instances, if the number of instances is larger that the number of inputs,
 then inputs are recursively iteration.</p>
 </td>
 </tr>
@@ -1854,7 +1911,7 @@ then inputs are recursively iteration.</p>
 <h3 id="frisbee.dev/v1alpha1.Inputs">Inputs
 </h3>
 <p>
-(<em>Appears on:</em><a href="#frisbee.dev/v1alpha1.TemplateSpec">TemplateSpec</a>)
+(<em>Appears on:</em><a href="#frisbee.dev/v1alpha1.Scheme">Scheme</a>, <a href="#frisbee.dev/v1alpha1.TemplateSpec">TemplateSpec</a>)
 </p>
 <div>
 </div>
@@ -2108,6 +2165,10 @@ string
 </tr>
 </tbody>
 </table>
+<h3 id="frisbee.dev/v1alpha1.OnTime">OnTime
+</h3>
+<div>
+</div>
 <h3 id="frisbee.dev/v1alpha1.Phase">Phase
 (<code>string</code> alias)</h3>
 <p>
@@ -2170,7 +2231,7 @@ bool
 </td>
 <td>
 <em>(Optional)</em>
-<p>Collocate will place all the services within the same node.</p>
+<p>Collocate will place all the Services of this Cluster within the same node.</p>
 </td>
 </tr>
 <tr>
@@ -2181,7 +2242,7 @@ bool
 </em>
 </td>
 <td>
-<p>ConflictsWith points to another cluster whose services cannot be located with this one.
+<p>ConflictsWith points to another Cluster whose Services cannot be located with this one.
 For example, this is needed for placing the master nodes on a different failure domain than the slave nodes.</p>
 </td>
 </tr>
@@ -2194,7 +2255,7 @@ For example, this is needed for placing the master nodes on a different failure 
 </td>
 <td>
 <em>(Optional)</em>
-<p>Nodes will place all the services within the same specific node.</p>
+<p>Nodes will place all the Services of this Cluster within the specific set of nodes.</p>
 </td>
 </tr>
 </tbody>
@@ -2479,16 +2540,14 @@ Lifecycle
 </tr>
 <tr>
 <td>
-<code>executedActions</code><br/>
+<code>scheduledJobs</code><br/>
 <em>
-<a href="#frisbee.dev/v1alpha1.ConditionalExpr">
-map[string]./api/v1alpha1.ConditionalExpr
-</a>
+[]string
 </em>
 </td>
 <td>
 <em>(Optional)</em>
-<p>ExecutedActions is a list of executed actions.</p>
+<p>ScheduledJobs is a list of references to the names of executed actions.</p>
 </td>
 </tr>
 <tr>
@@ -2564,7 +2623,7 @@ time for any reason. if we miss this deadline, we&rsquo;ll just wait till the ne
 </tr>
 <tr>
 <td>
-<code>conditions</code><br/>
+<code>event</code><br/>
 <em>
 <a href="#frisbee.dev/v1alpha1.ConditionalExpr">
 ConditionalExpr
@@ -2573,6 +2632,72 @@ ConditionalExpr
 </td>
 <td>
 <em>(Optional)</em>
+<p>Event schedules a new every when an event has happened.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="frisbee.dev/v1alpha1.Scheme">Scheme
+</h3>
+<div>
+</div>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>scenario</code><br/>
+<em>
+string
+</em>
+</td>
+<td>
+<p>Scenario returns the name of the scenario that invokes the template.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>namespace</code><br/>
+<em>
+string
+</em>
+</td>
+<td>
+<p>Returns the namespace where the scenario is running</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>inputs</code><br/>
+<em>
+<a href="#frisbee.dev/v1alpha1.Inputs">
+Inputs
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Inputs are dynamic fields that populate the spec.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>spec</code><br/>
+<em>
+[]byte
+</em>
+</td>
+<td>
+<p>Spec is the specification whose values will be replaced by parameters.</p>
+<br/>
+<br/>
+<table>
+</table>
 </td>
 </tr>
 </tbody>
@@ -2619,10 +2744,10 @@ ServiceSpec
 <table>
 <tr>
 <td>
-<code>requirements</code><br/>
+<code>decorators</code><br/>
 <em>
-<a href="#frisbee.dev/v1alpha1.Requirements">
-Requirements
+<a href="#frisbee.dev/v1alpha1.Decorators">
+Decorators
 </a>
 </em>
 </td>
@@ -2632,10 +2757,10 @@ Requirements
 </tr>
 <tr>
 <td>
-<code>decorators</code><br/>
+<code>requirements</code><br/>
 <em>
-<a href="#frisbee.dev/v1alpha1.Decorators">
-Decorators
+<a href="#frisbee.dev/v1alpha1.Requirements">
+Requirements
 </a>
 </em>
 </td>
@@ -2780,10 +2905,10 @@ Macro conflicts with any other parameter.</p>
 <tbody>
 <tr>
 <td>
-<code>requirements</code><br/>
+<code>decorators</code><br/>
 <em>
-<a href="#frisbee.dev/v1alpha1.Requirements">
-Requirements
+<a href="#frisbee.dev/v1alpha1.Decorators">
+Decorators
 </a>
 </em>
 </td>
@@ -2793,10 +2918,10 @@ Requirements
 </tr>
 <tr>
 <td>
-<code>decorators</code><br/>
+<code>requirements</code><br/>
 <em>
-<a href="#frisbee.dev/v1alpha1.Decorators">
-Decorators
+<a href="#frisbee.dev/v1alpha1.Requirements">
+Requirements
 </a>
 </em>
 </td>
@@ -2920,6 +3045,11 @@ string
 </tr>
 </tbody>
 </table>
+<h3 id="frisbee.dev/v1alpha1.StateAggregationFunctions">StateAggregationFunctions
+</h3>
+<div>
+<p>StateAggregationFunctions is a set of aggregation functions for managing the lifecycle of different resources.</p>
+</div>
 <h3 id="frisbee.dev/v1alpha1.Template">Template
 </h3>
 <div>
@@ -3091,7 +3221,7 @@ Lifecycle
 <h3 id="frisbee.dev/v1alpha1.TolerateSpec">TolerateSpec
 </h3>
 <p>
-(<em>Appears on:</em><a href="#frisbee.dev/v1alpha1.ClusterSpec">ClusterSpec</a>)
+(<em>Appears on:</em><a href="#frisbee.dev/v1alpha1.CallSpec">CallSpec</a>, <a href="#frisbee.dev/v1alpha1.ClusterSpec">ClusterSpec</a>)
 </p>
 <div>
 <p>TolerateSpec specifies the system&rsquo;s ability to continue operating despite failures or malfunctions.
@@ -3108,13 +3238,14 @@ Such failures are likely to happen as part of a Chaos experiment.</p>
 <tbody>
 <tr>
 <td>
-<code>failedServices</code><br/>
+<code>failedJobs</code><br/>
 <em>
 int
 </em>
 </td>
 <td>
-<p>FailedServices indicate the number of services that may fail before the cluster fails itself.</p>
+<em>(Optional)</em>
+<p>FailedJobs indicate the number of services that may fail before the cluster fails itself.</p>
 </td>
 </tr>
 </tbody>
@@ -3122,8 +3253,8 @@ int
 <h3 id="frisbee.dev/v1alpha1.VirtualObject">VirtualObject
 </h3>
 <div>
-<p>VirtualObject is a wrapper for jobs that do not actually create something on the system. For example, Deletion jobs.
-These jobs do not have a dedicated controller, but their fields are set manually.</p>
+<p>VirtualObject is a CRD without a dedicated controller. Practically, it is just an entry in the Kubernetes API
+that is used as placeholder for action like Delete and Call.</p>
 </div>
 <table>
 <thead>
@@ -3274,5 +3405,5 @@ Kubernetes meta/v1.Duration
 <hr/>
 <p><em>
 Generated with <code>gen-crd-api-reference-docs</code>
-on git commit <code>92c476c</code>.
+on git commit <code>4917904</code>.
 </em></p>

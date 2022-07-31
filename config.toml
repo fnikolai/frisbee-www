@@ -10,8 +10,11 @@ enableEmoji = true
 canonifyURLs = "false"
 pluralizeListTitles = "false"
 plainIdAnchors = "true"
-disableKinds = ["taxonomy", "taxonomyTerm"]
 
+
+[taxonomies]
+  category = 'categories'
+  tag = 'tags'
 
 
 [build]
@@ -41,7 +44,8 @@ ghrepo = "https://github.com/CARV-ICS-FORTH/frisbee"
 
 website = "https://frisbee.dev"
 
-docsrepo = "https://frisbee.dev/docs"
+docsrepo = "https://github.com/fnikolai/frisbee-www/content/"
+
 
 forum = "https://github.com/CARV-ICS-FORTH/frisbee/discussions"
 

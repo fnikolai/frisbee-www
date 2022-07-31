@@ -2,15 +2,21 @@
   name = "About Frisbee"
   weight = 1
   identifier = "about"
-  url = "/about/"
+  url = "/docs/about/"
 
 [[docs]]
-  name = "Getting Started"
+  name = "Quick start"
   weight = 5
-  identifier = "getting-started"
-  url = "/getting-started"
-  post = "break"
+  identifier = "quick-start"
+  url = "/docs/quick-start"
 
+
+[[docs]]
+  name = "Walkthrough"
+  weight = 5
+  identifier = "walkthrough"
+  url = "/docs/walkthrough"
+  post = "break"
 
 # Core Menus
 
@@ -19,21 +25,21 @@
   name = "User's Guide"
   weight = 20
   identifier = "users-guide"
-  url = "/users-guide/"
+  url = "/docs/users-guide/"
 
 
 [[docs]]
   name = "Developer's Guide"
   weight = 40
   identifier = "developers-guide"
-  url = "/developers-guide/"
+  url = "/docs/developers-guide/"
 
 
 [[docs]]
   name = "Operators's Manual"
   weight = 60
   identifier = "operators-manual"
-  url = "/operators-manual/"
+  url = "/docs/operators-manual/"
   post = "break"
 
 
@@ -43,20 +49,14 @@
   name = "Field References"
   weight = 80
   identifier = "fields"
-  url = "/fields/"
+  url = "/docs/fields/"
 
 [[docs]]
   name = "Troubleshooting"
   weight = 80
   identifier = "troubleshooting"
-  url = "/troubleshooting/"
+  url = "/docs/troubleshooting/"
 
-[[docs]]
-  name = "Contribute"
-  weight = 100
-  post = "break"
-  identifier = "contribute"
-  url = "/contribute/"
 
 
 ######## QUICKLINKS
