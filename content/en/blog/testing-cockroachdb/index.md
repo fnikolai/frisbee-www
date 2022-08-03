@@ -5,6 +5,7 @@ description: "Experience with testing a Cloud Database"
 categories: [blog]
 author: fnikol
 toc: true
+
 ---
 
 ### 1. Baseline Single
@@ -156,6 +157,8 @@ https://github.com/cockroachdb/cockroach/blob/master/pkg/cmd/roachtest/tests/sst
 > \xb4\xb6"/0/1651588517.218867146,0#31483,SET]
 > Corrupt \xb4\xb6"/0/1651588517.218867146,0#31483,SET].sst
 
+
+
 ![image-20220518160002401](images/image-20220518160002401.png)
 
 4. Cockroach detects and bitrot and panics with error
@@ -230,7 +233,6 @@ There is an issue with the pgurl format. For the rest of the experiment we conti
 * If the partition starts after the workload, it recovers when the partition is repaired
 * Otherwise, it remains 0
 
-![img](https://lh6.googleusercontent.com/X9rqdUvlJ2aFuiXfG3DtXherMy6KsnePLwoZxuJ8ZtOuvo1ioJylgC-ceL89ireRIVINj8-BbRhiD4VbAAJZQJ92E0yvtr-6WmwnWgh3Ef-PRkxQXLFZBg5eogUYeihf8-wNpPlxuzqXg3IxVmuvVA)
 
 ![image-20220518232404304](images/image-20220518232404304.png)
 

@@ -36,7 +36,7 @@ code = "/:filename/"
 [params]
 title = "Frisbee"
 
-keywords = "testing, Kubernetes-Native Platform,benchmarking distributed applications  "
+keywords = "Frisbee ,  Create Clustered Services, testing, Kubernetes contoller, chaos, chaos engineering, test framework, testing framework,Kubernetes-Native Platform,benchmarking distributed applications, fault-tolerance,fault tolerance,fault-injection, fault injection, test automation,  "
 
 description = "Smart, Cloud-Native Testbed!"
 
