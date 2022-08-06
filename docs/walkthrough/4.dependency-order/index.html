@@ -69,7 +69,7 @@
 <meta itemprop="name" content="Dependency Order">
 <meta itemprop="description" content="Spin-up the dependency stack of a system"><meta itemprop="datePublished" content="2022-06-29T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-06-29T00:00:00+00:00" />
-<meta itemprop="wordCount" content="270">
+<meta itemprop="wordCount" content="276">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://frisbee.dev/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_11831318422471112986.png"/>
 <meta name="twitter:title" content="Dependency Order"/>
@@ -275,6 +275,9 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#309;font-weight:bold">containers</span>:<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span>- <span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>app<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">image</span>:<span style="color:#bbb">  </span>czero/iperf2<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">ports</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- <span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>listen<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span><span style="color:#309;font-weight:bold">containerPort</span>:<span style="color:#bbb"> </span><span style="color:#f60">5001</span><span style="color:#bbb">        
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">command</span>:<span style="color:#bbb"> </span>[iperf]<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">args</span>:<span style="color:#bbb"> </span>[<span style="color:#c30">&#34;-s&#34;</span>,<span style="color:#bbb"> </span><span style="color:#c30">&#34;-f&#34;</span>,<span style="color:#bbb"> </span><span style="color:#c30">&#34;m&#34;</span>,<span style="color:#bbb"> </span><span style="color:#c30">&#34;-i&#34;</span>,<span style="color:#bbb"> </span><span style="color:#c30">&#34;5&#34;</span>]<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">
@@ -330,15 +333,15 @@
 <h2>See Also</h2>
 <ul>
 	
-	<li><a href="/docs/walkthrough/12.assertions/">Assertions</a></li>
+	<li><a href="/docs/walkthrough/11.advanced-placement/">Advanced Placement</a></li>
+	
+	<li><a href="/docs/walkthrough/13.assertions/">Assertions</a></li>
+	
+	<li><a href="/docs/walkthrough/12.callables/">Callables</a></li>
 	
 	<li><a href="/docs/walkthrough/5.clustering/">Clustering</a></li>
 	
-	<li><a href="/docs/walkthrough/7.conditionals/">Conditionals</a></li>
-	
-	<li><a href="/docs/developers-guide/visualizations/">Create Custom Visualizations</a></li>
-	
-	<li><a href="/docs/walkthrough/13.deletions/">Deletions</a></li>
+	<li><a href="/docs/walkthrough/8.conditional-scheduling/">Conditional Scheduling</a></li>
 	
 </ul>
 
@@ -409,53 +412,83 @@
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/walkthrough/6.scheduling/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Scheduling
+            <a href="/docs/walkthrough/6.time-driven-scheduling/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Time-Driven Scheduling
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/walkthrough/7.conditionals/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Conditionals
+            <a href="/docs/walkthrough/7.event-driven-scheduling/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Event-Driven Scheduling
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/walkthrough/8.tolerate-failures/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+            <a href="/docs/walkthrough/8.conditional-scheduling/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Conditional Scheduling
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/walkthrough/9.tolerate-failures/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Tolerate Failures
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/walkthrough/9.resource-throttling/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+            <a href="/docs/walkthrough/10.resource-throttling/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Resource Throttling
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/walkthrough/10.placement/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Placement
+            <a href="/docs/walkthrough/11.advanced-placement/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Advanced Placement
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/walkthrough/11.remote-calls/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Remote Calls
+            <a href="/docs/walkthrough/12.callables/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Callables
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/walkthrough/12.assertions/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+            <a href="/docs/walkthrough/13.assertions/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Assertions
-            </a>
-          </li>
-          <li class="f6 fw4">
-            <a href="/docs/walkthrough/13.deletions/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Deletions
-            </a>
-          </li>
-          <li class="f6 fw4">
-            <a href="/docs/walkthrough/14.monitoring/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Live Monitoring
             </a>
           </li>
           <li class="f6 fw4">
             <a href="/docs/walkthrough/naming/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Naming and Addressing
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/walkthrough/14.deletions/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Deletions
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/walkthrough/15.live-monitoring/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Live Monitoring
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/walkthrough/16.simulate-failure/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Simulate A Failure
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/walkthrough/17.simulate-cascading-failures/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Simulate Cascading Failures
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/walkthrough/18.revoke-failures/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Revoke Failures
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/walkthrough/20.distributed-logs/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Distributed Logs
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/walkthrough/19.sla-assertion/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              SLA Assertions
             </a>
           </li>
         </ul>
@@ -478,11 +511,6 @@
           <li class="f6 fw4">
             <a href="/docs/developers-guide/visualizations/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Create Custom Visualizations
-            </a>
-          </li>
-          <li class="f6 fw4">
-            <a href="/docs/developers-guide/feature-1/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Developers-Guide Feature-1
             </a>
           </li>
         </ul>

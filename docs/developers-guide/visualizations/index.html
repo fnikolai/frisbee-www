@@ -205,21 +205,6 @@
   </ul>
 </nav>
 	
-
-	<div date-pref>
-		
-
-		
-			<a href="https://frisbee.dev/docs/developers-guide/feature-1/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Developers-Guide Feature-1">
-			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
-    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
-    <path d="M0 0h24v24H0z" fill="none"/>
-</svg>
-
-			</a>
-		
-	</div>
-
 </aside>
 </div>
 
@@ -249,7 +234,7 @@
 <h2 id="create-custom-visualizations">Create Custom Visualizations <a class="header-link" href="#create-custom-visualizations"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2>
 <h4 id="package-structure">Package Structure <a class="header-link" href="#package-structure"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
 <p>If you go to <code>charts/system</code> you will see the following structure.</p>
-<p><img src="index.assets/tree.png" alt="tree"></p>
+<!-- raw HTML omitted -->
 <p>The <code>dashboards</code> directory,  containers the default (or custom) <code>Grafana Dashboards</code>.</p>
 <p>The templates, provide the templates for the <code>Telemetry Agents</code> as well as for the  <code>Grafana and Prometheus Services</code>. The <code>Chaos</code> and <code>tools</code> templates are describe common fault-injection and debugging tools that can be used out-of-the-box.</p>
 <h4 id="add-custom-telemetry-agent">Add Custom Telemetry Agent <a class="header-link" href="#add-custom-telemetry-agent"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
@@ -296,15 +281,15 @@
 <h2>See Also</h2>
 <ul>
 	
-	<li><a href="/docs/walkthrough/12.assertions/">Assertions</a></li>
+	<li><a href="/docs/walkthrough/11.advanced-placement/">Advanced Placement</a></li>
+	
+	<li><a href="/docs/walkthrough/13.assertions/">Assertions</a></li>
+	
+	<li><a href="/docs/walkthrough/12.callables/">Callables</a></li>
 	
 	<li><a href="/docs/walkthrough/5.clustering/">Clustering</a></li>
 	
-	<li><a href="/docs/walkthrough/7.conditionals/">Conditionals</a></li>
-	
-	<li><a href="/docs/walkthrough/13.deletions/">Deletions</a></li>
-	
-	<li><a href="/docs/walkthrough/4.dependency-order/">Dependency Order</a></li>
+	<li><a href="/docs/walkthrough/8.conditional-scheduling/">Conditional Scheduling</a></li>
 	
 </ul>
 
@@ -375,53 +360,83 @@
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/walkthrough/6.scheduling/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Scheduling
+            <a href="/docs/walkthrough/6.time-driven-scheduling/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Time-Driven Scheduling
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/walkthrough/7.conditionals/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Conditionals
+            <a href="/docs/walkthrough/7.event-driven-scheduling/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Event-Driven Scheduling
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/walkthrough/8.tolerate-failures/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+            <a href="/docs/walkthrough/8.conditional-scheduling/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Conditional Scheduling
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/walkthrough/9.tolerate-failures/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Tolerate Failures
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/walkthrough/9.resource-throttling/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+            <a href="/docs/walkthrough/10.resource-throttling/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Resource Throttling
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/walkthrough/10.placement/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Placement
+            <a href="/docs/walkthrough/11.advanced-placement/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Advanced Placement
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/walkthrough/11.remote-calls/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Remote Calls
+            <a href="/docs/walkthrough/12.callables/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Callables
             </a>
           </li>
           <li class="f6 fw4">
-            <a href="/docs/walkthrough/12.assertions/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+            <a href="/docs/walkthrough/13.assertions/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Assertions
-            </a>
-          </li>
-          <li class="f6 fw4">
-            <a href="/docs/walkthrough/13.deletions/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Deletions
-            </a>
-          </li>
-          <li class="f6 fw4">
-            <a href="/docs/walkthrough/14.monitoring/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Live Monitoring
             </a>
           </li>
           <li class="f6 fw4">
             <a href="/docs/walkthrough/naming/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
               Naming and Addressing
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/walkthrough/14.deletions/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Deletions
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/walkthrough/15.live-monitoring/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Live Monitoring
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/walkthrough/16.simulate-failure/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Simulate A Failure
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/walkthrough/17.simulate-cascading-failures/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Simulate Cascading Failures
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/walkthrough/18.revoke-failures/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Revoke Failures
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/walkthrough/20.distributed-logs/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Distributed Logs
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/walkthrough/19.sla-assertion/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              SLA Assertions
             </a>
           </li>
         </ul>
@@ -444,11 +459,6 @@
           <li class="f6 fw4">
             <a href="/docs/developers-guide/visualizations/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 primary-color ">
               Create Custom Visualizations
-            </a>
-          </li>
-          <li class="f6 fw4">
-            <a href="/docs/developers-guide/feature-1/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
-              Developers-Guide Feature-1
             </a>
           </li>
         </ul>

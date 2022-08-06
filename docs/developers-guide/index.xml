@@ -19,14 +19,5 @@ The templates, provide the templates for the Telemetry Agents as well as for the
 Add Custom Telemetry Agent To understand how to integrate a new telemetry agent, let&#39;s use a simplified version of the the systems.</description>
     </item>
     
-    <item>
-      <title>Developers-Guide Feature-1</title>
-      <link>https://frisbee.dev/docs/developers-guide/feature-1/</link>
-      <pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://frisbee.dev/docs/developers-guide/feature-1/</guid>
-      <description></description>
-    </item>
-    
   </channel>
 </rss>

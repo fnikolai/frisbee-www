@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  
+  <link rel="preload" href="https://frisbee.dev/fonts/muli-latin-200.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://frisbee.dev/fonts/muli-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://frisbee.dev/fonts/muli-latin-800.woff2" as="font" type="font/woff2" crossorigin>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>Assertions | </title>
+
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  <meta name="generator" content="Hugo 0.101.0" />
+
+  
+  <meta name="robots" content="noindex, nofollow">
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/output/css/app.min.b368142944d203fdc1d3dec8ab085c0c0e75aaf9171853110f03e91c1c2616f4.css" integrity="sha256-s2gUKUTSA/3B097IqwhcDA51qvkXGFMRDwPpHBwmFvQ=" crossorigin="anonymous">
+  
+  
+  
+  <meta name="keywords" content="testing, Kubernetes-Native Platform,benchmarking distributed applications  ">
+
+
+
+  <meta name="description"
+  content="Assert the behavior of a running system.">
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/output/js/app.4d1948163ddd8b2629fbbde4339a119d4d67f2c52c0230b70798a84341c22b96.js" integrity="sha256-TRlIFj3diyYp&#43;73kM5oRnU1n8sUsAjC3B5ioQ0HCK5Y=" crossorigin="anonymous" defer></script>
+  
+      
+ 
+
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0594cb">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="Assertions" />
+<meta property="og:description" content="Assert the behavior of a running system." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://frisbee.dev/docs/walkthrough/13.assertions/" /><meta property="og:image" content="https://frisbee.dev/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_3165638812683573635.png"/><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2022-06-29T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-06-29T00:00:00+00:00" /><meta property="og:site_name" content="Frisbee" />
+<meta itemprop="name" content="Assertions">
+<meta itemprop="description" content="Assert the behavior of a running system."><meta itemprop="datePublished" content="2022-06-29T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-06-29T00:00:00+00:00" />
+<meta itemprop="wordCount" content="608">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://frisbee.dev/opengraph/card-base_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_3165638812683573635.png"/>
+<meta name="twitter:title" content="Assertions"/>
+<meta name="twitter:description" content="Assert the behavior of a running system."/>
+
+
+</head>
+
+<body class="ma0 sans-serif bg-primary-color-light">
+  
+
+  
+<nav class="bg-primary-color-dark pv4 w-100" role="navigation">
+
+  <div class="center flex-ns flex-wrap items-center justify-start mw9">
+
+    <h1 class="dim f3 lh-solid ml0-ns mr0 mr4-l mv0 pl3 pl4-ns">
+      <a href="https://frisbee.dev" class="link white">
+         Home
+      </a>
+    </h1>
+    <ul class="list ma0 pa0 dn dib-l" role="menu">
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+          <a href="/news/" class="dim link light-silver">
+            News
+              
+            
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+          <a href="/docs/" class="dim link light-silver">
+            Docs
+              
+            
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+          <a href="/showcase/" class="dim link light-silver">
+            Showcase
+              
+            
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+          <a href="/blog/" class="dim link light-silver">
+            Blog
+              
+            
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+          <a href="https://github.com/CARV-ICS-FORTH/frisbee/discussions" class="dim link light-silver">
+            Community
+              
+            
+            
+              <span class="pl1">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link">
+<path d="M25.152 16.576v5.696q0 2.144-1.504 3.648t-3.648 1.504h-14.848q-2.144 0-3.648-1.504t-1.504-3.648v-14.848q0-2.112 1.504-3.616t3.648-1.536h12.576q0.224 0 0.384 0.16t0.16 0.416v1.152q0 0.256-0.16 0.416t-0.384 0.16h-12.576q-1.184 0-2.016 0.832t-0.864 2.016v14.848q0 1.184 0.864 2.016t2.016 0.864h14.848q1.184 0 2.016-0.864t0.832-2.016v-5.696q0-0.256 0.16-0.416t0.416-0.16h1.152q0.256 0 0.416 0.16t0.16 0.416zM32 1.152v9.12q0 0.48-0.352 0.8t-0.8 0.352-0.8-0.352l-3.136-3.136-11.648 11.648q-0.16 0.192-0.416 0.192t-0.384-0.192l-2.048-2.048q-0.192-0.16-0.192-0.384t0.192-0.416l11.648-11.648-3.136-3.136q-0.352-0.352-0.352-0.8t0.352-0.8 0.8-0.352h9.12q0.48 0 0.8 0.352t0.352 0.8z"></path>
+</svg>
+
+              </span>
+            
+          </a>
+        </li>
+      
+        <li class="f5 dib mr4" role="menuitem">
+            
+          <a href="https://github.com/CARV-ICS-FORTH/frisbee" class="dim link light-silver">
+            GitHub
+              
+            
+            
+              <span class="pl1">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link">
+<path d="M25.152 16.576v5.696q0 2.144-1.504 3.648t-3.648 1.504h-14.848q-2.144 0-3.648-1.504t-1.504-3.648v-14.848q0-2.112 1.504-3.616t3.648-1.536h12.576q0.224 0 0.384 0.16t0.16 0.416v1.152q0 0.256-0.16 0.416t-0.384 0.16h-12.576q-1.184 0-2.016 0.832t-0.864 2.016v14.848q0 1.184 0.864 2.016t2.016 0.864h14.848q1.184 0 2.016-0.864t0.832-2.016v-5.696q0-0.256 0.16-0.416t0.416-0.16h1.152q0.256 0 0.416 0.16t0.16 0.416zM32 1.152v9.12q0 0.48-0.352 0.8t-0.8 0.352-0.8-0.352l-3.136-3.136-11.648 11.648q-0.16 0.192-0.416 0.192t-0.384-0.192l-2.048-2.048q-0.192-0.16-0.192-0.384t0.192-0.416l11.648-11.648-3.136-3.136q-0.352-0.352-0.352-0.8t0.352-0.8 0.8-0.352h9.12q0.48 0 0.8 0.352t0.352 0.8z"></path>
+</svg>
+
+              </span>
+            
+          </a>
+        </li>
+      
+    </ul>
+
+    <div class="db dib-ns pl3"><form id="site-search-form" action="" role="search">
+  <fieldset class="bn ma0 pa0">
+    <label class="clip" for="search-input">Search</label>
+    <input type="search" id="search-input" class="needs-js bg-left bn f5 input-reset lh-solid mt3 mt0-ns pl4 pv2 w5 white" placeholder="Search the Docs" name="search-input" value="" style="background: url('/images/icon-search.png') 5px 11px/16px 16px no-repeat; background-color: rgba(255,255,255,0);">
+  </fieldset>
+</form>
+</div>
+
+    <span class="absolute mt1 mt2-l pr3 right-0 top-0">
+
+<a class="github-button needs-js link primary-color-dark" href="https://github.com/CARV-ICS-FORTH/frisbee/stargazers" data-size="large" data-show-count="true" aria-label="Star Frisbee on GitHub">Star</a>
+</span>
+
+  </div>
+</nav>
+
+  
+  <main role="main" class="content-with-sidebar min-vh-100 pb6 pb0-ns">
+    
+  <article class="w-100 ph4 pb5 pb6-ns pt1 pt5-ns">
+    <div class="flex-l">
+
+      <div class="order-2 w-100 w-20-l ph5-m ph0-l mb4 sticky">
+<aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
+	
+		<p class="b">What's on this Page</p>
+  	<nav id="TableOfContents">
+  <ul>
+    <li><a href="#assertions">Assertions</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#assertions-scope">Assertion's Scope</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+	
+
+	<div date-pref>
+		
+			<a href="https://frisbee.dev/docs/walkthrough/12.callables/" class="dib f6 pl1 hover-bg-light-gray br-100" title="Callables ">
+				<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+
+			</a>
+		
+
+		
+			<a href="https://frisbee.dev/docs/walkthrough/naming/" class="dib f6 pr1 hover-bg-light-gray br-100" title="Naming and Addressing">
+			<svg class="fill-current" height="30px" viewBox="0 0 24 24" width="30px" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg>
+
+			</a>
+		
+	</div>
+
+</aside>
+</div>
+
+      <div class="order-1 w-60-l mw7 ph0 ph5-ns mid-gray nested-copy-line-height no-underline nested-links nested-img nested-copy-separator nested-blockquote mt0-ns" style="flex-grow:1;">
+        <div class="documentation-copy center measure-wide-l">
+          <div id="readout" class="fixed right-0 bottom-0">
+          </div>
+          <header class="flex-none w-100">
+  
+    
+      <a href="/categories/testing" class="f6 fw8 mb0 link mid-gray dim mr3">
+        TESTING
+      </a>
+    
+      <a href="/categories/fundamentals" class="f6 fw8 mb0 link mid-gray dim mr3">
+        FUNDAMENTALS
+      </a>
+    
+  
+  <h1 class="lh-title mb3 mv0 pt3 primary-color-dark">Assertions</h1>
+</header>
+
+<aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
+  
+    <div class="f4 fw4 lh-copy">
+      Assert the behavior of a running system.
+    </div>
+  
+
+  
+</aside>
+
+
+
+<div class="prose" id="prose">
+
+<p>No testing framework can be complete without assertions.</p>
+<p>Let's see how to use them properly.</p>
+<p>In the following scenario, we:</p>
+<ul>
+<li>
+<p>Run a server that terminates gracefully after a few seconds</p>
+</li>
+<li>
+<p>Run a set of clients</p>
+</li>
+<li>
+<p>Evaluate the outcome with and without assertions.</p>
+</li>
+</ul>
+<h2 id="assertions">Assertions <a class="header-link" href="#assertions"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2>
+<h4 id="template-for-gracefully-terminated-server">Template for gracefully terminated server <a class="header-link" href="#template-for-gracefully-terminated-server"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<p>Firstly, let's make a server that gracefully terminates after a few seconds.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#0cf;font-weight:bold">---</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">apiVersion</span>:<span style="color:#bbb"> </span>frisbee.dev/v1alpha1<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">kind</span>:<span style="color:#bbb"> </span>Template<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">metadata</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>iperf.server<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">spec</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">service</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#309;font-weight:bold">containers</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span>- <span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>app<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">image</span>:<span style="color:#bbb"> </span>czero/iperf2<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">ports</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- <span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>listen<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span><span style="color:#309;font-weight:bold">containerPort</span>:<span style="color:#bbb"> </span><span style="color:#f60">5001</span><span style="color:#bbb">        
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">command</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- /bin/sh  <span style="color:#bbb"> </span><span style="color:#09f;font-style:italic"># Run shell</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- -c       <span style="color:#bbb"> </span><span style="color:#09f;font-style:italic"># Read from string</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- |        <span style="color:#bbb"> </span><span style="color:#09f;font-style:italic"># Multi-line str</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span><span style="color:#09f;font-style:italic"># Run the iperf server in the background</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>iperf -s -f -m -i 5 &amp;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span><span style="color:#09f;font-style:italic"># Gracefully terminate after the given period</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>sleep 60 &amp;&amp; exit 0<span style="color:#bbb">
+</span></span></span></code></pre></div><h4 id="scenario-without-assertions">Scenario, Without Assertions <a class="header-link" href="#scenario-without-assertions"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<p>Then, let's run our usual scenario.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#0cf;font-weight:bold">---</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">apiVersion</span>:<span style="color:#bbb"> </span>frisbee.dev/v1alpha1<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">kind</span>:<span style="color:#bbb"> </span>Scenario<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">metadata</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>assertions<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">spec</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">actions</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>- <span style="color:#309;font-weight:bold">action</span>:<span style="color:#bbb"> </span>Service<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>server<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">service</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">templateRef</span>:<span style="color:#bbb"> </span>iperf.server<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>- <span style="color:#309;font-weight:bold">action</span>:<span style="color:#bbb"> </span>Cluster<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>clients<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">depends</span>:<span style="color:#bbb"> </span>{<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">running</span>:<span style="color:#bbb"> </span>[<span style="color:#bbb"> </span>server ] } <span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">cluster</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">templateRef</span>:<span style="color:#bbb"> </span>iperf.client<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">inputs</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">target: server, duration</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;400&#34;</span><span style="color:#bbb"> </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">target: server, duration</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;400&#34;</span><span style="color:#bbb"> </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">target: server, duration</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;400&#34;</span><span style="color:#bbb"> </span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p>After around 60 seconds, if you check the status of the scenario you will see that the experiment completed successfully.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&gt;&gt; kubectl get scenarios assertions  -o <span style="color:#033">jsonpath</span><span style="color:#555">=</span><span style="color:#c30">&#39;{.status.phase}&#39;</span>
+</span></span><span style="display:flex;"><span>Success
+</span></span></code></pre></div><p>This is because after the server's termination, <code>the clients detected the broken connection and they exit themselves (gracefully)</code>.  It makes sense, but is that the desired behavior?</p>
+<h4 id="scenario-with-assertions">Scenario, With Assertions <a class="header-link" href="#scenario-with-assertions"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<p>Let's try repeat the previous scenario, but now let's use assertions.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#0cf;font-weight:bold">---</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">apiVersion</span>:<span style="color:#bbb"> </span>frisbee.dev/v1alpha1<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">kind</span>:<span style="color:#bbb"> </span>Scenario<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">metadata</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>assertions<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">spec</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">actions</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>- <span style="color:#309;font-weight:bold">action</span>:<span style="color:#bbb"> </span>Service<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>server<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">service</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">templateRef</span>:<span style="color:#bbb"> </span>iperf.server<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>- <span style="color:#309;font-weight:bold">action</span>:<span style="color:#bbb"> </span>Cluster<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>clients<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">depends</span>:<span style="color:#bbb"> </span>{<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">running</span>:<span style="color:#bbb"> </span>[<span style="color:#bbb"> </span>server ] } <span style="color:#bbb"> </span><span style="color:#09f;font-style:italic"># Depends are pre-execution conditions</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">assert</span>:<span style="color:#bbb">                           </span><span style="color:#09f;font-style:italic"># Assert are post-execution conditions</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">state</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#39;{{.IsRunning &#34;server&#34;}}&#39;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">cluster</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">templateRef</span>:<span style="color:#bbb"> </span>iperf.client<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">inputs</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">target: server, duration</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;400&#34;</span><span style="color:#bbb"> </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">target: server, duration</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;400&#34;</span><span style="color:#bbb"> </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">target: server, duration</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;400&#34;</span><span style="color:#bbb"> </span>}<span style="color:#bbb">
+</span></span></span></code></pre></div><p>After around 60 seconds, if you check the status of the scenario you will see that the experiment completed successfully.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&gt;&gt; kubectl get scenarios assertions  -o <span style="color:#033">jsonpath</span><span style="color:#555">=</span><span style="color:#c30">&#39;{.status.phase}&#39;</span>
+</span></span><span style="display:flex;"><span>Failed
+</span></span></code></pre></div><p>This is because after the server's termination, <code>the Scenario detects that the server is missing and aborts (with a failure)</code>.</p>
+<h2 id="assertions-scope">Assertion's Scope <a class="header-link" href="#assertions-scope"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2>
+<p>Let's try to repeat the <code>conditional</code> scenario we used before.</p>
+<p>But, in this case, along with the <code>until</code> condition which <code>suspends</code> the scenario when the condition is met, we have added an <code>assert</code> to <code>abort</code> the scenario when the condition is met.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#309;font-weight:bold">apiVersion</span>:<span style="color:#bbb"> </span>frisbee.dev/v1alpha1<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">kind</span>:<span style="color:#bbb"> </span>Scenario<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">metadata</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>assertions-scope<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#309;font-weight:bold">spec</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#309;font-weight:bold">actions</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>- <span style="color:#309;font-weight:bold">action</span>:<span style="color:#bbb"> </span>Service<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>server<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">service</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">templateRef</span>:<span style="color:#bbb"> </span>iperf.server<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span><span style="color:#09f;font-style:italic"># Scenario Scope</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>- <span style="color:#309;font-weight:bold">action</span>:<span style="color:#bbb"> </span>Cluster<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">name</span>:<span style="color:#bbb"> </span>clients<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">depends</span>:<span style="color:#bbb"> </span>{<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">running</span>:<span style="color:#bbb"> </span>[<span style="color:#bbb"> </span>server ] }<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">assert</span>:<span style="color:#bbb"> </span><span style="color:#09f;font-style:italic"># Abort the scenario</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">state</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#39;{{.NumSuccessfulJobs}} &gt;= 4&#39;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#09f;font-style:italic"># Cluster Scope</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#309;font-weight:bold">cluster</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">templateRef</span>:<span style="color:#bbb"> </span>iperf.client<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">instances</span>:<span style="color:#bbb"> </span><span style="color:#f60">10</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#309;font-weight:bold">inputs</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">target: server, duration</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;10&#34;</span><span style="color:#bbb"> </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">target: server, duration</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;20&#34;</span><span style="color:#bbb"> </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">          </span>- {<span style="color:#bbb"> </span><span style="color:#309;font-weight:bold">target: server, duration</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;30&#34;</span><span style="color:#bbb"> </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">         </span><span style="color:#309;font-weight:bold">schedule</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">           </span><span style="color:#309;font-weight:bold">cron</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#34;@every 1m&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">         </span><span style="color:#309;font-weight:bold">until</span>:<span style="color:#bbb"> </span><span style="color:#09f;font-style:italic"># Suspend the cluster</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">           </span><span style="color:#309;font-weight:bold">state</span>:<span style="color:#bbb"> </span><span style="color:#c30">&#39;{{.NumSuccessfulJobs}} &gt;= 6&#39;</span><span style="color:#bbb">
+</span></span></span></code></pre></div><p>You wait, and wait, and wait, .... and the scenario keep creating clients.</p>
+<p>What happened ?</p>
+<h4 id="state-expressions-are-locally-scoped">State expressions are locally scoped <a class="header-link" href="#state-expressions-are-locally-scoped"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
+<p>As we explain previously for  <code>until</code>:,</p>
+<ul>
+<li>the expression <code>{{.NumSuccessfulJobs}} &gt;= 6</code> is <strong>local</strong> to the <code>Cluster</code> and refers to the jobs managed by the <code>Cluster </code>controller.</li>
+</ul>
+<p>Equally for the <code>assertion</code>,</p>
+<ul>
+<li>the expression<code>'{{.NumSuccessfulJobs}} &gt;= 4'</code> is <strong>local</strong> to the <code>Scenario</code> and refers to the jobs managed by the <code>Scenario</code> controller.</li>
+</ul>
+<p>In other words, the <code>Scenario</code> accounts only for <code>Actions</code>, and not for jobs created within the context of a <code>Cluster</code>. The reason behind this convience will become clear later when we talk about <code>Cluster.Spec.Tolerate.FailedJobs</code>.</p>
+
+</div>
+
+          
+
+<h2>See Also</h2>
+<ul>
+	
+	<li><a href="/docs/walkthrough/11.advanced-placement/">Advanced Placement</a></li>
+	
+	<li><a href="/docs/walkthrough/12.callables/">Callables</a></li>
+	
+	<li><a href="/docs/walkthrough/5.clustering/">Clustering</a></li>
+	
+	<li><a href="/docs/walkthrough/8.conditional-scheduling/">Conditional Scheduling</a></li>
+	
+	<li><a href="/docs/developers-guide/visualizations/">Create Custom Visualizations</a></li>
+	
+</ul>
+
+        </div>
+      </div>
+      <div class="order-0 w-20 dn db-l">
+        
+<nav role="navigation">
+  <ul class="list pa0 nl2">
+    
+      
+      <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".about">About Frisbee</a>
+        <ul class="about desktopmenu animated fadeIn list pl0 bg-light-gray dn">
+          <li class="f6 fw4">
+            <a href="/docs/about/what-is-frisbee/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              What is Frisbee
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/about/concepts/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Basic Concepts
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/about/license/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              License
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/about/contribute/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Contribute
+            </a>
+          </li>
+        </ul>
+      </li>
+      
+      <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
+        <a href="/docs/quick-start" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".quick-start">Quick start</a>
+      </li>
+      
+      <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8 mb1 bb b--moon-gray">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2  primary-color" data-target=".walkthrough">Walkthrough</a>
+        <ul class="walkthrough desktopmenu animated fadeIn list pl0 bg-light-gray db">
+          <li class="f6 fw4">
+            <a href="/docs/walkthrough/1.hello-world/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Hello World
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/walkthrough/2.parameters/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Parameters
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/walkthrough/3.execution-order/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Execution Order
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/walkthrough/4.dependency-order/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Dependency Order
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/walkthrough/5.clustering/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Clustering
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/walkthrough/6.time-driven-scheduling/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Time-Driven Scheduling
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/walkthrough/7.event-driven-scheduling/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Event-Driven Scheduling
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/walkthrough/8.conditional-scheduling/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Conditional Scheduling
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/walkthrough/9.tolerate-failures/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Tolerate Failures
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/walkthrough/10.resource-throttling/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Resource Throttling
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/walkthrough/11.advanced-placement/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Advanced Placement
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/walkthrough/12.callables/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Callables
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/walkthrough/13.assertions/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 primary-color ">
+              Assertions
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/walkthrough/naming/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Naming and Addressing
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/walkthrough/14.deletions/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Deletions
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/walkthrough/15.live-monitoring/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Live Monitoring
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/walkthrough/16.simulate-failure/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Simulate A Failure
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/walkthrough/17.simulate-cascading-failures/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Simulate Cascading Failures
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/walkthrough/18.revoke-failures/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Revoke Failures
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/walkthrough/20.distributed-logs/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Distributed Logs
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/walkthrough/19.sla-assertion/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              SLA Assertions
+            </a>
+          </li>
+        </ul>
+      </li>
+      
+      <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".users-guide">User&#39;s Guide</a>
+        <ul class="users-guide desktopmenu animated fadeIn list pl0 bg-light-gray dn">
+          <li class="f6 fw4">
+            <a href="/docs/users-guide/feature-1/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Users-Guide Feature-1
+            </a>
+          </li>
+        </ul>
+      </li>
+      
+      <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".developers-guide">Developer&#39;s Guide</a>
+        <ul class="developers-guide desktopmenu animated fadeIn list pl0 bg-light-gray dn">
+          <li class="f6 fw4">
+            <a href="/docs/developers-guide/visualizations/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Create Custom Visualizations
+            </a>
+          </li>
+        </ul>
+      </li>
+      
+      <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8 mb1 bb b--moon-gray">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".operators-manual">Operators&#39;s Manual</a>
+        <ul class="operators-manual desktopmenu animated fadeIn list pl0 bg-light-gray dn">
+          <li class="f6 fw4">
+            <a href="/docs/operators-manual/feature-1/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Operators-Guide Feature-1
+            </a>
+          </li>
+        </ul>
+      </li>
+      
+      <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
+        <a href="/docs/fields/" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".fields">Field References</a>
+      </li>
+      
+      <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
+        <a href="javascript:void(0)" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 " data-target=".troubleshooting">Troubleshooting</a>
+        <ul class="troubleshooting desktopmenu animated fadeIn list pl0 bg-light-gray dn">
+          <li class="f6 fw4">
+            <a href="/docs/troubleshooting/faq/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              FAQ
+            </a>
+          </li>
+          <li class="f6 fw4">
+            <a href="/docs/troubleshooting/tools/" class="db link hover-bg-gray hover-white pl3 pr2 pv2 black ">
+              Tools
+            </a>
+          </li>
+        </ul>
+      </li>
+  </ul>
+</nav>
+
+      </div>
+
+    </div>
+  </article>
+
+  <div class="w-100 bg-light-gray">
+    <div class="mw7 pa4 center nested-lh-copy lh-copy">
+      <h6 class="f6 dark-gray mb2">
+  Last updated: June 29, 2022
+</h6>
+
+      <a href="https://github.com/CARV-ICS-FORTH/frisbee/edit/master/content/en/docs/walkthrough/13.assertions/index.md" class="
+f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
+">Improve this page</a>
+
+      
+
+
+    </div>
+  </div>
+
+  </main>
+
+  <footer class="bg-primary-color-dark ph1-ns pt4 relative w-100" role="contentinfo">
+    <div class="center flex flex-wrap justify-between mw9 w-90">
+      <div class="pb3 b pt1 w-100 w-50-ns mt6 pa3">
+          <h3 class="outline b f5 mv1  light-gray">
+              This project has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement </br>No. 894204 (Ether, H2020-MSCA-IF-2019)
+          </h3>
+      </div>
+
+      <div class="w-50 w-50"> 
+        
+
+
+  <section class="pa3 w-100 mr2">
+    <div class="center mw9">
+      <div class="flex-ns flex-wrap center">
+        
+          
+          
+            <div class="ba b--dark-gray bg-light-gray br3 flex flex-column flex-wrap items-center justify-center ph3 pv4 mb4 w-100 w-30-l  o-100">
+              
+                
+                   <a href="https://cordis.europa.eu/project/id/894204?utm_campaign=hugosponsor&amp;utm_medium=banner&amp;utm_source=homepage" class="grow">
+                
+              <img src="/images/sponsors/eu-logo.png" alt="Logo for European Union" class="img h3 center" />
+              </a>
+              
+            </div>
+          
+        
+          
+          
+            <div class="ba b--dark-gray bg-light-gray br3 flex flex-column flex-wrap items-center justify-center ph3 pv4 mb4 w-100 w-30-l  o-100">
+              
+                
+                   <a href="https://marie-sklodowska-curie-actions.ec.europa.eu/actions/postdoctoral-fellowships?utm_campaign=hugosponsor&amp;utm_medium=banner&amp;utm_source=homepage" class="grow">
+                
+              <img src="/images/sponsors/msca-logo.jpg" alt="Logo for Marie Skłodowska-Curie Actions" class="img h3 center" />
+              </a>
+              
+            </div>
+          
+        
+      </div>
+    </div>
+  </section>
+
+
+      </div>
+
+    </div>
+
+    <div class="bg-primary-color-dark bottom-0 left-0 right-0 dn-l fixed pb3 ph3 pt3 w-100"><div  class="globalmenu mobilemenu pb1 dn">
+    
+
+<ul class="list hidden dib ph0 scrolling-touch tc">
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/news/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          News
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/docs/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          Docs
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/showcase/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          Showcase
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/blog/" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          Blog
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="https://github.com/CARV-ICS-FORTH/frisbee/discussions" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          Community
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="https://github.com/CARV-ICS-FORTH/frisbee" class="ttu f6 link primary-color-light overflow hover-white db brand-font  ma0 w-100 pv3 ph4">
+          GitHub
+        </a>
+    </li>
+  
+</ul>
+
+</div>
+<div  class="docsmenu mobilemenu pb1 dn">
+    
+
+<ul class="list dib ph0 scrolling-touch tc">
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/docs/about/" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
+          About Frisbee
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/docs/quick-start" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
+          Quick start
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100 mb2 bb b--mid-gray">
+        <a href="/docs/walkthrough" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
+          Walkthrough
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/docs/users-guide/" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
+          User&#39;s Guide
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/docs/developers-guide/" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
+          Developer&#39;s Guide
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100 mb2 bb b--mid-gray">
+        <a href="/docs/operators-manual/" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
+          Operators&#39;s Manual
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/docs/fields/" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
+          Field References
+        </a>
+    </li>
+  
+    <li  class="tl dib ma0 hover-bg-black w-100">
+        <a href="/docs/troubleshooting/" class="ttu f6 link primary-color-light  hover-white db brand-font mb1  ma0 w-100 pv2 ph4">
+          Troubleshooting
+        </a>
+    </li>
+  
+</ul>
+
+</div>
+
+<div class="flex dn-l justify-between">
+  <button class="js-toggle flex-auto dib dn-l f6 tc db ph3 pv2 link mr2 white bg-primary-color-dark hover-bg-primary-color ba b--white-40 w-auto" data-target=".globalmenu">Menu</button>
+
+  <button class="js-toggle flex-auto dib dn-l f6 tc db ph3 pv2 link white bg-primary-color-dark hover-bg-primary-color ba b--white-40 w-auto" data-target=".docsmenu">Docs Menu</button>
+</div>
+</div>
+
+</footer>
+
+  
+  
+
+  
+
+  
+
+
+</body>
+
+</html>

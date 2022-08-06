@@ -61,32 +61,44 @@ apiVersion: frisbee.dev/v1alpha1 kind: Scenario metadata: name: clustering spec:
     </item>
     
     <item>
-      <title>Scheduling</title>
-      <link>https://frisbee.dev/docs/walkthrough/6.scheduling/</link>
+      <title>Time-Driven Scheduling</title>
+      <link>https://frisbee.dev/docs/walkthrough/6.time-driven-scheduling/</link>
       <pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://frisbee.dev/docs/walkthrough/6.scheduling/</guid>
+      <guid>https://frisbee.dev/docs/walkthrough/6.time-driven-scheduling/</guid>
       <description>Users may also set the creation policy to construct variable workloads and dynamically changing topologies for elastic experiments.
-Scheduling The next snippet shows how to schedule the creation of new services, using a cron-like syntax.
+Time-Driven Scheduling The next snippet shows how to schedule the creation of new services, using a cron-like syntax.
 --- apiVersion: frisbee.dev/v1alpha1 kind: Scenario metadata: name: scheduling spec: actions: - action: Service name: server service: templateRef: iperf.server - action: Cluster name: clients depends: { running: [ server ] } cluster: templateRef: iperf.client inputs: - { target: server, duration: &amp;#34;10&amp;#34; } - { target: server, duration: &amp;#34;20&amp;#34; } - { target: server, duration: &amp;#34;30&amp;#34; } # Schedule the creation of new clients schedule: cron: &amp;#34;@every 1m&amp;#34; All that it takes, it to add the scheduling fields and specify the desired cron, and you will get an output like this one:</description>
     </item>
     
     <item>
-      <title>Conditionals</title>
-      <link>https://frisbee.dev/docs/walkthrough/7.conditionals/</link>
+      <title>Event-Driven Scheduling</title>
+      <link>https://frisbee.dev/docs/walkthrough/7.event-driven-scheduling/</link>
       <pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://frisbee.dev/docs/walkthrough/7.conditionals/</guid>
-      <description>We also support conditional execution. The syntax is implemented by govaluate which offers the support for complex syntax.
-Conditionals apiVersion: frisbee.dev/v1alpha1 kind: Scenario metadata: name: conditionals spec: actions: - action: Service name: server service: templateRef: iperf.server - action: Cluster name: clients depends: { running: [ server ] } cluster: templateRef: iperf.client instances: 10 inputs: - { target: server, duration: &amp;#34;10&amp;#34; } - { target: server, duration: &amp;#34;20&amp;#34; } - { target: server, duration: &amp;#34;30&amp;#34; } schedule: cron: &amp;#34;@every 1m&amp;#34; # Suspend the execution if more than 6 clients are created until: state: &amp;#39;{{.</description>
+      <guid>https://frisbee.dev/docs/walkthrough/7.event-driven-scheduling/</guid>
+      <description>Users may also set the creation policy to construct variable workloads and dynamically changing topologies for elastic experiments.
+Event-Driven Scheduling The next snippet shows how to schedule the creation of new services, using govaluate syntax.
+--- apiVersion: frisbee.dev/v1alpha1 kind: Scenario metadata: name: conditionals spec: actions: - action: Service name: server service: templateRef: iperf.server - action: Cluster name: clients depends: { running: [ server ] } cluster: templateRef: iperf.client instances: 10 inputs: - { target: server, duration: &amp;#34;10&amp;#34; } - { target: server, duration: &amp;#34;20&amp;#34; } - { target: server, duration: &amp;#34;30&amp;#34; } schedule: cron: &amp;#34;@every 1m&amp;#34; # Schedule one client every minute event: # When 3 clients are created, give it a boost state: &amp;#39;{{.</description>
+    </item>
+    
+    <item>
+      <title>Conditional Scheduling</title>
+      <link>https://frisbee.dev/docs/walkthrough/8.conditional-scheduling/</link>
+      <pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://frisbee.dev/docs/walkthrough/8.conditional-scheduling/</guid>
+      <description>We also support loops execution.
+Conditional Scheduling In this scenario, Frisbee will keep spawning clients, either it reaches 6 clients, after which it will be suspended. If suspended, the cluster will stop spawning new clients, but the old clients will remain active.
+apiVersion: frisbee.dev/v1alpha1 kind: Scenario metadata: name: loops spec: actions: - action: Service name: server service: templateRef: iperf.server - action: Cluster name: clients depends: { running: [ server ] } cluster: templateRef: iperf.</description>
     </item>
     
     <item>
       <title>Tolerate Failures</title>
-      <link>https://frisbee.dev/docs/walkthrough/8.tolerate-failures/</link>
+      <link>https://frisbee.dev/docs/walkthrough/9.tolerate-failures/</link>
       <pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://frisbee.dev/docs/walkthrough/8.tolerate-failures/</guid>
+      <guid>https://frisbee.dev/docs/walkthrough/9.tolerate-failures/</guid>
       <description>Systems fail. After all, this is what testing is about.
 By default, Frisbee has a builtin fail-fast mechanism that aborts the experiment when a fault is sensed.
 Tolerate Failures Template Instead of waiting for a service to fail, let&#39;s give it some boost.
@@ -96,10 +108,10 @@ We have modified the previous template to take the exit code as an input.
     
     <item>
       <title>Resource Throttling</title>
-      <link>https://frisbee.dev/docs/walkthrough/9.resource-throttling/</link>
+      <link>https://frisbee.dev/docs/walkthrough/10.resource-throttling/</link>
       <pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://frisbee.dev/docs/walkthrough/9.resource-throttling/</guid>
+      <guid>https://frisbee.dev/docs/walkthrough/10.resource-throttling/</guid>
       <description>In Kubernetes, when you create a specification for a pod, you can optionally specify how many resources each container is allowed to use on a Kubernetes node. The most common resources are CPU and memory (RAM), but you can also specify others.
 But, what happens when you have parameterized services? How can you give parameterized resources?
 Frisbee address this issue via tha decorators abstraction.
@@ -107,21 +119,21 @@ Decorators rewrite the pod&#39;s specification according to some rules, before s
     </item>
     
     <item>
-      <title>Placement</title>
-      <link>https://frisbee.dev/docs/walkthrough/10.placement/</link>
+      <title>Advanced Placement</title>
+      <link>https://frisbee.dev/docs/walkthrough/11.advanced-placement/</link>
       <pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://frisbee.dev/docs/walkthrough/10.placement/</guid>
+      <guid>https://frisbee.dev/docs/walkthrough/11.advanced-placement/</guid>
       <description>Kubernetes already provide a powerful mechanism control which node the Pod deploys to. For example, to ensure that a Pod ends up on a node with an SSD attached to it, or to co-locate Pods from two different services that communicate a lot into the same availability zone.
 However, configuring these mechanisms is cumbersome. Especially when we talk about tens of dynamically created services. For this reason, Frisbee provides simple abstraction for controlling the placement at the level of a cluster.</description>
     </item>
     
     <item>
-      <title>Remote Calls</title>
-      <link>https://frisbee.dev/docs/walkthrough/11.remote-calls/</link>
+      <title>Callables</title>
+      <link>https://frisbee.dev/docs/walkthrough/12.callables/</link>
       <pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://frisbee.dev/docs/walkthrough/11.remote-calls/</guid>
+      <guid>https://frisbee.dev/docs/walkthrough/12.callables/</guid>
       <description>There are cases where you need to get a shell to a running container.
 For this reason, Frisbee provides the Call primitive.
 Hints:
@@ -130,10 +142,10 @@ The number of expected outputs must be the same as the number of defined service
     
     <item>
       <title>Assertions</title>
-      <link>https://frisbee.dev/docs/walkthrough/12.assertions/</link>
+      <link>https://frisbee.dev/docs/walkthrough/13.assertions/</link>
       <pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://frisbee.dev/docs/walkthrough/12.assertions/</guid>
+      <guid>https://frisbee.dev/docs/walkthrough/13.assertions/</guid>
       <description>No testing framework can be complete without assertions.
 Let&#39;s see how to use them properly.
 In the following scenario, we:
@@ -141,30 +153,7 @@ Run a server that terminates gracefully after a few seconds
 Run a set of clients
 Evaluate the outcome with and without assertions.
 Assertions Template for gracefully terminated server Firstly, let&#39;s make a server that gracefully terminates after a few seconds.
---- apiVersion: frisbee.dev/v1alpha1 kind: Template metadata: name: iperf.server spec: service: containers: - name: app image: czero/iperf2 command: - /bin/sh # Run shell - -c # Read from string - | # Multi-line str # Run the iperf server in the background iperf -s -f -m -i 5 &amp;amp; # Gracefully terminate after the given period sleep 60 &amp;amp;&amp;amp; exit 0 Scenario, Without Assertions Then, let&#39;s run our usual scenario.</description>
-    </item>
-    
-    <item>
-      <title>Deletions</title>
-      <link>https://frisbee.dev/docs/walkthrough/13.deletions/</link>
-      <pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://frisbee.dev/docs/walkthrough/13.deletions/</guid>
-      <description>Running systems are far for being `static&#39;. Nodes come-up, nodes get crashing, new clients arrive, old clients go away, etc etc.
-Therefore, we should be able to test our systems against high-level of churns.
-And to do so, it is necessary not only to create new servers/clients, but also to be able to delete existing ones.
-Deletion --- apiVersion: frisbee.dev/v1alpha1 kind: Scenario metadata: name: deletions spec: actions: - action: Service name: server service: templateRef: iperf.</description>
-    </item>
-    
-    <item>
-      <title>Live Monitoring</title>
-      <link>https://frisbee.dev/docs/walkthrough/14.monitoring/</link>
-      <pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://frisbee.dev/docs/walkthrough/14.monitoring/</guid>
-      <description>Resource Monitoring Frisbee integrates the following web-based dashboard which consumes information from the Kubernetes API.
-Dashboard: is a web-based Kubernetes user interface. You can use Dashboard to deploy containerized applications to a Kubernetes cluster, troubleshoot your containerized application, and manage the cluster resources.
-Chaos Dashboard: is a one-step web UI for managing, designing, and monitoring chaos experiments on Chaos Mesh. It will ask for a token. You can get it from the config via grep token ~/.</description>
+--- apiVersion: frisbee.dev/v1alpha1 kind: Template metadata: name: iperf.server spec: service: containers: - name: app image: czero/iperf2 ports: - name: listen containerPort: 5001 command: - /bin/sh # Run shell - -c # Read from string - | # Multi-line str # Run the iperf server in the background iperf -s -f -m -i 5 &amp;amp; # Gracefully terminate after the given period sleep 60 &amp;amp;&amp;amp; exit 0 Scenario, Without Assertions Then, let&#39;s run our usual scenario.</description>
     </item>
     
     <item>
@@ -176,6 +165,77 @@ Chaos Dashboard: is a one-step web UI for managing, designing, and monitoring ch
       <description>In contrast to other Workflow enginers like Argo that use dynamically generated names, all objects in Frisbee follow a predictable naming pattern. This makes it possible to create communicating services.
 Reference an Object In case of communicating services, such as a client-server architecture, we need the client to know the name of the server in other to establish a communication case.
 apiVersion: frisbee.dev/v1alpha1 kind: Scenario metadata: name: server-client spec: actions: - action: Service name: server service: templateRef: iperf2.</description>
+    </item>
+    
+    <item>
+      <title>Deletions</title>
+      <link>https://frisbee.dev/docs/walkthrough/14.deletions/</link>
+      <pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://frisbee.dev/docs/walkthrough/14.deletions/</guid>
+      <description>Running systems are far for being `static&#39;. Nodes come-up, nodes get crashing, new clients arrive, old clients go away, etc etc.
+Therefore, we should be able to test our systems against high-level of churns.
+And to do so, it is necessary not only to create new servers/clients, but also to be able to delete existing ones.
+Deletion --- apiVersion: frisbee.dev/v1alpha1 kind: Scenario metadata: name: delete-job spec: actions: - action: Service name: server service: templateRef: iperf.</description>
+    </item>
+    
+    <item>
+      <title>Live Monitoring</title>
+      <link>https://frisbee.dev/docs/walkthrough/15.live-monitoring/</link>
+      <pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://frisbee.dev/docs/walkthrough/15.live-monitoring/</guid>
+      <description>Resource Monitoring Frisbee integrates the following web-based dashboard which consumes information from the Kubernetes API.
+Dashboard: is a web-based Kubernetes user interface. You can use Dashboard to deploy containerized applications to a Kubernetes cluster, troubleshoot your containerized application, and manage the cluster resources.
+Chaos Dashboard: is a one-step web UI for managing, designing, and monitoring chaos experiments on Chaos Mesh. It will ask for a token. You can get it from the config via grep token ~/.</description>
+    </item>
+    
+    <item>
+      <title>Simulate A Failure</title>
+      <link>https://frisbee.dev/docs/walkthrough/16.simulate-failure/</link>
+      <pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://frisbee.dev/docs/walkthrough/16.simulate-failure/</guid>
+      <description>This document describes how to simulate faults in Frisbee.
+Simulate Failures --- apiVersion: frisbee.dev/v1alpha1 kind: Scenario metadata: name: simulate-failure spec: actions: - action: Service name: server service: templateRef: iperf.server # Create a cluster of clients - action: Cluster name: clients depends: { running: [ server ] } cluster: templateRef: iperf.client instances: 3 inputs: - { target: server } # Partition server from the clients; clients can reach the server, but server cannot reach the clients - action: Chaos name: partition depends: { running: [ clients ], after: &amp;#34;30s&amp;#34; } chaos: templateRef: system.</description>
+    </item>
+    
+    <item>
+      <title>Simulate Cascading Failures</title>
+      <link>https://frisbee.dev/docs/walkthrough/17.simulate-cascading-failures/</link>
+      <pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://frisbee.dev/docs/walkthrough/17.simulate-cascading-failures/</guid>
+      <description>This document describes how to simulate a cascade of faults in Frisbee.
+Simulate Cascading Failures --- apiVersion: frisbee.dev/v1alpha1 kind: Scenario metadata: name: chaos-cascading-failures spec: actions: - action: Service name: server service: templateRef: iperf.server # Create a cluster of clients - action: Cluster name: clients depends: { running: [ server ] } cluster: templateRef: iperf.client instances: 4 inputs: - { target: server } # When all clients are up and running, kill some of them periodically - action: Cascade name: killer depends: { running: [ clients ] } cascade: templateRef: system.</description>
+    </item>
+    
+    <item>
+      <title>Revoke Failures</title>
+      <link>https://frisbee.dev/docs/walkthrough/18.revoke-failures/</link>
+      <pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://frisbee.dev/docs/walkthrough/18.revoke-failures/</guid>
+      <description>Failures in Frisbee can be revoked in two ways:
+Automatically after an expiration time Manually Revoke Failures Automatically --- apiVersion: frisbee.dev/v1alpha1 kind: Scenario metadata: name: revoke-failure spec: actions: - action: Service name: server service: templateRef: iperf.server - action: Service name: client depends: { running: [ server ] } service: templateRef: iperf.client inputs: - { target: server } # Inject a network failure, after 1 minute, # and let run for 2minutes.</description>
+    </item>
+    
+    <item>
+      <title>Distributed Logs</title>
+      <link>https://frisbee.dev/docs/walkthrough/20.distributed-logs/</link>
+      <pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://frisbee.dev/docs/walkthrough/20.distributed-logs/</guid>
+      <description>Distributed Logs Template --- apiVersion: frisbee.dev/v1alpha1 kind: Template metadata: name: iperf.client spec: inputs: parameters: target: localhost logClaimName: &amp;#34;&amp;#34; service: decorators: telemetry: - system.telemetry.agent volumes: # Need to declare the volume here - name: logvolume persistentVolumeClaim: claimName: &amp;#34;{{.Inputs.Parameters.logClaimName}}&amp;#34; containers: - name: app image: czero/iperf2 volumeMounts: # Need to mount the volume here - name: logvolume mountPath: /logs command: - /bin/sh - -c - | set -eum cut -d &amp;#39; &amp;#39; -f 4 /proc/self/stat &amp;gt; /dev/shm/app iperf -c {{.</description>
+    </item>
+    
+    <item>
+      <title>SLA Assertions</title>
+      <link>https://frisbee.dev/docs/walkthrough/19.sla-assertion/</link>
+      <pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://frisbee.dev/docs/walkthrough/19.sla-assertion/</guid>
+      <description>SLA Assertions --- apiVersion: frisbee.dev/v1alpha1 kind: Scenario metadata: name: sla-assertions spec: actions: - action: Service name: server service: templateRef: iperf.server - action: Service name: client depends: { running: [ server ] } assert: metrics: &amp;#34;avg() of query(summary/152/rx-max, 1m, now) is below(-3000000000)&amp;#34; service: templateRef: iperf.client inputs: - { target: server } # Create a cluster of noisy neighbors - action: Cluster name: noisy-neighbors depends: { running: [ server ] } cluster: templateRef: iperf.</description>
     </item>
     
   </channel>
