@@ -1,6 +1,6 @@
 ---
-title: Remote Calls
-linktitle: Remote Calls
+title: Callables
+linktitle: Callables
 description: Learn how to infer with a running system
 date: 2022-06-29
 publishdate: 2022-06-29
@@ -8,9 +8,9 @@ authors: [Fotis NIKOLAIDIS]
 menu:
   docs:
     parent: "walkthrough"
-    weight: 21
-weight: 21
-sections_weight: 21
+    weight: 22
+weight: 22
+sections_weight: 22
 categories: [testing,fundamentals]
 draft: false
 toc: true
@@ -66,7 +66,7 @@ spec:
 apiVersion: frisbee.dev/v1alpha1
 kind: Scenario
 metadata:
-  name:  remote-calls
+  name:  callables
 spec:
   actions:
     # Provision a set of idle pods

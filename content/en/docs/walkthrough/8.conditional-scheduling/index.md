@@ -1,16 +1,16 @@
 ---
-title: Conditionals
-linktitle: Conditionals
-description: Build loops and conditional creation of events
+title: Conditional Scheduling
+linktitle: Conditional Scheduling
+description: Conditional Scheduling
 date: 2022-06-29
 publishdate: 2022-06-29
 authors: [Fotis NIKOLAIDIS]
 menu:
     docs:
         parent: "walkthrough"
-        weight: 17
-weight: 17
-sections_weight: 17
+        weight: 18
+weight: 18
+sections_weight: 18
 categories: [testing,fundamentals]
 draft: false
 toc: true
@@ -18,11 +18,13 @@ toc: true
 
 
 
-We also support conditional execution. The syntax is implemented by [`govaluate`](https://github.com/Knetic/govaluate) which offers the support for complex [syntax](https://github.com/Knetic/govaluate/blob/master/MANUAL.md).
+We also support loops execution. 
 
 
 
-## Conditionals
+## Conditional Scheduling
+
+In this scenario, Frisbee will keep spawning clients, either it reaches 6 clients, after which it will be `suspended`. If suspended, the cluster will stop spawning new clients, but the old clients will remain active.
 
 
 
@@ -30,7 +32,7 @@ We also support conditional execution. The syntax is implemented by [`govaluate`
 apiVersion: frisbee.dev/v1alpha1
 kind: Scenario
 metadata:
-  name: conditionals
+  name: loops
 spec:
   actions:
     - action: Service
@@ -56,10 +58,4 @@ spec:
 ```
 
 
-
-In this scenario, Frisbee will keep spawning clients, either it reaches 6 clients, after which it will be `suspended`. If suspended, the cluster will stop spawning new clients, but the old clients will remain active.
-
-
-
-> NOTE: the expression `{{.NumSuccessfulJobs}} >= 6` is **local** to the `Cluster` and refers to the jobs managed by the `Cluster` controller. 
 

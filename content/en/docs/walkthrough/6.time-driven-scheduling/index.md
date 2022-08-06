@@ -1,6 +1,6 @@
 ---
-title: Scheduling
-linktitle: Scheduling
+title: Time-Driven Scheduling
+linktitle: Time-Driven Scheduling
 description: Learn how to spread the creation of services over time
 date: 2022-06-29
 publishdate: 2022-06-29
@@ -22,9 +22,9 @@ Users may also set the creation policy to construct variable workloads and dynam
 
 
 
-## Scheduling 
+## Time-Driven Scheduling 
 
-The next snippet shows how to schedule the creation of new services, using a cron-like syntax.
+The next snippet shows how to schedule the creation of new services, using a `cron-like syntax`.
 
 ```yaml
 ---

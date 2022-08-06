@@ -8,9 +8,9 @@ authors: [Fotis NIKOLAIDIS]
 menu:
   docs:
     parent: "walkthrough"
-    weight: 23
-weight: 23
-sections_weight: 23
+    weight: 25
+weight: 25
+sections_weight: 25
 categories: [testing,fundamentals]
 draft: false
 toc: true
@@ -108,7 +108,6 @@ spec:
     decorators:						
       telemetry:				  # Add support for Telemetry
         - system.telemetry.agent  # Collect Generic System's Metrics
-        - iperf2.telemetry.client # Collect App Specific Metrics
     containers:
       - name: app
         image: czero/iperf2
@@ -123,8 +122,6 @@ In the previous experiment, we used two Telemetry agents that exist on different
 ```bash
 # Install system-wise telemetry agents (system.telemetry.agent)
 helm upgrade --install  my-system ./charts/system/  --debug --wait
-# Install app-specic telemetry agents (iperf2.telemetry.client)
-helm upgrade --install  my-iperf2 ./charts/iperf2/  --debug --wait
 ```
 
 

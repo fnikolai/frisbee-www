@@ -26,7 +26,7 @@ toc: true
 
 If you go to `charts/system` you will see the following structure.
 
-![tree](index.assets/tree.png)
+<img src="index.assets/tree.png" alt="tree" style="zoom:50%;" />
 
 
 

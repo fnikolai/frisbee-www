@@ -8,9 +8,9 @@ authors: [Fotis NIKOLAIDIS]
 menu:
   docs:
     parent: "walkthrough"
-    weight: 22
-weight: 22
-sections_weight: 22
+    weight: 23
+weight: 23
+sections_weight: 23
 categories: [testing,fundamentals]
 draft: false
 toc: true
@@ -49,6 +49,9 @@ spec:
     containers:
       - name: app
         image: czero/iperf2
+        ports:
+          - name: listen
+            containerPort: 5001        
         command:
           - /bin/sh   # Run shell
           - -c        # Read from string
@@ -144,6 +147,9 @@ Failed
 This is because after the server's termination, `the Scenario detects that the server is missing and aborts (with a failure)`.
 
 
+
+
+
 ## Assertion's Scope
 
 
@@ -202,8 +208,4 @@ Equally for the `assertion`,
 
 
 In other words, the `Scenario` accounts only for `Actions`, and not for jobs created within the context of a `Cluster`. The reason behind this convience will become clear later when we talk about `Cluster.Spec.Tolerate.FailedJobs`.
-
-
-
-
 

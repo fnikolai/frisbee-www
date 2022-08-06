@@ -1,16 +1,16 @@
 ---
-title: Placement
-linktitle: Placement
-description: Control the service placement policy
+title: Advanced Placement
+linktitle: Advanced Placement
+description: Learn how to control the service placement policy
 date: 2022-06-29
 publishdate: 2022-06-29
 authors: [Fotis NIKOLAIDIS]
 menu:
   docs:
     parent: "walkthrough"
-    weight: 20
-weight: 20
-sections_weight: 20
+    weight: 21
+weight: 21
+sections_weight: 21
 categories: [testing,fundamentals]
 draft: false
 toc: true

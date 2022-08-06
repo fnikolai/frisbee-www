@@ -8,9 +8,9 @@ authors: [Fotis NIKOLAIDIS]
 menu:
   docs:
     parent: "walkthrough"
-    weight: 23
-weight: 23
-sections_weight: 23
+    weight: 24
+weight: 24
+sections_weight: 24
 categories: [testing,fundamentals]
 draft: false
 toc: true
@@ -34,7 +34,7 @@ And to do so, it is necessary not only to create new servers/clients, but also t
 apiVersion: frisbee.dev/v1alpha1
 kind: Scenario
 metadata:
-  name: deletions
+  name: delete-job
 spec:
   actions:
     - action: Service
@@ -42,31 +42,47 @@ spec:
       service:
         templateRef: iperf.server
 
-    # Create a first cluster
-    - action: Cluster
-      name: group-a
+    # Create a Client
+    - action: Service
+      name: client
       depends: { running: [ server ] }
-      cluster:
+      service:
         templateRef: iperf.client
-        instances: 3
+        inputs:
+          - { target: server }
 
-    # Create a first cluster
-    - action: Cluster
-      name: group-b
-      depends: { running: [ server ] }
-      cluster:
-        templateRef: iperf.client
-        instances: 3
-
-    # Delete the second cluster.
+    # Delete the client, after 2 minutes
     - action: Delete
-      name: delete-group-b
-      depends: { running: [ group-b ],  after: "30s" }
+      name: delete-action
+      depends: { after: "2m" }
       delete: # references jobs should be action.
-        jobs: [ group-b ]
+        jobs: [ client ]
 ```
 
 
 
 > **Referenced Jobs** are references to other actions that should be deleted -- you cannot delete `Services` within a `Cluster`. you can only delete the `Cluster`.
+
+
+
+
+
+To verify the operation:
+
+```shell
+>> kubectl describe scenario
+...
+Events:
+  Type    Reason        Age    From       Message
+  ----    ------        ----   ----       -------
+  Normal  Initialized   2m44s  deletions  Start scheduling jobs
+  Normal  VExecBegin    44s    deletions  delete-action
+  Normal  VExecBegin    44s    deletions  clients
+  Normal  VExecSuccess  44s    deletions  clients
+  Normal  VExecSuccess  44s    deletions  delete-action
+```
+
+
+
+
 

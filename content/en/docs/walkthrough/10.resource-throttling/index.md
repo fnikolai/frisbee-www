@@ -8,9 +8,9 @@ authors: [Fotis NIKOLAIDIS]
 menu:
     docs:
         parent: "walkthrough"
-        weight: 19
-weight: 19
-sections_weight: 19
+        weight: 20
+weight: 20
+sections_weight: 20
 categories: [testing,fundamentals]
 draft: false
 toc: true
