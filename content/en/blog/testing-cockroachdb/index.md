@@ -230,8 +230,6 @@ There is an issue with the pgurl format. For the rest of the experiment we conti
 * If the partition starts after the workload, it recovers when the partition is repaired
 * Otherwise, it remains 0
 
-![img](https://lh6.googleusercontent.com/X9rqdUvlJ2aFuiXfG3DtXherMy6KsnePLwoZxuJ8ZtOuvo1ioJylgC-ceL89ireRIVINj8-BbRhiD4VbAAJZQJ92E0yvtr-6WmwnWgh3Ef-PRkxQXLFZBg5eogUYeihf8-wNpPlxuzqXg3IxVmuvVA)
-
 ![image-20220518232404304](images/image-20220518232404304.png)
 
 ##### 3. System failure
