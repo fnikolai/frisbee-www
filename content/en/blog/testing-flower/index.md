@@ -26,19 +26,19 @@ toc: true
 
 #### Metrics
 
-![image-20220609192440670](images/image-20220609192440670.png)
+[![image-20220609192440670](images/image-20220609192440670.png)](images/image-20220609192440670.png)
 
 Average CPU Usage
 
-![image-20220609192505809](images/image-20220609192505809.png)
+[![image-20220609192505809](images/image-20220609192505809.png)](images/image-20220609192505809.png)
 
 Page faults
 
-![image-20220609192542674](images/image-20220609192542674.png)
+[![image-20220609192542674](images/image-20220609192542674.png)](images/image-20220609192542674.png)
 
 Accessed Sectors
 
-![image-20220609192602497](images/image-20220609192602497.png)
+[![image-20220609192602497](images/image-20220609192602497.png)](images/image-20220609192602497.png)
 
 Network Throughput
 
@@ -60,19 +60,19 @@ Network Throughput
 
 #### Metrics
 
-![image-20220607233620086](images/image-20220607233620086.png)
+[![image-20220607233620086](images/image-20220607233620086.png)](images/image-20220607233620086.png)
 
 Average CPU Usage
 
-![image-20220607233631962](images/image-20220607233631962.png)
+[![image-20220607233631962](images/image-20220607233631962.png)](images/image-20220607233620086.png)
 
 Page faults
 
-![image-20220607233700834](images/image-20220607233700834.png)
+[![image-20220607233700834](images/image-20220607233700834.png)](images/image-20220607233700834.png)
 
 Accessed Sectors
 
-![image-20220607233712231](images/image-20220607233712231.png)
+[![image-20220607233712231](images/image-20220607233712231.png)](images/image-20220607233700834.png)
 
 Network Throughput
 
@@ -98,19 +98,19 @@ time skews in the calculations.
 
 #### Metrics
 
-![image-20220608001438451](images/image-20220608001438451.png)
+[![image-20220608001438451](images/image-20220608001438451.png)](images/image-20220608001438451.png)
 
 Average CPU Usage
 
-![image-20220608001536575](images/image-20220608001536575.png)
+[![image-20220608001536575](images/image-20220608001536575.png)](images/image-20220608001536575.png)
 
 Page faults
 
-![image-20220608001548209](images/image-20220608001548209.png)
+[![image-20220608001548209](images/image-20220608001548209.png)](images/image-20220608001548209.png)
 
 Accessed Sectors
 
-![image-20220608001558227](images/image-20220608001558227.png)
+[![image-20220608001558227](images/image-20220608001558227.png)](images/image-20220608001558227.png)
 
 Network Throughput
 
@@ -135,19 +135,19 @@ Network Throughput
 
 #### Metrics
 
-![image-20220608130209826](images/image-20220608130209826.png)
+[![image-20220608130209826](images/image-20220608130209826.png)](images/image-20220608130209826.png)
 
 Average CPU Usage
 
-![image-20220608130328953](images/image-20220608130328953.png)
+[![image-20220608130328953](images/image-20220608130328953.png)](images/image-20220608130328953.png)
 
 Page faults
 
-![image-20220608130340082](images/image-20220608130340082.png)
+[![image-20220608130340082](images/image-20220608130340082.png)](images/image-20220608130340082.png)
 
 Accessed Sectors
 
-![image-20220608130417180](images/image-20220608130417180.png)
+[![image-20220608130417180](images/image-20220608130417180.png)](images/image-20220608130417180.png)
 
 Network Throughput
 
@@ -176,19 +176,19 @@ Network Throughput
 
 #### Metrics
 
-![image-20220608132304693](images/image-20220608132304693.png)
+[![image-20220608132304693](images/image-20220608132304693.png)](images/image-20220608132304693.png)
 
 Average CPU Usage
 
-![image-20220608132316356](images/image-20220608132316356.png)
+[![image-20220608132316356](images/image-20220608132316356.png)](images/image-20220608132316356.png)
 
 Page faults
 
-![image-20220608132518773](images/image-20220608132518773.png)
+[![image-20220608132518773](images/image-20220608132518773.png)](images/image-20220608132518773.png)
 
 Accessed Sectors
 
-![image-20220608132554279](images/image-20220608132554279.png)
+[![image-20220608132554279](images/image-20220608132554279.png)](images/image-20220608132554279.png)
 
 Network Throughput
 
@@ -212,19 +212,19 @@ Network Throughput
 
 #### Metrics
 
-![image-20220608135023471](images/image-20220608135023471.png)
+[![image-20220608135023471](images/image-20220608135023471.png)](images/image-20220608135023471.png)
 
 Average CPU Usage
 
-![image-20220608135040514](images/image-20220608135040514.png)
+[![image-20220608135040514](images/image-20220608135040514.png)](images/image-20220608135040514.png)
 
 Page faults
 
-![image-20220608135052252](images/image-20220608135052252.png)
+[![image-20220608135052252](images/image-20220608135052252.png)](images/image-20220608135052252.png)
 
 Accessed Sectors
 
-![image-20220608135602023](images/image-20220608135602023.png)
+[![image-20220608135602023](images/image-20220608135602023.png)](images/image-20220608135602023.png)
 
 Network Throughput
 
@@ -247,19 +247,19 @@ Network Throughput
 
 #### Metrics
 
-![image-20220608140407839](images/image-20220608140407839.png)
+[![image-20220608140407839](images/image-20220608140407839.png)](images/image-20220608140407839.png)
 
 Average CPU Usage
 
-![image-20220608140447212](images/image-20220608140447212.png)
+[![image-20220608140447212](images/image-20220608140447212.png)](images/image-20220608140447212.png)
 
 Page faults
 
-![image-20220608140500718](images/image-20220608140500718.png)
+[![image-20220608140500718](images/image-20220608140500718.png)](images/image-20220608140500718.png)
 
 Accessed Sectors
 
-![image-20220608140515543](images/image-20220608140515543.png)
+[![image-20220608140515543](images/image-20220608140515543.png)](images/image-20220608140515543.png)
 
 Network Throughput
 
@@ -282,19 +282,19 @@ Network Throughput
 
 #### Metrics
 
-![image-20220608162149844](images/image-20220608162149844.png)
+[![image-20220608162149844](images/image-20220608162149844.png)](images/image-20220608162149844.png)
 
 Average CPU Usage
 
-![image-20220608162200908](images/image-20220608162200908.png)
+[![image-20220608162200908](images/image-20220608162200908.png)](images/image-20220608162200908.png)
 
 Page faults
 
-![image-20220608162212052](images/image-20220608162212052.png)
+[![image-20220608162212052](images/image-20220608162212052.png)](images/image-20220608162212052.png)
 
 Accessed Sectors
 
-![image-20220608162224419](images/image-20220608162224419.png)
+[![image-20220608162224419](images/image-20220608162224419.png)](images/image-20220608162224419.png)
 
 Network Throughput
 
@@ -317,19 +317,19 @@ Network Throughput
 
 #### Metrics
 
-![image-20220608165054670](images/image-20220608165054670.png)
+[![image-20220608165054670](images/image-20220608165054670.png)](images/image-20220608165054670.png)
 
 Average CPU Usage
 
-![image-20220608165120220](images/image-20220608165120220.png)
+[![image-20220608165120220](images/image-20220608165120220.png)](images/image-20220608165120220.png)
 
 Page faults
 
-![image-20220608165131633](images/image-20220608165131633.png)
+[![image-20220608165131633](images/image-20220608165131633.png)](images/image-20220608165131633.png)
 
 Accessed Sectors
 
-![image-20220608165147814](images/image-20220608165147814.png)
+[![image-20220608165147814](images/image-20220608165147814.png)](images/image-20220608165147814.png)
 
 Network Throughput
 
@@ -352,19 +352,19 @@ Network Throughput
 
 #### Metrics
 
-![image-20220608171926368](images/image-20220608171926368.png)
+[![image-20220608171926368](images/image-20220608171926368.png)](images/image-20220608171926368.png)
 
 Average CPU Usage
 
-![image-20220608171956156](images/image-20220608171956156.png)
+[![image-20220608171956156](images/image-20220608171956156.png)](images/image-20220608171956156.png)
 
 Page faults
 
-![image-20220608172014755](images/image-20220608172014755.png)
+[![image-20220608172014755](images/image-20220608172014755.png)](images/image-20220608172014755.png)
 
 Accessed Sectors
 
-![image-20220608172025106](images/image-20220608172025106.png)
+[![image-20220608172025106](images/image-20220608172025106.png)](images/image-20220608172025106.png)
 
 Network Throughput
 
@@ -386,19 +386,19 @@ Network Throughput
 
 #### Metrics
 
-![image-20220608175432008](images/image-20220608175432008.png)
+[![image-20220608175432008](images/image-20220608175432008.png)](images/image-20220608175432008.png)
 
 Average CPU Usage
 
-![image-20220608175442443](images/image-20220608175442443.png)
+[![image-20220608175442443](images/image-20220608175442443.png)](images/image-20220608175442443.png)
 
 Page faults
 
-![image-20220608175457000](images/image-20220608175457000.png)
+[![image-20220608175457000](images/image-20220608175457000.png)](images/image-20220608175457000.png)
 
 Accessed Sectors
 
-![image-20220608175513261](images/image-20220608175513261.png)
+[![image-20220608175513261](images/image-20220608175513261.png)](images/image-20220608175513261.png)
 
 Network Throughput
 
@@ -420,27 +420,27 @@ Network Throughput
 
 * Otherwise, additional nodes exit in failure
 
-![image-20220608185729213](images/image-20220608185729213.png)
+[![image-20220608185729213](images/image-20220608185729213.png)](images/image-20220608185729213.png)
 
 * 30 clients hit the CPU capacity of the cluster
 
-![image-20220608191751981](images/image-20220608191751981.png)
+[![image-20220608191751981](images/image-20220608191751981.png)](images/image-20220608191751981.png)
 
 #### Metrics
 
-![image-20220608195026806](images/image-20220608195026806.png)
+[![image-20220608195026806](images/image-20220608195026806.png)](images/image-20220608195026806.png)
 
 Average CPU Usage
 
-![image-20220608195056786](images/image-20220608195056786.png)
+[![image-20220608195056786](images/image-20220608195056786.png)](images/image-20220608195056786.png)
 
 Page faults
 
-![image-20220608195124640](images/image-20220608195124640.png)
+[![image-20220608195124640](images/image-20220608195124640.png)](images/image-20220608195124640.png)
 
 Accessed Sectors
 
-![image-20220608195147681](images/image-20220608195147681.png)
+[![image-20220608195147681](images/image-20220608195147681.png)](images/image-20220608195147681.png)
 
 Network Throughput
 
@@ -462,19 +462,19 @@ Network Throughput
 
 *
 
-![image-20220609163419058](images/image-20220609163419058.png)
+[![image-20220609163419058](images/image-20220609163419058.png)](images/image-20220609163419058.png)
 
 Average CPU Usage
 
-![image-20220609163444920](images/image-20220609163444920.png)
+[![image-20220609163444920](images/image-20220609163444920.png)](images/image-20220609163444920.png)
 
 Page faults
 
-![image-20220609163521100](images/image-20220609163521100.png)
+[![image-20220609163521100](images/image-20220609163521100.png)](images/image-20220609163521100.png)
 
 Accessed Sectors
 
-![image-20220609163544081](images/image-20220609163544081.png)
+[![image-20220609163544081](images/image-20220609163544081.png)](images/image-20220609163544081.png)
 
 Network Throughput
 
@@ -494,19 +494,19 @@ Network Throughput
 
 #### Observations
 
-![image-20220609182917096](images/image-20220609182917096.png)
+[![image-20220609182917096](images/image-20220609182917096.png)](images/image-20220609182917096.png)
 
 Average CPU Usage
 
-![image-20220609183105844](images/image-20220609183105844.png)
+[![image-20220609183105844](images/image-20220609183105844.png)](images/image-20220609183105844.png)
 
 Page faults
 
-![image-20220609183934485](images/image-20220609183934485.png)
+[![image-20220609183934485](images/image-20220609183934485.png)](images/image-20220609183934485.png)
 
 Accessed Sectors
 
-![image-20220609183921641](images/image-20220609183921641.png)
+[![image-20220609183921641](images/image-20220609183921641.png)](images/image-20220609183921641.png)
 
 Network Throughput
 
@@ -529,19 +529,19 @@ Network Throughput
 * Because all the clients start simultaneously, the scheduling is inefficient.
 * The scheduler sees 0 activity and collocates the clients. But then the traffic begins, and everything does down.
 
-![image-20220609193843149](images/image-20220609193843149.png)
+[![image-20220609193843149](images/image-20220609193843149.png)](images/image-20220609193843149.png)
 
 Average CPU Usage
 
-![image-20220609193855621](images/image-20220609193855621.png)
+[![image-20220609193855621](images/image-20220609193855621.png)](images/image-20220609193855621.png)
 
 Page faults
 
-![image-20220609193928305](images/image-20220609193928305.png)
+[![image-20220609193928305](images/image-20220609193928305.png)](images/image-20220609193928305.png)
 
 Accessed Sectors
 
-![image-20220609193918106](images/image-20220609193918106.png)
+[![image-20220609193918106](images/image-20220609193918106.png)](images/image-20220609193918106.png)
 
 Network Throughput
 
@@ -564,18 +564,18 @@ Network Throughput
 * Because all the clients start simultaneously, the scheduling is inefficient.
 * The scheduler sees 0 activity and collocates the clients. But then the traffic begins, and everything does down.
 
-![image-20220609202344170](images/image-20220609202344170.png)
+[![image-20220609202344170](images/image-20220609202344170.png)](images/image-20220609202344170.png)
 
 Average CPU Usage
 
-![image-20220609202415613](images/image-20220609202415613.png)
+[![image-20220609202415613](images/image-20220609202415613.png)](images/image-20220609202415613.png)
 
 Page faults
 
-![image-20220609202430983](images/image-20220609202430983.png)
+[![image-20220609202430983](images/image-20220609202430983.png)](images/image-20220609202430983.png)
 
 Accessed Sectors
 
-![image-20220609202443154](images/image-20220609202443154.png)
+[![image-20220609202443154](images/image-20220609202443154.png)](images/image-20220609202443154.png)
 
 Network Throughput
