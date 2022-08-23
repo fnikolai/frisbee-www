@@ -140,7 +140,7 @@ Observations
 ### 10. Bitrot
 
 Replicate roachtest from
-https://github.com/cockroachdb/cockroach/blob/master/pkg/cmd/roachtest/tests/sstable_corruption.go#L30
+[Here](https://github.com/cockroachdb/cockroach/blob/master/pkg/cmd/roachtest/tests/sstable_corruption.go#L30)
 
 #### Observations
 
