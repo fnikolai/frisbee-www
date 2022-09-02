@@ -270,7 +270,7 @@
 
 <h1 id="deployment">Deployment</h1>
 <h2 id="q-the-service-seems-fine-but-i-get-a-failed-message">Q: The service seems fine, but I get a Failed message. <a class="header-link" href="#q-the-service-seems-fine-but-i-get-a-failed-message"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2>
-<p>The service run in a Pod that may host multiple containers. The application contrainer, the telemetry container,
+<p>The service run in a Pod that may host multiple containers. The application containers, the telemetry container,
 and so on. Given that, if the application seems fine, it is perhaps one of the sidecar containers that has failed.</p>
 <h2 id="q-i-changed-some-templates-but-the-changes-does-not-seem-to-affect-the-test-plan">Q: I changed some templates, but the changes does not seem to affect the Test Plan. <a class="header-link" href="#q-i-changed-some-templates-but-the-changes-does-not-seem-to-affect-the-test-plan"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2>
 <p>The changes are local and must be posted to the Kubernetes API. To update all templates within a chart use:</p>
@@ -546,9 +546,11 @@ sure that you have set <code>systemd.unified_cgroup_hierarchy=1</code> in the gr
   Last updated: June 28, 2022
 </h6>
 
-      <a href="https://github.com/CARV-ICS-FORTH/frisbee/edit/master/content/en/docs/troubleshooting/faq/index.md" class="
+      <a href="https://github.com/fnikolai/frisbee-www/edit/main/content/en/docs/troubleshooting/faq/index.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 ">Improve this page</a>
+
+
 
       
 

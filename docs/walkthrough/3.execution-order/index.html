@@ -275,7 +275,7 @@
 
 <div class="prose" id="prose">
 
-<p>Frisbee allows you to define the  workflow as a directed-acyclic graph (DAG) by specifying the  dependencies of each action. When you do so, the Frisbee  scheduler ensures that your action is run only after the specified dependencies have successfully completed. After they  succeed, the dependent action transitions from <code>UNINTIALIZED</code> to <code>PENDING</code> and then to <code>RUNNING</code>. If any of the job dependencies fail, the scenario automatically transitions from  <code>PENDING</code> to <code>FAILED</code>.</p>
+<p>Frisbee allows you to define the  workflow as a directed-acyclic graph (DAG) by specifying the  dependencies of each action. When you do so, the Frisbee  scheduler ensures that your action is run only after the specified dependencies have successfully completed. After they  succeed, the dependent action transitions from <code>INITIALIZING</code> to <code>PENDING</code> and then to <code>RUNNING</code>. If any of the job dependencies fail, the scenario automatically transitions from  <code>PENDING</code> to <code>FAILED</code>.</p>
 <blockquote>
 <p>For intended failures, such as services crashing as part of a Chaos experiment, see see <code>TolerateSpec</code> in the <code>Cluster</code> CRD. More info and example about this feature at [here](add link).</p>
 </blockquote>
@@ -552,9 +552,11 @@
   Last updated: June 29, 2022
 </h6>
 
-      <a href="https://github.com/CARV-ICS-FORTH/frisbee/edit/master/content/en/docs/walkthrough/3.execution-order/index.md" class="
+      <a href="https://github.com/fnikolai/frisbee-www/edit/main/content/en/docs/walkthrough/3.execution-order/index.md" class="
 f6 ph3 pv1 br2 dib  tc ttu mv3 bg-primary-color white hover-bg-green link
 ">Improve this page</a>
+
+
 
       
 

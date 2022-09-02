@@ -34,7 +34,7 @@ Parameterized Template apiVersion: frisbee.dev/v1alpha1 kind: Template	metadata:
       <pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>https://frisbee.dev/docs/walkthrough/3.execution-order/</guid>
-      <description>Frisbee allows you to define the workflow as a directed-acyclic graph (DAG) by specifying the dependencies of each action. When you do so, the Frisbee scheduler ensures that your action is run only after the specified dependencies have successfully completed. After they succeed, the dependent action transitions from UNINTIALIZED to PENDING and then to RUNNING. If any of the job dependencies fail, the scenario automatically transitions from PENDING to FAILED.</description>
+      <description>Frisbee allows you to define the workflow as a directed-acyclic graph (DAG) by specifying the dependencies of each action. When you do so, the Frisbee scheduler ensures that your action is run only after the specified dependencies have successfully completed. After they succeed, the dependent action transitions from INITIALIZING to PENDING and then to RUNNING. If any of the job dependencies fail, the scenario automatically transitions from PENDING to FAILED.</description>
     </item>
     
     <item>
@@ -162,7 +162,7 @@ Assertions Template for gracefully terminated server Firstly, let&#39;s make a s
       <pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>https://frisbee.dev/docs/walkthrough/naming/</guid>
-      <description>In contrast to other Workflow enginers like Argo that use dynamically generated names, all objects in Frisbee follow a predictable naming pattern. This makes it possible to create communicating services.
+      <description>In contrast to other Workflow engines like Argo that use dynamically generated names, all objects in Frisbee follow a predictable naming pattern. This makes it possible to create communicating services.
 Reference an Object In case of communicating services, such as a client-server architecture, we need the client to know the name of the server in other to establish a communication case.
 apiVersion: frisbee.dev/v1alpha1 kind: Scenario metadata: name: server-client spec: actions: - action: Service name: server service: templateRef: iperf2.</description>
     </item>
