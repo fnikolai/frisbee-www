@@ -140,7 +140,7 @@ Observations
 ### 10. Bitrot
 
 Replicate roachtest from
-https://github.com/cockroachdb/cockroach/blob/master/pkg/cmd/roachtest/tests/sstable_corruption.go#L30
+[Here](https://github.com/cockroachdb/cockroach/blob/master/pkg/cmd/roachtest/tests/sstable_corruption.go#L30)
 
 #### Observations
 
@@ -230,7 +230,7 @@ There is an issue with the pgurl format. For the rest of the experiment we conti
 * If the partition starts after the workload, it recovers when the partition is repaired
 * Otherwise, it remains 0
 
-![image-20220518232404304](images/image-20220518232404304.png)
+[![image-20220518232404304](images/image-20220518232404304.png)](images/image-20220518232404304.png)
 
 ##### 3. System failure
 
@@ -251,52 +251,52 @@ There is an issue with the pgurl format. For the rest of the experiment we conti
 
 Overall routines
 
-![image-20220518214040510](images/image-20220518214040510.png)
+[![image-20220518214040510](images/image-20220518214040510.png)](images/image-20220518214040510.png)
 
 Masters-0 (Isolated node)
 
-![image-20220518220001192](images/image-20220518220001192.png)
+[![image-20220518220001192](images/image-20220518220001192.png)](images/image-20220518220001192.png)
 
 Masters-3 (Workload node)
 
-![image-20220518220031792](images/image-20220518220031792.png)
+[![image-20220518220031792](images/image-20220518220031792.png)](images/image-20220518220031792.png)
 
 Masters-2 (Random replicated node)
 
-![image-20220518220211253](images/image-20220518220211253.png)
+[![image-20220518220211253](images/image-20220518220211253.png)](images/image-20220518220211253.png)
 
 ##### 5. Scenario: Connectivity when applying ***BOTH*** network partition (partition -> sleep 3m -> workload)
 
 Overall routines
 
-![image-20220518224009046](images/image-20220518224009046.png)
+[![image-20220518224009046](images/image-20220518224009046.png)](images/image-20220518224009046.png)
 
 Masters-0 (Isolated node)
 
-![image-20220518224033734](images/image-20220518224033734.png)
+[![image-20220518224033734](images/image-20220518224033734.png)](images/image-20220518224033734.png)
 
 Masters-3 (Workload node)
 
-![image-20220518224056253](images/image-20220518224056253.png)
+[![image-20220518224056253](images/image-20220518224056253.png)](images/image-20220518224056253.png)
 
 Masters-2 (Random replicated node)
 
-![image-20220518224131608](images/image-20220518224131608.png)
+[![image-20220518224131608](images/image-20220518224131608.png)](images/image-20220518224131608.png)
 
 ##### 6. Scenario: Connectivity when applying ***TO*** network partition (partition -> sleep 3m -> workload)
 
 Overall routines
 
-![image-20220518232122549](images/image-20220518232122549.png)
+[![image-20220518232122549](images/image-20220518232122549.png)](images/image-20220518232122549.png)
 
 Masters-0 (Isolated node)
 
-![image-20220518232148767](images/image-20220518232148767.png)
+[![image-20220518232148767](images/image-20220518232148767.png)](images/image-20220518232148767.png)
 
 Masters-3 (Workload node)
 
-![image-20220518232314983](images/image-20220518232314983.png)
+[![image-20220518232314983](images/image-20220518232314983.png)](images/image-20220518232314983.png)
 
 Masters-2 (Random replicated node)
 
-![image-20220518232341230](images/image-20220518232341230.png)
+[![image-20220518232341230](images/image-20220518232341230.png)](images/image-20220518232341230.png)
