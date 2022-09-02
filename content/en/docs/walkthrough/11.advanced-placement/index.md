@@ -85,4 +85,4 @@ The available fields are:
 | Nodes         | Place all the Services of this Cluster within the specific set of nodes. |
 
 
-> **WARNING**: If you run this scenarion on a local deployment, it will block forever since the constraints are not met.
+> **WARNING**: If you run this scenario on a local deployment, it will block forever since the constraints are not met.

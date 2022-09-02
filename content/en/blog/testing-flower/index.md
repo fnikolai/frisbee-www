@@ -3,7 +3,7 @@ date: 2022-06-30
 title: "Testing Flower"
 description: "Experience with testing a Federated Learning Framework"
 categories: [blog]
-author: fnikol
+author: Fotis NIKOLAIDIS
 toc: true
 ---
 

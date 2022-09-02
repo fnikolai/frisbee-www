@@ -98,7 +98,7 @@ spec:
 
 | Instances  | Inputs      | Result                                                       |
 | :--------- | :---------- | :----------------------------------------------------------- |
-| N          | Undefined   | N `Instances` are created with the default tempalte values.  |
+| N          | Undefined   | N `Instances` are created with the default template values.  |
 | Undefined  | N           | N `Instances` are created with custom `Inputs`.              |
 | N (e.g 10) | <N (e.g 2)  | 10 `Instances` are created. Every 2 instances, the `Inputs` are repeated. |
 | N (e.g 10) | <N (e.g 12) | Abort                                                        |

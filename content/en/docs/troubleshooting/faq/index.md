@@ -20,7 +20,7 @@ toc: true
 # Deployment
 
 ## Q: The service seems fine, but I get a Failed message.
-The service run in a Pod that may host multiple containers. The application contrainer, the telemetry container,
+The service run in a Pod that may host multiple containers. The application containers, the telemetry container,
 and so on. Given that, if the application seems fine, it is perhaps one of the sidecar containers that has failed.
 
 ## Q: I changed some templates, but the changes does not seem to affect the Test Plan.

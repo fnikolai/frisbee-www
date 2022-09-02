@@ -1,7 +1,7 @@
 ---
 title: Basic Concepts
 linktitle: Basic Concepts
-description: Basic Feautes of Frisbee
+description: Basic Features of Frisbee
 date: 2022-06-30
 publishdate: 2022-06-30
 authors: [Fotis NIKOLAIDIS]
@@ -67,7 +67,7 @@ Currently, Frisbee workflows provide the following features:
 * **Event-Driven Expressions**
   * Programmable Assertions
   * Conditional Loops
-* **Addressing Macros**: The dynamicity of a Frisbee experiment can cause numerous issues such as addressing a non-scheduled service or a removed one. Macros are runtime evaluated expressions that forces the controller to query the Kubernetes API for the referenced object and replace the macro expression with the returned results. The results can be filter using on the following filters: first(), last(), oldest(), recent(), all(), one(), percent().
+* **Addressing Macros**: The dynamic nature of Frisbee experiments can cause numerous issues such as addressing a non-scheduled service or a removed one. Macros are runtime evaluated expressions that forces the controller to query the Kubernetes API for the referenced object and replace the macro expression with the returned results. The results can be filter using on the following filters: first(), last(), oldest(), recent(), all(), one(), percent().
 * **Phase and Conditions**: The phase of a Scenario is a simple, high-level summary of where the Scenario is in its lifecycle. The phase is not intended to be a comprehensive rollup of observations of scenario state, nor is it intended to be a comprehensive state machine. Instead, the Phase is a top-level description calculated based on some Conditions. The Conditions describe the various stages the Test has been through.
 
 

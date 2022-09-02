@@ -18,7 +18,7 @@ toc: true
 
 
 
-In contrast to other Workflow enginers like Argo that use dynamically generated names, all objects in Frisbee follow a predictable naming pattern. This makes it possible to create communicating services.
+In contrast to other Workflow engines like Argo that use dynamically generated names, all objects in Frisbee follow a predictable naming pattern. This makes it possible to create communicating services.
 
 ## Reference an Object
 

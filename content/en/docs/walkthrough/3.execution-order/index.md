@@ -18,7 +18,7 @@ toc: true
 
 
 
-Frisbee allows you to define the  workflow as a directed-acyclic graph (DAG) by specifying the  dependencies of each action. When you do so, the Frisbee  scheduler ensures that your action is run only after the specified dependencies have successfully completed. After they  succeed, the dependent action transitions from `UNINTIALIZED` to `PENDING` and then to `RUNNING`. If any of the job dependencies fail, the scenario automatically transitions from  `PENDING` to `FAILED`.
+Frisbee allows you to define the  workflow as a directed-acyclic graph (DAG) by specifying the  dependencies of each action. When you do so, the Frisbee  scheduler ensures that your action is run only after the specified dependencies have successfully completed. After they  succeed, the dependent action transitions from `INITIALIZING` to `PENDING` and then to `RUNNING`. If any of the job dependencies fail, the scenario automatically transitions from  `PENDING` to `FAILED`.
 
 
 

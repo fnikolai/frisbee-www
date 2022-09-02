@@ -5,9 +5,6 @@ on:
   push:
     branches:
       - main  # Set a branch to deploy
-  pull_request_target:
-    branches:
-      - main  # Set a branch name to trigger deployment
 
 jobs:
   deploy:

@@ -3,7 +3,7 @@ date: 2022-06-30
 title: "Testing CockroachDB"
 description: "Experience with testing a Cloud Database"
 categories: [blog]
-author: fnikol
+author: Fotis NIKOLAIDIS
 toc: true
 ---
 
@@ -156,7 +156,8 @@ Replicate roachtest from
 > \xb4\xb6"/0/1651588517.218867146,0#31483,SET]
 > Corrupt \xb4\xb6"/0/1651588517.218867146,0#31483,SET].sst
 
-![image-20220518160002401](images/image-20220518160002401.png)
+[![image-20220518160002401](images/image-20220518160002401.png)](images/image-20220518160002401.png)
+
 
 4. Cockroach detects and bitrot and panics with error
 

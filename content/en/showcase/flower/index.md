@@ -1,5 +1,4 @@
 ---
-
 title: Flower
 date: 2022-06-28
 description: "Showcase: \"More than 10 scenarios for flower.\""
@@ -9,4 +8,4 @@ aliases: [/showcase/flower/]
 
 ---
 
-The description of the Flower chart should go here
+The description of the Flower chart should go here.

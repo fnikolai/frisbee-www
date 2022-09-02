@@ -44,7 +44,7 @@ ghrepo = "https://github.com/CARV-ICS-FORTH/frisbee"
 
 website = "https://frisbee.dev"
 
-docsrepo = "https://github.com/fnikolai/frisbee-www/content/"
+docsrepo = "https://github.com/fnikolai/frisbee-www"
 
 
 forum = "https://github.com/CARV-ICS-FORTH/frisbee/discussions"
