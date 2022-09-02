@@ -414,7 +414,7 @@ before the experiment's activities are done.</li>
 </ul>
 <h3 id="10-bitrot">10. Bitrot <a class="header-link" href="#10-bitrot"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3>
 <p>Replicate roachtest from
-<a href="https://github.com/cockroachdb/cockroach/blob/master/pkg/cmd/roachtest/tests/sstable_corruption.go#L30">https://github.com/cockroachdb/cockroach/blob/master/pkg/cmd/roachtest/tests/sstable_corruption.go#L30</a></p>
+<a href="https://github.com/cockroachdb/cockroach/blob/master/pkg/cmd/roachtest/tests/sstable_corruption.go#L30">Here</a></p>
 <h4 id="observations-9">Observations <a class="header-link" href="#observations-9"><svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4>
 <ol>
 <li>
@@ -599,7 +599,7 @@ Error: parse &quot;{pgurl:2-4}&quot;: first path segment in URL cannot contain c
 <li>If the partition starts after the workload, it recovers when the partition is repaired</li>
 <li>Otherwise, it remains 0</li>
 </ul>
-<p><img src="images/image-20220518232404304.png" alt="image-20220518232404304"></p>
+<p><a href="images/image-20220518232404304.png"><img src="images/image-20220518232404304.png" alt="image-20220518232404304"></a></p>
 <h5 id="3-system-failure">3. System failure</h5>
 <p><strong>Sub-Scenario:</strong> Connectivity when applying <em><strong>BOTH</strong></em> network partition <strong>(workload -&gt; sleep 3m -&gt; partition)</strong></p>
 <ol>
@@ -617,31 +617,31 @@ tionAbortedError(ABORT_REASON_CLIENT_REJECT): &quot;sql txn\</p>
 </blockquote>
 <h5 id="4-scenario-connectivity-when-applying-to-network-partition-workload---sleep-3m---partition">4. Scenario: Connectivity when applying <em><strong>TO</strong></em> network partition (workload -&gt; sleep 3m -&gt; partition)</h5>
 <p>Overall routines</p>
-<p><img src="images/image-20220518214040510.png" alt="image-20220518214040510"></p>
+<p><a href="images/image-20220518214040510.png"><img src="images/image-20220518214040510.png" alt="image-20220518214040510"></a></p>
 <p>Masters-0 (Isolated node)</p>
-<p><img src="images/image-20220518220001192.png" alt="image-20220518220001192"></p>
+<p><a href="images/image-20220518220001192.png"><img src="images/image-20220518220001192.png" alt="image-20220518220001192"></a></p>
 <p>Masters-3 (Workload node)</p>
-<p><img src="images/image-20220518220031792.png" alt="image-20220518220031792"></p>
+<p><a href="images/image-20220518220031792.png"><img src="images/image-20220518220031792.png" alt="image-20220518220031792"></a></p>
 <p>Masters-2 (Random replicated node)</p>
-<p><img src="images/image-20220518220211253.png" alt="image-20220518220211253"></p>
+<p><a href="images/image-20220518220211253.png"><img src="images/image-20220518220211253.png" alt="image-20220518220211253"></a></p>
 <h5 id="5-scenario-connectivity-when-applying-both-network-partition-partition---sleep-3m---workload">5. Scenario: Connectivity when applying <em><strong>BOTH</strong></em> network partition (partition -&gt; sleep 3m -&gt; workload)</h5>
 <p>Overall routines</p>
-<p><img src="images/image-20220518224009046.png" alt="image-20220518224009046"></p>
+<p><a href="images/image-20220518224009046.png"><img src="images/image-20220518224009046.png" alt="image-20220518224009046"></a></p>
 <p>Masters-0 (Isolated node)</p>
-<p><img src="images/image-20220518224033734.png" alt="image-20220518224033734"></p>
+<p><a href="images/image-20220518224033734.png"><img src="images/image-20220518224033734.png" alt="image-20220518224033734"></a></p>
 <p>Masters-3 (Workload node)</p>
-<p><img src="images/image-20220518224056253.png" alt="image-20220518224056253"></p>
+<p><a href="images/image-20220518224056253.png"><img src="images/image-20220518224056253.png" alt="image-20220518224056253"></a></p>
 <p>Masters-2 (Random replicated node)</p>
-<p><img src="images/image-20220518224131608.png" alt="image-20220518224131608"></p>
+<p><a href="images/image-20220518224131608.png"><img src="images/image-20220518224131608.png" alt="image-20220518224131608"></a></p>
 <h5 id="6-scenario-connectivity-when-applying-to-network-partition-partition---sleep-3m---workload">6. Scenario: Connectivity when applying <em><strong>TO</strong></em> network partition (partition -&gt; sleep 3m -&gt; workload)</h5>
 <p>Overall routines</p>
-<p><img src="images/image-20220518232122549.png" alt="image-20220518232122549"></p>
+<p><a href="images/image-20220518232122549.png"><img src="images/image-20220518232122549.png" alt="image-20220518232122549"></a></p>
 <p>Masters-0 (Isolated node)</p>
-<p><img src="images/image-20220518232148767.png" alt="image-20220518232148767"></p>
+<p><a href="images/image-20220518232148767.png"><img src="images/image-20220518232148767.png" alt="image-20220518232148767"></a></p>
 <p>Masters-3 (Workload node)</p>
-<p><img src="images/image-20220518232314983.png" alt="image-20220518232314983"></p>
+<p><a href="images/image-20220518232314983.png"><img src="images/image-20220518232314983.png" alt="image-20220518232314983"></a></p>
 <p>Masters-2 (Random replicated node)</p>
-<p><img src="images/image-20220518232341230.png" alt="image-20220518232341230"></p>
+<p><a href="images/image-20220518232341230.png"><img src="images/image-20220518232341230.png" alt="image-20220518232341230"></a></p>
 
 </div>
 
