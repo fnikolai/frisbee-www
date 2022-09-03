@@ -1,7 +1,7 @@
 ---
 title: Create Custom Visualizations
 linktitle: Create Custom Visualizations
-description: Create Custom Visualizations
+description: Learn how create your own dashboard in Frisbee
 date: 2022-06-29
 publishdate: 2022-06-29
 authors: [Fotis NIKOLAIDIS]

@@ -32,7 +32,6 @@ guessSyntax = true
 [Permalinks]
 code = "/:filename/"
 
-
 [params]
 title = "Frisbee"
 

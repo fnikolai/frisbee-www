@@ -51,26 +51,9 @@ The above will deploy a Kubernetes environment based on [Microk8s](https://micro
 
 
 
-## Step 2: Install Cert Manager
+## Step 2: Install Frisbee Platform
 
-We use the certificate manager for [Managing a TLS Certificate for Kubernetes Admission Webhook](https://www.velotio.com/engineering-blog/managing-tls-certificate-for-kubernetes-admission-webhook).
-
-```shell
-# Add the Helm repository
-helm repo add jetstack https://charts.jetstack.io
-
-# Update your local Helm chart repository cache:
-helm repo update 
-
-# Install the Certificate Manager (If not already installed)
-helm install cert-manager jetstack/cert-manager --version v1.9.1  \
-	--namespace cert-manager  --create-namespace  \
-	--set installCRDs=true
-```
-
-
-
-## Step 3: Install Frisbee
+#### Download source code
 
 Although Frisbee can be installed directly from a Helm repository, for demonstration purposes we favor the git-based
 method.
@@ -84,13 +67,64 @@ method.
 
 # Have a look at the installation configuration
 >> less charts/platform/values.yaml
-
-# Make sure that the dir "/mnt/local" exists. The error will not appear until the execution of the test.
->> mkdir /tmp/frisbee
-
-# Deploy the platform on the default namespace
->> helm  upgrade --install --wait my-frisbee ./charts/platform/ --debug -n default
 ```
+
+
+
+#### Install in Production Mode
+
+When in Production mode, the Frisbee cli will install in the Kubernetes Cluster all the containerized Frisbee components, **including the Frisbee controller.**
+
+```bash
+./main install production 
+```
+
+
+
+
+
+#### Install in Development Mode
+
+When in Development mode, the Frisbee cli will install in the Kubernetes Cluster all the containerized Frisbee components, **except for the Frisbee controller. ** The controller should then be run manually on the localhost. 
+
+
+
+This convention allows us to develop the controller, without having to create a new container every time we need to recompile it.
+
+
+
+```bash
+./main install development ./ <publicIP>
+```
+
+The `publicIP` is needed for the  Kubernetes API and Grafana notification channel to communicate with the locally controller. 
+
+
+
+> Frisbee automatically checks if a  certificate manager is installed in the Kubernetes cluster, and installs it if needed.
+>
+> The certificate manager is required for [Managing a TLS Certificate for Kubernetes Admission Webhook](https://www.velotio.com/engineering-blog/managing-tls-certificate-for-kubernetes-admission-webhook).
+
+
+
+Upon successful installation, we will see the following message:
+
+```bash
+...
+Frisbee runs in development mode. You must use:  FRISBEE_NAMESPACE=frisbee make run
+```
+
+This command with run the controller on the local node. ./main install development ./ <publicIP>
+
+
+
+
+
+## Step 2: Run a test
+
+
+
+
 
 ## Testing a System
 

@@ -9,23 +9,32 @@
           </a>
 
         <h3 class="f2 black">Install in seconds.</h3>
-        <p class="f3">No dependencies, No compilation.</p>
+         <p class="f3">Host on any server, CDN, or CI.</p>
       </div>
     </div>
 
     <!-- RIGHT -->
     <div class="w-100 w-50-ns tc">
-
-      <p class="f5 mid-gray">Install via Helm</p>
+        <p class="f3">Production Mode (Run Anywhere)</p>
       <div class="code f4 bg-black light-green lh-copy pv3 ph3 br2 w-100 w-100-ns center tl">
-          >> helm repo add frisbee https://carv-ics-forth.github.io/frisbee/charts
-            <br />
-          >> helm upgrade --install --wait my-frisbee frisbee/platform
-            <br />
+          >> curl -sSLf {{.Site.Params.website}}/install.sh | bash
+          <br \>
+          >> kubectl frisbee install production
       </div>
-     
 
+        <p class="f3">Development Mode (Run Locally)</p>
+        <div class="code f4 bg-black light-green lh-copy pv3 ph3 br2 w-100 w-100-ns center tl">
+            >> git clone git@github.com:CARV-ICS-FORTH/frisbee.git
+            <br \>
+            >> ./install.sh development ./ [PublicIP]
+            <br \>
+            >> make run
+        </div>
+    </div>
+
+        <!--
       <p class="f5 nested-links"><a href="{{ "docs/getting-started/installing/" | absURL }}" class="link">See the Getting Started Guide for other methods. {{ partial "svg/link-ext.svg" (dict "fill" "#333" "size" "14") }}</a></p>
+      -->
     </div>
 
     <!-- TODO: the install section should have a tab menu for selecting the preferred installation method, i.e. the binaries from GitHub or the commands for the installation via a package manager https://github.com/rdwatters/hugo-docs-concept/issues/3#issuecomment-287498412 -->
