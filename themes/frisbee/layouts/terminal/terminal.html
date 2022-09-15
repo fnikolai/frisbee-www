@@ -1,28 +1,30 @@
 
-
+{{ define "main" }}
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css"/>
 
   {{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production")  }}
   <meta name="robots" content="index, follow">
   {{ else }}
   <meta name="robots" content="noindex, nofollow">
-  {{ end }}
+  {{ end }}    
 
-<body>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
-    
-    
-    <link rel="stylesheet" href="https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css"/>
-    
+</div>
 <script>
 $('body').terminal({
-    hello: function(what) {
+    hello: function() {
         this.echo('Hello, ' + what +
-                  '. Wellcome to this terminal.');
+                  '. tarxidiamou.');
+    },
+    ls: function() {
+        this.echo(' tarxidiamou ');
+    },
+    cat: function() {
+        this.echo($('<img src="https://placekitten.com/408/287">'));
     }
 }, {
-    greetings: 'My First Web Terminal'
+    greetings: 'frisbee - Terminal'
 });
 </script>
-</body>
+{{ end }}
