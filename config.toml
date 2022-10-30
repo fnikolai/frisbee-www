@@ -28,6 +28,8 @@ typographer = false
 style = "manni"
 guessSyntax = true
 
+[googleAnalytics]
+googleAnalytics="G-SJ4X22NLGC"
 
 [Permalinks]
 code = "/:filename/"

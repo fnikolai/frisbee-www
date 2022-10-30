@@ -7,7 +7,10 @@
   <section class="w-100 ph4 ph5-ns pv4">
     {{- partial "home-page-sections/features-icons" . -}}
   </section>
-
+  <head>
+    {{ template "_internal/google_analytics.html" . }}
+    {{ template "_internal/google_analytics_async.html" . }}
+  </head>
 <!--
   {{ partial "home-page-sections/sponsors.html" (dict "cx" . "gtag" "home" ) }}
 -->
